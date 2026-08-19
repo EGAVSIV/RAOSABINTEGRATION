@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaurav // Control Room</title>
+<meta name="description" content="Personal trading ops terminal — webhook monitors, F&O scanners, option chain analysis and gamma dashboards, all in one place.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230B0E11%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 fill=%22%23F0A500%22 text-anchor=%22middle%22 font-family=%22monospace%22>&gt;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0E11;
+    --panel:#12161C;
+    --panel-2:#161B22;
+    --border:#232935;
+    --border-hover:#3A4150;
+    --text:#E8EAED;
+    --muted:#7A8494;
+    --muted-2:#4E5665;
+    --amber:#F0A500;
+    --amber-dim:#8A6410;
+    --green:#3DDC84;
+    --red:#FF5C5C;
+    --font-display:'Space Grotesk', sans-serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.5;
+    overflow-x:hidden;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 42px 42px;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- Ticker ---------- */
+  .ticker-wrap{
+    border-bottom:1px solid var(--border);
+    background:var(--panel);
+    overflow:hidden;
+    white-space:nowrap;
+    position:relative;
+  }
+  .ticker-wrap::before,.ticker-wrap::after{
+    content:"";
+    position:absolute; top:0; bottom:0; width:60px; z-index:2;
+  }
+  .ticker-wrap::before{left:0; background:linear-gradient(90deg, var(--panel), transparent);}
+  .ticker-wrap::after{right:0; background:linear-gradient(270deg, var(--panel), transparent);}
+  .ticker{
+    display:inline-flex;
+    animation: scroll-left 34s linear infinite;
+    padding:9px 0;
+  }
+  @keyframes scroll-left{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  .ticker span{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:0.03em;
+    color:var(--muted);
+    padding:0 22px;
+    border-right:1px solid var(--border);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .ticker .dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 6px var(--green);
+    flex:none;
+  }
+  .ticker .up{color:var(--green);}
+
+  /* ---------- Header / hero ---------- */
+  header{
+    max-width:1180px;
+    margin:0 auto;
+    padding:64px 32px 56px;
+    position:relative;
+  }
+
+  .topline{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:56px;
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--muted);
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--text);
+    font-weight:600;
+  }
+  .brand .glyph{
+    width:26px;height:26px;
+    border:1px solid var(--amber);
+    border-radius:6px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--amber);
+    font-size:14px;
+  }
+  .clock{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .clock .live-dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 8px var(--green);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:0.35;}
+  }
+
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    color:var(--amber);
+    text-transform:uppercase;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;height:1px;
+    background:var(--amber);
+  }
+
+  h1{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:clamp(38px, 6.4vw, 76px);
+    line-height:1.02;
+    letter-spacing:-0.02em;
+    max-width:900px;
+  }
+  h1 .accent{color:var(--amber);}
+  h1 .out{
+    -webkit-text-stroke:1px var(--border-hover);
+    color:transparent;
+  }
+
+  .lede{
+    margin-top:26px;
+    max-width:560px;
+    color:var(--muted);
+    font-size:16.5px;
+  }
+
+  .hero-meta{
+    margin-top:44px;
+    display:flex;
+    gap:0;
+    border-top:1px solid var(--border);
+    flex-wrap:wrap;
+  }
+  .hero-meta div{
+    flex:1;
+    min-width:150px;
+    padding:18px 22px 0 0;
+    border-right:1px solid var(--border);
+  }
+  .hero-meta div:last-child{border-right:none;}
+  .hero-meta .num{
+    font-family:var(--font-mono);
+    font-size:26px;
+    color:var(--text);
+    font-weight:600;
+  }
+  .hero-meta .lbl{
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--muted-2);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    margin-top:4px;
+  }
+
+  /* ---------- Section label ---------- */
+  .section-head{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:26px;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .section-head h2{
+    font-family:var(--font-display);
+    font-size:22px;
+    font-weight:600;
+  }
+  .section-head .sub{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--muted-2);
+    letter-spacing:0.04em;
+  }
+
+  /* ---------- Grid of apps ---------- */
+  .grid{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px 90px;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+  }
+  @media (max-width:920px){ .grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:620px){ .grid{grid-template-columns:1fr;} }
+
+  .card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:22px;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    min-height:250px;
+    transition: border-color .25s ease, transform .25s ease, background .25s ease;
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";
+    position:absolute; inset:0;
+    background: radial-gradient(420px circle at var(--mx,50%) var(--my,0%), rgba(240,165,0,0.08), transparent 60%);
+    opacity:0;
+    transition:opacity .3s ease;
+    pointer-events:none;
+  }
+  .card:hover{
+    border-color:var(--border-hover);
+    transform:translateY(-3px);
+    background:var(--panel-2);
+  }
+  .card:hover::before{opacity:1;}
+
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:20px;
+  }
+  .icon-box{
+    width:44px;height:44px;
+    border:1px solid var(--border);
+    border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--amber);
+    background:rgba(240,165,0,0.04);
+    flex:none;
+  }
+  .icon-box svg{width:22px;height:22px;}
+
+  .status{
+    display:flex;align-items:center;gap:6px;
+    font-family:var(--font-mono);
+    font-size:10.5px;
+    color:var(--green);
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+  }
+  .status .d{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 6px var(--green);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+
+  .card-id{
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--muted-2);
+    letter-spacing:0.06em;
+    margin-bottom:8px;
+  }
+
+  .card h3{
+    font-family:var(--font-display);
+    font-size:19px;
+    font-weight:600;
+    margin-bottom:9px;
+    letter-spacing:-0.01em;
+  }
+
+  .card p{
+    color:var(--muted);
+    font-size:13.6px;
+    flex:1;
+    margin-bottom:20px;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:16px;
+    border-top:1px solid var(--border);
+    font-family:var(--font-mono);
+  }
+  .url{
+    font-size:11.5px;
+    color:var(--muted-2);
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    max-width:62%;
+  }
+  .launch{
+    font-size:12px;
+    color:var(--amber);
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:6px 12px;
+    border:1px solid var(--amber-dim);
+    border-radius:6px;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+    flex:none;
+  }
+  .card:hover .launch{
+    background:var(--amber);
+    color:#0B0E11;
+    border-color:var(--amber);
+  }
+  .launch svg{width:12px;height:12px;transition:transform .2s ease;}
+  .card:hover .launch svg{transform:translate(2px,-2px);}
+
+  .card a.hit{position:absolute;inset:0;z-index:1;}
+  .card-foot, .card-top{position:relative;z-index:2;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid var(--border);
+    padding:34px 32px 40px;
+  }
+  .footer-in{
+    max-width:1180px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--muted-2);
+  }
+  .footer-in .tag{
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .footer-in .tag .d{
+    width:5px;height:5px;border-radius:50%;
+    background:var(--amber);
+  }
+</style>
+</head>
+<body>
+
+  <div class="ticker-wrap">
+    <div class="ticker" id="ticker"></div>
+  </div>
+
+  <header>
+    <div class="topline">
+      <div class="brand">
+        <span class="glyph">&gt;</span>
+        GAURAV.RAOSAB.IN
+      </div>
+      <div class="clock">
+        <span class="live-dot"></span>
+        <span id="clockText">IST --:--:--</span>
+      </div>
+    </div>
+
+    <div class="eyebrow">Personal Trading Ops</div>
+    <h1>All markets.<br>One <span class="accent">terminal</span><span class="out">.</span></h1>
+    <p class="lede">Six tools, one desk. Webhook monitors, F&O scanners and option-chain analytics, wired straight into a single control room.</p>
+
+    <div class="hero-meta">
+      <div>
+        <div class="num">06</div>
+        <div class="lbl">Apps online</div>
+      </div>
+      <div>
+        <div class="num">NSE</div>
+        <div class="lbl">F&amp;O · Index · Spot</div>
+      </div>
+      <div>
+        <div class="num">24/7</div>
+        <div class="lbl">Webhook watch</div>
+      </div>
+      <div>
+        <div class="num">100%</div>
+        <div class="lbl">Uptime target</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="section-head">
+    <h2>Desk</h2>
+    <div class="sub">// click a panel to launch</div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <footer>
+    <div class="footer-in">
+      <div class="tag"><span class="d"></span> Built &amp; run by Gaurav</div>
+      <div>gaurav.raosab.in</div>
+    </div>
+  </footer>
+
+<script>
+  const apps = [
+    {
+      id: "APP_01",
+      name: "OptionWH Monitor",
+      desc: "Live webhook monitor for option-symbol alerts — every trigger, tracked in real time.",
+      url: "https://optionwh.raosab.in/",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a5 5 0 0 0-5 5v3.2c0 .5-.2 1-.5 1.4L5 15h14l-1.5-2.4a2.3 2.3 0 0 1-.5-1.4V8a5 5 0 0 0-5-5Z"/><path d="M9.5 18a2.5 2.5 0 0 0 5 0"/><circle cx="18" cy="6" r="2.6"/></svg>`
+    },
+    {
+      id: "APP_02",
+      name: "SpotWH Monitor",
+      desc: "Webhook monitor for spot-symbol alerts — clean signal for every price event.",
+      url: "https://spotwh.raosab.in/",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2.5-7 4 14 2.5-9 2 2H22"/></svg>`
+    },
+    {
+      id: "APP_03",
+      name: "Streamlit Hub",
+      desc: "Every Streamlit app on the desk, indexed and reachable from one home page.",
+      url: "http://raosab.in/",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/><rect x="14" y="14" width="7" height="7" rx="1.2"/></svg>`
+    },
+    {
+      id: "APP_04",
+      name: "All Scans · FNO",
+      desc: "Full sweep across F&O — every scan running side by side, updated continuously.",
+      url: "https://allscans.raosab.in/",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 7v4l3 2"/></svg>`
+    },
+    {
+      id: "APP_05",
+      name: "OI Decay",
+      desc: "Option-chain analysis focused on open-interest decay across strikes and expiries.",
+      url: "https://oidecay.raosab.in/",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15c2-1 3-4 4-6s2-3 3-2 1 4 3 4 3-3 4-6"/></svg>`
+    },
+    {
+      id: "APP_06",
+      name: "Gamma Blast",
+      desc: "Index-trade dashboard built around gamma exposure — where the blast zone sits.",
+      url: "https://index-trade-render-dasboard.onrender.com/",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>`
+    }
+  ];
+
+  const grid = document.getElementById('grid');
+  grid.innerHTML = apps.map(a => `
+    <div class="card" data-card>
+      <a class="hit" href="${a.url}" target="_blank" rel="noopener noreferrer" aria-label="Open ${a.name}"></a>
+      <div class="card-top">
+        <div class="icon-box">${a.icon}</div>
+        <div class="status"><span class="d"></span>Live</div>
+      </div>
+      <div class="card-id">${a.id}</div>
+      <h3>${a.name}</h3>
+      <p>${a.desc}</p>
+      <div class="card-foot">
+        <span class="url">${a.url.replace('https://','').replace('http://','').replace(/\/$/,'')}</span>
+        <span class="launch">Launch
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </span>
+      </div>
+    </div>
+  `).join('');
+
+  // cursor-follow glow on cards
+  document.querySelectorAll('[data-card]').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+      card.style.setProperty('--my', `${e.clientY - r.top}px`);
+    });
+  });
+
+  // ticker content — duplicated once for seamless loop
+  const tickerItems = apps.map(a => `<span><span class="dot"></span>${a.name.toUpperCase()} <span class="up">● LIVE</span></span>`).join('');
+  document.getElementById('ticker').innerHTML = tickerItems + tickerItems;
+
+  // IST clock
+  function updateClock(){
+    const now = new Date();
+    const opts = { timeZone: 'Asia/Kolkata', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    const t = new Intl.DateTimeFormat('en-GB', opts).format(now);
+    document.getElementById('clockText').textContent = `IST ${t}`;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
+</body>
+</html>
