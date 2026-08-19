@@ -8,17 +8,17 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230B0E11%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 fill=%22%23F0A500%22 text-anchor=%22middle%22 font-family=%22monospace%22>&gt;</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0B0E11;
     --panel:#12161C;
-    --panel-2:#161B22;
-    --border:#232935;
+    --panel-2:#181D25;
+    --border:#242A34;
     --border-hover:#3A4150;
-    --text:#E8EAED;
-    --muted:#7A8494;
-    --muted-2:#4E5665;
+    --text:#F1F3F5;
+    --muted:#8891A0;
+    --muted-2:#5B6473;
     --amber:#F0A500;
     --amber-dim:#8A6410;
     --green:#3DDC84;
@@ -29,19 +29,29 @@
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
-
   html{scroll-behavior:smooth;}
 
   body{
     background:var(--bg);
     color:var(--text);
     font-family:var(--font-body);
-    line-height:1.5;
+    font-size:17px;
+    line-height:1.55;
     overflow-x:hidden;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
-    background-size: 42px 42px;
+    position:relative;
+  }
+
+  /* colorful ambient background */
+  body::before{
+    content:"";
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(680px 480px at 8% -8%, rgba(56,189,248,0.16), transparent 60%),
+      radial-gradient(620px 460px at 96% 8%, rgba(244,114,182,0.14), transparent 60%),
+      radial-gradient(700px 520px at 50% 115%, rgba(52,211,153,0.10), transparent 60%),
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: auto, auto, auto, 42px 42px, 42px 42px;
   }
 
   a{color:inherit;text-decoration:none;}
@@ -57,6 +67,7 @@
     overflow:hidden;
     white-space:nowrap;
     position:relative;
+    z-index:2;
   }
   .ticker-wrap::before,.ticker-wrap::after{
     content:"";
@@ -67,7 +78,7 @@
   .ticker{
     display:inline-flex;
     animation: scroll-left 34s linear infinite;
-    padding:9px 0;
+    padding:10px 0;
   }
   @keyframes scroll-left{
     from{transform:translateX(0);}
@@ -75,7 +86,7 @@
   }
   .ticker span{
     font-family:var(--font-mono);
-    font-size:12px;
+    font-size:13px;
     letter-spacing:0.03em;
     color:var(--muted);
     padding:0 22px;
@@ -86,11 +97,8 @@
   }
   .ticker .dot{
     width:6px;height:6px;border-radius:50%;
-    background:var(--green);
-    box-shadow:0 0 6px var(--green);
     flex:none;
   }
-  .ticker .up{color:var(--green);}
 
   /* ---------- Header / hero ---------- */
   header{
@@ -98,6 +106,7 @@
     margin:0 auto;
     padding:64px 32px 56px;
     position:relative;
+    z-index:2;
   }
 
   .topline{
@@ -106,8 +115,10 @@
     align-items:center;
     margin-bottom:56px;
     font-family:var(--font-mono);
-    font-size:13px;
+    font-size:14px;
     color:var(--muted);
+    gap:16px;
+    flex-wrap:wrap;
   }
   .brand{
     display:flex;
@@ -117,12 +128,17 @@
     font-weight:600;
   }
   .brand .glyph{
-    width:26px;height:26px;
+    width:28px;height:28px;
     border:1px solid var(--amber);
     border-radius:6px;
     display:flex;align-items:center;justify-content:center;
     color:var(--amber);
-    font-size:14px;
+    font-size:15px;
+  }
+  .topline-right{
+    display:flex;
+    align-items:center;
+    gap:14px;
   }
   .clock{
     display:flex;
@@ -140,9 +156,25 @@
     50%{opacity:0.35;}
   }
 
-  .eyebrow{
+  .admin-btn{
+    display:flex;align-items:center;gap:7px;
+    border:1px solid var(--border);
+    background:var(--panel);
+    color:var(--muted);
+    padding:7px 13px;
+    border-radius:7px;
     font-family:var(--font-mono);
     font-size:12.5px;
+    cursor:pointer;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .admin-btn:hover{border-color:var(--amber); color:var(--amber);}
+  .admin-btn svg{width:14px;height:14px;}
+  .admin-btn.on{border-color:var(--green); color:var(--green);}
+
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:13px;
     letter-spacing:0.14em;
     color:var(--amber);
     text-transform:uppercase;
@@ -160,12 +192,17 @@
   h1{
     font-family:var(--font-display);
     font-weight:700;
-    font-size:clamp(38px, 6.4vw, 76px);
+    font-size:clamp(42px, 6.8vw, 82px);
     line-height:1.02;
     letter-spacing:-0.02em;
-    max-width:900px;
+    max-width:920px;
   }
-  h1 .accent{color:var(--amber);}
+  h1 .accent{
+    background:linear-gradient(100deg, #F0A500, #F472B6 55%, #38BDF8);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
   h1 .out{
     -webkit-text-stroke:1px var(--border-hover);
     color:transparent;
@@ -173,9 +210,9 @@
 
   .lede{
     margin-top:26px;
-    max-width:560px;
+    max-width:600px;
     color:var(--muted);
-    font-size:16.5px;
+    font-size:18px;
   }
 
   .hero-meta{
@@ -194,13 +231,13 @@
   .hero-meta div:last-child{border-right:none;}
   .hero-meta .num{
     font-family:var(--font-mono);
-    font-size:26px;
+    font-size:28px;
     color:var(--text);
     font-weight:600;
   }
   .hero-meta .lbl{
     font-family:var(--font-mono);
-    font-size:11px;
+    font-size:12px;
     color:var(--muted-2);
     text-transform:uppercase;
     letter-spacing:0.08em;
@@ -218,15 +255,17 @@
     margin-bottom:26px;
     flex-wrap:wrap;
     gap:10px;
+    position:relative;
+    z-index:2;
   }
   .section-head h2{
     font-family:var(--font-display);
-    font-size:22px;
+    font-size:25px;
     font-weight:600;
   }
   .section-head .sub{
     font-family:var(--font-mono);
-    font-size:12px;
+    font-size:13px;
     color:var(--muted-2);
     letter-spacing:0.04em;
   }
@@ -238,7 +277,9 @@
     padding:0 32px 90px;
     display:grid;
     grid-template-columns:repeat(3, 1fr);
-    gap:18px;
+    gap:20px;
+    position:relative;
+    z-index:2;
   }
   @media (max-width:920px){ .grid{grid-template-columns:repeat(2,1fr);} }
   @media (max-width:620px){ .grid{grid-template-columns:1fr;} }
@@ -246,54 +287,68 @@
   .card{
     background:var(--panel);
     border:1px solid var(--border);
-    border-radius:10px;
-    padding:22px;
-    position:relative;
+    border-radius:12px;
     display:flex;
     flex-direction:column;
-    min-height:250px;
-    transition: border-color .25s ease, transform .25s ease, background .25s ease;
+    transition: border-color .25s ease, transform .25s ease, background .25s ease, box-shadow .25s ease;
     overflow:hidden;
-  }
-  .card::before{
-    content:"";
-    position:absolute; inset:0;
-    background: radial-gradient(420px circle at var(--mx,50%) var(--my,0%), rgba(240,165,0,0.08), transparent 60%);
-    opacity:0;
-    transition:opacity .3s ease;
-    pointer-events:none;
+    position:relative;
   }
   .card:hover{
-    border-color:var(--border-hover);
-    transform:translateY(-3px);
+    border-color:var(--accent, var(--border-hover));
+    transform:translateY(-4px);
     background:var(--panel-2);
+    box-shadow:0 14px 34px -18px var(--accent, rgba(0,0,0,0.5));
   }
-  .card:hover::before{opacity:1;}
+
+  .art{
+    height:118px;
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid var(--border);
+  }
+  .art svg{width:100%;height:100%;display:block;}
+
+  .card-body{
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
 
   .card-top{
     display:flex;
     justify-content:space-between;
     align-items:flex-start;
-    margin-bottom:20px;
+    margin-top:-38px;
+    margin-bottom:16px;
+    position:relative;
+    z-index:2;
   }
   .icon-box{
-    width:44px;height:44px;
+    width:46px;height:46px;
     border:1px solid var(--border);
-    border-radius:9px;
+    border-radius:10px;
     display:flex;align-items:center;justify-content:center;
-    color:var(--amber);
-    background:rgba(240,165,0,0.04);
+    color:var(--accent, var(--amber));
+    background:var(--panel);
+    box-shadow:0 6px 16px -6px rgba(0,0,0,0.5);
     flex:none;
   }
-  .icon-box svg{width:22px;height:22px;}
+  .icon-box svg{width:23px;height:23px;}
 
   .status{
     display:flex;align-items:center;gap:6px;
     font-family:var(--font-mono);
-    font-size:10.5px;
+    font-size:11px;
     color:var(--green);
     letter-spacing:0.05em;
     text-transform:uppercase;
+    background:var(--panel);
+    border:1px solid var(--border);
+    padding:5px 9px;
+    border-radius:20px;
+    margin-top:2px;
   }
   .status .d{
     width:6px;height:6px;border-radius:50%;
@@ -304,23 +359,24 @@
 
   .card-id{
     font-family:var(--font-mono);
-    font-size:11px;
-    color:var(--muted-2);
-    letter-spacing:0.06em;
+    font-size:11.5px;
+    color:var(--accent, var(--muted-2));
+    letter-spacing:0.08em;
     margin-bottom:8px;
+    font-weight:600;
   }
 
   .card h3{
     font-family:var(--font-display);
-    font-size:19px;
+    font-size:21.5px;
     font-weight:600;
-    margin-bottom:9px;
+    margin-bottom:10px;
     letter-spacing:-0.01em;
   }
 
   .card p{
     color:var(--muted);
-    font-size:13.6px;
+    font-size:15px;
     flex:1;
     margin-bottom:20px;
   }
@@ -332,42 +388,76 @@
     padding-top:16px;
     border-top:1px solid var(--border);
     font-family:var(--font-mono);
+    gap:10px;
   }
   .url{
-    font-size:11.5px;
+    font-size:12px;
     color:var(--muted-2);
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
-    max-width:62%;
+    max-width:56%;
   }
   .launch{
-    font-size:12px;
-    color:var(--amber);
+    font-size:13px;
+    font-weight:600;
+    color:var(--accent, var(--amber));
     display:flex;
     align-items:center;
     gap:6px;
-    padding:6px 12px;
-    border:1px solid var(--amber-dim);
-    border-radius:6px;
-    transition: background .2s ease, color .2s ease, border-color .2s ease;
+    padding:7px 13px;
+    border:1px solid var(--accent, var(--amber-dim));
+    border-radius:7px;
+    transition: background .2s ease, color .2s ease;
     flex:none;
   }
   .card:hover .launch{
-    background:var(--amber);
+    background:var(--accent, var(--amber));
     color:#0B0E11;
-    border-color:var(--amber);
   }
   .launch svg{width:12px;height:12px;transition:transform .2s ease;}
   .card:hover .launch svg{transform:translate(2px,-2px);}
 
-  .card a.hit{position:absolute;inset:0;z-index:1;}
-  .card-foot, .card-top{position:relative;z-index:2;}
+  .card-del{
+    position:absolute; top:12px; right:12px; z-index:5;
+    width:26px;height:26px;border-radius:7px;
+    background:rgba(11,14,17,0.75);
+    border:1px solid var(--border);
+    color:var(--red);
+    display:none;
+    align-items:center;justify-content:center;
+    cursor:pointer;
+  }
+  .admin-on .card-del{display:flex;}
+  .card-del svg{width:13px;height:13px;}
+
+  /* add-app tile */
+  .add-tile{
+    display:none;
+    border:1.5px dashed var(--border-hover);
+    border-radius:12px;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:10px;
+    min-height:280px;
+    background:transparent;
+    color:var(--muted);
+    cursor:pointer;
+    font-family:var(--font-mono);
+    font-size:14px;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .admin-on .add-tile{display:flex;}
+  .add-tile:hover{border-color:var(--amber); color:var(--amber);}
+  .add-tile svg{width:26px;height:26px;}
 
   /* ---------- Footer ---------- */
   footer{
     border-top:1px solid var(--border);
     padding:34px 32px 40px;
+    position:relative;
+    z-index:2;
   }
   .footer-in{
     max-width:1180px;
@@ -378,7 +468,7 @@
     flex-wrap:wrap;
     gap:14px;
     font-family:var(--font-mono);
-    font-size:11.5px;
+    font-size:12.5px;
     color:var(--muted-2);
   }
   .footer-in .tag{
@@ -389,6 +479,88 @@
   .footer-in .tag .d{
     width:5px;height:5px;border-radius:50%;
     background:var(--amber);
+  }
+
+  /* ---------- Modal ---------- */
+  .modal-bg{
+    position:fixed; inset:0; z-index:50;
+    background:rgba(5,7,9,0.72);
+    backdrop-filter:blur(3px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+  }
+  .modal-bg.show{display:flex;}
+  .modal{
+    width:100%; max-width:420px;
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:26px;
+  }
+  .modal h4{
+    font-family:var(--font-display);
+    font-size:19px;
+    margin-bottom:6px;
+  }
+  .modal .hint{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--muted-2);
+    margin-bottom:20px;
+  }
+  .field{margin-bottom:14px;}
+  .field label{
+    display:block;
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    margin-bottom:6px;
+  }
+  .field input, .field textarea, .field select{
+    width:100%;
+    background:var(--bg);
+    border:1px solid var(--border);
+    color:var(--text);
+    padding:10px 12px;
+    border-radius:8px;
+    font-family:var(--font-body);
+    font-size:14.5px;
+  }
+  .field input[type=color]{padding:4px; height:40px; cursor:pointer;}
+  .field textarea{resize:vertical; min-height:60px;}
+  .field input:focus, .field textarea:focus, .field select:focus{outline:1px solid var(--amber); border-color:var(--amber);}
+  .modal-actions{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+  }
+  .btn{
+    flex:1;
+    padding:11px;
+    border-radius:8px;
+    font-family:var(--font-mono);
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    border:1px solid var(--border);
+    background:transparent;
+    color:var(--muted);
+  }
+  .btn.primary{
+    background:var(--amber);
+    border-color:var(--amber);
+    color:#0B0E11;
+  }
+  .error-msg{
+    color:var(--red);
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    margin-top:8px;
+    display:none;
   }
 </style>
 </head>
@@ -404,9 +576,15 @@
         <span class="glyph">&gt;</span>
         GAURAV.RAOSAB.IN
       </div>
-      <div class="clock">
-        <span class="live-dot"></span>
-        <span id="clockText">IST --:--:--</span>
+      <div class="topline-right">
+        <div class="clock">
+          <span class="live-dot"></span>
+          <span id="clockText">IST --:--:--</span>
+        </div>
+        <button class="admin-btn" id="adminBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          <span id="adminBtnText">Admin</span>
+        </button>
       </div>
     </div>
 
@@ -416,7 +594,7 @@
 
     <div class="hero-meta">
       <div>
-        <div class="num">06</div>
+        <div class="num" id="appCount">06</div>
         <div class="lbl">Apps online</div>
       </div>
       <div>
@@ -448,86 +626,270 @@
     </div>
   </footer>
 
+  <!-- Admin login modal -->
+  <div class="modal-bg" id="loginModal">
+    <div class="modal">
+      <h4>Admin access</h4>
+      <div class="hint">Enter the desk password to add or remove apps.</div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="pwInput" placeholder="••••••••">
+      </div>
+      <div class="error-msg" id="pwError">Wrong password. Try again.</div>
+      <div class="modal-actions">
+        <button class="btn" id="pwCancel">Cancel</button>
+        <button class="btn primary" id="pwSubmit">Unlock</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add app modal -->
+  <div class="modal-bg" id="addModal">
+    <div class="modal">
+      <h4>Add a new app</h4>
+      <div class="hint">Appears instantly on this desk (saved in this browser).</div>
+      <div class="field">
+        <label>App name</label>
+        <input type="text" id="newName" placeholder="e.g. Vol Surface Tracker">
+      </div>
+      <div class="field">
+        <label>URL</label>
+        <input type="text" id="newUrl" placeholder="https://...">
+      </div>
+      <div class="field">
+        <label>Short description</label>
+        <textarea id="newDesc" placeholder="What this app does, in one line."></textarea>
+      </div>
+      <div class="field">
+        <label>Accent color</label>
+        <input type="color" id="newColor" value="#38BDF8">
+      </div>
+      <div class="modal-actions">
+        <button class="btn" id="addCancel">Cancel</button>
+        <button class="btn primary" id="addSubmit">Add to desk</button>
+      </div>
+    </div>
+  </div>
+
 <script>
-  const apps = [
+  /* ====== CONFIG ====== */
+  const ADMIN_PASSWORD = "gaurav123"; // change this before publishing
+
+  /* ====== DEFAULT APPS ====== */
+  const defaultApps = [
     {
-      id: "APP_01",
+      id: "APP_01", locked:true,
       name: "OptionWH Monitor",
       desc: "Live webhook monitor for option-symbol alerts — every trigger, tracked in real time.",
       url: "https://optionwh.raosab.in/",
-      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a5 5 0 0 0-5 5v3.2c0 .5-.2 1-.5 1.4L5 15h14l-1.5-2.4a2.3 2.3 0 0 1-.5-1.4V8a5 5 0 0 0-5-5Z"/><path d="M9.5 18a2.5 2.5 0 0 0 5 0"/><circle cx="18" cy="6" r="2.6"/></svg>`
+      accent: "#38BDF8",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a5 5 0 0 0-5 5v3.2c0 .5-.2 1-.5 1.4L5 15h14l-1.5-2.4a2.3 2.3 0 0 1-.5-1.4V8a5 5 0 0 0-5-5Z"/><path d="M9.5 18a2.5 2.5 0 0 0 5 0"/><circle cx="18" cy="6" r="2.6"/></svg>`,
+      art: "radar"
     },
     {
-      id: "APP_02",
+      id: "APP_02", locked:true,
       name: "SpotWH Monitor",
       desc: "Webhook monitor for spot-symbol alerts — clean signal for every price event.",
       url: "https://spotwh.raosab.in/",
-      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2.5-7 4 14 2.5-9 2 2H22"/></svg>`
+      accent: "#A78BFA",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2.5-7 4 14 2.5-9 2 2H22"/></svg>`,
+      art: "pulse"
     },
     {
-      id: "APP_03",
+      id: "APP_03", locked:true,
       name: "Streamlit Hub",
       desc: "Every Streamlit app on the desk, indexed and reachable from one home page.",
       url: "http://raosab.in/",
-      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/><rect x="14" y="14" width="7" height="7" rx="1.2"/></svg>`
+      accent: "#F0A500",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/><rect x="14" y="14" width="7" height="7" rx="1.2"/></svg>`,
+      art: "grid"
     },
     {
-      id: "APP_04",
+      id: "APP_04", locked:true,
       name: "All Scans · FNO",
       desc: "Full sweep across F&O — every scan running side by side, updated continuously.",
       url: "https://allscans.raosab.in/",
-      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 7v4l3 2"/></svg>`
+      accent: "#34D399",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 7v4l3 2"/></svg>`,
+      art: "scan"
     },
     {
-      id: "APP_05",
+      id: "APP_05", locked:true,
       name: "OI Decay",
       desc: "Option-chain analysis focused on open-interest decay across strikes and expiries.",
       url: "https://oidecay.raosab.in/",
-      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15c2-1 3-4 4-6s2-3 3-2 1 4 3 4 3-3 4-6"/></svg>`
+      accent: "#FB7185",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15c2-1 3-4 4-6s2-3 3-2 1 4 3 4 3-3 4-6"/></svg>`,
+      art: "decay"
     },
     {
-      id: "APP_06",
+      id: "APP_06", locked:true,
       name: "Gamma Blast",
       desc: "Index-trade dashboard built around gamma exposure — where the blast zone sits.",
       url: "https://index-trade-render-dasboard.onrender.com/",
-      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>`
+      accent: "#F472B6",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>`,
+      art: "bullbear"
     }
   ];
 
-  const grid = document.getElementById('grid');
-  grid.innerHTML = apps.map(a => `
-    <div class="card" data-card>
-      <a class="hit" href="${a.url}" target="_blank" rel="noopener noreferrer" aria-label="Open ${a.name}"></a>
-      <div class="card-top">
-        <div class="icon-box">${a.icon}</div>
-        <div class="status"><span class="d"></span>Live</div>
-      </div>
-      <div class="card-id">${a.id}</div>
-      <h3>${a.name}</h3>
-      <p>${a.desc}</p>
-      <div class="card-foot">
-        <span class="url">${a.url.replace('https://','').replace('http://','').replace(/\/$/,'')}</span>
-        <span class="launch">Launch
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-        </span>
-      </div>
-    </div>
-  `).join('');
+  /* ====== candlestick backdrop generator ====== */
+  function candleBackdrop(seed, upColor, downColor){
+    let x = 6, bars = [];
+    let rnd = seed;
+    const next = () => { rnd = (rnd * 9301 + 49297) % 233280; return rnd / 233280; };
+    for(let i=0;i<16;i++){
+      const up = next() > 0.45;
+      const bodyH = 14 + next()*38;
+      const wickH = bodyH + 8 + next()*16;
+      const midY = 60;
+      const bodyY = midY - bodyH/2 + (next()*10-5);
+      const wickY = bodyY - (wickH-bodyH)/2;
+      const color = up ? upColor : downColor;
+      bars.push(`<line x1="${x+4}" y1="${wickY}" x2="${x+4}" y2="${wickY+wickH}" stroke="${color}" stroke-width="1" opacity="0.55"/>`);
+      bars.push(`<rect x="${x}" y="${bodyY}" width="8" height="${bodyH}" fill="${color}" opacity="0.75" rx="1"/>`);
+      x += 20;
+    }
+    return bars.join('');
+  }
 
-  // cursor-follow glow on cards
-  document.querySelectorAll('[data-card]').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const r = card.getBoundingClientRect();
-      card.style.setProperty('--mx', `${e.clientX - r.left}px`);
-      card.style.setProperty('--my', `${e.clientY - r.top}px`);
+  /* ====== per-app illustrated art ====== */
+  function artFor(app, idx){
+    const c = app.accent;
+    const gradId = "g" + idx;
+    const candles = candleBackdrop(idx*17+3, "#3DDC84", "#FF5C5C");
+
+    const motifs = {
+      radar: `
+        <g transform="translate(160,60)" opacity="0.95">
+          <circle r="34" fill="none" stroke="${c}" stroke-width="1" opacity="0.35"/>
+          <circle r="22" fill="none" stroke="${c}" stroke-width="1" opacity="0.5"/>
+          <circle r="10" fill="none" stroke="${c}" stroke-width="1.2" opacity="0.7"/>
+          <line x1="0" y1="0" x2="30" y2="-14" stroke="${c}" stroke-width="2">
+            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="4s" repeatCount="indefinite"/>
+          </line>
+          <circle cx="0" cy="0" r="3.5" fill="${c}"/>
+        </g>`,
+      pulse: `
+        <g transform="translate(20,60)">
+          <path d="M0 0 H50 L58 -22 L68 22 L78 -12 L88 0 H300" fill="none" stroke="${c}" stroke-width="2.5" opacity="0.9"/>
+          <circle cx="68" cy="22" r="4" fill="${c}"/>
+        </g>`,
+      grid: `
+        <g transform="translate(122,26)" opacity="0.95">
+          <rect x="0" y="0" width="30" height="30" rx="6" fill="${c}" opacity="0.85"/>
+          <rect x="38" y="0" width="30" height="30" rx="6" fill="${c}" opacity="0.5"/>
+          <rect x="0" y="38" width="30" height="30" rx="6" fill="${c}" opacity="0.5"/>
+          <rect x="38" y="38" width="30" height="30" rx="6" fill="${c}" opacity="0.85"/>
+        </g>`,
+      scan: `
+        <g transform="translate(160,60)">
+          <rect x="-90" y="-24" width="180" height="48" fill="none" stroke="${c}" stroke-width="1" opacity="0.3"/>
+          <rect x="-90" y="-24" width="26" height="48" fill="${c}" opacity="0.3">
+            <animate attributeName="x" values="-90;64;-90" dur="3.2s" repeatCount="indefinite"/>
+          </rect>
+        </g>`,
+      decay: `
+        <g transform="translate(20,20)">
+          <path d="M0 5 C 40 8, 80 45, 300 62" fill="none" stroke="${c}" stroke-width="2.5" opacity="0.9"/>
+        </g>`,
+      bullbear: `
+        <g transform="translate(112,58)" opacity="0.95">
+          <path d="M0 20 L14 -6 L20 6 L34 -20" fill="none" stroke="${c}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M40 -18 L52 6 L46 6 L58 20" fill="none" stroke="${c}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="27" cy="1" r="5" fill="${c}"/>
+        </g>`
+    };
+
+    return `
+      <svg viewBox="0 0 320 118" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="${gradId}" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="${c}" stop-opacity="0.28"/>
+            <stop offset="100%" stop-color="${c}" stop-opacity="0.02"/>
+          </linearGradient>
+        </defs>
+        <rect width="320" height="118" fill="url(#${gradId})"/>
+        <g opacity="0.5">${candles}</g>
+        ${motifs[app.art] || motifs.grid}
+      </svg>`;
+  }
+
+  /* ====== storage ====== */
+  const STORAGE_KEY = "desk_custom_apps_v1";
+  function loadCustom(){
+    try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+    catch(e){ return []; }
+  }
+  function saveCustom(list){
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+  }
+
+  let customApps = loadCustom();
+  let isAdmin = sessionStorage.getItem("isAdmin") === "1";
+
+  const genericIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>`;
+  const genericArtKeys = ["radar","pulse","grid","scan","decay","bullbear"];
+
+  function allApps(){
+    return [...defaultApps, ...customApps.map((a,i) => ({...a, icon: genericIcon, art: genericArtKeys[i % genericArtKeys.length]}))];
+  }
+
+  function render(){
+    const grid = document.getElementById('grid');
+    const apps = allApps();
+    document.getElementById('appCount').textContent = String(apps.length).padStart(2,'0');
+    document.body.classList.toggle('admin-on', isAdmin);
+
+    grid.innerHTML = apps.map((a, i) => `
+      <a class="card" style="--accent:${a.accent}" href="${a.url}" target="_blank" rel="noopener noreferrer" aria-label="Open ${a.name}">
+        ${!a.locked ? `<div class="card-del" data-del="${a.id}" title="Remove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></div>` : ''}
+        <div class="art">${artFor(a, i)}</div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="icon-box">${a.icon}</div>
+            <div class="status"><span class="d"></span>Live</div>
+          </div>
+          <div class="card-id">${a.id}</div>
+          <h3>${a.name}</h3>
+          <p>${a.desc}</p>
+          <div class="card-foot">
+            <span class="url">${a.url.replace('https://','').replace('http://','').replace(/\/$/,'')}</span>
+            <span class="launch">Launch
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+    `).join('') + `
+      <div class="add-tile" id="addTile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+        Add a new app
+      </div>
+    `;
+
+    document.querySelectorAll('[data-del]').forEach(btn=>{
+      btn.addEventListener('click', e=>{
+        e.preventDefault(); e.stopPropagation();
+        const id = btn.getAttribute('data-del');
+        customApps = customApps.filter(a=>a.id!==id);
+        saveCustom(customApps);
+        render();
+      });
     });
-  });
+    const addTile = document.getElementById('addTile');
+    if(addTile){
+      addTile.addEventListener('click', ()=> openModal('addModal'));
+    }
+  }
 
-  // ticker content — duplicated once for seamless loop
-  const tickerItems = apps.map(a => `<span><span class="dot"></span>${a.name.toUpperCase()} <span class="up">● LIVE</span></span>`).join('');
-  document.getElementById('ticker').innerHTML = tickerItems + tickerItems;
+  /* ====== ticker ====== */
+  function renderTicker(){
+    const items = allApps().map(a => `<span><span class="dot" style="background:${a.accent};box-shadow:0 0 6px ${a.accent}"></span>${a.name.toUpperCase()} <span style="color:${a.accent}">● LIVE</span></span>`).join('');
+    document.getElementById('ticker').innerHTML = items + items;
+  }
 
-  // IST clock
+  /* ====== clock ====== */
   function updateClock(){
     const now = new Date();
     const opts = { timeZone: 'Asia/Kolkata', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
@@ -536,6 +898,75 @@
   }
   updateClock();
   setInterval(updateClock, 1000);
+
+  /* ====== modals ====== */
+  function openModal(id){ document.getElementById(id).classList.add('show'); }
+  function closeModal(id){ document.getElementById(id).classList.remove('show'); }
+
+  const adminBtn = document.getElementById('adminBtn');
+  const adminBtnText = document.getElementById('adminBtnText');
+  function refreshAdminBtn(){
+    adminBtn.classList.toggle('on', isAdmin);
+    adminBtnText.textContent = isAdmin ? "Admin ✓" : "Admin";
+  }
+  refreshAdminBtn();
+
+  adminBtn.addEventListener('click', ()=>{
+    if(isAdmin){
+      isAdmin = false;
+      sessionStorage.removeItem("isAdmin");
+      refreshAdminBtn();
+      render();
+    } else {
+      document.getElementById('pwInput').value = '';
+      document.getElementById('pwError').style.display = 'none';
+      openModal('loginModal');
+    }
+  });
+
+  document.getElementById('pwCancel').addEventListener('click', ()=> closeModal('loginModal'));
+  document.getElementById('pwSubmit').addEventListener('click', ()=>{
+    const val = document.getElementById('pwInput').value;
+    if(val === ADMIN_PASSWORD){
+      isAdmin = true;
+      sessionStorage.setItem("isAdmin","1");
+      refreshAdminBtn();
+      closeModal('loginModal');
+      render();
+    } else {
+      document.getElementById('pwError').style.display = 'block';
+    }
+  });
+  document.getElementById('pwInput').addEventListener('keydown', e=>{
+    if(e.key === 'Enter') document.getElementById('pwSubmit').click();
+  });
+
+  document.getElementById('addCancel').addEventListener('click', ()=> closeModal('addModal'));
+  document.getElementById('addSubmit').addEventListener('click', ()=>{
+    const name = document.getElementById('newName').value.trim();
+    const url = document.getElementById('newUrl').value.trim();
+    const desc = document.getElementById('newDesc').value.trim();
+    const color = document.getElementById('newColor').value;
+    if(!name || !url) return;
+    const id = "CUSTOM_" + Date.now();
+    customApps.push({ id, name, url, desc: desc || "Added from the admin desk.", accent: color, locked:false });
+    saveCustom(customApps);
+    document.getElementById('newName').value = '';
+    document.getElementById('newUrl').value = '';
+    document.getElementById('newDesc').value = '';
+    closeModal('addModal');
+    render();
+    renderTicker();
+  });
+
+  [ 'loginModal','addModal' ].forEach(id=>{
+    document.getElementById(id).addEventListener('click', e=>{
+      if(e.target.id === id) closeModal(id);
+    });
+  });
+
+  render();
+  renderTicker();
 </script>
 </body>
 </html>
