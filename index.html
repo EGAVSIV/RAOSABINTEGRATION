@@ -278,6 +278,7 @@
     display:grid;
     grid-template-columns:repeat(3, 1fr);
     gap:20px;
+    justify-content:center;
     position:relative;
     z-index:2;
   }
@@ -590,11 +591,11 @@
 
     <div class="eyebrow">Personal Trading Ops</div>
     <h1>All markets.<br>One <span class="accent">terminal</span><span class="out">.</span></h1>
-    <p class="lede">Six tools, one desk. Webhook monitors, F&O scanners and option-chain analytics, wired straight into a single control room.</p>
+    <p class="lede">Five tools, one desk. Webhook monitors, F&O scanners and option-chain analytics, wired straight into a single control room.</p>
 
     <div class="hero-meta">
       <div>
-        <div class="num" id="appCount">06</div>
+        <div class="num" id="appCount">05</div>
         <div class="lbl">Apps online</div>
       </div>
       <div>
@@ -679,24 +680,15 @@
   const defaultApps = [
     {
       id: "APP_01", locked:true,
-      name: "OptionWH Monitor",
-      desc: "Live webhook monitor for option-symbol alerts — every trigger, tracked in real time.",
-      url: "https://optionwh.raosab.in/",
+      name: "WEBHOOK - TV Monitor",
+      desc: "Live TradingView webhook monitor — real-time alerts and open interest updates.",
+      url: "https://webhook-oi.raosab.in/",
       accent: "#38BDF8",
       icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a5 5 0 0 0-5 5v3.2c0 .5-.2 1-.5 1.4L5 15h14l-1.5-2.4a2.3 2.3 0 0 1-.5-1.4V8a5 5 0 0 0-5-5Z"/><path d="M9.5 18a2.5 2.5 0 0 0 5 0"/><circle cx="18" cy="6" r="2.6"/></svg>`,
       art: "radar"
     },
     {
       id: "APP_02", locked:true,
-      name: "SpotWH Monitor",
-      desc: "Webhook monitor for spot-symbol alerts — clean signal for every price event.",
-      url: "https://spotwh.raosab.in/",
-      accent: "#A78BFA",
-      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2.5-7 4 14 2.5-9 2 2H22"/></svg>`,
-      art: "pulse"
-    },
-    {
-      id: "APP_03", locked:true,
       name: "Streamlit Hub",
       desc: "Every Streamlit app on the desk, indexed and reachable from one home page.",
       url: "http://raosab.in/",
@@ -705,7 +697,7 @@
       art: "grid"
     },
     {
-      id: "APP_04", locked:true,
+      id: "APP_03", locked:true,
       name: "All Scans · FNO",
       desc: "Full sweep across F&O — every scan running side by side, updated continuously.",
       url: "https://allscans.raosab.in/",
@@ -714,7 +706,7 @@
       art: "scan"
     },
     {
-      id: "APP_05", locked:true,
+      id: "APP_04", locked:true,
       name: "OI Decay",
       desc: "Option-chain analysis focused on open-interest decay across strikes and expiries.",
       url: "https://oidecay.raosab.in/",
@@ -723,7 +715,7 @@
       art: "decay"
     },
     {
-      id: "APP_06", locked:true,
+      id: "APP_05", locked:true,
       name: "Gamma Blast",
       desc: "Index-trade dashboard built around gamma exposure — where the blast zone sits.",
       url: "https://index-trade-render-dasboard.onrender.com/",
