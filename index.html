@@ -453,6 +453,47 @@
   .add-tile:hover{border-color:var(--amber); color:var(--amber);}
   .add-tile svg{width:26px;height:26px;}
 
+  /* ---------- Bottom quote marquee ---------- */
+  .quote-wrap{
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    background:linear-gradient(90deg, rgba(240,165,0,0.06), rgba(244,114,182,0.05), rgba(56,189,248,0.06));
+    overflow:hidden;
+    white-space:nowrap;
+    position:relative;
+    z-index:2;
+  }
+  .quote-wrap::before,.quote-wrap::after{
+    content:"";
+    position:absolute; top:0; bottom:0; width:80px; z-index:2;
+  }
+  .quote-wrap::before{left:0; background:linear-gradient(90deg, var(--bg), transparent);}
+  .quote-wrap::after{right:0; background:linear-gradient(270deg, var(--bg), transparent);}
+  .quote-marquee{
+    display:inline-flex;
+    align-items:center;
+    animation: scroll-left 46s linear infinite;
+    padding:16px 0;
+  }
+  .quote-marquee span{
+    font-family:var(--font-mono);
+    font-size:13.5px;
+    letter-spacing:0.03em;
+    color:var(--muted);
+    padding:0 26px;
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+  }
+  .quote-marquee span b{
+    color:var(--text);
+    font-weight:600;
+  }
+  .quote-marquee span .sep{
+    color:var(--amber);
+    opacity:0.7;
+  }
+
   /* ---------- Footer ---------- */
   footer{
     border-top:1px solid var(--border);
@@ -480,6 +521,43 @@
   .footer-in .tag .d{
     width:5px;height:5px;border-radius:50%;
     background:var(--amber);
+  }
+
+  .site-window{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:7px 12px 7px 10px;
+    transition:border-color .2s ease;
+  }
+  .site-window:hover{border-color:var(--amber);}
+  .site-window .dots{
+    display:flex;
+    gap:5px;
+    flex:none;
+  }
+  .site-window .dots span{
+    width:7px;height:7px;border-radius:50%;
+    display:block;
+  }
+  .site-window .dots span:nth-child(1){background:#FF5C5C;}
+  .site-window .dots span:nth-child(2){background:#F0A500;}
+  .site-window .dots span:nth-child(3){background:#3DDC84;}
+  .site-window .bar{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    border-left:1px solid var(--border);
+    padding-left:10px;
+  }
+  .site-window .bar svg{width:11px;height:11px;color:var(--muted-2);flex:none;}
+  .site-window .bar span{
+    color:var(--text);
+    font-weight:600;
+    letter-spacing:0.01em;
   }
 
   /* ---------- Modal ---------- */
@@ -591,11 +669,11 @@
 
     <div class="eyebrow">Personal Trading Ops</div>
     <h1>All markets.<br>One <span class="accent">terminal</span><span class="out">.</span></h1>
-    <p class="lede">Five tools, one desk. Webhook monitors, F&O scanners and option-chain analytics, wired straight into a single control room.</p>
+    <p class="lede">Six tools, one desk. Webhook monitors, F&O scanners and option-chain analytics, wired straight into a single control room.</p>
 
     <div class="hero-meta">
       <div>
-        <div class="num" id="appCount">05</div>
+        <div class="num" id="appCount">06</div>
         <div class="lbl">Apps online</div>
       </div>
       <div>
@@ -620,10 +698,20 @@
 
   <div class="grid" id="grid"></div>
 
+  <div class="quote-wrap">
+    <div class="quote-marquee" id="quoteMarquee"></div>
+  </div>
+
   <footer>
     <div class="footer-in">
       <div class="tag"><span class="d"></span> Built &amp; run by Gaurav</div>
-      <div>www.raosab.in</div>
+      <div class="site-window">
+        <span class="dots"><span></span><span></span><span></span></span>
+        <span class="bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg>
+          <span>www.raosab.in</span>
+        </span>
+      </div>
     </div>
   </footer>
 
@@ -722,88 +810,129 @@
       accent: "#F472B6",
       icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>`,
       art: "bullbear"
+    },
+    {
+      id: "APP_06", locked:true,
+      name: "Smart Option Chain",
+      desc: "Live option-chain reader with strike-by-strike OI, IV and premium in one clean view.",
+      url: "https://smartoptionchain.onrender.com/",
+      accent: "#A78BFA",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M9 19v-7"/><path d="M14 19V9"/><path d="M19 19v-4"/><path d="M4 5h15"/></svg>`,
+      art: "chain"
     }
   ];
 
-  /* ====== candlestick backdrop generator ====== */
+  /* ====== candlestick backdrop generator ======
+     A quiet, low-contrast strip of candles that sits along the floor of the
+     art panel rather than filling it — reads as texture, not noise. */
   function candleBackdrop(seed, upColor, downColor){
-    let x = 6, bars = [];
+    let x = 14, bars = [];
     let rnd = seed;
     const next = () => { rnd = (rnd * 9301 + 49297) % 233280; return rnd / 233280; };
-    for(let i=0;i<16;i++){
-      const up = next() > 0.45;
-      const bodyH = 14 + next()*38;
-      const wickH = bodyH + 8 + next()*16;
-      const midY = 60;
-      const bodyY = midY - bodyH/2 + (next()*10-5);
+    const floor = 96;
+    for(let i=0;i<13;i++){
+      const up = next() > 0.48;
+      const bodyH = 8 + next()*22;
+      const wickH = bodyH + 5 + next()*10;
+      const bodyY = floor - bodyH - next()*6;
       const wickY = bodyY - (wickH-bodyH)/2;
       const color = up ? upColor : downColor;
-      bars.push(`<line x1="${x+4}" y1="${wickY}" x2="${x+4}" y2="${wickY+wickH}" stroke="${color}" stroke-width="1" opacity="0.55"/>`);
-      bars.push(`<rect x="${x}" y="${bodyY}" width="8" height="${bodyH}" fill="${color}" opacity="0.75" rx="1"/>`);
-      x += 20;
+      bars.push(`<line x1="${x+3.5}" y1="${wickY}" x2="${x+3.5}" y2="${wickY+wickH}" stroke="${color}" stroke-width="1" opacity="0.4"/>`);
+      bars.push(`<rect x="${x}" y="${bodyY}" width="7" height="${bodyH}" fill="${color}" opacity="0.55" rx="1.5"/>`);
+      x += 24;
     }
     return bars.join('');
   }
 
-  /* ====== per-app illustrated art ====== */
+  /* ====== per-app illustrated art ======
+     Composition: a soft diagonal wash in the accent colour, a thin candle
+     line resting quietly along the floor, and one glowing motif that reads
+     as the "instrument" for that app — sitting clear of the icon-box that
+     overlaps the top-left corner once the card renders. */
   function artFor(app, idx){
     const c = app.accent;
     const gradId = "g" + idx;
+    const glowId = "glow" + idx;
+    const fadeId = "fade" + idx;
     const candles = candleBackdrop(idx*17+3, "#3DDC84", "#FF5C5C");
 
     const motifs = {
       radar: `
-        <g transform="translate(160,60)" opacity="0.95">
-          <circle r="34" fill="none" stroke="${c}" stroke-width="1" opacity="0.35"/>
-          <circle r="22" fill="none" stroke="${c}" stroke-width="1" opacity="0.5"/>
-          <circle r="10" fill="none" stroke="${c}" stroke-width="1.2" opacity="0.7"/>
-          <line x1="0" y1="0" x2="30" y2="-14" stroke="${c}" stroke-width="2">
-            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="4s" repeatCount="indefinite"/>
+        <g transform="translate(232,46)" filter="url(#${glowId})">
+          <circle r="30" fill="none" stroke="${c}" stroke-width="1" opacity="0.3"/>
+          <circle r="19" fill="none" stroke="${c}" stroke-width="1" opacity="0.45"/>
+          <circle r="8" fill="none" stroke="${c}" stroke-width="1.2" opacity="0.65"/>
+          <line x1="0" y1="0" x2="25" y2="-12" stroke="${c}" stroke-width="2" stroke-linecap="round">
+            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="5s" repeatCount="indefinite"/>
           </line>
-          <circle cx="0" cy="0" r="3.5" fill="${c}"/>
+          <circle cx="0" cy="0" r="3" fill="${c}"/>
         </g>`,
       pulse: `
-        <g transform="translate(20,60)">
-          <path d="M0 0 H50 L58 -22 L68 22 L78 -12 L88 0 H300" fill="none" stroke="${c}" stroke-width="2.5" opacity="0.9"/>
-          <circle cx="68" cy="22" r="4" fill="${c}"/>
+        <g transform="translate(150,46)" filter="url(#${glowId})">
+          <path d="M-90 6 H-40 L-32 -16 L-22 20 L-12 -10 L-2 6 H130" fill="none" stroke="${c}" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+          <circle cx="-22" cy="20" r="3.5" fill="${c}"/>
         </g>`,
       grid: `
-        <g transform="translate(122,26)" opacity="0.95">
-          <rect x="0" y="0" width="30" height="30" rx="6" fill="${c}" opacity="0.85"/>
-          <rect x="38" y="0" width="30" height="30" rx="6" fill="${c}" opacity="0.5"/>
-          <rect x="0" y="38" width="30" height="30" rx="6" fill="${c}" opacity="0.5"/>
-          <rect x="38" y="38" width="30" height="30" rx="6" fill="${c}" opacity="0.85"/>
+        <g transform="translate(212,32)" filter="url(#${glowId})">
+          <rect x="0" y="0" width="24" height="24" rx="6" fill="${c}" opacity="0.85"/>
+          <rect x="31" y="0" width="24" height="24" rx="6" fill="${c}" opacity="0.45"/>
+          <rect x="0" y="31" width="24" height="24" rx="6" fill="${c}" opacity="0.45"/>
+          <rect x="31" y="31" width="24" height="24" rx="6" fill="${c}" opacity="0.85"/>
         </g>`,
       scan: `
-        <g transform="translate(160,60)">
-          <rect x="-90" y="-24" width="180" height="48" fill="none" stroke="${c}" stroke-width="1" opacity="0.3"/>
-          <rect x="-90" y="-24" width="26" height="48" fill="${c}" opacity="0.3">
-            <animate attributeName="x" values="-90;64;-90" dur="3.2s" repeatCount="indefinite"/>
+        <g transform="translate(216,46)" filter="url(#${glowId})">
+          <rect x="-64" y="-19" width="128" height="38" rx="4" fill="none" stroke="${c}" stroke-width="1" opacity="0.3"/>
+          <rect x="-64" y="-19" width="20" height="38" rx="4" fill="${c}" opacity="0.35">
+            <animate attributeName="x" values="-64;44;-64" dur="3.4s" repeatCount="indefinite"/>
           </rect>
         </g>`,
       decay: `
-        <g transform="translate(20,20)">
-          <path d="M0 5 C 40 8, 80 45, 300 62" fill="none" stroke="${c}" stroke-width="2.5" opacity="0.9"/>
+        <g transform="translate(150,30)" filter="url(#${glowId})">
+          <path d="M-100 4 C -40 10, 30 42, 130 52" fill="none" stroke="${c}" stroke-width="2.25" stroke-linecap="round" opacity="0.9"/>
+          <circle cx="130" cy="52" r="3.5" fill="${c}"/>
         </g>`,
       bullbear: `
-        <g transform="translate(112,58)" opacity="0.95">
-          <path d="M0 20 L14 -6 L20 6 L34 -20" fill="none" stroke="${c}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M40 -18 L52 6 L46 6 L58 20" fill="none" stroke="${c}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="27" cy="1" r="5" fill="${c}"/>
+        <g transform="translate(210,44)" filter="url(#${glowId})">
+          <path d="M0 18 L12 -6 L18 4 L30 -18" fill="none" stroke="${c}" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M40 -16 L50 4 L45 4 L55 18" fill="none" stroke="${c}" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="24" cy="0" r="4" fill="${c}"/>
+        </g>`,
+      chain: `
+        <g transform="translate(200,44)" filter="url(#${glowId})">
+          <rect x="-56" y="18" width="10" height="16" rx="2" fill="${c}" opacity="0.55"/>
+          <rect x="-40" y="6" width="10" height="28" rx="2" fill="${c}" opacity="0.75"/>
+          <rect x="-24" y="-10" width="10" height="44" rx="2" fill="${c}" opacity="0.95"/>
+          <rect x="-8" y="2" width="10" height="32" rx="2" fill="${c}" opacity="0.75"/>
+          <rect x="8" y="14" width="10" height="20" rx="2" fill="${c}" opacity="0.55"/>
+          <line x1="-60" y1="-2" x2="24" y2="-2" stroke="${c}" stroke-width="1" stroke-dasharray="1 4" opacity="0.5"/>
         </g>`
     };
 
     return `
       <svg viewBox="0 0 320 118" preserveAspectRatio="xMidYMid slice">
         <defs>
-          <linearGradient id="${gradId}" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="${c}" stop-opacity="0.28"/>
+          <linearGradient id="${gradId}" x1="0" y1="0" x2="0.75" y2="1">
+            <stop offset="0%" stop-color="${c}" stop-opacity="0.22"/>
             <stop offset="100%" stop-color="${c}" stop-opacity="0.02"/>
           </linearGradient>
+          <linearGradient id="${fadeId}" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0B0E11" stop-opacity="0"/>
+            <stop offset="72%" stop-color="#0B0E11" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#0B0E11" stop-opacity="0.9"/>
+          </linearGradient>
+          <filter id="${glowId}" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="0.4" result="soft"/>
+            <feMerge>
+              <feMergeNode in="soft"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
         </defs>
         <rect width="320" height="118" fill="url(#${gradId})"/>
-        <g opacity="0.5">${candles}</g>
+        <g>${candles}</g>
+        <rect width="320" height="118" fill="url(#${fadeId})"/>
         ${motifs[app.art] || motifs.grid}
+        <line x1="0" y1="97.5" x2="320" y2="97.5" stroke="${c}" stroke-width="1" opacity="0.18"/>
       </svg>`;
   }
 
@@ -879,6 +1008,20 @@
   function renderTicker(){
     const items = allApps().map(a => `<span><span class="dot" style="background:${a.accent};box-shadow:0 0 6px ${a.accent}"></span>${a.name.toUpperCase()} <span style="color:${a.accent}">● LIVE</span></span>`).join('');
     document.getElementById('ticker').innerHTML = items + items;
+  }
+
+  /* ====== bottom quote marquee ====== */
+  const deskQuotes = [
+    "Become a pro — money will flow",
+    "You can do 3 things in the market: buy, sell, wait",
+    "Cut your losses short and let your winners run",
+    "Never, ever argue with your trading system",
+    "Do more of what works and less of what doesn't",
+    "I know where I'm getting out before I get in"
+  ];
+  function renderQuotes(){
+    const items = deskQuotes.map(q => `<span><b>${q}</b><span class="sep">◆</span></span>`).join('');
+    document.getElementById('quoteMarquee').innerHTML = items + items;
   }
 
   /* ====== clock ====== */
@@ -959,6 +1102,7 @@
 
   render();
   renderTicker();
+  renderQuotes();
 </script>
 </body>
 </html>
