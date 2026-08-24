@@ -669,11 +669,11 @@
 
     <div class="eyebrow">Personal Trading Ops</div>
     <h1>All markets.<br>One <span class="accent">terminal</span><span class="out">.</span></h1>
-    <p class="lede">Six tools, one desk. Webhook monitors, F&O scanners and option-chain analytics, wired straight into a single control room.</p>
+    <p class="lede">Seven tools, one desk. Webhook monitors, F&O scanners and option-chain analytics, wired straight into a single control room.</p>
 
     <div class="hero-meta">
       <div>
-        <div class="num" id="appCount">06</div>
+        <div class="num" id="appCount">07</div>
         <div class="lbl">Apps online</div>
       </div>
       <div>
@@ -819,12 +819,19 @@
       accent: "#A78BFA",
       icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M9 19v-7"/><path d="M14 19V9"/><path d="M19 19v-4"/><path d="M4 5h15"/></svg>`,
       art: "chain"
+    },
+    {
+      id: "APP_07", locked:true,
+      name: "OI- 360 View",
+      desc: "Comprehensive 360° open-interest monitoring dashboard for multi-strike and trend analysis.",
+      url: "https://oi-360.onrender.com/",
+      accent: "#38BDF8",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>`,
+      art: "radar"
     }
   ];
 
-  /* ====== candlestick backdrop generator ======
-     A quiet, low-contrast strip of candles that sits along the floor of the
-     art panel rather than filling it — reads as texture, not noise. */
+  /* ====== candlestick backdrop generator ====== */
   function candleBackdrop(seed, upColor, downColor){
     let x = 14, bars = [];
     let rnd = seed;
@@ -844,11 +851,7 @@
     return bars.join('');
   }
 
-  /* ====== per-app illustrated art ======
-     Composition: a soft diagonal wash in the accent colour, a thin candle
-     line resting quietly along the floor, and one glowing motif that reads
-     as the "instrument" for that app — sitting clear of the icon-box that
-     overlaps the top-left corner once the card renders. */
+  /* ====== per-app illustrated art ====== */
   function artFor(app, idx){
     const c = app.accent;
     const gradId = "g" + idx;
@@ -996,6 +999,7 @@
         customApps = customApps.filter(a=>a.id!==id);
         saveCustom(customApps);
         render();
+        renderTicker();
       });
     });
     const addTile = document.getElementById('addTile');
