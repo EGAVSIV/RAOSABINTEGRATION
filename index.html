@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gaurav // Control Room</title>
-<meta name="description" content="Personal trading ops terminal — webhook monitors, F&O scanners, option chain analysis and gamma dashboards, all in one place.">
+<meta name="description" content="Personal trading ops terminal — webhook monitors, F&O scanners, MACD trend view, Fibonacci retracement, option chain analysis and gamma dashboards, all in one place.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230B0E11%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 fill=%22%23F0A500%22 text-anchor=%22middle%22 font-family=%22monospace%22>&gt;</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,17 +41,37 @@
     position:relative;
   }
 
-  /* colorful ambient background */
+  /* ---------- Background image + colorful ambient overlay ---------- */
+  /* Drop your image at /Asset/Images/BG01.png (relative to site root) */
   body::before{
     content:"";
     position:fixed; inset:0; z-index:0; pointer-events:none;
-    background:
-      radial-gradient(680px 480px at 8% -8%, rgba(56,189,248,0.16), transparent 60%),
-      radial-gradient(620px 460px at 96% 8%, rgba(244,114,182,0.14), transparent 60%),
-      radial-gradient(700px 520px at 50% 115%, rgba(52,211,153,0.10), transparent 60%),
-      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: auto, auto, auto, 42px 42px, 42px 42px;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+      radial-gradient(680px 480px at 8% -8%, rgba(56,189,248,0.22), transparent 60%),
+      radial-gradient(620px 460px at 96% 8%, rgba(244,114,182,0.20), transparent 60%),
+      radial-gradient(700px 520px at 50% 115%, rgba(52,211,153,0.16), transparent 60%),
+      radial-gradient(520px 420px at 70% 40%, rgba(240,165,0,0.10), transparent 65%),
+      linear-gradient(180deg, rgba(11,14,17,0.55) 0%, rgba(11,14,17,0.80) 55%, rgba(11,14,17,0.95) 100%),
+      url('/Asset/Images/BG01.png');
+    background-size: 42px 42px, 42px 42px, auto, auto, auto, auto, cover, cover;
+    background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 0 0, 0 0, center, center, center, center, center, center;
+  }
+
+  /* floating colorful aura blobs — drifting slowly behind everything */
+  .aura{ position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+  .aura span{ position:absolute; border-radius:50%; filter:blur(95px); opacity:0.5; animation: floatBlob 22s ease-in-out infinite; }
+  .aura span:nth-child(1){ width:440px; height:440px; background:#38BDF8; top:-140px; left:-100px; animation-duration:24s; }
+  .aura span:nth-child(2){ width:380px; height:380px; background:#F472B6; top:6%; right:-150px; animation-duration:28s; animation-delay:-4s; }
+  .aura span:nth-child(3){ width:360px; height:360px; background:#34D399; bottom:-150px; left:28%; animation-duration:26s; animation-delay:-9s; }
+  .aura span:nth-child(4){ width:320px; height:320px; background:#F0A500; bottom:16%; right:8%; animation-duration:21s; animation-delay:-2s; }
+  .aura span:nth-child(5){ width:300px; height:300px; background:#A78BFA; top:38%; left:44%; animation-duration:30s; animation-delay:-13s; }
+  @keyframes floatBlob{
+    0%,100%{ transform:translate(0,0) scale(1); }
+    33%{ transform:translate(34px,-44px) scale(1.08); }
+    66%{ transform:translate(-28px,28px) scale(0.94); }
   }
 
   a{color:inherit;text-decoration:none;}
@@ -63,7 +83,8 @@
   /* ---------- Ticker ---------- */
   .ticker-wrap{
     border-bottom:1px solid var(--border);
-    background:var(--panel);
+    background:rgba(18,22,28,0.72);
+    backdrop-filter: blur(8px);
     overflow:hidden;
     white-space:nowrap;
     position:relative;
@@ -134,6 +155,7 @@
     display:flex;align-items:center;justify-content:center;
     color:var(--amber);
     font-size:15px;
+    box-shadow:0 0 14px rgba(240,165,0,0.35);
   }
   .topline-right{
     display:flex;
@@ -198,10 +220,18 @@
     max-width:920px;
   }
   h1 .accent{
-    background:linear-gradient(100deg, #F0A500, #F472B6 55%, #38BDF8);
+    background:linear-gradient(100deg, #F0A500, #F472B6 35%, #38BDF8 70%, #34D399);
+    background-size:200% auto;
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
+    animation: gradientShift 8s ease infinite;
+    filter: drop-shadow(0 0 22px rgba(244,114,182,0.18));
+  }
+  @keyframes gradientShift{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
   }
   h1 .out{
     -webkit-text-stroke:1px var(--border-hover);
@@ -286,7 +316,8 @@
   @media (max-width:620px){ .grid{grid-template-columns:1fr;} }
 
   .card{
-    background:var(--panel);
+    background:rgba(18,22,28,0.78);
+    backdrop-filter: blur(6px);
     border:1px solid var(--border);
     border-radius:12px;
     display:flex;
@@ -295,11 +326,25 @@
     overflow:hidden;
     position:relative;
   }
+  .card::after{
+    content:"";
+    position:absolute; inset:0;
+    border-radius:12px;
+    padding:1px;
+    background:linear-gradient(135deg, var(--accent, transparent), transparent 40%);
+    -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity:0;
+    transition:opacity .25s ease;
+    pointer-events:none;
+  }
+  .card:hover::after{ opacity:0.9; }
   .card:hover{
     border-color:var(--accent, var(--border-hover));
     transform:translateY(-4px);
-    background:var(--panel-2);
-    box-shadow:0 14px 34px -18px var(--accent, rgba(0,0,0,0.5));
+    background:rgba(24,29,37,0.9);
+    box-shadow:0 18px 40px -18px var(--accent, rgba(0,0,0,0.5));
   }
 
   .art{
@@ -457,7 +502,7 @@
   .quote-wrap{
     border-top:1px solid var(--border);
     border-bottom:1px solid var(--border);
-    background:linear-gradient(90deg, rgba(240,165,0,0.06), rgba(244,114,182,0.05), rgba(56,189,248,0.06));
+    background:linear-gradient(90deg, rgba(240,165,0,0.08), rgba(244,114,182,0.07), rgba(56,189,248,0.08));
     overflow:hidden;
     white-space:nowrap;
     position:relative;
@@ -560,6 +605,50 @@
     letter-spacing:0.01em;
   }
 
+  /* ---------- Floating RaoSab.in promo badge ---------- */
+  .float-promo{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:40;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    padding:12px 20px 12px 14px;
+    border-radius:999px;
+    background:linear-gradient(120deg, rgba(240,165,0,0.22), rgba(244,114,182,0.16), rgba(56,189,248,0.20));
+    border:1px solid var(--border-hover);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:0.05em;
+    color:var(--text);
+    box-shadow:0 14px 34px -12px rgba(0,0,0,0.65);
+    animation: floatBob 3.2s ease-in-out infinite;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .float-promo:hover{
+    transform:translateY(-4px) scale(1.03);
+    border-color:var(--amber);
+    box-shadow:0 20px 46px -14px rgba(240,165,0,0.5);
+  }
+  .float-promo .fp-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 8px var(--green);
+    animation:pulse 2s ease-in-out infinite;
+    flex:none;
+  }
+  .float-promo b{ color:var(--amber); }
+  @keyframes floatBob{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-7px); }
+  }
+  @media (max-width:620px){
+    .float-promo{ right:14px; bottom:14px; padding:10px 15px 10px 12px; font-size:11px; }
+  }
+
   /* ---------- Modal ---------- */
   .modal-bg{
     position:fixed; inset:0; z-index:50;
@@ -645,6 +734,8 @@
 </head>
 <body>
 
+  <div class="aura"><span></span><span></span><span></span><span></span><span></span></div>
+
   <div class="ticker-wrap">
     <div class="ticker" id="ticker"></div>
   </div>
@@ -669,11 +760,11 @@
 
     <div class="eyebrow">Personal Trading Ops</div>
     <h1>All markets.<br>One <span class="accent">terminal</span><span class="out">.</span></h1>
-    <p class="lede">Seven tools, one desk. Webhook monitors, F&O scanners and option-chain analytics, wired straight into a single control room.</p>
+    <p class="lede">Nine tools, one desk. Webhook monitors, F&O scanners, MACD trend view, Fibonacci retracement and option-chain analytics, wired straight into a single control room.</p>
 
     <div class="hero-meta">
       <div>
-        <div class="num" id="appCount">07</div>
+        <div class="num" id="appCount">09</div>
         <div class="lbl">Apps online</div>
       </div>
       <div>
@@ -714,6 +805,11 @@
       </div>
     </div>
   </footer>
+
+  <a class="float-promo" href="https://www.raosab.in" target="_blank" rel="noopener" aria-label="Visit RaoSab.in">
+    <span class="fp-dot"></span>
+    <span class="fp-text">RAOSAB<b>.IN</b></span>
+  </a>
 
   <!-- Admin login modal -->
   <div class="modal-bg" id="loginModal">
@@ -828,6 +924,24 @@
       accent: "#38BDF8",
       icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>`,
       art: "radar"
+    },
+    {
+      id: "APP_08", locked:true,
+      name: "MACD-360 View",
+      desc: "Trend identification across every timeframe — MACD state, transitions and momentum bias in one 360° sweep.",
+      url: "https://macd.raosab.in",
+      accent: "#FACC15",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 8 12 12 15 21 6"/><path d="M15 6h6v6"/></svg>`,
+      art: "trend"
+    },
+    {
+      id: "APP_09", locked:true,
+      name: "FIB Retracement ATF",
+      desc: "Automatic Fibonacci retracement across all timeframes — key levels, confluence zones and reaction points.",
+      url: "https://fib.raosab.in",
+      accent: "#22D3EE",
+      icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18M3 9.5h18M3 14h18M3 18.5h18"/><path d="M4 18 11 9 15 13 20 5" stroke-width="2"/></svg>`,
+      art: "fib"
     }
   ];
 
@@ -908,6 +1022,24 @@
           <rect x="-8" y="2" width="10" height="32" rx="2" fill="${c}" opacity="0.75"/>
           <rect x="8" y="14" width="10" height="20" rx="2" fill="${c}" opacity="0.55"/>
           <line x1="-60" y1="-2" x2="24" y2="-2" stroke="${c}" stroke-width="1" stroke-dasharray="1 4" opacity="0.5"/>
+        </g>`,
+      trend: `
+        <g transform="translate(150,64)" filter="url(#${glowId})">
+          <path d="M-110 30 C -70 8, -30 34, 0 4 S 60 -22, 110 -36" fill="none" stroke="${c}" stroke-width="2.5" stroke-linecap="round" opacity="0.92"/>
+          <path d="M-110 30 C -70 8, -30 34, 0 4 S 60 -22, 110 -36" fill="none" stroke="${c}" stroke-width="0.75" stroke-dasharray="2 6" opacity="0.4" transform="translate(0,14)"/>
+          <circle cx="110" cy="-36" r="4" fill="${c}">
+            <animate attributeName="r" values="3;5.5;3" dur="1.8s" repeatCount="indefinite"/>
+          </circle>
+        </g>`,
+      fib: `
+        <g transform="translate(150,22)" filter="url(#${glowId})">
+          <line x1="-122" y1="0" x2="122" y2="0" stroke="${c}" stroke-width="1" opacity="0.22"/>
+          <line x1="-122" y1="16" x2="122" y2="16" stroke="${c}" stroke-width="1" opacity="0.34"/>
+          <line x1="-122" y1="34" x2="122" y2="34" stroke="${c}" stroke-width="1" opacity="0.48"/>
+          <line x1="-122" y1="54" x2="122" y2="54" stroke="${c}" stroke-width="1" opacity="0.62"/>
+          <line x1="-122" y1="76" x2="122" y2="76" stroke="${c}" stroke-width="1" opacity="0.78"/>
+          <path d="M-112 76 L-38 6 L22 54 L92 -2" fill="none" stroke="${c}" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+          <circle cx="92" cy="-2" r="3.5" fill="${c}"/>
         </g>`
     };
 
@@ -953,7 +1085,7 @@
   let isAdmin = sessionStorage.getItem("isAdmin") === "1";
 
   const genericIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>`;
-  const genericArtKeys = ["radar","pulse","grid","scan","decay","bullbear"];
+  const genericArtKeys = ["radar","pulse","grid","scan","decay","bullbear","trend","fib"];
 
   function allApps(){
     return [...defaultApps, ...customApps.map((a,i) => ({...a, icon: genericIcon, art: genericArtKeys[i % genericArtKeys.length]}))];
