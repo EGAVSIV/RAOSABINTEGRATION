@@ -20,7 +20,7 @@ jobs:
     - name: Check out repository
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0 # Fetches full history so git pull --rebase works cleanly
+        fetch-depth: 0
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -48,6 +48,7 @@ jobs:
         git add geotrader/result.json
         git diff --quiet && git diff --staged --quiet || (
           git commit -m "Auto-update geotrader/result.json [skip ci]" && \
-          git pull --rebase origin main && \
+          git fetch origin main && \
+          git rebase -X ours origin/main && \
           git push
         )
