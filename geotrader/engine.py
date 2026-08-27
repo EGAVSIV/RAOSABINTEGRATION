@@ -482,10 +482,18 @@ def run_intraday_scan(data, universe_symbols):
             if ev:
                 events.append(ev)
 
-    cutoff = pd.Timestamp.now() - timedelta(days=INTRADAY_LOOKBACK_DAYS)
-    events = [ev for ev in events if pd.Timestamp(ev["ts"]) >= cutoff]
-    events.sort(key=lambda x: x["ts"], reverse=True)
-    return events
+    # Make the cutoff timezone-aware (UTC) to match ISO timestamps safely
+    cutoff = pd.Timestamp.now(tz="UTC") - timedelta(days=INTRADAY_LOOKBACK_DAYS)
+    
+    # Standardize all event timestamps to timezone-aware UTC before comparing
+    filtered_events = []
+    for ev in events:
+        ts = pd.to_datetime(ev["ts"], utc=True)
+        if ts >= cutoff:
+            filtered_events.append(ev)
+
+    filtered_events.sort(key=lambda x: x["ts"], reverse=True)
+    return filtered_events
 
 
 # =====================================================================
