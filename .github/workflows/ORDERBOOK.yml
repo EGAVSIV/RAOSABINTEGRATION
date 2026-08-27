@@ -2,9 +2,8 @@ name: Hourly NSE ORDERBOOK Data Fetcher
 
 on:
   schedule:
-    # Runs at minute 0 of every hour
     - cron: '0 * * * *'
-  workflow_dispatch: # Allows manual trigger from GitHub UI
+  workflow_dispatch:
 
 jobs:
   build-and-run:
@@ -31,7 +30,14 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add orderbook/nse_orders_data.json
+          
+          # Stage file if present or fallback to root JSON if generated there
+          if [ -f "orderbook/nse_orders_data.json" ]; then
+            git add orderbook/nse_orders_data.json
+          elif [ -f "nse_orders_data.json" ]; then
+            git add nse_orders_data.json
+          fi
+
           git status
-          git commit -m "auto: update nse_orders_data.json [skip ci]" || exit 0
+          git diff --quiet && git diff --staged --quiet || git commit -m "auto: update nse_orders_data.json [skip ci]"
           git push
