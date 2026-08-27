@@ -37,6 +37,19 @@ import numpy as np
 # CONFIG
 # =====================================================================
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR points to repository root for input data
+
+
+TF_FOLDERS = {
+    "15m": os.path.join(BASE_DIR, "stockdata_15"),
+    "1H":  os.path.join(BASE_DIR, "stockdata_1H"),
+    "D":   os.path.join(BASE_DIR, "stockdata_D"),
+    "W":   os.path.join(BASE_DIR, "stockdata_W"),
+    "M":   os.path.join(BASE_DIR, "stockdata_M"),
+}
+
+# SAVE OUTPUT HERE: geotrader/result.json
+OUTPUT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "result.json")
 
 TF_FOLDERS = {
     "15m": os.path.join(BASE_DIR, "stockdata_15"),
