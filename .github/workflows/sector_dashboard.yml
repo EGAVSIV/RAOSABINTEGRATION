@@ -1,12 +1,10 @@
-name: Sector DB RUN
+name: Sector DB Output file
 
 on:
   schedule:
-    # Runs at 10:00 AM UTC (3:30 PM IST) Monday to Friday
     - cron: '0 10 * * 1-5'
   workflow_dispatch:
 
-# GRANT WRITE PERMISSIONS TO GITHUB_TOKEN
 permissions:
   contents: write
 
@@ -37,5 +35,5 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add sector/scan_results.json sector/index.html
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update sector results & dashboard [3:30 PM IST]" && git push)
+          git add sector/scan_results.json sector/index.html sector/sector_rotation_weekly_report.pdf sector/sector_rotation_state.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update sector results & HTML dashboard [3:30 PM IST]" && git push)
