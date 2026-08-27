@@ -2,25 +2,13 @@
 ================================================================================
  MARKET DASHBOARD - CALCULATION ENGINE
 ================================================================================
-Reads OHLCV data (JSON files, one per symbol, per timeframe) from the folders:
+Reads OHLCV data from:
+    stockdata_15 / stockdata_1H / stockdata_D / stockdata_W / stockdata_M
+    AND sectorial_index_data (Sector Indices)
 
-    stockdata_15   -> 15 minute candles
-    stockdata_1H   -> 1 hour candles
-    stockdata_D    -> Daily candles
-    stockdata_W    -> Weekly candles
-    stockdata_M    -> Monthly candles
-
-...calculates every parameter the dashboard needs (RSI, Bollinger Bands, CPR,
-Camarilla pivots, % change, advance/decline, sector performance, momentum
-streaks, multi-timeframe RSI scanner, intraday breakout events) and writes a
-single consolidated file: result.json
-
-This script has NO UI code in it (no Streamlit). Run it manually or on a
-schedule (cron / Task Scheduler) and the dashboard.html will pick up the
-latest result.json.
-
-    python engine.py
-
+Calculates RSI, Bollinger Bands, CPR, Camarilla pivots, % change, advance/decline, 
+sector performance, momentum streaks, multi-timeframe RSI scanner, and intraday 
+breakout events, then writes geotrader/result.json.
 ================================================================================
 """
 
@@ -36,7 +24,6 @@ import numpy as np
 # =====================================================================
 # CONFIG
 # =====================================================================
-# BASE_DIR points to repository root where stockdata_* folders are stored
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 TF_FOLDERS = {
@@ -46,6 +33,9 @@ TF_FOLDERS = {
     "W":   os.path.join(BASE_DIR, "stockdata_W"),
     "M":   os.path.join(BASE_DIR, "stockdata_M"),
 }
+
+# --- ADDED: SECTORIAL INDEX DATA FOLDER ---
+SECTORIAL_INDEX_DIR = os.path.join(BASE_DIR, "sectorial_index_data")
 
 # SAVE OUTPUT HERE: geotrader/result.json
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -59,7 +49,6 @@ SYMBOL_MAP_CANDIDATES = [
     os.path.join(BASE_DIR, "market_data", "FNOSECTOR.xlsx"),
 ]
 
-
 RSI_PERIOD = 14
 BB_PERIOD = 20
 BB_STD = 2
@@ -70,7 +59,7 @@ INTRADAY_TFS = ["15m", "1H"]
 
 
 # =====================================================================
-# DATA LOADING (flexible JSON schema)
+# DATA LOADING
 # =====================================================================
 DATE_KEYS = ["datetime", "date", "timestamp", "time", "Date", "Datetime", "Timestamp"]
 COL_ALIASES = {
@@ -90,12 +79,6 @@ def _first_present(d, keys):
 
 
 def load_symbol_json(path):
-    """Load one symbol's JSON file into a clean, sorted OHLCV DataFrame
-    indexed by datetime. Supports either:
-      - a list of row-dicts:      [{"date": "...", "open": 1, ...}, ...]
-      - a dict of column arrays:  {"date": [...], "open": [...], ...}
-      - a dict wrapping records:  {"data": [ {...}, {...} ]}
-    """
     with open(path, "r", encoding="utf-8") as f:
         raw = json.load(f)
 
@@ -103,7 +86,6 @@ def load_symbol_json(path):
         raw = raw["data"]
 
     if isinstance(raw, dict):
-        # dict-of-arrays -> DataFrame directly
         df = pd.DataFrame(raw)
     elif isinstance(raw, list):
         df = pd.DataFrame(raw)
@@ -173,9 +155,6 @@ def compute_bollinger(close, period=BB_PERIOD, num_std=BB_STD):
 
 
 def compute_pivots(df):
-    """CPR (Central Pivot Range) + Camarilla levels for each row, derived
-    from the PREVIOUS row's High/Low/Close - i.e. the levels that apply
-    while that row's candle is trading."""
     ph = df["high"].shift(1)
     pl = df["low"].shift(1)
     pc = df["close"].shift(1)
@@ -194,8 +173,6 @@ def compute_pivots(df):
 
 
 def enrich(df):
-    """Add rsi_14 / bollinger / cpr / camarilla columns to a raw OHLCV df,
-    unless those columns already exist in the source JSON (then keep them)."""
     if df.empty:
         return df
     df = df.copy()
@@ -217,10 +194,9 @@ def enrich(df):
 
 
 # =====================================================================
-# SYMBOL CATEGORY MAP (optional)
+# SYMBOL CATEGORY MAP
 # =====================================================================
 def load_symbol_map():
-    """Returns dict: symbol -> {"category": "broader"/"sector"/"fno", "sector": str or None}"""
     for path in SYMBOL_MAP_CANDIDATES:
         if not os.path.exists(path):
             continue
@@ -257,16 +233,19 @@ def load_symbol_map():
                 return out
         except Exception as e:
             print(f"[symbol map] failed to read {path}: {e}")
-    print("[symbol map] none found - every symbol will be treated as category 'fno'")
+    print("[symbol map] none found")
     return {}
 
 
 # =====================================================================
-# CACHE: load every symbol / timeframe once
+# CACHE: load every symbol / timeframe + sectorial index data
 # =====================================================================
 def load_all():
-    """Returns nested dict: data[tf][symbol] = enriched DataFrame"""
+    """Returns (nested dict data[tf][symbol], list of detected sector index symbols)"""
     data = {tf: {} for tf in TF_FOLDERS}
+    sector_index_detected = []
+
+    # 1. Load standard timeframe stock folders
     for tf, folder in TF_FOLDERS.items():
         for symbol in list_symbols(folder):
             path = os.path.join(folder, f"{symbol}.json")
@@ -277,7 +256,25 @@ def load_all():
                 data[tf][symbol] = enrich(df)
             except Exception as e:
                 print(f"[load] skipping {tf}/{symbol}: {e}")
-    return data
+
+    # 2. Load sectorial index data folder
+    if os.path.isdir(SECTORIAL_INDEX_DIR):
+        for symbol in list_symbols(SECTORIAL_INDEX_DIR):
+            path = os.path.join(SECTORIAL_INDEX_DIR, f"{symbol}.json")
+            try:
+                df = load_symbol_json(path)
+                if df.empty:
+                    continue
+                enriched_df = enrich(df)
+                data["D"][symbol] = enriched_df
+                sector_index_detected.append(symbol)
+                print(f"[sectorial data] loaded sector index: {symbol}")
+            except Exception as e:
+                print(f"[sectorial data] skipping {symbol}: {e}")
+    else:
+        print(f"[sectorial data] folder not found: {SECTORIAL_INDEX_DIR}")
+
+    return data, sector_index_detected
 
 
 # =====================================================================
@@ -331,22 +328,9 @@ def rsi_state(curr, prev):
 
 def run_rsi_scanner(data):
     rows = []
-    tf_labels = {"15m": "15 MIN", "1H": "60 MIN", "D": "DAY"}
+    tf_labels = {"15m": "15 MIN", "1H": "60 MIN", "D": "DAY", "W": "WEEK", "M": "MONTH"}
 
     for tf, label in tf_labels.items():
-        for symbol, df in data.get(tf, {}).items():
-            if len(df) < 2 or "rsi_14" not in df.columns:
-                continue
-            curr, prev = df["rsi_14"].iloc[-1], df["rsi_14"].iloc[-2]
-            if pd.isna(curr) or pd.isna(prev):
-                continue
-            rows.append({
-                "symbol": symbol, "tf": label,
-                "rsi": round(float(curr), 2),
-                "state": rsi_state(curr, prev),
-            })
-
-    for tf, label in [("W", "WEEK"), ("M", "MONTH")]:
         for symbol, df in data.get(tf, {}).items():
             if len(df) < 2 or "rsi_14" not in df.columns:
                 continue
@@ -481,10 +465,7 @@ def run_intraday_scan(data, universe_symbols):
             if ev:
                 events.append(ev)
 
-    # Make the cutoff timezone-aware (UTC) to match ISO timestamps safely
     cutoff = pd.Timestamp.now(tz="UTC") - timedelta(days=INTRADAY_LOOKBACK_DAYS)
-    
-    # Standardize all event timestamps to timezone-aware UTC before comparing
     filtered_events = []
     for ev in events:
         ts = pd.to_datetime(ev["ts"], utc=True)
@@ -503,28 +484,30 @@ def main():
     print("Market Dashboard Engine — starting run:", datetime.now().isoformat())
     print("=" * 70)
 
-    data = load_all()
+    data, detected_sector_indices = load_all()
     symbol_map = load_symbol_map()
+
+    # Automatically add detected sector indices to map if not present
+    for sec_sym in detected_sector_indices:
+        if sec_sym not in symbol_map:
+            symbol_map[sec_sym] = {"category": "sector"}
 
     all_daily_symbols = sorted(data.get("D", {}).keys())
     if not all_daily_symbols:
         raise SystemExit(
-            f"No daily data found. Expected JSON files inside: {TF_FOLDERS['D']}"
+            f"No daily data found. Checked stock folders and {SECTORIAL_INDEX_DIR}"
         )
 
     broader_syms = [s for s in all_daily_symbols if symbol_map.get(s, {}).get("category") == "broader"]
     sector_index_syms = [s for s in all_daily_symbols if symbol_map.get(s, {}).get("category") == "sector"]
     fno_syms = [s for s in all_daily_symbols if symbol_map.get(s, {}).get("category", "fno") == "fno"]
-    if not symbol_map:
-        # no map at all -> everything is the "fno" tradable universe
-        fno_syms = all_daily_symbols
 
     daily_data = data["D"]
 
     # ---- Broader market ----
     broader_market = build_change_table(daily_data, broader_syms)
 
-    # ---- Sector performance (index-level) ----
+    # ---- Sector performance ----
     sector_performance = build_change_table(daily_data, sector_index_syms)
 
     # ---- FNO universe % change / gainers-losers / advance-decline ----
@@ -537,7 +520,7 @@ def main():
     dec = sum(1 for r in fno_change if r["change"] < 0)
     unch = sum(1 for r in fno_change if r["change"] == 0)
 
-    # ---- Sector -> stock groups (top5/bottom5 per sector) ----
+    # ---- Sector -> stock groups ----
     sector_names = sorted({v.get("sector") for v in symbol_map.values() if v.get("sector")})
     sector_stocks = {}
     for sec in sector_names:
@@ -599,7 +582,6 @@ def main():
     print(f"\n✅ result.json written -> {OUTPUT_FILE}")
     print(f"   Symbols: {len(all_daily_symbols)} | FNO: {len(fno_syms)} | "
           f"Broader: {len(broader_syms)} | Sector-index: {len(sector_index_syms)}")
-    print(f"   RSI rows: {len(rsi_rows)} | Intraday events (7d): {len(intraday_events)}")
 
 
 if __name__ == "__main__":
