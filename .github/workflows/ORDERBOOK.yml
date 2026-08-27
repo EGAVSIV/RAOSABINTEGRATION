@@ -25,7 +25,7 @@ jobs:
           pip install pandas requests
 
       - name: Run data engine
-        run: python fetch_data.py
+        run: python orderbook/fetch_data.py
 
       - name: Commit and push updated JSON
         run: |
