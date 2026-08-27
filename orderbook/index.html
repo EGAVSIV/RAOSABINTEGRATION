@@ -317,14 +317,55 @@ async function loadData() {
 }
 
 function populateFilters() {
-    const select = document.getElementById('stockFilter');
+    // Populate Stock Filter
+    const stockSelect = document.getElementById('stockFilter');
     const symbols = [...new Set(globalData.announcements.map(item => item.symbol))].sort();
     symbols.forEach(sym => {
-        const option = document.createElement('option');
-        option.value = sym;
-        option.textContent = sym;
-        select.appendChild(option);
+        if(sym) {
+            const option = document.createElement('option');
+            option.value = sym;
+            option.textContent = sym;
+            stockSelect.appendChild(option);
+        }
     });
+
+    // Populate Order Type (DESC) Filter
+    const descSelect = document.getElementById('descFilter');
+    const descriptions = [...new Set(globalData.announcements.map(item => item.desc))].filter(Boolean).sort();
+    descriptions.forEach(desc => {
+        const option = document.createElement('option');
+        option.value = desc;
+        option.textContent = desc;
+        descSelect.appendChild(option);
+    });
+}
+
+function applyFilters() {
+    const stock = document.getElementById('stockFilter').value;
+    const desc = document.getElementById('descFilter').value;
+    const search = document.getElementById('searchFilter').value.toLowerCase();
+
+    const filteredAnnouncements = globalData.announcements.filter(a => {
+        const matchesStock = stock === 'All' || a.symbol === stock;
+        const matchesDesc = desc === 'All' || a.desc === desc;
+        const matchesSearch = (a.symbol && a.symbol.toLowerCase().includes(search)) || 
+                              (a.sm_name && a.sm_name.toLowerCase().includes(search));
+        return matchesStock && matchesDesc && matchesSearch;
+    });
+
+    const validSymbols = new Set(filteredAnnouncements.map(a => a.symbol));
+
+    const filteredRankings = globalData.rankings.filter(r => {
+        const matchesStock = stock === 'All' || r.symbol === stock;
+        const matchesDesc = desc === 'All' || r.desc === desc || validSymbols.has(r.symbol);
+        const matchesSearch = (r.symbol && r.symbol.toLowerCase().includes(search)) || 
+                              (r.company && r.company.toLowerCase().includes(search));
+        return matchesStock && matchesDesc && matchesSearch;
+    });
+
+    renderRankings(filteredRankings);
+    renderAnnouncements(filteredAnnouncements);
+    renderMetrics(filteredRankings);
 }
 
 function renderMetrics(rankings) {
