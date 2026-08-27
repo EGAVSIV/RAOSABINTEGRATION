@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEOTRADER — Market Intelligence Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg-0:#080B12;
+    --bg-1:#0E131D;
+    --panel:#121A26;
+    --panel-2:#161F2E;
+    --border:#22304480;
+    --border-strong:#2C3E56;
+    --text-primary:#E7ECF4;
+    --text-secondary:#8C9BB3;
+    --text-muted:#5B6A82;
+    --gold:#F2B705;
+    --gold-dim:#B98A05;
+    --green:#1FCE7A;
+    --green-dim:#0F5C36;
+    --red:#FF5C6C;
+    --red-dim:#6B1F27;
+    --blue:#4C9EFF;
+    --font-display:'Space Grotesk',sans-serif;
+    --font-mono:'IBM Plex Mono',monospace;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--bg-0);color:var(--text-primary);font-family:var(--font-mono);}
+  body{padding-bottom:60px;}
+  ::-webkit-scrollbar{height:8px;width:8px;}
+  ::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:4px;}
+
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 28px;border-bottom:1px solid var(--border);
+    background:linear-gradient(180deg,var(--bg-1),var(--bg-0));
+    position:sticky;top:0;z-index:20;
+  }
+  .brand{display:flex;align-items:baseline;gap:10px;}
+  .brand .mark{
+    width:10px;height:10px;background:var(--gold);
+    box-shadow:0 0 0 3px #F2B70522;
+  }
+  .brand h1{
+    font-family:var(--font-display);font-size:20px;font-weight:700;
+    letter-spacing:0.06em;margin:0;color:var(--text-primary);
+  }
+  .brand span.tag{
+    font-size:11px;color:var(--text-muted);letter-spacing:0.12em;
+    text-transform:uppercase;
+  }
+  .topbar-right{display:flex;align-items:center;gap:18px;}
+  .clock{font-size:12px;color:var(--text-secondary);}
+  .clock b{color:var(--text-primary);font-weight:500;}
+  #refreshBtn{
+    background:var(--panel-2);border:1px solid var(--border-strong);color:var(--text-primary);
+    font-family:var(--font-mono);font-size:12px;padding:8px 14px;border-radius:var(--radius);
+    cursor:pointer;display:flex;align-items:center;gap:8px;letter-spacing:0.04em;
+  }
+  #refreshBtn:hover{border-color:var(--gold-dim);color:var(--gold);}
+  #refreshBtn .dot{width:6px;height:6px;border-radius:50%;background:var(--green);}
+  #refreshBtn.loading .dot{background:var(--gold);animation:pulse 1s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.25;}}
+
+  .ticker-tape{
+    overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--border);
+    background:var(--bg-1);padding:9px 0;
+  }
+  .ticker-tape .track{display:inline-block;padding-left:100%;animation:scroll 42s linear infinite;}
+  .ticker-tape:hover .track{animation-play-state:paused;}
+  @keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
+  .tick{display:inline-flex;align-items:center;gap:6px;margin-right:34px;font-size:13px;}
+  .tick .sym{color:var(--text-primary);font-weight:500;}
+  .tick.up{color:var(--green);}
+  .tick.down{color:var(--red);}
+
+  .wrap{max-width:1440px;margin:0 auto;padding:26px 28px;}
+
+  .section-label{
+    font-family:var(--font-display);font-size:13px;font-weight:600;
+    letter-spacing:0.1em;text-transform:uppercase;color:var(--text-secondary);
+    display:flex;align-items:center;gap:10px;margin:34px 0 14px;
+  }
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .section-label .n{color:var(--gold);}
+
+  .grid{display:grid;gap:16px;}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
+  .grid-3{grid-template-columns:repeat(3,1fr);}
+  .grid-2{grid-template-columns:repeat(2,1fr);}
+  @media(max-width:1100px){.grid-4{grid-template-columns:repeat(2,1fr);}.grid-3{grid-template-columns:repeat(1,1fr);}.grid-2{grid-template-columns:1fr;}}
+
+  .card{
+    background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+    padding:18px 20px;
+  }
+  .card h3{
+    font-family:var(--font-display);font-size:14px;font-weight:600;margin:0 0 14px;
+    color:var(--text-primary);display:flex;align-items:center;justify-content:space-between;
+  }
+  .card h3 small{font-size:11px;color:var(--text-muted);font-weight:400;font-family:var(--font-mono);}
+
+  .kpi{padding:18px 20px;}
+  .kpi .label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;}
+  .kpi .value{font-family:var(--font-display);font-size:30px;font-weight:700;margin-top:6px;}
+  .kpi.k-adv .value{color:var(--green);}
+  .kpi.k-dec .value{color:var(--red);}
+  .kpi.k-total .value{color:var(--gold);}
+  .kpi.k-events .value{color:var(--blue);}
+
+  .chart-box{position:relative;height:300px;}
+  .chart-box.tall{height:380px;}
+
+  select{
+    background:var(--panel-2);color:var(--text-primary);border:1px solid var(--border-strong);
+    font-family:var(--font-mono);font-size:12px;padding:6px 10px;border-radius:6px;
+  }
+
+  .badge-grid{display:flex;flex-wrap:wrap;gap:8px;}
+  .badge{
+    padding:8px 12px;border-radius:6px;font-size:12px;font-weight:500;
+    display:flex;align-items:center;gap:8px;
+  }
+  .badge.up{background:var(--green-dim);color:#B9F3D3;border:1px solid #1FCE7A44;}
+  .badge.down{background:var(--red-dim);color:#FFC7CD;border:1px solid #FF5C6C44;}
+  .badge .n{opacity:0.75;font-size:11px;}
+
+  table{width:100%;border-collapse:collapse;font-size:12.5px;}
+  th{
+    text-align:left;color:var(--text-muted);font-weight:500;text-transform:uppercase;
+    font-size:10.5px;letter-spacing:0.06em;padding:8px 10px;border-bottom:1px solid var(--border-strong);
+    position:sticky;top:0;background:var(--panel);
+  }
+  td{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text-primary);}
+  tr:hover td{background:var(--panel-2);}
+  .state-chip{padding:3px 9px;border-radius:20px;font-size:11px;font-weight:500;display:inline-block;}
+  .state-BULLISH{background:#0F5C3644;color:#5FE3A3;}
+  .state-BEARISH{background:#6B1F2744;color:#FF9AA5;}
+  .state-CHANGE_NOW{background:#B98A0544;color:var(--gold);}
+  .state-NEUTRAL{background:#22304480;color:var(--text-secondary);}
+
+  .rsi-controls{display:flex;gap:16px;margin-bottom:14px;flex-wrap:wrap;}
+  .rsi-controls .grp{display:flex;flex-direction:column;gap:6px;}
+  .rsi-controls .grp span{font-size:10.5px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;}
+  .rsi-controls label{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--text-secondary);cursor:pointer;}
+  .table-scroll{max-height:420px;overflow:auto;border-radius:8px;}
+
+  .events{display:flex;flex-direction:column;gap:10px;}
+  .event{
+    background:var(--panel-2);border-radius:8px;padding:12px 14px;
+    border-left:3px solid var(--green);
+  }
+  .event.SELL{border-left-color:var(--red);}
+  .event .head{display:flex;align-items:center;gap:10px;font-size:12.5px;margin-bottom:6px;}
+  .event .head .sig{font-weight:600;padding:2px 8px;border-radius:4px;font-size:11px;}
+  .event.BUY .sig{background:var(--green-dim);color:#B9F3D3;}
+  .event.SELL .sig{background:var(--red-dim);color:#FFC7CD;}
+  .event .ts{color:var(--text-muted);}
+  .event .sym{color:var(--text-primary);font-weight:600;}
+  .event .reasons{font-size:11.5px;color:var(--text-secondary);line-height:1.7;}
+
+  .empty{color:var(--text-muted);font-size:13px;padding:30px 0;text-align:center;}
+
+  #genTime{color:var(--text-secondary);}
+  .footer-note{margin-top:40px;font-size:11px;color:var(--text-muted);text-align:center;letter-spacing:0.04em;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="mark"></div>
+    <h1>GEOTRADER</h1>
+    <span class="tag">Market Intelligence Terminal</span>
+  </div>
+  <div class="topbar-right">
+    <div class="clock">Last calc <b id="genTime">—</b></div>
+    <button id="refreshBtn"><span class="dot"></span>Refresh</button>
+  </div>
+</div>
+
+<div class="ticker-tape">
+  <div class="track" id="tickerTrack"></div>
+</div>
+
+<div class="wrap">
+
+  <div class="grid grid-4">
+    <div class="card kpi k-total"><div class="label">Symbols tracked</div><div class="value" id="kpiTotal">—</div></div>
+    <div class="card kpi k-adv"><div class="label">Advancing</div><div class="value" id="kpiAdv">—</div></div>
+    <div class="card kpi k-dec"><div class="label">Declining</div><div class="value" id="kpiDec">—</div></div>
+    <div class="card kpi k-events"><div class="label">Intraday events (7d)</div><div class="value" id="kpiEvents">—</div></div>
+  </div>
+
+  <div class="section-label"><span class="n">01</span> Market overview</div>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3>Broad market indices</h3>
+      <div class="chart-box"><canvas id="chartBroader"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>Sector performance</h3>
+      <div class="chart-box"><canvas id="chartSector"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>Advance / decline</h3>
+      <div class="chart-box"><canvas id="chartAD"></canvas></div>
+    </div>
+  </div>
+
+  <div class="section-label"><span class="n">02</span> FNO leaders</div>
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>Top 5 & bottom 5 (FNO)</h3>
+      <div class="chart-box tall"><canvas id="chartFno"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>Sector explorer <small>choose a sector to see its FNO members</small></h3>
+      <select id="sectorSelect" style="margin-bottom:12px;width:100%;"></select>
+      <div class="chart-box tall"><canvas id="chartSectorStocks"></canvas></div>
+    </div>
+  </div>
+
+  <div class="section-label"><span class="n">03</span> Momentum streaks <small style="text-transform:none;font-weight:400;color:var(--text-muted);font-family:var(--font-mono);font-size:11px;">(≥ 2 consecutive closes)</small></div>
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>Upside momentum</h3>
+      <div class="badge-grid" id="momUp"></div>
+    </div>
+    <div class="card">
+      <h3>Downside momentum</h3>
+      <div class="badge-grid" id="momDown"></div>
+    </div>
+  </div>
+
+  <div class="section-label"><span class="n">04</span> RSI scanner <small style="text-transform:none;font-weight:400;color:var(--text-muted);font-family:var(--font-mono);font-size:11px;">multi-timeframe</small></div>
+  <div class="card">
+    <div class="rsi-controls" id="rsiFilters"></div>
+    <div class="table-scroll">
+      <table id="rsiTable">
+        <thead><tr><th>Symbol</th><th>Timeframe</th><th>RSI</th><th>State</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-label"><span class="n">05</span> Intraday rolling ticker <small style="text-transform:none;font-weight:400;color:var(--text-muted);font-family:var(--font-mono);font-size:11px;">FNO breakout / breakdown events, last 7 days</small></div>
+  <div class="card">
+    <div class="events" id="eventsList"></div>
+  </div>
+
+  <div class="footer-note">GEOTRADER · data sourced from result.json · generated by engine.py</div>
+</div>
+
+<script>
+const CHART_COLORS = { green:'#1FCE7A', red:'#FF5C6C', gold:'#F2B705', blue:'#4C9EFF', grid:'#1C2636', text:'#8C9BB3' };
+let charts = {};
+let RESULT = null;
+
+Chart.defaults.font.family = "'IBM Plex Mono', monospace";
+Chart.defaults.font.size = 11;
+Chart.defaults.color = CHART_COLORS.text;
+
+function fmtChange(v){ return (v>0?'+':'') + v.toFixed(2) + '%'; }
+function colorFor(v){ return v>=0 ? CHART_COLORS.green : CHART_COLORS.red; }
+
+function destroy(id){ if(charts[id]){ charts[id].destroy(); delete charts[id]; } }
+
+function horizontalBar(canvasId, rows, opts={}){
+  destroy(canvasId);
+  const ctx = document.getElementById(canvasId).getContext('2d');
+  const labels = rows.map(r=>r.symbol);
+  const data = rows.map(r=>r.change);
+  charts[canvasId] = new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ data, backgroundColor: data.map(colorFor), borderRadius: 3, barThickness: opts.thick || 14 }] },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: c => fmtChange(c.raw) } } },
+      scales:{
+        x:{ grid:{color:CHART_COLORS.grid}, ticks:{callback:v=>v+'%'} },
+        y:{ grid:{display:false}, ticks:{ autoSkip:false } }
+      }
+    }
+  });
+}
+
+function renderKPIs(d){
+  document.getElementById('kpiTotal').textContent = d.meta.total_symbols;
+  document.getElementById('kpiAdv').textContent = d.advance_decline.advance;
+  document.getElementById('kpiDec').textContent = d.advance_decline.decline;
+  document.getElementById('kpiEvents').textContent = d.intraday_events.length;
+  const gt = new Date(d.generated_at);
+  document.getElementById('genTime').textContent = isNaN(gt) ? d.generated_at : gt.toLocaleString();
+}
+
+function renderTicker(d){
+  const track = document.getElementById('tickerTrack');
+  const top = d.fno.top5 || [], bottom = d.fno.bottom5 || [];
+  const all = [...top, ...bottom];
+  if(!all.length){ track.innerHTML = '<span class="tick">No FNO data available</span>'; return; }
+  const html = all.map(r => `<span class="tick ${r.change>=0?'up':'down'}">${r.change>=0?'▲':'▼'} <span class="sym">${r.symbol}</span> ${fmtChange(r.change)}</span>`).join('');
+  track.innerHTML = html + html;
+}
+
+function renderBroader(d){
+  const rows = (d.broader_market||[]).slice().sort((a,b)=>a.change-b.change);
+  if(!rows.length){ document.getElementById('chartBroader').parentElement.innerHTML = '<div class="empty">No broader-index symbols mapped</div>'; return; }
+  horizontalBar('chartBroader', rows);
+}
+
+function renderSector(d){
+  const rows = (d.sector_performance||[]).slice().sort((a,b)=>a.change-b.change);
+  if(!rows.length){ document.getElementById('chartSector').parentElement.innerHTML = '<div class="empty">No sector-index symbols mapped</div>'; return; }
+  horizontalBar('chartSector', rows);
+}
+
+function renderAD(d){
+  destroy('chartAD');
+  const ctx = document.getElementById('chartAD').getContext('2d');
+  const ad = d.advance_decline;
+  charts['chartAD'] = new Chart(ctx, {
+    type:'doughnut',
+    data:{
+      labels:['Advance','Decline','Unchanged'],
+      datasets:[{ data:[ad.advance, ad.decline, ad.unchanged], backgroundColor:[CHART_COLORS.green, CHART_COLORS.red, '#3A4B63'], borderWidth:0 }]
+    },
+    options:{ responsive:true, maintainAspectRatio:false, cutout:'62%', plugins:{legend:{position:'bottom', labels:{boxWidth:10, padding:14}}} }
+  });
+}
+
+function renderFno(d){
+  const top = d.fno.top5||[], bottom = d.fno.bottom5||[];
+  const rows = [...bottom, ...top].sort((a,b)=>a.change-b.change);
+  if(!rows.length){ document.getElementById('chartFno').parentElement.innerHTML = '<div class="empty">No FNO data available</div>'; return; }
+  horizontalBar('chartFno', rows, {thick:16});
+}
+
+function renderSectorExplorer(d){
+  const select = document.getElementById('sectorSelect');
+  const sectors = Object.keys(d.sector_stocks||{});
+  if(!sectors.length){
+    select.style.display='none';
+    document.getElementById('chartSectorStocks').parentElement.innerHTML = '<div class="empty">No sector → stock mapping found</div>';
+    return;
+  }
+  select.innerHTML = sectors.map(s=>`<option value="${s}">${s}</option>`).join('');
+  const draw = () => {
+    const sec = select.value;
+    const g = d.sector_stocks[sec];
+    const rows = [...(g.bottom5||[]), ...(g.top5||[])].sort((a,b)=>a.change-b.change);
+    horizontalBar('chartSectorStocks', rows, {thick:14});
+  };
+  select.onchange = draw;
+  draw();
+}
+
+function renderMomentum(d){
+  const upEl = document.getElementById('momUp'), downEl = document.getElementById('momDown');
+  const up = d.momentum_streaks.up||[], down = d.momentum_streaks.down||[];
+  upEl.innerHTML = up.length ? up.map(r=>`<div class="badge up">${r.symbol} <span class="n">${r.strength}d</span></div>`).join('') : '<div class="empty">No upside streaks ≥ 2 days</div>';
+  downEl.innerHTML = down.length ? down.map(r=>`<div class="badge down">${r.symbol} <span class="n">${r.strength}d</span></div>`).join('') : '<div class="empty">No downside streaks ≥ 2 days</div>';
+}
+
+function renderRSI(d){
+  const rows = d.rsi_scanner||[];
+  const tfs = [...new Set(rows.map(r=>r.tf))];
+  const states = ['BULLISH','CHANGE_NOW','NEUTRAL','BEARISH'];
+  const filtersEl = document.getElementById('rsiFilters');
+
+  const active = { tf: new Set(tfs), state: new Set(states) };
+
+  function group(list, key){
+    const box = document.createElement('div'); box.className='grp';
+    const span = document.createElement('span'); span.textContent = key.toUpperCase(); box.appendChild(span);
+    list.forEach(v=>{
+      const lbl = document.createElement('label');
+      const cb = document.createElement('input'); cb.type='checkbox'; cb.checked=true;
+      cb.addEventListener('change', ()=>{
+        if(cb.checked) active[key].add(v); else active[key].delete(v);
+        draw();
+      });
+      lbl.appendChild(cb); lbl.appendChild(document.createTextNode(v));
+      box.appendChild(lbl);
+    });
+    return box;
+  }
+  filtersEl.innerHTML = '';
+  filtersEl.appendChild(group(tfs, 'tf'));
+  filtersEl.appendChild(group(states, 'state'));
+
+  const tbody = document.querySelector('#rsiTable tbody');
+  function draw(){
+    const filtered = rows.filter(r => active.tf.has(r.tf) && active.state.has(r.state));
+    if(!filtered.length){ tbody.innerHTML = '<tr><td colspan="4" class="empty">No rows match the selected filters</td></tr>'; return; }
+    tbody.innerHTML = filtered.map(r => `<tr><td>${r.symbol}</td><td>${r.tf}</td><td>${r.rsi}</td><td><span class="state-chip state-${r.state}">${r.state.replace('_',' ')}</span></td></tr>`).join('');
+  }
+  if(!rows.length){ tbody.innerHTML = '<tr><td colspan="4" class="empty">No RSI data available</td></tr>'; filtersEl.innerHTML=''; return; }
+  draw();
+}
+
+function renderEvents(d){
+  const el = document.getElementById('eventsList');
+  const events = d.intraday_events||[];
+  if(!events.length){ el.innerHTML = '<div class="empty">No intraday breakout events in the last 7 days</div>'; return; }
+  el.innerHTML = events.map(ev => {
+    const ts = new Date(ev.ts);
+    const tsStr = isNaN(ts) ? ev.ts : ts.toLocaleString();
+    return `<div class="event ${ev.signal}">
+      <div class="head"><span class="sig">${ev.signal}</span><span class="sym">${ev.symbol}</span><span>${ev.tf}</span><span class="ts">${tsStr}</span></div>
+      <div class="reasons">${(ev.reasons||[]).map(r=>'• '+r).join('<br>')}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderAll(d){
+  RESULT = d;
+  renderKPIs(d);
+  renderTicker(d);
+  renderBroader(d);
+  renderSector(d);
+  renderAD(d);
+  renderFno(d);
+  renderSectorExplorer(d);
+  renderMomentum(d);
+  renderRSI(d);
+  renderEvents(d);
+}
+
+async function loadResult(){
+  const btn = document.getElementById('refreshBtn');
+  btn.classList.add('loading');
+  try{
+    const res = await fetch('result.json?_=' + Date.now());
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    renderAll(data);
+  }catch(err){
+    document.querySelector('.wrap').insertAdjacentHTML('afterbegin',
+      `<div class="card" style="border-color:var(--red);margin-bottom:20px;">
+         <h3 style="color:var(--red);">Could not load result.json</h3>
+         <div style="color:var(--text-secondary);font-size:12.5px;line-height:1.6;">
+           ${err.message}. Make sure result.json is in the same folder as this dashboard and
+           that you are viewing it through a local web server (not opened directly as a file://
+           URL — browsers block that). Run <code>python -m http.server</code> in this folder and
+           open <code>http://localhost:8000/dashboard.html</code>, then run engine.py again if
+           the file is missing.
+         </div>
+       </div>`);
+  }finally{
+    btn.classList.remove('loading');
+  }
+}
+
+document.getElementById('refreshBtn').addEventListener('click', loadResult);
+loadResult();
+</script>
+
+</body>
+</html>
