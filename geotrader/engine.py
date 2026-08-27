@@ -36,9 +36,8 @@ import numpy as np
 # =====================================================================
 # CONFIG
 # =====================================================================
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # BASE_DIR points to repository root for input data
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 TF_FOLDERS = {
     "15m": os.path.join(BASE_DIR, "stockdata_15"),
