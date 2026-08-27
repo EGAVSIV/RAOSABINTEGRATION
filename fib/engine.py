@@ -23,7 +23,7 @@ FIB_OPTIONS = {
 }
 
 LOOKBACK_LEVELS = [50, 100, 200]
-OUTPUT_JSON_FILE = BASE_DIR / "results.json"
+OUTPUT_JSON_FILE = Path(__file__).resolve().parent / "results.json"
 
 
 def get_symbols_from_local_folder(folder_path: Path):
