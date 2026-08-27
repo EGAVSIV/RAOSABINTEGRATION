@@ -1,14 +1,171 @@
 {
-  "generated_at": "2026-08-27T21:36:17.716737",
+  "generated_at": "2026-08-27T21:43:04.142358",
   "meta": {
-    "total_symbols": 215,
+    "total_symbols": 251,
     "broader_count": 0,
-    "sector_index_count": 0,
-    "fno_count": 215,
-    "sector_map_loaded": false
+    "sector_index_count": 39,
+    "fno_count": 212,
+    "sector_map_loaded": true
   },
   "broader_market": [],
-  "sector_performance": [],
+  "sector_performance": [
+    {
+      "symbol": "BANKNIFTY",
+      "change": -0.47
+    },
+    {
+      "symbol": "CNXAUTO",
+      "change": -0.4
+    },
+    {
+      "symbol": "CNXCONSUMPTION",
+      "change": -0.39
+    },
+    {
+      "symbol": "CNXENERGY",
+      "change": 0.01
+    },
+    {
+      "symbol": "CNXFINANCE",
+      "change": -0.4
+    },
+    {
+      "symbol": "CNXFMCG",
+      "change": -0.47
+    },
+    {
+      "symbol": "CNXINFRA",
+      "change": -0.55
+    },
+    {
+      "symbol": "CNXIT",
+      "change": -0.32
+    },
+    {
+      "symbol": "CNXMEDIA",
+      "change": -0.89
+    },
+    {
+      "symbol": "CNXMETAL",
+      "change": -0.86
+    },
+    {
+      "symbol": "CNXMNC",
+      "change": -0.41
+    },
+    {
+      "symbol": "CNXPHARMA",
+      "change": 0.84
+    },
+    {
+      "symbol": "CNXPSE",
+      "change": -0.27
+    },
+    {
+      "symbol": "CNXPSUBANK",
+      "change": -0.94
+    },
+    {
+      "symbol": "CNXREALTY",
+      "change": -0.06
+    },
+    {
+      "symbol": "CNXSERVICE",
+      "change": -0.48
+    },
+    {
+      "symbol": "CPSE",
+      "change": -0.18
+    },
+    {
+      "symbol": "NIFTY",
+      "change": -0.48
+    },
+    {
+      "symbol": "NIFTYPVTBANK",
+      "change": 0.09
+    },
+    {
+      "symbol": "NIFTY_CAPITAL_MKT",
+      "change": -1.22
+    },
+    {
+      "symbol": "NIFTY_CONSR_DURBL",
+      "change": 0.72
+    },
+    {
+      "symbol": "NIFTY_COREHOUSING",
+      "change": -0.29
+    },
+    {
+      "symbol": "NIFTY_CORP_MAATR",
+      "change": -0.46
+    },
+    {
+      "symbol": "NIFTY_EV",
+      "change": -0.01
+    },
+    {
+      "symbol": "NIFTY_HEALTHCARE",
+      "change": 0.73
+    },
+    {
+      "symbol": "NIFTY_HOUSING",
+      "change": -0.27
+    },
+    {
+      "symbol": "NIFTY_INDIA_MFG",
+      "change": -0.05
+    },
+    {
+      "symbol": "NIFTY_IND_DEFENCE",
+      "change": 0.59
+    },
+    {
+      "symbol": "NIFTY_IND_TOURISM",
+      "change": -0.64
+    },
+    {
+      "symbol": "NIFTY_IPO",
+      "change": -0.22
+    },
+    {
+      "symbol": "NIFTY_MOBILITY",
+      "change": -0.31
+    },
+    {
+      "symbol": "NIFTY_MS_IT_TELCM",
+      "change": 0.61
+    },
+    {
+      "symbol": "NIFTY_MULTI_INFRA",
+      "change": -0.16
+    },
+    {
+      "symbol": "NIFTY_MULTI_MFG",
+      "change": 0.01
+    },
+    {
+      "symbol": "NIFTY_NEW_CONSUMP",
+      "change": -0.4
+    },
+    {
+      "symbol": "NIFTY_NONCYC_CONS",
+      "change": -0.28
+    },
+    {
+      "symbol": "NIFTY_OIL_AND_GAS",
+      "change": -0.8
+    },
+    {
+      "symbol": "NIFTY_RURAL",
+      "change": -0.64
+    },
+    {
+      "symbol": "NIFTY_TOP_10_EW",
+      "change": -0.43
+    }
+  ],
   "sector_stocks": {},
   "fno": {
     "all": [
@@ -121,10 +278,6 @@
         "change": -0.92
       },
       {
-        "symbol": "BANKNIFTY",
-        "change": -0.47
-      },
-      {
         "symbol": "BDL",
         "change": -1.06
       },
@@ -191,10 +344,6 @@
       {
         "symbol": "CIPLA",
         "change": 1.23
-      },
-      {
-        "symbol": "CNXFINANCE",
-        "change": -0.4
       },
       {
         "symbol": "CNXMIDCAP",
@@ -585,10 +734,6 @@
         "change": 0.41
       },
       {
-        "symbol": "NIFTY",
-        "change": -0.48
-      },
-      {
         "symbol": "NIFTYJR",
         "change": -0.21
       },
@@ -920,7 +1065,7 @@
   },
   "advance_decline": {
     "advance": 82,
-    "decline": 129,
+    "decline": 126,
     "unchanged": 4
   },
   "momentum_streaks": {
@@ -1273,10 +1418,6 @@
       },
       {
         "symbol": "NESTLEIND",
-        "strength": 2
-      },
-      {
-        "symbol": "NIFTY",
         "strength": 2
       },
       {
@@ -4075,7 +4216,7 @@
     {
       "symbol": "BANKNIFTY",
       "tf": "DAY",
-      "rsi": 50.0,
+      "rsi": 49.46,
       "state": "NEUTRAL"
     },
     {
@@ -4183,7 +4324,7 @@
     {
       "symbol": "CNXFINANCE",
       "tf": "DAY",
-      "rsi": 48.27,
+      "rsi": 48.74,
       "state": "NEUTRAL"
     },
     {
@@ -4771,7 +4912,7 @@
     {
       "symbol": "NIFTY",
       "tf": "DAY",
-      "rsi": 43.47,
+      "rsi": 44.85,
       "state": "NEUTRAL"
     },
     {
@@ -5199,6 +5340,222 @@
       "tf": "DAY",
       "rsi": 62.63,
       "state": "CHANGE_NOW"
+    },
+    {
+      "symbol": "CNXAUTO",
+      "tf": "DAY",
+      "rsi": 50.09,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "CNXCONSUMPTION",
+      "tf": "DAY",
+      "rsi": 45.49,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "CNXENERGY",
+      "tf": "DAY",
+      "rsi": 42.3,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "CNXFMCG",
+      "tf": "DAY",
+      "rsi": 39.85,
+      "state": "CHANGE_NOW"
+    },
+    {
+      "symbol": "CNXINFRA",
+      "tf": "DAY",
+      "rsi": 42.78,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "CNXIT",
+      "tf": "DAY",
+      "rsi": 46.64,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "CNXMEDIA",
+      "tf": "DAY",
+      "rsi": 52.91,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "CNXMETAL",
+      "tf": "DAY",
+      "rsi": 59.07,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "CNXMNC",
+      "tf": "DAY",
+      "rsi": 46.53,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "CNXPHARMA",
+      "tf": "DAY",
+      "rsi": 60.02,
+      "state": "CHANGE_NOW"
+    },
+    {
+      "symbol": "CNXPSE",
+      "tf": "DAY",
+      "rsi": 40.62,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "CNXPSUBANK",
+      "tf": "DAY",
+      "rsi": 49.51,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "CNXREALTY",
+      "tf": "DAY",
+      "rsi": 53.04,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "CNXSERVICE",
+      "tf": "DAY",
+      "rsi": 44.63,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "CPSE",
+      "tf": "DAY",
+      "rsi": 40.95,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTYPVTBANK",
+      "tf": "DAY",
+      "rsi": 54.14,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_CAPITAL_MKT",
+      "tf": "DAY",
+      "rsi": 56.29,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_CONSR_DURBL",
+      "tf": "DAY",
+      "rsi": 57.62,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_COREHOUSING",
+      "tf": "DAY",
+      "rsi": 48.74,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_CORP_MAATR",
+      "tf": "DAY",
+      "rsi": 46.85,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_EV",
+      "tf": "DAY",
+      "rsi": 50.45,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_HEALTHCARE",
+      "tf": "DAY",
+      "rsi": 57.38,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_HOUSING",
+      "tf": "DAY",
+      "rsi": 48.08,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_INDIA_MFG",
+      "tf": "DAY",
+      "rsi": 55.63,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_IND_DEFENCE",
+      "tf": "DAY",
+      "rsi": 55.52,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_IND_TOURISM",
+      "tf": "DAY",
+      "rsi": 47.08,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_IPO",
+      "tf": "DAY",
+      "rsi": 62.61,
+      "state": "BULLISH"
+    },
+    {
+      "symbol": "NIFTY_MOBILITY",
+      "tf": "DAY",
+      "rsi": 53.84,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_MS_IT_TELCM",
+      "tf": "DAY",
+      "rsi": 59.1,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_MULTI_INFRA",
+      "tf": "DAY",
+      "rsi": 45.37,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_MULTI_MFG",
+      "tf": "DAY",
+      "rsi": 55.43,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_NEW_CONSUMP",
+      "tf": "DAY",
+      "rsi": 55.49,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_NONCYC_CONS",
+      "tf": "DAY",
+      "rsi": 43.97,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_OIL_AND_GAS",
+      "tf": "DAY",
+      "rsi": 42.95,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_RURAL",
+      "tf": "DAY",
+      "rsi": 43.5,
+      "state": "NEUTRAL"
+    },
+    {
+      "symbol": "NIFTY_TOP_10_EW",
+      "tf": "DAY",
+      "rsi": 45.4,
+      "state": "NEUTRAL"
     },
     {
       "symbol": "360ONE",
@@ -7783,17 +8140,6 @@
   ],
   "intraday_events": [
     {
-      "symbol": "CNXFINANCE",
-      "tf": "15m",
-      "signal": "SELL",
-      "ts": "2026-08-27T09:45:00+00:00",
-      "reasons": [
-        "Daily Low BD @ 09:45",
-        "RSI < 40 @ 09:45",
-        "BB Lower BD @ 09:45"
-      ]
-    },
-    {
       "symbol": "ABCAPITAL",
       "tf": "15m",
       "signal": "SELL",
@@ -7938,16 +8284,6 @@
       ]
     },
     {
-      "symbol": "BANKNIFTY",
-      "tf": "15m",
-      "signal": "BUY",
-      "ts": "2026-08-27T07:30:00+00:00",
-      "reasons": [
-        "Weekly High BO @ 07:30",
-        "Cam H4 BO @ 07:30"
-      ]
-    },
-    {
       "symbol": "ICICIBANK",
       "tf": "15m",
       "signal": "BUY",
@@ -7988,16 +8324,6 @@
       "reasons": [
         "Daily Low BD @ 06:45",
         "Cam L4 BD @ 06:45"
-      ]
-    },
-    {
-      "symbol": "BANKNIFTY",
-      "tf": "1H",
-      "signal": "BUY",
-      "ts": "2026-08-27T06:45:00+00:00",
-      "reasons": [
-        "Weekly High BO @ 06:45",
-        "Cam H4 BO @ 06:45"
       ]
     },
     {
@@ -8502,17 +8828,6 @@
       "reasons": [
         "Weekly Low BD @ 04:15",
         "BB Lower BD @ 04:15"
-      ]
-    },
-    {
-      "symbol": "NIFTY",
-      "tf": "15m",
-      "signal": "SELL",
-      "ts": "2026-08-27T04:15:00+00:00",
-      "reasons": [
-        "Daily Low BD @ 04:15",
-        "BB Lower BD @ 04:15",
-        "Cam L4 BD @ 04:15"
       ]
     },
     {
