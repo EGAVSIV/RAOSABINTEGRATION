@@ -1,0 +1,39 @@
+name: Geotrader Engine
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  schedule:
+    # Optional: Runs automatically every day at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual trigger from the GitHub Actions tab
+
+jobs:
+  run-engine:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10' # Adjust Python version as needed
+        cache: 'pip'          # Caches pip dependencies for faster builds
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas numpy
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Execute Geotrader Engine
+      env:
+        # Pass API keys or secrets securely from GitHub Repository Secrets
+        API_KEY: ${{ secrets.API_KEY }}
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      run: |
+        python geotrader/engine.py
