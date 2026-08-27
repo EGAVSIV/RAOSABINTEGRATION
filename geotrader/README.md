@@ -6,7 +6,9 @@ independent pieces:
 ```
 project/
 ├── engine.py            # 1. calculation engine -> writes result.json
-├── dashboard.html        # 2. standalone HTML dashboard -> reads result.json
+├── dashboard.html        # 2a. dashboard shell (structure only)
+├── styles.css             #  2b. "Market Radar" design system
+├── app.js                 #  2c. dashboard logic (charts, sparklines, heatmap, gauge)
 ├── requirements.txt      # 3. python dependencies for engine.py
 ├── stockdata_15/         # 15-minute candles, one .json file per symbol
 ├── stockdata_1H/         # 1-hour candles
@@ -15,6 +17,10 @@ project/
 ├── stockdata_M/          # Monthly candles
 └── symbol_map.json       # optional: category + sector per symbol
 ```
+
+`dashboard.html` is now a thin shell — all visual design lives in `styles.css`
+and all rendering logic in `app.js`, so you can restyle or extend either
+independently.
 
 ## 1. Data folders (per your screenshot)
 
@@ -82,11 +88,13 @@ sector-map file (same two-column format the old app used) is also still
 supported as a fallback — see `SYMBOL_MAP_CANDIDATES` at the top of
 `engine.py` for the exact filenames/paths it checks.
 
-## 3. Dashboard (`dashboard.html`)
+## 3. Dashboard (`dashboard.html` + `styles.css` + `app.js`)
 
-A single, self-contained HTML file — no build step, no server-side code.
-It fetches `result.json` with `fetch()`, so it must be served over HTTP
-(browsers block `fetch` on `file://` pages):
+"Market Radar" — a dark, topographic trading-terminal design: an animated
+radar-sweep mark, contour-line background, amber/phosphor-green signal
+colors, and glassy panels. No build step, no framework — just three static
+files. It fetches `result.json` with `fetch()`, so it must be served over
+HTTP (browsers block `fetch` on `file://` pages):
 
 ```bash
 python -m http.server 8000
@@ -97,14 +105,20 @@ the top bar any time after re-running `engine.py` to pull the latest
 `result.json` without reloading the page.
 
 ### What's on it
-- Ticker tape of FNO top/bottom movers
-- KPI strip: symbols tracked, advancing, declining, 7-day intraday events
-- Broad market / sector performance / advance-decline charts
-- FNO top5 & bottom5 bar chart
-- Sector explorer (dropdown → that sector's FNO members)
-- Momentum streak badges (up / down)
-- RSI scanner table with timeframe + state checkboxes
+- Animated radar-mark logo + scrolling ticker tape of FNO top/bottom movers
+- KPI strip with animated counters and a sparkline of the FNO change distribution
+- Broad market / sector index panels — each row has its own live sparkline
+- A radial advance/decline gauge (the dashboard's signature element)
+- **Sector terrain** — a heat-tile grid, tile color = that sector's average change
+- FNO top5 & bottom5 bar chart, plus a sector explorer dropdown
+- Momentum streak badges (up 🔥 / down 🧊)
+- **RSI heatmap** — every FNO symbol × every timeframe, color-graded 0–100
+- Full RSI scanner table with timeframe + state checkboxes and inline RSI bars
 - Intraday rolling ticker (breakout/breakdown events, last 7 days)
+
+Want a different palette or layout? Everything is token-driven at the top
+of `styles.css` (`:root { --amber, --phosphor, --bg-0, ... }`) — change the
+variables and the whole dashboard re-themes.
 
 ## Notes on what changed from the original file
 
