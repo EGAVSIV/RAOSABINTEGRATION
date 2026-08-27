@@ -36,7 +36,7 @@ import numpy as np
 # =====================================================================
 # CONFIG
 # =====================================================================
-# BASE_DIR points to repository root for input data
+# BASE_DIR points to repository root where stockdata_* folders are stored
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 TF_FOLDERS = {
@@ -48,23 +48,9 @@ TF_FOLDERS = {
 }
 
 # SAVE OUTPUT HERE: geotrader/result.json
-OUTPUT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "result.json")
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_FILE = os.path.join(CURRENT_DIR, "result.json")
 
-TF_FOLDERS = {
-    "15m": os.path.join(BASE_DIR, "stockdata_15"),
-    "1H":  os.path.join(BASE_DIR, "stockdata_1H"),
-    "D":   os.path.join(BASE_DIR, "stockdata_D"),
-    "W":   os.path.join(BASE_DIR, "stockdata_W"),
-    "M":   os.path.join(BASE_DIR, "stockdata_M"),
-}
-
-OUTPUT_FILE = os.path.join(BASE_DIR, "result.json")
-
-# Optional symbol -> {"category": "broader"|"sector"|"fno", "sector": "IT"} map.
-# Looked up in this order; first one found is used. If none exist, every
-# symbol found in stockdata_D is treated as an "fno" (tradable stock) symbol,
-# and the Broader Market / Sector Performance sections are simply left empty
-# instead of crashing - so the engine always runs even without a mapping file.
 SYMBOL_MAP_CANDIDATES = [
     os.path.join(BASE_DIR, "config", "symbol_map.json"),
     os.path.join(BASE_DIR, "symbol_map.json"),
@@ -72,6 +58,7 @@ SYMBOL_MAP_CANDIDATES = [
     os.path.join(BASE_DIR, "FNOSECTOR.xlsx"),
     os.path.join(BASE_DIR, "market_data", "FNOSECTOR.xlsx"),
 ]
+
 
 RSI_PERIOD = 14
 BB_PERIOD = 20
