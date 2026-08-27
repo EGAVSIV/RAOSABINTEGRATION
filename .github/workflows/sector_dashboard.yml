@@ -1,10 +1,14 @@
-name: Sector analysis dasboard run
+name: Daily Sector & Stock Scanner
 
 on:
   schedule:
     # Runs at 10:00 AM UTC (3:30 PM IST) Monday to Friday
     - cron: '0 10 * * 1-5'
   workflow_dispatch:
+
+# GRANT WRITE PERMISSIONS TO GITHUB_TOKEN
+permissions:
+  contents: write
 
 jobs:
   run-scan:
