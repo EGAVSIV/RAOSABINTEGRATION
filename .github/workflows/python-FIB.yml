@@ -1,10 +1,13 @@
-name: Run FIB Engine Scan
+name: Run Stock Engine Scan
 
 on:
   schedule:
-    # Runs automatically every day at midnight UTC (adjust timing as needed)
     - cron: '0 0 * * *'
-  workflow_dispatch: # Allows manual triggers from the GitHub Actions tab
+  workflow_dispatch:
+
+# Grant write permissions to GITHUB_TOKEN at the workflow/job level
+permissions:
+  contents: write
 
 jobs:
   run-analysis:
@@ -13,6 +16,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          # Pass explicit token authorization for pushing
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
