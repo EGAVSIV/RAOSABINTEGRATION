@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RaoSab Hub | 50+ Specialized Applications</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-main: #0e1217;
+      --bg-header: #151921;
+      --bg-card: #1c222d;
+      --bg-card-hover: #252d3c;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-blue: #3b82f6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background-color: var(--bg-main); color: var(--text-main); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+    header {
+      background-color: var(--bg-header);
+      border-bottom: 1px solid var(--border-color);
+      height: 60px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; flex-shrink: 0;
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo {
+      width: 32px; height: 32px; background: linear-gradient(135deg, #ef4444, #3b82f6);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem; color: #fff;
+    }
+    .brand-title { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.3px; }
+
+    .search-container { position: relative; width: 320px; }
+    .search-container i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.85rem; }
+    .search-input {
+      width: 100%; padding: 8px 12px 8px 36px;
+      background: rgba(0, 0, 0, 0.3); border: 1px solid var(--border-color);
+      border-radius: 8px; color: #fff; font-size: 0.85rem;
+    }
+    .search-input:focus { outline: none; border-color: var(--accent-blue); }
+
+    .dashboard-container {
+      flex: 1; display: grid; grid-template-columns: 320px 1fr 320px;
+      gap: 16px; padding: 16px; overflow: hidden;
+    }
+
+    .column { display: flex; flex-direction: column; gap: 16px; overflow-y: auto; padding-right: 4px; }
+
+    .section-title {
+      font-size: 0.85rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; color: var(--text-muted);
+      display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+    }
+
+    .compact-card {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: 10px; padding: 10px 12px;
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; transition: all 0.2s ease;
+    }
+    .compact-card:hover { background: var(--bg-card-hover); border-color: rgba(255, 255, 255, 0.2); }
+    .compact-card.active { border-color: var(--accent-blue); background: var(--bg-card-hover); }
+
+    .compact-info { display: flex; align-items: center; gap: 10px; }
+    .compact-icon {
+      width: 30px; height: 30px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; background: rgba(255, 255, 255, 0.05); color: var(--accent-blue);
+    }
+    .card-title { font-size: 0.85rem; font-weight: 600; }
+
+    .viewer-area {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: 16px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+
+    iframe { width: 100%; height: 100%; border: none; display: none; }
+
+    .placeholder-state {
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+      color: var(--text-muted); font-size: 0.9rem;
+    }
+    .spinner {
+      width: 40px; height: 40px; border: 3px solid rgba(255, 255, 255, 0.1);
+      border-top-color: var(--accent-blue); border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .footer-note { position: absolute; bottom: 12px; font-size: 0.75rem; color: var(--text-muted); }
+    .footer-note a { color: var(--accent-blue); text-decoration: none; }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-logo"><i class="fa-solid fa-crown"></i></div>
+      <div class="brand-title">RaoSab Hub | 50+ Specialized Applications</div>
+    </div>
+    <div class="search-container">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search apps..." onkeyup="filterApps()">
+    </div>
+  </header>
+
+  <div class="dashboard-container">
+    <div class="column" id="leftColumn"></div>
+
+    <div class="viewer-area">
+      <div class="placeholder-state" id="placeholder">
+        <div class="spinner"></div>
+        <div id="placeholderText">Select an application to load...</div>
+      </div>
+      <iframe id="appViewer" onload="onIframeLoaded()"></iframe>
+      <div class="footer-note">Built on top-level services with native HTTPS on <a href="https://raosab.in" target="_blank">raosab.in</a></div>
+    </div>
+
+    <div class="column" id="rightColumn"></div>
+  </div>
+
+  <script>
+    const appsData = [
+      {
+        category: "Astro & Cycles", icon: "fa-solid fa-moon", color: "#a855f7",
+        apps: [
+          { name: "Fibre Tracement", url: "https://fibretracement.streamlit.app" },
+          { name: "Birth Charts", url: "https://birthcharts.streamlit.app" },
+          { name: "Aspect Filter", url: "https://aspectfilter.streamlit.app" },
+          { name: "All Cycles", url: "https://allcycles.streamlit.app" },
+          { name: "Stock Scanner Aspect", url: "https://stock-scanner-ascpect.streamlit.app" },
+          { name: "Nakshtra", url: "https://nakshtra.streamlit.app" },
+          { name: "FnO Price Cycle", url: "https://fnopricecycle.streamlit.app" },
+          { name: "Gann Cycle", url: "https://ganncycle.streamlit.app" },
+          { name: "Nifty Time Cycle", url: "https://niftytimecycle.streamlit.app" },
+          { name: "Geo Trader", url: "https://geotrader.streamlit.app" },
+          { name: "Astro Samadhan", url: "https://astrosamadhan.streamlit.app" },
+          { name: "Lal Kitab", url: "https://lalkitab.streamlit.app" },
+          { name: "Live Planet Position", url: "https://liveplanetpostion.streamlit.app" },
+          { name: "Sun Cycle", url: "https://suncycle.streamlit.app" }
+        ]
+      },
+      {
+        category: "Options & F&O Analytics", icon: "fa-solid fa-chart-line", color: "#ef4444",
+        apps: [
+          { name: "FnO Reversal Point", url: "https://fnoreversalpnt.streamlit.app" },
+          { name: "Gamma Scan 1", url: "https://gammascan.streamlit.app" },
+          { name: "Gamma Scan 2", url: "https://gammascan1.streamlit.app" },
+          { name: "Option Chain Gaurav", url: "https://optionchainbygaurav.streamlit.app" },
+          { name: "OI Gaurav", url: "https://oiwithgaurav.streamlit.app" },
+          { name: "OI GSY", url: "https://oiwithgsy.streamlit.app" },
+          { name: "OI Decay", url: "https://oidecay.streamlit.app" },
+          { name: "FnO Backtesting", url: "https://fnobacktesting.streamlit.app" }
+        ]
+      },
+      {
+        category: "Live Market & Scanners", icon: "fa-solid fa-bolt", color: "#10b981",
+        apps: [
+          { name: "FII DII Data", url: "https://fiidii.streamlit.app" },
+          { name: "Intraday Reversal", url: "https://intradayreversal.streamlit.app" },
+          { name: "Last Traded Price", url: "https://lasttradedprice.streamlit.app" },
+          { name: "Nifty Live GS", url: "https://niftylivebygs.streamlit.app" },
+          { name: "Nubra LTP", url: "https://nubraltp.streamlit.app" },
+          { name: "Market Depth GS", url: "https://marketdepthgs.streamlit.app" },
+          { name: "Orderbook Track", url: "https://orderbooktrack.streamlit.app" },
+          { name: "Screeners App", url: "https://screenersapp.streamlit.app" }
+        ]
+      },
+      {
+        category: "Technical & Fundamentals", icon: "fa-solid fa-chart-pie", color: "#3b82f6",
+        apps: [
+          { name: "Fundamental GS", url: "https://fundamentalgs.streamlit.app" },
+          { name: "MFH Analysis 1", url: "https://mfhanalysis.streamlit.app" },
+          { name: "MFH Analysis 2", url: "https://mfhanalysis2.streamlit.app" },
+          { name: "Dow Theory", url: "https://dowtheory.streamlit.app" },
+          { name: "Sector Analysis", url: "https://sectoranalysis.streamlit.app" },
+          { name: "Tech Funda", url: "https://techfunda.streamlit.app" },
+          { name: "Technical GS", url: "https://technicalgs.streamlit.app" }
+        ]
+      },
+      {
+        category: "News & Tools", icon: "fa-solid fa-newspaper", color: "#f97316",
+        apps: [
+          { name: "Backtest 111", url: "https://backtest111.streamlit.app" },
+          { name: "All News", url: "https://allnews.streamlit.app" },
+          { name: "One India News", url: "https://oneindianews.streamlit.app" },
+          { name: "Trading Journal GS", url: "https://tradingjournalgs.streamlit.app" }
+        ]
+      },
+      {
+        category: "Utilities & Weather", icon: "fa-solid fa-cloud-sun", color: "#06b6d4",
+        apps: [
+          { name: "Master Data GS", url: "https://masterdatags.streamlit.app" },
+          { name: "GS World 1", url: "https://gsworld.streamlit.app" },
+          { name: "GS World 2", url: "https://gsworld1.streamlit.app" },
+          { name: "GS Library", url: "https://gslibrary.streamlit.app" },
+          { name: "Backup Multi", url: "https://backupmulti.streamlit.app" },
+          { name: "Multis", url: "https://multis.streamlit.app" },
+          { name: "Contact App", url: "https://8003994518.streamlit.app" },
+          { name: "Rulebook 24", url: "https://rulebook24.streamlit.app" },
+          { name: "RB 1122", url: "https://rb1122.streamlit.app" },
+          { name: "Sec Sea", url: "https://secsea.streamlit.app" },
+          { name: "Rao Saab App", url: "https://raosaab.streamlit.app" },
+          { name: "USA Weather", url: "https://usaweather.streamlit.app" },
+          { name: "USA Weather 1", url: "https://usaweather1.streamlit.app" },
+          { name: "USA Weather 2", url: "https://usaweather2.streamlit.app" },
+          { name: "USA Weather 3", url: "https://usaweather3.streamlit.app" },
+          { name: "USA Weather 4", url: "https://usaweather4.streamlit.app" }
+        ]
+      }
+    ];
+
+    const leftCol = document.getElementById('leftColumn');
+    const rightCol = document.getElementById('rightColumn');
+    const iframe = document.getElementById('appViewer');
+    const placeholder = document.getElementById('placeholder');
+    const placeholderText = document.getElementById('placeholderText');
+
+    function renderApps() {
+      appsData.forEach((cat, index) => {
+        const targetCol = (index % 2 === 0) ? leftCol : rightCol;
+
+        const secTitle = document.createElement('div');
+        secTitle.className = 'section-title';
+        secTitle.innerHTML = `<i class="${cat.icon}" style="color: ${cat.color};"></i> ${cat.category}`;
+        targetCol.appendChild(secTitle);
+
+        cat.apps.forEach(app => {
+          const card = document.createElement('div');
+          card.className = 'compact-card';
+          card.innerHTML = `
+            <div class="compact-info">
+              <div class="compact-icon"><i class="${cat.icon}"></i></div>
+              <div class="card-title">${app.name}</div>
+            </div>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem; color: var(--text-muted);"></i>
+          `;
+          card.onclick = () => loadApp(app.url, app.name, card);
+          targetCol.appendChild(card);
+        });
+      });
+
+      // Automatically load the first app
+      const firstCard = leftCol.querySelector('.compact-card');
+      if (firstCard) {
+        firstCard.click();
+      }
+    }
+
+    function loadApp(url, name, cardElement) {
+      document.querySelectorAll('.compact-card').forEach(c => c.classList.remove('active'));
+      if(cardElement) cardElement.classList.add('active');
+
+      placeholder.style.display = 'flex';
+      placeholderText.textContent = `Loading ${name}...`;
+      iframe.style.display = 'none';
+      iframe.src = url + "/?embed=true";
+    }
+
+    function onIframeLoaded() {
+      if (iframe.src && iframe.src !== 'about:blank') {
+        placeholder.style.display = 'none';
+        iframe.style.display = 'block';
+      }
+    }
+
+    function filterApps() {
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      document.querySelectorAll('.compact-card').forEach(card => {
+        const match = card.innerText.toLowerCase().includes(q);
+        card.style.display = match ? 'flex' : 'none';
+      });
+    }
+
+    renderApps();
+  </script>
+</body>
+</html>
