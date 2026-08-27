@@ -11,7 +11,7 @@ SOURCE_REPO = "Data-Collector"
 SOURCE_BRANCH = "main"
 FOLDERS = ["stockdata_15", "stockdata_1H", "stockdata_D", "stockdata_W", "stockdata_M"]
 ROOT = Path(__file__).resolve().parent
-DEST = ROOT / "COPIEDDATA"
+DEST = ROOT
 MANIFEST = DEST / ".copy_manifest.json"
 API = f"https://api.github.com/repos/{OWNER}/{SOURCE_REPO}/git/trees/{SOURCE_BRANCH}"
 
