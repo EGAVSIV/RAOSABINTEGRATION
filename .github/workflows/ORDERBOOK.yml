@@ -5,7 +5,6 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch:
 
-# Grant write access to repository contents for git push
 permissions:
   contents: write
 
@@ -37,12 +36,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          if [ -f "orderbook/nse_orders_data.json" ]; then
-            git add orderbook/nse_orders_data.json
-          elif [ -f "nse_orders_data.json" ]; then
-            git add nse_orders_data.json
-          fi
-
+          git add orderbook/nse_orders_data.json
           git status
           git diff --quiet && git diff --staged --quiet || git commit -m "auto: update nse_orders_data.json [skip ci]"
           git push
