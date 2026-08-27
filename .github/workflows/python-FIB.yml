@@ -1,0 +1,36 @@
+name: Run FIB Engine Scan
+
+on:
+  schedule:
+    # Runs automatically every day at midnight UTC (adjust timing as needed)
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual triggers from the GitHub Actions tab
+
+jobs:
+  run-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas
+
+      - name: Execute Engine Script
+        run: |
+          python fib/engine.py
+
+      - name: Commit and Push Results
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add results.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update stock analysis results [skip ci]" && git push)
