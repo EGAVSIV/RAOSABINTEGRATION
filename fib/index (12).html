@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0620">
+  <title>raosab.in — Fibonacci Retracement Scanner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-base: #070514;
+      --bg-card: rgba(18, 14, 43, 0.7);
+      --bg-card-hover: rgba(30, 24, 66, 0.8);
+      --border-color: rgba(139, 92, 246, 0.2);
+      --border-accent: rgba(56, 189, 248, 0.4);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-cyan: #38bdf8;
+      --accent-purple: #8b5cf6;
+      --accent-pink: #ec4899;
+      --accent-green: #10b981;
+      --font-main: 'DM Sans', sans-serif;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Aurora & Grid Backgrounds */
+    .aurora {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: -2;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    .a1 { width: 500px; height: 500px; background: var(--accent-purple); top: -100px; left: -100px; }
+    .a2 { width: 450px; height: 450px; background: var(--accent-cyan); top: 30%; right: -150px; }
+    .a3 { width: 600px; height: 600px; background: #3b82f6; bottom: -200px; left: 20%; }
+    
+    .grid-glow {
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .glass {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+    }
+
+    /* Topbar */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      border-bottom: 1px solid var(--border-color);
+      background: rgba(10, 6, 32, 0.8);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand-wrap { display: flex; align-items: center; gap: 14px; }
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    }
+    .eyebrow { font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); tracking: 1px; display: flex; align-items: center; gap: 6px; }
+    .live-dot { width: 6px; height: 6px; background: var(--accent-green); border-radius: 50%; box-shadow: 0 0 8px var(--accent-green); }
+    .brand-mega { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: #fff; text-decoration: none; }
+    .brand-mega span { color: var(--accent-cyan); }
+    .brand-text p { font-size: 0.8rem; color: var(--text-muted); }
+
+    .header-actions { display: flex; align-items: center; gap: 16px; }
+    .clock-pill {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-color);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      display: flex;
+      gap: 8px;
+    }
+    .clock-tz { color: var(--accent-cyan); font-weight: 700; }
+    .connection-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--accent-green);
+    }
+    .pulse { width: 8px; height: 8px; background: var(--accent-green); border-radius: 50%; animation: blink 1.5s infinite; }
+
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    /* Layout */
+    .layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 24px;
+      max-width: 1400px;
+      margin: 24px auto;
+      padding: 0 24px;
+    }
+
+    /* Sidebar */
+    .sidebar { padding: 24px; height: fit-content; }
+    .side-heading { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; }
+    .side-icon { font-size: 1.2rem; color: var(--accent-cyan); }
+    .side-heading span { font-size: 0.7rem; color: var(--text-muted); font-weight: 700; }
+    .side-heading h2 { font-family: var(--font-heading); font-size: 1.1rem; }
+
+    .control-group { margin-bottom: 20px; }
+    .control-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
+    .field-wrap { position: relative; }
+    select, input {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(10, 6, 32, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: #fff;
+      font-family: var(--font-main);
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.3s ease;
+      appearance: none;
+    }
+    select:focus, input:focus { border-color: var(--accent-cyan); box-shadow: 0 0 10px rgba(56, 189, 248, 0.2); }
+    .field-wrap b { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--text-muted); }
+
+    .selected-scanner {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(56, 189, 248, 0.1));
+      border: 1px solid var(--border-accent);
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 10px;
+    }
+    .selected-top { font-size: 0.7rem; font-weight: 700; color: var(--accent-cyan); display: flex; align-items: center; gap: 4px; }
+    .selected-scanner strong { display: block; font-family: var(--font-heading); font-size: 1rem; margin-top: 4px; }
+    .selected-scanner small { font-size: 0.75rem; color: var(--text-muted); }
+
+    /* Content Area & Results */
+    .results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+    }
+    .section-kicker { font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); display: flex; align-items: center; gap: 6px; }
+    .results-header h2 { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; }
+    .results-header h2 em { font-style: normal; color: var(--accent-cyan); }
+    
+    .search-wrap { position: relative; width: 260px; }
+    .search-wrap span { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+    .search-wrap input { padding-left: 36px; }
+
+    /* Data Table */
+    .result-card { padding: 24px; overflow: hidden; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th {
+      padding: 14px 18px;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      border-bottom: 2px solid var(--border-color);
+      background: rgba(10, 6, 32, 0.4);
+    }
+    td { padding: 16px 18px; border-bottom: 1px solid var(--border-color); font-size: 0.95rem; }
+    tr:hover td { background: var(--bg-card-hover); }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(139, 92, 246, 0.2));
+      border: 1px solid var(--border-accent);
+      color: #fff;
+    }
+
+    .empty { text-align: center; padding: 60px 20px; }
+    .empty-orb { font-size: 3rem; color: var(--accent-purple); margin-bottom: 12px; }
+    .empty h3 { font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 6px; }
+    .empty p { color: var(--text-muted); font-size: 0.9rem; }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 60px;
+      border-top: 1px solid var(--border-color);
+      background: rgba(10, 6, 32, 0.9);
+      padding: 40px 24px 24px 24px;
+    }
+    .footer-top {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-brand { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none; }
+    .footer-brand span { color: var(--accent-cyan); }
+    .social-row { display: flex; gap: 12px; }
+    .social-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-color);
+      display: grid;
+      place-items: center;
+      color: var(--text-muted);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .social-btn:hover { color: #fff; border-color: var(--accent-cyan); background: rgba(56, 189, 248, 0.2); }
+    .footer-bottom { text-align: center; margin-top: 30px; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .topbar { flex-direction: column; gap: 16px; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="aurora a1"></div>
+  <div class="aurora a2"></div>
+  <div class="aurora a3"></div>
+  <div class="grid-glow"></div>
+
+  <!-- Top Navigation Bar -->
+  <header class="topbar">
+    <div class="brand-wrap">
+      <div class="brand-icon">▥</div>
+      <div class="brand-text">
+        <div class="eyebrow"><span class="live-dot"></span> LIVE QUANT TERMINAL · NSE</div>
+        <a class="brand-mega" href="https://www.raosab.in" target="_blank" rel="noopener">raosab<span>.in</span></a>
+        <p>Multi-Timeframe Stock Screener — Fibonacci Engine</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="clock-pill">
+        <span class="clock-tz">IST</span>
+        <span id="clockTime">--:--:--</span>
+      </div>
+      <div class="connection-pill">
+        <span class="pulse"></span>
+        <span id="connectionText">SYSTEM ACTIVE</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Grid Layout -->
+  <main class="layout">
+    
+    <!-- Left Sidebar Control Panel -->
+    <aside class="sidebar glass">
+      <div class="side-heading">
+        <div class="side-icon">⚙</div>
+        <div>
+          <span>CONTROL PANEL</span>
+          <h2>Scanner Controls</h2>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label for="timeframe">⏱ Timeframe</label>
+        <div class="field-wrap">
+          <select id="timeframe" onchange="renderTable()">
+            <option value="15 Min">15 Min</option>
+            <option value="1 Hour">1 Hour</option>
+            <option value="Daily" selected>Daily</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Monthly">Monthly</option>
+          </select>
+          <b>⌄</b>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label for="lookback">🔢 Lookback Bars</label>
+        <div class="field-wrap">
+          <select id="lookback" onchange="renderTable()">
+            <option value="50" selected>50 Bars</option>
+            <option value="100">100 Bars</option>
+            <option value="200">200 Bars</option>
+          </select>
+          <b>⌄</b>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label for="fibZone">📐 Fib Zone Target</label>
+        <div class="field-wrap">
+          <select id="fibZone" onchange="renderTable()">
+            <option value="61-78" selected>61% - 78% Zone</option>
+            <option value="58-61">58% - 61% Zone</option>
+            <option value="35-50">35% - 50% Zone</option>
+          </select>
+          <b>⌄</b>
+        </div>
+      </div>
+
+      <div class="selected-scanner">
+        <div class="selected-top">◉ ACTIVE ALGORITHM</div>
+        <strong>Fibonacci Retracement</strong>
+        <small>Auto-calculated via engine.py</small>
+      </div>
+    </aside>
+
+    <!-- Main Results Area -->
+    <section class="content">
+      <section class="results-header">
+        <div>
+          <div class="section-kicker"><span>✦</span> LIVE OUTPUT</div>
+          <h2>Scanner <em>Results</em></h2>
+        </div>
+        <div class="search-wrap">
+          <span>⌕</span>
+          <input id="search" type="search" placeholder="Search stock symbol..." oninput="renderTable()">
+        </div>
+      </section>
+
+      <section class="result-card glass">
+        <div class="table-wrap">
+          <table id="resultsTable">
+            <thead>
+              <tr>
+                <th>Stock Symbol</th>
+                <th>Close Price</th>
+                <th>Zone Low</th>
+                <th>Zone High</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr><td colspan="4">Loading dataset...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div>
+        <a class="footer-brand" href="https://www.raosab.in" target="_blank" rel="noopener">raosab<span>.in</span></a>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Professional Quant & Stock Analytics Terminal</p>
+      </div>
+      <div class="social-row">
+        <a href="https://www.youtube.com/@AnmolVaaniQuotes" target="_blank" rel="noopener" aria-label="YouTube" class="social-btn"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12Z"/></svg></a>
+        <a href="https://x.com/EGAVSIV5" target="_blank" rel="noopener" aria-label="X (Twitter)" class="social-btn"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M18.9 2H22l-7.6 8.7L23.3 22h-7.2l-5.6-7.3L4 22H1l8.1-9.3L1 2h7.4l5 6.7Zm-1.3 18h1.8L7 4h-1.9Z"/></svg></a>
+        <a href="https://www.instagram.com/egavsiv/" target="_blank" rel="noopener" aria-label="Instagram" class="social-btn"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.25.64.42 1.37.47 2.43C21.99 8.94 22 9.3 22 12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47C15.06 21.99 14.7 22 12 22s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.7 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43a4.9 4.9 0 0 1 1.15-1.77A4.9 4.9 0 0 1 5.45 2.53c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.3 2 12 2Zm0 1.8c-2.65 0-2.99.01-4.04.06-.87.04-1.34.18-1.65.3a3.1 3.1 0 0 0-1.15.75 3.1 3.1 0 0 0-.75 1.15c-.12.31-.26.78-.3 1.65C4.01 9 4 9.35 4 12s.01 3 .06 4.04c.04.87.18 1.34.3 1.65.15.4.33.72.75 1.15.4.4.73.6 1.15.75.31.12.78.26 1.65.3 1.05.05 1.39.06 4.04.06s3-.01 4.04-.06c.87-.04 1.34-.18 1.65-.3.4-.15.72-.33 1.15-.75.4-.4.6-.73.75-1.15.12-.31.26-.78.3-1.65.05-1.05.06-1.39.06-4.04s-.01-3-.06-4.04c-.04-.87-.18-1.34-.3-1.65a3.1 3.1 0 0 0-.75-1.15 3.1 3.1 0 0 0-1.15-.75c-.31-.12-.78-.26-1.65-.3C15 4.01 14.65 4 12 4Zm0 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm4.7-2a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1Z"/></svg></a>
+        <a href="https://www.facebook.com/gauravsinghyadav007/" target="_blank" rel="noopener" aria-label="Facebook" class="social-btn"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="footYear"></span> raosab.in · Automated Market Scan Results · Educational Purpose Only
+    </div>
+  </footer>
+
+  <!-- Embedded Dashboard Logic -->
+  <script>
+    let rawData = {};
+
+    // Live IST Clock
+    function updateClock() {
+      const now = new Date();
+      const options = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+      document.getElementById('clockTime').textContent = now.toLocaleTimeString('en-US', options);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    document.getElementById('footYear').textContent = new Date().getFullYear();
+
+    // Data Fetcher
+    async function loadData() {
+      try {
+        const response = await fetch('results.json');
+        rawData = await response.json();
+        renderTable();
+      } catch (err) {
+        document.getElementById('tableBody').innerHTML = 
+          `<tr><td colspan="4" style="text-align:center; color:#ef4444;">Error fetching results.json. Run engine.py first!</td></tr>`;
+      }
+    }
+
+    // Dynamic Filter Engine
+    function renderTable() {
+      const tf = document.getElementById('timeframe').value;
+      const lb = document.getElementById('lookback').value;
+      const zone = document.getElementById('fibZone').value;
+      const search = document.getElementById('search').value.toLowerCase();
+      
+      const tbody = document.getElementById('tableBody');
+      tbody.innerHTML = '';
+
+      const records = (rawData[tf] && rawData[tf][lb] && rawData[tf][lb][zone]) ? rawData[tf][lb][zone] : [];
+      const filtered = records.filter(r => r.Stock.toLowerCase().includes(search));
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="4">
+              <div class="empty">
+                <div class="empty-orb">⌁</div>
+                <h3>No stocks found in target zone</h3>
+                <p>Try switching timeframe or selecting a different Fibonacci zone.</p>
+              </div>
+            </td>
+          </tr>`;
+        return;
+      }
+
+      filtered.forEach(row => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><span class="badge">${row.Stock}</span></td>
+          <td style="font-weight:700; color: var(--accent-cyan); font-family: var(--font-mono);">${row.Close}</td>
+          <td style="font-family: var(--font-mono);">${row.ZoneLow}</td>
+          <td style="font-family: var(--font-mono);">${row.ZoneHigh}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
