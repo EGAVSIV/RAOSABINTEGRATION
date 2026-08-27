@@ -373,7 +373,7 @@ async function loadResult(){
   const btn = document.getElementById('refreshBtn');
   btn.classList.add('loading');
   try{
-    const res = await fetch('geotrader/result.json?_=' + Date.now());
+    const res = await fetch('result.json?_=' + Date.now());
     if(!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
     renderAll(data);
