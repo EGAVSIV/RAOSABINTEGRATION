@@ -7,363 +7,13 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg-deep:#05070f;
-    --bg-panel:#0c1120;
-    --bg-panel-2:#10182c;
-    --panel-border:rgba(148,163,184,0.14);
-    --panel-border-strong:rgba(240,185,11,0.35);
-    --gold:#f0b90b;
-    --gold-soft:rgba(240,185,11,0.14);
-    --emerald:#22c55e;
-    --emerald-soft:rgba(34,197,94,0.14);
-    --crimson:#fb4570;
-    --crimson-soft:rgba(251,69,112,0.14);
-    --cyan:#38d3f8;
-    --cyan-soft:rgba(56,211,248,0.12);
-    --text-primary:#e9eefb;
-    --text-muted:#8592ac;
-    --text-faint:#4c5872;
-    --mono:'JetBrains Mono',monospace;
-    --display:'Space Grotesk',sans-serif;
-    --body:'Inter',sans-serif;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    font-family:var(--body);
-    background:
-      radial-gradient(1200px 600px at 15% -10%, rgba(240,185,11,0.08), transparent 60%),
-      radial-gradient(1000px 500px at 100% 0%, rgba(56,211,248,0.07), transparent 55%),
-      var(--bg-deep);
-    color:var(--text-primary);
-    min-height:100vh;
-  }
-  .container{max-width:1440px;margin:0 auto;padding:22px 26px 60px;}
-
-  /* ---- Ticker ---- */
-  .ticker-wrap{
-    background:linear-gradient(90deg,#0c1120,#0f1730 50%,#0c1120);
-    border:1px solid var(--panel-border-strong);
-    border-radius:10px;
-    overflow:hidden;
-    margin-bottom:20px;
-    position:relative;
-    height:40px;
-  }
-  .ticker-wrap::before{
-    content:"LIVE";
-    position:absolute;left:0;top:0;bottom:0;
-    display:flex;align-items:center;
-    padding:0 14px;
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:1px;
-    color:#05070f;
-    background:var(--gold);
-    z-index:2;
-    font-weight:700;
-  }
-  .ticker-track{
-    display:flex;
-    align-items:center;
-    height:100%;
-    white-space:nowrap;
-    animation:scroll-ticker 38s linear infinite;
-    padding-left:80px;
-    font-family:var(--mono);
-    font-size:13px;
-  }
-  .ticker-track span{margin-right:34px;color:var(--text-muted);}
-  .ticker-track b{color:var(--text-primary);font-weight:600;}
-  .t-up{color:var(--emerald);}
-  .t-mid{color:var(--gold);}
-  .t-high{color:var(--crimson);}
-  @keyframes scroll-ticker{
-    0%{transform:translateX(0);}
-    100%{transform:translateX(-50%);}
-  }
-
-  /* ---- Header ---- */
-  header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:linear-gradient(135deg,var(--bg-panel),var(--bg-panel-2));
-    border:1px solid var(--panel-border);
-    border-radius:16px;
-    padding:22px 32px;
-    margin-bottom:22px;
-    flex-wrap:wrap;
-    gap:14px;
-    position:relative;
-    overflow:hidden;
-  }
-  header::after{
-    content:"";
-    position:absolute;top:-40%;right:-10%;
-    width:280px;height:280px;
-    background:radial-gradient(circle, rgba(240,185,11,0.16), transparent 70%);
-    pointer-events:none;
-  }
-  .header-title{display:flex;align-items:center;gap:16px;z-index:1;}
-  .logo-badge{
-    width:52px;height:52px;border-radius:12px;
-    background:linear-gradient(135deg,var(--gold),#c9930a);
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 8px 24px rgba(240,185,11,0.25);
-  }
-  .logo-badge i{color:#05070f;font-size:22px;}
-  .header-title h1{
-    font-family:var(--display);
-    font-size:23px;
-    margin:0;
-    font-weight:700;
-    letter-spacing:0.2px;
-    color:var(--text-primary);
-  }
-  .header-title p{
-    margin:2px 0 0;
-    font-size:12.5px;
-    color:var(--text-muted);
-    font-family:var(--mono);
-    letter-spacing:0.4px;
-  }
-  .header-clock{
-    text-align:right;
-    font-family:var(--mono);
-    z-index:1;
-  }
-  .header-clock .status{
-    display:inline-flex;align-items:center;gap:6px;
-    font-size:12px;color:var(--emerald);
-    background:var(--emerald-soft);
-    border:1px solid rgba(34,197,94,0.3);
-    padding:4px 10px;border-radius:20px;
-    margin-bottom:6px;
-  }
-  .header-clock .status::before{
-    content:"";width:6px;height:6px;border-radius:50%;background:var(--emerald);
-    box-shadow:0 0 6px var(--emerald);
-  }
-  #liveDate{color:var(--text-muted);font-size:12px;}
-
-  /* ---- Metrics ---- */
-  .metrics-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:16px;
-    margin-bottom:22px;
-  }
-  .metric-card{
-    background:var(--bg-panel);
-    border:1px solid var(--panel-border);
-    border-left:3px solid var(--gold);
-    padding:20px 22px;
-    border-radius:14px;
-    position:relative;
-    overflow:hidden;
-    transition:transform .2s ease, border-color .2s ease;
-  }
-  .metric-card:hover{transform:translateY(-2px);border-color:var(--panel-border-strong);}
-  .metric-card:nth-child(2){border-left-color:var(--crimson);}
-  .metric-card:nth-child(3){border-left-color:var(--cyan);}
-  .metric-card h3{
-    font-size:11.5px;color:var(--text-muted);
-    margin:0 0 10px;text-transform:uppercase;letter-spacing:1.2px;
-    font-family:var(--mono);
-    display:flex;align-items:center;gap:8px;
-  }
-  .metric-card .value{
-    font-family:var(--display);
-    font-size:32px;font-weight:700;color:var(--text-primary);
-  }
-  .metric-card .value small{font-size:15px;color:var(--text-muted);font-family:var(--body);}
-
-  /* ---- Filters ---- */
-  .filter-panel{
-    background:var(--bg-panel);
-    border:1px solid var(--panel-border);
-    padding:18px 20px;
-    border-radius:14px;
-    margin-bottom:26px;
-    display:flex;
-    gap:18px;
-    flex-wrap:wrap;
-    align-items:flex-end;
-  }
-  .filter-group{display:flex;flex-direction:column;gap:7px;flex:1;min-width:200px;}
-  label{
-    font-size:11.5px;color:var(--text-muted);
-    text-transform:uppercase;letter-spacing:0.8px;
-    font-family:var(--mono);
-  }
-  select,input{
-    background:#070b16;
-    border:1px solid var(--panel-border);
-    color:var(--text-primary);
-    padding:11px 14px;
-    border-radius:9px;
-    outline:none;
-    font-family:var(--body);
-    font-size:14px;
-    transition:border-color .15s ease, box-shadow .15s ease;
-  }
-  select:focus,input:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-soft);}
-  input::placeholder{color:var(--text-faint);}
-
-  /* ---- Section titles ---- */
-  .section-title{
-    font-family:var(--display);
-    font-size:18px;
-    font-weight:600;
-    margin:0 0 14px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    color:var(--text-primary);
-  }
-  .section-title i{color:var(--gold);}
-  .section-sub{
-    font-size:12.5px;color:var(--text-muted);
-    margin:-8px 0 14px;
-    font-family:var(--mono);
-  }
-
-  /* ---- Tables ---- */
-  .table-container{
-    background:var(--bg-panel);
-    border:1px solid var(--panel-border);
-    border-radius:14px;
-    overflow-x:auto;
-    margin-bottom:34px;
-  }
-  table{width:100%;border-collapse:collapse;text-align:left;min-width:900px;}
-  thead th{
-    position:sticky;top:0;
-    background:#080d1b;
-    color:var(--text-muted);
-    padding:14px 16px;
-    font-size:11.5px;
-    text-transform:uppercase;
-    letter-spacing:0.7px;
-    font-family:var(--mono);
-    border-bottom:1px solid var(--panel-border-strong);
-    white-space:nowrap;
-  }
-  td{
-    padding:14px 16px;
-    border-top:1px solid var(--panel-border);
-    font-size:13.5px;
-    color:var(--text-primary);
-    white-space:nowrap;
-  }
-  td.wrap{white-space:normal;max-width:280px;color:var(--text-muted);font-size:13px;}
-  tbody tr{transition:background .15s ease;}
-  tbody tr:nth-child(even){background:rgba(255,255,255,0.015);}
-  tbody tr:hover{background:rgba(240,185,11,0.05);}
-
-  .sym-cell{display:flex;align-items:center;gap:10px;}
-  .sym-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-  .sym-code{font-family:var(--mono);font-weight:700;letter-spacing:0.4px;color:var(--text-primary);}
-
-  .mono{font-family:var(--mono);}
-  .val-rupee{color:var(--cyan);font-family:var(--mono);font-weight:600;}
-
-  .pct-bar-wrap{display:flex;align-items:center;gap:8px;}
-  .pct-bar-track{width:70px;height:6px;border-radius:4px;background:rgba(255,255,255,0.08);overflow:hidden;}
-  .pct-bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--gold),var(--crimson));}
-  .pct-label{font-family:var(--mono);font-size:12.5px;color:var(--text-muted);min-width:38px;}
-
-  .badge{
-    padding:5px 11px;
-    border-radius:6px;
-    font-size:12px;
-    font-weight:700;
-    font-family:var(--mono);
-    display:inline-flex;align-items:center;gap:6px;
-  }
-  .badge::before{content:"";width:6px;height:6px;border-radius:50%;}
-  .badge-high{background:var(--crimson-soft);color:#ff90ab;}
-  .badge-high::before{background:var(--crimson);box-shadow:0 0 6px var(--crimson);}
-  .badge-mid{background:var(--gold-soft);color:#ffd668;}
-  .badge-mid::before{background:var(--gold);box-shadow:0 0 6px var(--gold);}
-  .badge-low{background:var(--emerald-soft);color:#6ee7a3;}
-  .badge-low::before{background:var(--emerald);box-shadow:0 0 6px var(--emerald);}
-
-  .sector-pill{
-    background:var(--cyan-soft);
-    color:#7fe3ff;
-    padding:4px 10px;
-    border-radius:20px;
-    font-size:11.5px;
-    font-family:var(--mono);
-    border:1px solid rgba(56,211,248,0.25);
-  }
-
-  .link-group a{
-    color:var(--text-muted);
-    text-decoration:none;
-    font-size:12.5px;
-    font-weight:600;
-    margin-right:12px;
-    transition:color .15s ease;
-  }
-  .link-group a:hover{color:var(--gold);}
-  .link-group i{margin-right:4px;}
-
-  .empty-row td{
-    text-align:center;
-    padding:40px;
-    color:var(--text-faint);
-    font-family:var(--mono);
-    font-size:13px;
-  }
-
-  /* ---- Footer ---- */
-  footer{
-    background:linear-gradient(135deg,var(--bg-panel),var(--bg-panel-2));
-    border:1px solid var(--panel-border);
-    border-radius:14px;
-    padding:26px 30px;
-    margin-top:10px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:18px;
-  }
-  .footer-info{line-height:1.7;font-size:13.5px;color:var(--text-muted);}
-  .footer-info strong{color:var(--text-primary);font-family:var(--display);font-size:14.5px;}
-  .footer-tagline{font-family:var(--mono);font-size:12px;color:var(--gold);margin-top:4px;}
-  .social-links{display:flex;gap:10px;}
-  .social-links a{
-    color:var(--text-primary);
-    text-decoration:none;
-    font-size:14px;
-    display:flex;align-items:center;gap:8px;
-    background:rgba(255,255,255,0.04);
-    border:1px solid var(--panel-border);
-    padding:9px 16px;
-    border-radius:9px;
-    transition:border-color .15s ease, transform .15s ease;
-  }
-  .social-links a:hover{border-color:var(--gold);transform:translateY(-1px);}
-
-  @media (max-width:640px){
-    .container{padding:14px;}
-    header{padding:18px;}
-    .header-clock{text-align:left;}
-    table{min-width:760px;}
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="container">
 
-  <header>
+  <header class="reveal" style="--d:0s">
     <div class="header-title">
       <div class="logo-badge"><i class="fa-solid fa-chart-line"></i></div>
       <div>
@@ -377,28 +27,28 @@
     </div>
   </header>
 
-  <div class="ticker-wrap">
+  <div class="ticker-wrap reveal" style="--d:.05s">
     <div class="ticker-track" id="tickerTrack">
       <span><b>Loading market data…</b></span>
     </div>
   </div>
 
   <div class="metrics-grid">
-    <div class="metric-card">
+    <div class="metric-card reveal" style="--d:.1s">
       <h3><i class="fa-solid fa-layer-group"></i> Total Orders Tracked</h3>
       <div class="value" id="metric-total">0</div>
     </div>
-    <div class="metric-card">
+    <div class="metric-card reveal" style="--d:.16s">
       <h3><i class="fa-solid fa-bolt"></i> Highest Impact Score</h3>
       <div class="value" id="metric-max-impact">0</div>
     </div>
-    <div class="metric-card">
+    <div class="metric-card reveal" style="--d:.22s">
       <h3><i class="fa-solid fa-sack-dollar"></i> Total Value</h3>
       <div class="value"><small>₹</small> <span id="metric-total-val">0</span> <small>Cr</small></div>
     </div>
   </div>
 
-  <div class="filter-panel">
+  <div class="filter-panel reveal" style="--d:.28s">
     <div class="filter-group">
       <label for="stockFilter"><i class="fa-solid fa-tag"></i> Filter by Stock</label>
       <select id="stockFilter" onchange="applyFilters()">
@@ -417,9 +67,22 @@
     </div>
   </div>
 
-  <h2 class="section-title"><i class="fa-solid fa-brain"></i> Order Impact Ranking</h2>
-  <p class="section-sub">Ranked by impact score — order size relative to market cap and completion horizon</p>
-  <div class="table-container">
+  <h2 class="section-title reveal" style="--d:.32s"><i class="fa-solid fa-chart-pie"></i> Analytics</h2>
+  <p class="section-sub reveal" style="--d:.34s">Visual read of impact concentration and sector spread — updates live with your filters</p>
+  <div class="charts-grid">
+    <div class="chart-card reveal" style="--d:.36s">
+      <h3><i class="fa-solid fa-ranking-star"></i> Top 10 by Impact Score</h3>
+      <div class="chart-box"><canvas id="impactChart"></canvas></div>
+    </div>
+    <div class="chart-card reveal" style="--d:.4s">
+      <h3><i class="fa-solid fa-industry"></i> Order Value by Sector</h3>
+      <div class="chart-box"><canvas id="sectorChart"></canvas></div>
+    </div>
+  </div>
+
+  <h2 class="section-title reveal" style="--d:.44s"><i class="fa-solid fa-brain"></i> Order Impact Ranking</h2>
+  <p class="section-sub reveal" style="--d:.46s">Ranked by impact score — order size relative to market cap and completion horizon</p>
+  <div class="table-container reveal" style="--d:.48s">
     <table>
       <thead>
         <tr>
@@ -438,9 +101,9 @@
     </table>
   </div>
 
-  <h2 class="section-title"><i class="fa-solid fa-rotate"></i> Raw NSE Order Announcements</h2>
-  <p class="section-sub">Unfiltered exchange feed as disclosed by listed companies</p>
-  <div class="table-container">
+  <h2 class="section-title reveal" style="--d:.5s"><i class="fa-solid fa-rotate"></i> Raw NSE Order Announcements</h2>
+  <p class="section-sub reveal" style="--d:.52s">Unfiltered exchange feed as disclosed by listed companies</p>
+  <div class="table-container reveal" style="--d:.54s">
     <table>
       <thead>
         <tr>
@@ -455,7 +118,7 @@
     </table>
   </div>
 
-  <footer>
+  <footer class="reveal" style="--d:.58s">
     <div class="footer-info">
       <strong>Designed by Gaurav Singh Yadav</strong><br>
       Built with love — Energy · Commodity · Quant Intelligence 📶
@@ -469,187 +132,7 @@
 
 </div>
 
-<script>
-let globalData = { announcements: [], rankings: [] };
-
-function updateClock(){
-  const now = new Date();
-  const opts = { weekday:'short', year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:true, timeZone:'Asia/Kolkata' };
-  document.getElementById('liveDate').textContent = now.toLocaleString('en-IN', opts) + ' IST';
-}
-updateClock();
-setInterval(updateClock, 1000);
-
-async function loadData() {
-    try {
-        const response = await fetch('nse_orders_data.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        globalData = await response.json();
-
-        populateFilters();
-        renderMetrics(globalData.rankings || []);
-        renderRankings(globalData.rankings || []);
-        renderAnnouncements(globalData.announcements || []);
-        renderTicker(globalData.rankings || []);
-    } catch (error) {
-        console.error("Error loading JSON file data:", error);
-        document.getElementById('tickerTrack').innerHTML = '<span><b>⚠ Could not load nse_orders_data.json — place it alongside this file.</b></span>';
-    }
-}
-
-function populateFilters() {
-    const stockSelect = document.getElementById('stockFilter');
-    const symbols = [...new Set((globalData.announcements || []).map(item => item.symbol))].sort();
-    symbols.forEach(sym => {
-        if(sym) {
-            const option = document.createElement('option');
-            option.value = sym;
-            option.textContent = sym;
-            stockSelect.appendChild(option);
-        }
-    });
-
-    const descSelect = document.getElementById('descFilter');
-    if (descSelect) {
-        const descriptions = [...new Set((globalData.announcements || []).map(item => item.desc))].filter(Boolean).sort();
-        descriptions.forEach(desc => {
-            const option = document.createElement('option');
-            option.value = desc;
-            option.textContent = desc;
-            descSelect.appendChild(option);
-        });
-    }
-}
-
-function applyFilters() {
-    const stock = document.getElementById('stockFilter').value;
-    const descElement = document.getElementById('descFilter');
-    const desc = descElement ? descElement.value : 'All';
-    const search = document.getElementById('searchFilter').value.toLowerCase();
-
-    const filteredAnnouncements = (globalData.announcements || []).filter(a => {
-        const matchesStock = stock === 'All' || a.symbol === stock;
-        const matchesDesc = desc === 'All' || a.desc === desc;
-        const matchesSearch = (a.symbol && a.symbol.toLowerCase().includes(search)) ||
-                              (a.sm_name && a.sm_name.toLowerCase().includes(search));
-        return matchesStock && matchesDesc && matchesSearch;
-    });
-
-    const validSymbols = new Set(filteredAnnouncements.map(a => a.symbol));
-
-    const filteredRankings = (globalData.rankings || []).filter(r => {
-        const matchesStock = stock === 'All' || r.symbol === stock;
-        const matchesDesc = desc === 'All' || r.desc === desc || validSymbols.has(r.symbol);
-        const matchesSearch = (r.symbol && r.symbol.toLowerCase().includes(search)) ||
-                              (r.company && r.company.toLowerCase().includes(search));
-        return matchesStock && matchesDesc && matchesSearch;
-    });
-
-    renderRankings(filteredRankings);
-    renderAnnouncements(filteredAnnouncements);
-    renderMetrics(filteredRankings);
-}
-
-function impactTier(score){
-    if (score > 50) return { cls: 'high', label: 'High' };
-    if (score > 20) return { cls: 'mid', label: 'Mid' };
-    return { cls: 'low', label: 'Low' };
-}
-
-function fmtNum(n){
-    if (n === undefined || n === null || isNaN(n)) return '—';
-    return Number(n).toLocaleString('en-IN');
-}
-
-function renderMetrics(rankings) {
-    document.getElementById('metric-total').innerText = rankings.length;
-    const maxImpact = rankings.length ? Math.max(...rankings.map(r => r.impact_score || 0)) : 0;
-    document.getElementById('metric-max-impact').innerText = fmtNum(maxImpact);
-    const totalVal = rankings.reduce((acc, curr) => acc + (curr.order_val_cr || 0), 0);
-    document.getElementById('metric-total-val').innerText = totalVal.toLocaleString('en-IN');
-}
-
-function renderTicker(rankings) {
-    const track = document.getElementById('tickerTrack');
-    if (!rankings.length) {
-        track.innerHTML = '<span><b>No ranked orders available yet.</b></span>';
-        return;
-    }
-    const top = [...rankings].sort((a,b) => (b.impact_score||0) - (a.impact_score||0)).slice(0, 15);
-    const buildItems = () => top.map(r => {
-        const tier = impactTier(r.impact_score || 0);
-        const cls = tier.cls === 'high' ? 't-high' : (tier.cls === 'mid' ? 't-mid' : 't-up');
-        return `<span><b>${r.symbol || '—'}</b> ₹${fmtNum(r.order_val_cr)} Cr &nbsp;<span class="${cls}">● Impact ${fmtNum(r.impact_score)}</span></span>`;
-    }).join('');
-    track.innerHTML = buildItems() + buildItems();
-}
-
-function renderRankings(rankings) {
-    const tbody = document.getElementById('rankingsTable');
-    if (!rankings.length) {
-        tbody.innerHTML = `<tr class="empty-row"><td colspan="9"><i class="fa-solid fa-inbox"></i> No matching orders found</td></tr>`;
-        return;
-    }
-    tbody.innerHTML = rankings.map(r => {
-        const tier = impactTier(r.impact_score || 0);
-        const dotColor = tier.cls === 'high' ? 'var(--crimson)' : (tier.cls === 'mid' ? 'var(--gold)' : 'var(--emerald)');
-        const pct = Math.max(0, Math.min(100, r.order_pct_mcap || 0));
-        return `
-            <tr>
-                <td>
-                  <div class="sym-cell">
-                    <span class="sym-dot" style="background:${dotColor}"></span>
-                    <span class="sym-code">${r.symbol || '—'}</span>
-                  </div>
-                </td>
-                <td>${r.company || '—'}</td>
-                <td class="val-rupee">₹${fmtNum(r.order_val_cr)}</td>
-                <td class="mono">₹${fmtNum(r.market_cap_cr)}</td>
-                <td>
-                  <div class="pct-bar-wrap">
-                    <div class="pct-bar-track"><div class="pct-bar-fill" style="width:${pct}%"></div></div>
-                    <span class="pct-label">${r.order_pct_mcap ?? '—'}%</span>
-                  </div>
-                </td>
-                <td><span class="badge badge-${tier.cls}">${tier.label} · ${fmtNum(r.impact_score)}</span></td>
-                <td class="mono">${r.completion_time || '—'}</td>
-                <td><span class="sector-pill">${r.sector || '—'}</span></td>
-                <td>
-                  <div class="link-group">
-                    <a href="${r.screener_url || '#'}" target="_blank"><i class="fa-solid fa-chart-simple"></i>Screener</a>
-                    <a href="${r.pdf_url || '#'}" target="_blank"><i class="fa-solid fa-file-pdf"></i>PDF</a>
-                  </div>
-                </td>
-            </tr>
-        `;
-    }).join('');
-}
-
-function renderAnnouncements(announcements) {
-    const tbody = document.getElementById('announcementsTable');
-    if (!announcements.length) {
-        tbody.innerHTML = `<tr class="empty-row"><td colspan="5"><i class="fa-solid fa-inbox"></i> No matching announcements found</td></tr>`;
-        return;
-    }
-    tbody.innerHTML = announcements.map(a => `
-        <tr>
-            <td><span class="sym-code">${a.symbol || '—'}</span></td>
-            <td>${a.sm_name || '—'}</td>
-            <td class="wrap">${a.desc || '—'}</td>
-            <td class="mono">${a.Date || '—'}</td>
-            <td>
-              <div class="link-group">
-                <a href="${a.screener_url || '#'}" target="_blank"><i class="fa-solid fa-chart-simple"></i>Screener</a>
-                <a href="${a.attchmntFile || '#'}" target="_blank"><i class="fa-solid fa-file-pdf"></i>PDF</a>
-              </div>
-            </td>
-        </tr>
-    `).join('');
-}
-
-document.addEventListener('DOMContentLoaded', loadData);
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
