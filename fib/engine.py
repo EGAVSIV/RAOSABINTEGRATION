@@ -1,19 +1,12 @@
 import json
-import urllib.request
+from pathlib import Path
 import pandas as pd
 
 # =====================================================
-# DATA COLLECTOR REPO CONFIGURATION
+# LOCAL REPOSITORY PATH CONFIGURATION
 # =====================================================
-REPO_OWNER = "EGAVSIV"
-REPO_NAME = "Data-Collector"
-BRANCH = "main"
-
-# API endpoint for reading folder contents
-API_BASE_URL = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents"
-
-# Raw content endpoint for fetching actual JSON file data
-RAW_BASE_URL = f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}"
+# Resolves the root directory relative to this script (fib/ -> root)
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 TIMEFRAME_MAP = {
     "15 Min": "stockdata_15",
@@ -30,37 +23,17 @@ FIB_OPTIONS = {
 }
 
 LOOKBACK_LEVELS = [50, 100, 200]
-OUTPUT_JSON_FILE = "results.json"
+OUTPUT_JSON_FILE = BASE_DIR / "results.json"
 
 
-def fetch_url_json(url: str):
-    """Helper function to fetch JSON data from a remote URL."""
-    try:
-        req = urllib.request.Request(
-            url,
-            headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"},
-        )
-        with urllib.request.urlopen(req, timeout=10) as response:
-            return json.loads(response.read().decode())
-    except Exception as e:
-        return None
-
-
-def get_symbols_from_repo_folder(folder_name: str):
-    """Dynamically fetches all stock symbol file names from the Data-Collector folder via GitHub API."""
-    url = f"{API_BASE_URL}/{folder_name}?ref={BRANCH}"
-    folder_contents = fetch_url_json(url)
-
-    if not folder_contents or not isinstance(folder_contents, list):
-        print(f"Warning: Could not fetch symbol list for folder '{folder_name}'")
+def get_symbols_from_local_folder(folder_path: Path):
+    """Fetches all stock symbol file names from the local data folder."""
+    if not folder_path.exists() or not folder_path.is_dir():
+        print(f"Warning: Local folder '{folder_path}' does not exist.")
         return []
 
     # Extract symbol names from .json files (e.g., 'AAPL.json' -> 'AAPL')
-    symbols = [
-        item["name"].replace(".json", "")
-        for item in folder_contents
-        if item.get("name", "").endswith(".json")
-    ]
+    symbols = [f.stem for f in folder_path.glob("*.json")]
     return sorted(symbols)
 
 
@@ -84,13 +57,13 @@ def calculate_fib_levels(df: pd.DataFrame, lookback: int, fib_key: str):
 def run_engine():
     all_results = {}
 
-    for tf_label, folder in TIMEFRAME_MAP.items():
+    for tf_label, folder_name in TIMEFRAME_MAP.items():
         all_results[tf_label] = {}
-        print(f"Fetching symbols for {tf_label} ({folder})...")
+        folder_path = BASE_DIR / folder_name
         
-        # Dynamically pull symbol list from Data Collector Repo
-        symbols = get_symbols_from_repo_folder(folder)
-        print(f"Found {len(symbols)} symbols in {folder}.")
+        print(f"Scanning local files for {tf_label} ({folder_name})...")
+        symbols = get_symbols_from_local_folder(folder_path)
+        print(f"Found {len(symbols)} symbols in {folder_name}.")
 
         for lookback in LOOKBACK_LEVELS:
             all_results[tf_label][lookback] = {}
@@ -99,9 +72,14 @@ def run_engine():
                 scanned_stocks = []
 
                 for symbol in symbols:
-                    # Construct direct HTTP URL to raw JSON file in Data-Collector repo
-                    raw_file_url = f"{RAW_BASE_URL}/{folder}/{symbol}.json"
-                    raw_data = fetch_url_json(raw_file_url)
+                    json_file_path = folder_path / f"{symbol}.json"
+
+                    try:
+                        with open(json_file_path, "r", encoding="utf-8") as f:
+                            raw_data = json.load(f)
+                    except Exception as e:
+                        print(f"Error reading {json_file_path}: {e}")
+                        continue
 
                     if not raw_data:
                         continue
@@ -135,7 +113,7 @@ def run_engine():
 
                 all_results[tf_label][lookback][fib_key] = scanned_stocks
 
-    with open(OUTPUT_JSON_FILE, "w") as f:
+    with open(OUTPUT_JSON_FILE, "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=2)
 
     print(f"Calculation Complete! Results saved to {OUTPUT_JSON_FILE}")
