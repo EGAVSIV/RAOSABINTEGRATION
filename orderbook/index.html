@@ -242,6 +242,12 @@
             </select>
         </div>
         <div class="filter-group">
+            <label for="descFilter">Select Order Type (DESC)</label>
+            <select id="descFilter" onchange="applyFilters()">
+                <option value="All">All Types</option>
+            </select>
+        </div>
+        <div class="filter-group">
             <label for="searchFilter">Search Keyword</label>
             <input type="text" id="searchFilter" placeholder="Type symbol or company..." onkeyup="applyFilters()">
         </div>
@@ -301,25 +307,26 @@
 <script>
 let globalData = { announcements: [], rankings: [] };
 
-// Load data directly from external output JSON file
 async function loadData() {
     try {
         const response = await fetch('nse_orders_data.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         globalData = await response.json();
         
         populateFilters();
-        renderMetrics(globalData.rankings);
-        renderRankings(globalData.rankings);
-        renderAnnouncements(globalData.announcements);
+        renderMetrics(globalData.rankings || []);
+        renderRankings(globalData.rankings || []);
+        renderAnnouncements(globalData.announcements || []);
     } catch (error) {
         console.error("Error loading JSON file data:", error);
     }
 }
 
 function populateFilters() {
-    // Populate Stock Filter
     const stockSelect = document.getElementById('stockFilter');
-    const symbols = [...new Set(globalData.announcements.map(item => item.symbol))].sort();
+    const symbols = [...new Set((globalData.announcements || []).map(item => item.symbol))].sort();
     symbols.forEach(sym => {
         if(sym) {
             const option = document.createElement('option');
@@ -329,23 +336,25 @@ function populateFilters() {
         }
     });
 
-    // Populate Order Type (DESC) Filter
     const descSelect = document.getElementById('descFilter');
-    const descriptions = [...new Set(globalData.announcements.map(item => item.desc))].filter(Boolean).sort();
-    descriptions.forEach(desc => {
-        const option = document.createElement('option');
-        option.value = desc;
-        option.textContent = desc;
-        descSelect.appendChild(option);
-    });
+    if (descSelect) {
+        const descriptions = [...new Set((globalData.announcements || []).map(item => item.desc))].filter(Boolean).sort();
+        descriptions.forEach(desc => {
+            const option = document.createElement('option');
+            option.value = desc;
+            option.textContent = desc;
+            descSelect.appendChild(option);
+        });
+    }
 }
 
 function applyFilters() {
     const stock = document.getElementById('stockFilter').value;
-    const desc = document.getElementById('descFilter').value;
+    const descElement = document.getElementById('descFilter');
+    const desc = descElement ? descElement.value : 'All';
     const search = document.getElementById('searchFilter').value.toLowerCase();
 
-    const filteredAnnouncements = globalData.announcements.filter(a => {
+    const filteredAnnouncements = (globalData.announcements || []).filter(a => {
         const matchesStock = stock === 'All' || a.symbol === stock;
         const matchesDesc = desc === 'All' || a.desc === desc;
         const matchesSearch = (a.symbol && a.symbol.toLowerCase().includes(search)) || 
@@ -355,7 +364,7 @@ function applyFilters() {
 
     const validSymbols = new Set(filteredAnnouncements.map(a => a.symbol));
 
-    const filteredRankings = globalData.rankings.filter(r => {
+    const filteredRankings = (globalData.rankings || []).filter(r => {
         const matchesStock = stock === 'All' || r.symbol === stock;
         const matchesDesc = desc === 'All' || r.desc === desc || validSymbols.has(r.symbol);
         const matchesSearch = (r.symbol && r.symbol.toLowerCase().includes(search)) || 
@@ -370,7 +379,7 @@ function applyFilters() {
 
 function renderMetrics(rankings) {
     document.getElementById('metric-total').innerText = rankings.length;
-    const maxImpact = rankings.length ? Math.max(...rankings.map(r => r.impact_score)) : 0;
+    const maxImpact = rankings.length ? Math.max(...rankings.map(r => r.impact_score || 0)) : 0;
     document.getElementById('metric-max-impact').innerText = maxImpact;
     const totalVal = rankings.reduce((acc, curr) => acc + (curr.order_val_cr || 0), 0);
     document.getElementById('metric-total-val').innerText = totalVal.toLocaleString('en-IN');
@@ -415,28 +424,7 @@ function renderAnnouncements(announcements) {
     `).join('');
 }
 
-function applyFilters() {
-    const stock = document.getElementById('stockFilter').value;
-    const search = document.getElementById('searchFilter').value.toLowerCase();
-
-    const filteredRankings = globalData.rankings.filter(r => {
-        const matchesStock = stock === 'All' || r.symbol === stock;
-        const matchesSearch = r.symbol.toLowerCase().includes(search) || r.company.toLowerCase().includes(search);
-        return matchesStock && matchesSearch;
-    });
-
-    const filteredAnnouncements = globalData.announcements.filter(a => {
-        const matchesStock = stock === 'All' || a.symbol === stock;
-        const matchesSearch = a.symbol.toLowerCase().includes(search) || a.sm_name.toLowerCase().includes(search);
-        return matchesStock && matchesSearch;
-    });
-
-    renderRankings(filteredRankings);
-    renderAnnouncements(filteredAnnouncements);
-    renderMetrics(filteredRankings);
-}
-
-window.onload = loadData;
+document.addEventListener('DOMContentLoaded', loadData);
 </script>
 </body>
 </html>
