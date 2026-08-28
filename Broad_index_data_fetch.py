@@ -1,14 +1,19 @@
+import os
+import ssl
+import socket
+import time
 import pandas as pd
 from tvDatafeed import TvDatafeed, Interval
-from datetime import datetime
-import socket, ssl, time, os
 
-# === TV Datafeed Login ===
-username = "EGAVSIV"
-password = "Eric$1234"
-tv = TvDatafeed(username, password)
+# === TV Datafeed Login via Env Variables ===
+# Set TV_USERNAME and TV_PASSWORD in GitHub Repository Secrets
+username = os.environ.get("TV_USERNAME", "EGAVSIV")
+password = os.environ.get("TV_PASSWORD", "Eric$1234")
 
-# === Only Required Timeframes ===
+# Initialize headless mode (set username/password to None for guest access if needed)
+tv = TvDatafeed(username=username, password=password)
+
+# === Timeframes ===
 interval_map = {
     'D': Interval.in_daily,
     'W': Interval.in_weekly,
@@ -19,26 +24,28 @@ interval_map = {
 output_dir = "Broad_index_data"
 os.makedirs(output_dir, exist_ok=True)
 
-# === Delay for retries ===
-retry_delay = 3  # seconds
+retry_delay = 3
+max_attempts = 5  # Prevents GitHub Actions hanging indefinitely
 
-# === Fetch with infinite retry ===
 def fetch_with_retry(symbol, label, interval):
     attempt = 1
-    while True:
+    while attempt <= max_attempts:
         try:
             df = tv.get_hist(symbol=symbol, exchange='NSE', interval=interval, n_bars=1000)
             if df is not None and not df.empty:
                 df['timeframe'] = label
                 return df
             else:
-                print(f"⚠️ Empty data for {symbol} [{label}] (Attempt {attempt})")
-        except (socket.timeout, ssl.SSLError):
-            print(f"⏳ Timeout for {symbol} [{label}] (Attempt {attempt})")
+                print(f"⚠️ Empty data for {symbol} [{label}] (Attempt {attempt}/{max_attempts})")
+        except (socket.timeout, ssl.SSLError, Exception) as e:
+            print(f"⏳ Error for {symbol} [{label}] (Attempt {attempt}/{max_attempts}): {e}")
+        
         attempt += 1
         time.sleep(retry_delay)
+    
+    print(f"❌ Failed to fetch {symbol} [{label}] after {max_attempts} attempts.")
+    return None
 
-# === Fetch and Save for One Symbol ===
 def fetch_and_save_all(symbol):
     symbol_data = {}
 
@@ -47,26 +54,23 @@ def fetch_and_save_all(symbol):
         if df is not None:
             symbol_data[label] = df
 
-    if len(symbol_data) == len(interval_map):  # All timeframes received
-        df_all = pd.concat(symbol_data.values(), keys=symbol_data.keys(), names=['Timeframe'])
-        
-        # Reset the index so time and timeframe become standard JSON fields
+    if len(symbol_data) == len(interval_map):
+        # Concatenate and reset index safely
+        df_all = pd.concat(symbol_data.values(), keys=symbol_data.keys(), names=['Timeframe', 'Original_Index'])
         df_reset = df_all.reset_index()
         
         filepath = os.path.join(output_dir, f"{symbol}.json")
-        
-        # Export to JSON format
         df_reset.to_json(filepath, orient='records', date_format='iso', indent=4)
         print(f"✅ Saved: {symbol}")
     else:
-        print(f"❌ Skipped {symbol} due to missing data.")
+        print(f"❌ Skipped {symbol} due to missing timeframes.")
 
-# === Symbols List ===
 symbols = [
-    'NIFTY','CNX100','CNX200','NIFTY_CAPITAL_MKT','NIFTYJR',
-    'NIFTY_MID_SELECT','CNXSMALLCAP','CNXMIDCAP','BANKNIFTY', 
-    'CNXFINANCE', 'MCXBULLDEX']
+    'NIFTY', 'CNX100', 'CNX200', 'NIFTY_CAPITAL_MKT', 'NIFTYJR',
+    'NIFTY_MID_SELECT', 'CNXSMALLCAP', 'CNXMIDCAP', 'BANKNIFTY', 
+    'CNXFINANCE', 'MCXBULLDEX'
+]
 
-# === Run for All Symbols ===
-for symbol in symbols:
-    fetch_and_save_all(symbol)
+if __name__ == "__main__":
+    for symbol in symbols:
+        fetch_and_save_all(symbol)
