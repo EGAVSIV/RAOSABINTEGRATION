@@ -1,0 +1,47 @@
+# Optional: auto-refresh GeoTrader's result.json and publish the dashboard
+# to GitHub Pages.
+#
+# Place this file at:  <repo-root>/.github/workflows/refresh.yml
+# (GitHub only recognizes workflow files under .github/workflows/ at the
+# repository root — it cannot live inside the geotrader/ folder.)
+#
+# It assumes:
+#   - your data folders (Broad_index_data, sectorial_index_data,
+#     stockdata_15/1H/D/W/M) live at the repo root, next to geotrader/
+#   - GitHub Pages is set to deploy from the "gh-pages" branch, or you
+#     swap the last step for actions/deploy-pages if you prefer the
+#     native Pages deployment flow.
+
+name: Refresh GeoTrader Data
+
+on:
+  schedule:
+    - cron: "0 4,6,8,10 * * 1-5"   # a few times during NSE market hours (UTC)
+  workflow_dispatch: {}             # lets you trigger it manually too
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r geotrader/requirements.txt
+
+      - name: Run calculation engine
+        run: python geotrader/engine.py
+
+      - name: Commit updated result.json
+        run: |
+          git config user.name "geotrader-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add geotrader/output/result.json
+          git diff --cached --quiet || git commit -m "chore: refresh result.json [skip ci]"
+          git push

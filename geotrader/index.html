@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GeoTrader — Market Intelligence Terminal</title>
+<meta name="description" content="Live NSE F&O market intelligence: breadth, sector performance, RSI scanner and intraday breakout signals." />
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============================================================ HEADER -->
+  <header class="header">
+    <div class="brand">
+      <div class="radar-mark" aria-hidden="true"></div>
+      <div class="brand-text">
+        <h1>GEOTRADER</h1>
+        <div class="tag">Market Intelligence Terminal · NSE F&amp;O</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <span class="status-pill" id="dataStatus"><span class="dot"></span><span id="dataStatusText">Loading…</span></span>
+      <div class="clock-block">
+        <div class="time mono" id="clockTime">--:--:--</div>
+        <div class="date" id="clockDate">IST</div>
+      </div>
+      <button class="btn" id="refreshBtn" type="button">
+        <span class="ico">⟳</span> Refresh
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================ TICKER -->
+  <div class="ticker">
+    <div class="ticker-track mono" id="tickerTrack">
+      <span class="tick-item"><span class="sym">Loading market feed…</span></span>
+    </div>
+  </div>
+
+  <!-- ============================================================ KPI STRIP -->
+  <section class="grid grid-4" id="kpiStrip" aria-label="Key breadth metrics"></section>
+
+  <!-- ============================================================ BROAD + SECTOR -->
+  <div class="section-title"><span class="idx">01</span><h2>Broad Market &amp; Sector Indices</h2><div class="rule"></div></div>
+  <section class="grid grid-2-even">
+    <div class="panel">
+      <div class="panel-head">
+        <h2>📈 Broad Market Indices</h2>
+        <span class="hint">Daily close vs previous close</span>
+      </div>
+      <div id="broaderList"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <h2>🏭 Sector Indices</h2>
+        <span class="hint">Daily close vs previous close</span>
+      </div>
+      <div id="sectorList"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================ GAUGE + FNO TOP/BOTTOM -->
+  <div class="section-title"><span class="idx">02</span><h2>Market Breadth &amp; F&amp;O Movers</h2><div class="rule"></div></div>
+  <section class="grid grid-2">
+    <div class="panel">
+      <div class="panel-head"><h2>⚖️ Advance / Decline — F&amp;O Universe</h2></div>
+      <div class="gauge-wrap">
+        <canvas id="gaugeCanvas" width="260" height="260" aria-label="Advance decline gauge"></canvas>
+        <div class="gauge-legend">
+          <span class="item"><span class="swatch" style="background:var(--bull)"></span>Advance <b id="advCount" class="mono">–</b></span>
+          <span class="item"><span class="swatch" style="background:var(--bear)"></span>Decline <b id="decCount" class="mono">–</b></span>
+          <span class="item"><span class="swatch" style="background:var(--ink-3)"></span>Unchanged <b id="unchCount" class="mono">–</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <h2>🔥 F&amp;O Top 5 &amp; Bottom 5</h2>
+        <span class="hint">Ranked by daily % change</span>
+      </div>
+      <div id="fnoChart" class="hbar-chart"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================ SECTOR EXPLORER -->
+  <div class="section-title"><span class="idx">03</span><h2>Sector Explorer</h2><div class="rule"></div></div>
+  <section class="grid grid-4" id="sectorExplorer"></section>
+
+  <!-- ============================================================ SECTOR TERRAIN -->
+  <div class="section-title"><span class="idx">04</span><h2>Sector Terrain</h2><div class="rule"></div></div>
+  <section class="panel">
+    <div class="panel-head">
+      <h2>🗺️ Sector Heat Map</h2>
+      <span class="hint">Tile shade = average daily % change of mapped stocks</span>
+    </div>
+    <div class="terrain" id="terrainGrid"></div>
+  </section>
+
+  <!-- ============================================================ MOMENTUM -->
+  <div class="section-title"><span class="idx">05</span><h2>Momentum Streaks</h2><div class="rule"></div></div>
+  <section class="grid grid-2-even">
+    <div class="panel">
+      <div class="panel-head"><h2>🟢 Upside Momentum <span class="hint">≥ 2 consecutive up-closes</span></h2></div>
+      <div class="badge-grid" id="momentumUp"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>🔴 Downside Momentum <span class="hint">≥ 2 consecutive down-closes</span></h2></div>
+      <div class="badge-grid" id="momentumDown"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================ RSI SCANNER -->
+  <div class="section-title"><span class="idx">06</span><h2>RSI Scanner — Multi-Timeframe</h2><div class="rule"></div></div>
+  <section class="panel">
+    <div class="panel-head">
+      <h2>📊 RSI(14) Scanner</h2>
+      <span class="hint" id="rsiCount"></span>
+    </div>
+    <div class="filter-bar">
+      <div class="filter-group">
+        <span class="fg-label">Timeframe</span>
+        <div class="chips" id="tfChips"></div>
+      </div>
+      <div class="filter-group">
+        <span class="fg-label">State</span>
+        <div class="chips" id="stateChips"></div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="geo-table">
+        <thead>
+          <tr><th>Symbol</th><th>Timeframe</th><th style="width:36%">RSI(14)</th><th>State</th></tr>
+        </thead>
+        <tbody id="rsiTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============================================================ INTRADAY EVENTS -->
+  <div class="section-title"><span class="idx">07</span><h2>Intraday Signal Feed</h2><div class="rule"></div></div>
+  <section class="panel">
+    <div class="panel-head">
+      <h2>📡 First-Break Events <span class="hint">Daily / Weekly level breaks, confirmed by RSI, Bollinger, CPR &amp; Camarilla — last 7 days</span></h2>
+    </div>
+    <div class="event-list" id="eventList"></div>
+  </section>
+
+  <footer class="site-footer">
+    <span>GeoTrader Terminal · data refreshed by <span class="mono">engine.py</span></span>
+    <span class="mono" id="generatedAt">generated_at: —</span>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
