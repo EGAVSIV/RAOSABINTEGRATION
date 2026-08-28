@@ -1,29 +1,6 @@
 """
 ================================================================================
- GEOTRADER  —  MARKET INTELLIGENCE ENGINE
-================================================================================
-Pure-Python / pandas calculation engine. No Streamlit, no UI code.
-
-Reads raw OHLCV JSON from the repo's data folders:
-
-    Broad_index_data/        one file per broad market index
-                              (records tagged with a "Timeframe" field: D / W / M)
-    sectorial_index_data/    one file per sector index (same mixed-timeframe shape)
-    stockdata_15/            one file per FNO stock, 15-minute candles
-    stockdata_1H/            one file per FNO stock, 1-hour candles
-    stockdata_D/             one file per FNO stock, daily candles
-    stockdata_W/             one file per FNO stock, weekly candles
-    stockdata_M/             one file per FNO stock, monthly candles
-
-Computes RSI(14), Bollinger Bands(20,2), CPR + Camarilla pivots, % change,
-advance/decline, sector performance, sector -> stock leaderboards, momentum
-streaks, a multi-timeframe RSI scanner and an intraday first-break signal
-scan — then writes ONE json file: geotrader/output/result.json
-
-Usage:
-    python engine.py                  # uses ../ as the data root (repo root)
-    python engine.py --root /path     # explicit repo root
-    python engine.py --out result.json
+ GEOTRADER — MARKET INTELLIGENCE ENGINE (FIXED & HARDENED)
 ================================================================================
 """
 
@@ -65,6 +42,27 @@ TF_KEYS = ["Timeframe", "timeframe", "TF", "tf"]
 
 
 # =====================================================================
+# JSON SANITIZER HELPER (PREVENTS TRUNCATED OUTPUT)
+# =====================================================================
+def _clean_val(val):
+    """Recursively clean dictionary/list data to ensure JSON safety (no NaN/Inf)."""
+    if isinstance(val, float):
+        if np.isnan(val) or np.isinf(val):
+            return None
+        return round(val, 4)
+    if isinstance(val, (np.integer, np.int64, np.int32)):
+        return int(val)
+    if isinstance(val, (np.floating, np.float64, np.float32)):
+        f = float(val)
+        return None if (np.isnan(f) or np.isinf(f)) else round(f, 4)
+    if isinstance(val, dict):
+        return {k: _clean_val(v) for k, v in val.items()}
+    if isinstance(val, list):
+        return [_clean_val(v) for v in val]
+    return val
+
+
+# =====================================================================
 # LOW-LEVEL JSON -> DATAFRAME HELPERS
 # =====================================================================
 def _first_present(columns, candidates):
@@ -87,7 +85,6 @@ def _read_json_records(path):
 
 
 def _records_to_df(records):
-    """Turn a list of OHLCV dict records into a clean, sorted, indexed DataFrame."""
     if not records:
         return pd.DataFrame()
 
@@ -122,22 +119,16 @@ def _records_to_df(records):
 
 
 def load_flat_symbol_json(path):
-    """stockdata_* style: one file, one timeframe, flat list of OHLCV records."""
     return _records_to_df(_read_json_records(path))
 
 
 def load_multi_tf_index_json(path):
-    """Broad_index_data / sectorial_index_data style: one file holding several
-    timeframes at once, disambiguated by a 'Timeframe' field on each record.
-    Returns {tf: DataFrame}.
-    """
     records = _read_json_records(path)
     if not records:
         return {}
 
     tf_key = _first_present(records[0].keys(), TF_KEYS)
     if tf_key is None:
-        # No timeframe tag -> treat the whole file as a single (daily) series
         return {"D": _records_to_df(records)}
 
     buckets: dict[str, list] = {}
@@ -177,7 +168,6 @@ def compute_bollinger(close, period=BB_PERIOD, num_std=BB_STD):
 
 
 def compute_pivots(df):
-    """Classic CPR (Central Pivot Range) + Camarilla, from the PREVIOUS bar."""
     ph, pl, pc = df["high"].shift(1), df["low"].shift(1), df["close"].shift(1)
     pivot = (ph + pl + pc) / 3
     bc = (ph + pl) / 2
@@ -202,13 +192,11 @@ def enrich(df):
 
 
 # =====================================================================
-# SYMBOL -> SECTOR MAP
+# SYMBOL -> SECTOR MAP (NORMALIZED FOR CASE MATCHING)
 # =====================================================================
 def load_symbol_sector_map(path):
-    """Accepts [{"Stocks": "TCS", "Sectors": ["CNXIT", ...]}, ...] (list form)
-    or {"TCS": ["CNXIT", ...]} / {"TCS": "CNXIT"} (dict form)."""
     if not os.path.exists(path):
-        print(f"[symbol map] not found at {path} — sector leaderboards will be empty")
+        print(f"[symbol map] ⚠️ Warning: File not found at {path} — sector leaderboards will be empty")
         return {}
 
     with open(path, "r", encoding="utf-8") as f:
@@ -222,14 +210,14 @@ def load_symbol_sector_map(path):
             if isinstance(sectors, str):
                 sectors = [s.strip() for s in sectors.split(",")]
             if stock:
-                out[str(stock).strip()] = [str(s).strip() for s in sectors if s]
+                out[str(stock).strip().upper()] = [str(s).strip() for s in sectors if s]
     elif isinstance(raw, dict):
         for stock, sectors in raw.items():
             if isinstance(sectors, str):
                 sectors = [sectors]
-            out[str(stock).strip()] = [str(s).strip() for s in sectors]
+            out[str(stock).strip().upper()] = [str(s).strip() for s in sectors]
 
-    print(f"[symbol map] loaded {len(out)} stocks from {path}")
+    print(f"[symbol map] Loaded {len(out)} mapped symbols from {path}")
     return out
 
 
@@ -237,11 +225,6 @@ def load_symbol_sector_map(path):
 # DATA LOADING
 # =====================================================================
 def load_universe(root):
-    """Returns:
-        stock_data[tf][symbol]  -> enriched df   (FNO tradable universe)
-        broad_data[tf][symbol]  -> enriched df   (broad market indices)
-        sector_data[tf][symbol] -> enriched df   (sector indices)
-    """
     stock_dirs = {
         "15m": os.path.join(root, "stockdata_15"),
         "1H":  os.path.join(root, "stockdata_1H"),
@@ -254,22 +237,25 @@ def load_universe(root):
 
     stock_data = {tf: {} for tf in stock_dirs}
     for tf, folder in stock_dirs.items():
-        for sym in list_symbols(folder):
+        symbols = list_symbols(folder)
+        for sym in symbols:
             try:
                 df = load_flat_symbol_json(os.path.join(folder, f"{sym}.json"))
                 if not df.empty:
-                    stock_data[tf][sym] = enrich(df)
+                    stock_data[tf][sym.upper()] = enrich(df)
             except Exception as e:
                 print(f"[stock:{tf}] skip {sym}: {e}")
 
     def load_index_folder(folder, label):
         out = {"D": {}, "W": {}, "M": {}}
-        for sym in list_symbols(folder):
+        symbols = list_symbols(folder)
+        print(f"[{label}] Found {len(symbols)} files in {folder}")
+        for sym in symbols:
             try:
                 per_tf = load_multi_tf_index_json(os.path.join(folder, f"{sym}.json"))
                 for tf, df in per_tf.items():
                     if tf in out and not df.empty:
-                        out[tf][sym] = enrich(df)
+                        out[tf][sym.upper()] = enrich(df)
             except Exception as e:
                 print(f"[{label}] skip {sym}: {e}")
         return out
@@ -289,7 +275,7 @@ def pct_change_last_two(df):
     p, c = df["close"].iloc[-2], df["close"].iloc[-1]
     if pd.isna(p) or pd.isna(c) or p == 0:
         return 0.0
-    return round(((c - p) / p) * 100, 2)
+    return round(float(((c - p) / p) * 100), 2)
 
 
 def build_change_table(daily_dict, symbols=None):
@@ -297,12 +283,12 @@ def build_change_table(daily_dict, symbols=None):
     rows = []
     for sym in symbols:
         df = daily_dict.get(sym)
-        if df is None:
+        if df is None or df.empty:
             continue
         rows.append({
             "symbol": sym,
             "change": pct_change_last_two(df),
-            "close": None if df.empty else round(float(df["close"].iloc[-1]), 2),
+            "close": round(float(df["close"].iloc[-1]), 2),
         })
     return rows
 
@@ -449,13 +435,12 @@ def run_intraday_scan(stock_data, symbols):
 
 
 # =====================================================================
-# MAIN
+# MAIN EXECUTION
 # =====================================================================
 def main():
     parser = argparse.ArgumentParser(description="GeoTrader calculation engine")
-    parser.add_argument("--root", default=None,
-                         help="Repo root containing the data folders (default: parent of this file's folder)")
-    parser.add_argument("--out", default=None, help="Output json path (default: ./output/result.json)")
+    parser.add_argument("--root", default=None, help="Repo root containing data folders")
+    parser.add_argument("--out", default=None, help="Output json path")
     parser.add_argument("--symbol-map", default=None, help="Path to symbol_map.json")
     args = parser.parse_args()
 
@@ -481,7 +466,7 @@ def main():
     broader_market = build_change_table(broad_data.get("D", {}))
     sector_performance = build_change_table(sector_data.get("D", {}))
 
-    # ---- FNO universe % change / gainers-losers / advance-decline ----
+    # ---- FNO universe % change ----
     fno_change = build_change_table(stock_data["D"], fno_symbols)
     fno_sorted_desc = sorted(fno_change, key=lambda r: r["change"], reverse=True)
     fno_sorted_asc = sorted(fno_change, key=lambda r: r["change"])
@@ -521,10 +506,10 @@ def main():
     # ---- RSI multi-timeframe scanner ----
     rsi_rows = run_rsi_scanner(stock_data)
 
-    # ---- Intraday first-break signal scan (last 7 days) ----
+    # ---- Intraday first-break scan ----
     intraday_events = run_intraday_scan(stock_data, fno_symbols)
 
-    result = {
+    raw_result = {
         "generated_at": datetime.now().isoformat(),
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "meta": {
@@ -544,9 +529,12 @@ def main():
         "intraday_events": intraday_events,
     }
 
+    # Clean data to guarantee valid, complete JSON output
+    clean_result = _clean_val(raw_result)
+
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(result, f, indent=2, default=str)
+        json.dump(clean_result, f, indent=2)
 
     print(f"\n✅ wrote {out_path}")
     print(f"   FNO: {len(fno_symbols)} | Broader: {len(broader_market)} | "
