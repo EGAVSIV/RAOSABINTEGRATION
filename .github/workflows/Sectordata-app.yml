@@ -1,94 +1,57 @@
-name: Sectoral Index Data Fetch (3:30 PM IST)
+name: Index Data Fetch (3:30 PM IST)
 
 on:
-  # ✅ Manual trigger (Run button in GitHub UI)
   workflow_dispatch:
-
-  # ✅ Auto run: Monday–Friday at 3:30 PM IST
   schedule:
     - cron: '0 10 * * 1-5'   # 10:00 UTC = 15:30 IST
 
-# ✅ REQUIRED to allow git push from Actions
 permissions:
   contents: write
 
-# ✅ Prevent overlapping runs
 concurrency:
-  group: sectorial-index-data
+  group: index-data-fetch
   cancel-in-progress: false
 
 jobs:
   run-sector-data:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 30
 
     steps:
-      # -------------------------------------------------
-      # 1️⃣ Checkout repo
-      # -------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           ref: main
 
-      # -------------------------------------------------
-      # 2️⃣ Setup Python
-      # -------------------------------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      # -------------------------------------------------
-      # 3️⃣ Upgrade pip
-      # -------------------------------------------------
       - name: Upgrade pip
         run: python -m pip install --upgrade pip
 
-      # -------------------------------------------------
-      # 4️⃣ Install dependencies
-      # -------------------------------------------------
       - name: Install dependencies
         run: |
           pip install pandas pyarrow
           pip install git+https://github.com/rongardF/tvdatafeed.git
 
-      # -------------------------------------------------
-      # 5️⃣ Debug (shows files runner actually sees)
-      # -------------------------------------------------
-      - name: Debug – list repo files
-        run: |
-          echo "Current path:"
-          pwd
-          echo "Repo contents:"
-          ls -la
-
-      # -------------------------------------------------
-      # 6️⃣ Run your script
-      # -------------------------------------------------
-      - name: Run sector data script
+      - name: Run scripts
+        env:
+          TV_USERNAME: ${{ secrets.TV_USERNAME }}
+          TV_PASSWORD: ${{ secrets.TV_PASSWORD }}
         run: |
           python Sectordatafetch.py
-
-
-          
-
-      - name: Run Broad index sector data script
-        run: |
           python Broad_index_data_fetch.py
 
-      # -------------------------------------------------
-      # 7️⃣ Commit & push generated parquet files
-      #     (Handles remote updates safely)
-      # -------------------------------------------------
       - name: Commit and push generated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add sectorial_index_data || true
-          git commit -m "Auto update sectorial index data [CI]" || echo "Nothing to commit"
+          # Add BOTH output directories to git tracking
+          git add sectorial_index_data Broad_index_data || true
+          git commit -m "Auto update sectorial and broad index data [CI]" || echo "Nothing to commit"
 
-          # 🔥 Critical fix for non-fast-forward errors
           git pull --rebase origin main
           git push origin main
