@@ -5,7 +5,7 @@
    for the two bar charts, hand-drawn <canvas> for the breadth gauge.
 ===================================================================== */
 
-const RESULT_URL = "output/result.json";
+const RESULT_URL = "result.json";
 
 const COLORS = {
   bull: "#35d68f",
@@ -82,7 +82,7 @@ function renderFetchError() {
   const msg = `
     <div class="empty-state">
       <div class="glyph">⚠</div>
-      Could not load <span class="mono">output/result.json</span>.
+      Could not load <span class="mono">result.json</span>.
       Run <span class="mono">python engine.py</span> and make sure this page is served over HTTP
       (not opened as a local file:// path).
     </div>`;

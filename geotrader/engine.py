@@ -461,7 +461,7 @@ def main():
 
     here = os.path.dirname(os.path.abspath(__file__))
     root = args.root or os.path.dirname(here)
-    out_path = args.out or os.path.join(here, "output", "result.json")
+    out_path = args.out or os.path.join(here, "result.json")
     symbol_map_path = args.symbol_map or os.path.join(here, "symbol_map.json")
 
     print("=" * 78)
@@ -552,7 +552,9 @@ def main():
         "intraday_events": intraday_events,
     }
 
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    out_dir = os.path.dirname(out_path)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2, default=str)
 

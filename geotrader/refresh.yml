@@ -42,6 +42,6 @@ jobs:
         run: |
           git config user.name "geotrader-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add geotrader/output/result.json
+          git add geotrader/result.json
           git diff --cached --quiet || git commit -m "chore: refresh result.json [skip ci]"
           git push
