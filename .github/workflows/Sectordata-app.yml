@@ -70,6 +70,13 @@ jobs:
         run: |
           python Sectordatafetch.py
 
+
+          
+
+      - name: Run Broad index sector data script
+        run: |
+          python Broad_index_data_fetch.py
+
       # -------------------------------------------------
       # 7️⃣ Commit & push generated parquet files
       #     (Handles remote updates safely)
