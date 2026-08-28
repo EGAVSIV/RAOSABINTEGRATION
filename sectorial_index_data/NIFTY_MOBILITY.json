@@ -4642,6 +4642,17 @@
         "timeframe":"D"
     },
     {
+        "Timeframe":"D",
+        "datetime":"2026-08-28T03:45:00.000",
+        "symbol":"NSE:NIFTY_MOBILITY",
+        "open":23786.35,
+        "high":23796.1,
+        "low":23571.0,
+        "close":23676.1,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
         "Timeframe":"W",
         "datetime":"2024-12-16T03:45:00.000",
         "symbol":"NSE:NIFTY_MOBILITY",
@@ -5615,8 +5626,8 @@
         "symbol":"NSE:NIFTY_MOBILITY",
         "open":23759.0,
         "high":23989.55,
-        "low":23657.25,
-        "close":23731.65,
+        "low":23571.0,
+        "close":23676.1,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -5847,7 +5858,7 @@
         "open":23638.65,
         "high":24102.2,
         "low":23536.1,
-        "close":23731.65,
+        "close":23676.1,
         "volume":0.0,
         "timeframe":"M"
     }

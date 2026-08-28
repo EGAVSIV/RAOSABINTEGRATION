@@ -4642,6 +4642,17 @@
         "timeframe":"D"
     },
     {
+        "Timeframe":"D",
+        "datetime":"2026-08-28T03:45:00.000",
+        "symbol":"NSE:NIFTY_HOUSING",
+        "open":11959.15,
+        "high":11965.5,
+        "low":11874.4,
+        "close":11926.65,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
         "Timeframe":"W",
         "datetime":"2024-12-16T03:45:00.000",
         "symbol":"NSE:NIFTY_HOUSING",
@@ -5615,8 +5626,8 @@
         "symbol":"NSE:NIFTY_HOUSING",
         "open":11964.5,
         "high":12058.0,
-        "low":11887.15,
-        "close":11950.0,
+        "low":11874.4,
+        "close":11926.65,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -5847,7 +5858,7 @@
         "open":12065.05,
         "high":12176.55,
         "low":11803.45,
-        "close":11950.0,
+        "close":11926.65,
         "volume":0.0,
         "timeframe":"M"
     }
