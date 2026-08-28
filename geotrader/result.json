@@ -1,1079 +1,2702 @@
 {
-  "generated_at": "2026-08-28T16:47:31.244565",
+  "generated_at": "2026-08-28T21:08:08.141429",
+  "generated_at_utc": "2026-08-28T21:08:08.141435+00:00",
   "meta": {
-    "total_symbols": 251,
-    "broader_count": 0,
+    "fno_count": 215,
+    "broader_count": 10,
     "sector_index_count": 39,
-    "fno_count": 212,
-    "sector_map_loaded": true
+    "sectors_mapped": 26,
+    "symbol_map_loaded": true
   },
-  "broader_market": [],
-  "sector_performance": [
+  "broader_market": [
     {
       "symbol": "BANKNIFTY",
-      "change": -0.02
+      "change": -0.02,
+      "close": 57496.3
     },
     {
-      "symbol": "CNXAUTO",
-      "change": -0.11
+      "symbol": "CNX100",
+      "change": 0.24,
+      "close": 25341.75
     },
     {
-      "symbol": "CNXCONSUMPTION",
-      "change": -0.14
-    },
-    {
-      "symbol": "CNXENERGY",
-      "change": -0.26
+      "symbol": "CNX200",
+      "change": 0.2,
+      "close": 14094.0
     },
     {
       "symbol": "CNXFINANCE",
-      "change": 0.02
+      "change": 0.02,
+      "close": 26286.5
     },
     {
-      "symbol": "CNXFMCG",
-      "change": -0.46
+      "symbol": "CNXMIDCAP",
+      "change": 0.05,
+      "close": 64069.5
     },
     {
-      "symbol": "CNXINFRA",
-      "change": 0.05
-    },
-    {
-      "symbol": "CNXIT",
-      "change": 3.51
-    },
-    {
-      "symbol": "CNXMEDIA",
-      "change": 0.39
-    },
-    {
-      "symbol": "CNXMETAL",
-      "change": 0.75
-    },
-    {
-      "symbol": "CNXMNC",
-      "change": -0.02
-    },
-    {
-      "symbol": "CNXPHARMA",
-      "change": 0.53
-    },
-    {
-      "symbol": "CNXPSE",
-      "change": -0.13
-    },
-    {
-      "symbol": "CNXPSUBANK",
-      "change": 0.19
-    },
-    {
-      "symbol": "CNXREALTY",
-      "change": -0.08
-    },
-    {
-      "symbol": "CNXSERVICE",
-      "change": 0.49
-    },
-    {
-      "symbol": "CPSE",
-      "change": 0.11
+      "symbol": "CNXSMALLCAP",
+      "change": 0.2,
+      "close": 20080.0
     },
     {
       "symbol": "NIFTY",
-      "change": 0.35
+      "change": 0.35,
+      "close": 24175.65
     },
     {
-      "symbol": "NIFTYPVTBANK",
-      "change": -0.08
+      "symbol": "NIFTYJR",
+      "change": -0.25,
+      "close": 74159.15
     },
     {
       "symbol": "NIFTY_CAPITAL_MKT",
-      "change": 0.78
+      "change": 0.78,
+      "close": 5507.85
+    },
+    {
+      "symbol": "NIFTY_MID_SELECT",
+      "change": 0.12,
+      "close": 14966.7
+    }
+  ],
+  "sector_performance": [
+    {
+      "symbol": "BANKNIFTY",
+      "change": -0.02,
+      "close": 57496.3
+    },
+    {
+      "symbol": "CNXAUTO",
+      "change": -0.11,
+      "close": 28851.8
+    },
+    {
+      "symbol": "CNXCONSUMPTION",
+      "change": -0.14,
+      "close": 11904.2
+    },
+    {
+      "symbol": "CNXENERGY",
+      "change": -0.26,
+      "close": 38003.65
+    },
+    {
+      "symbol": "CNXFINANCE",
+      "change": 0.02,
+      "close": 26286.5
+    },
+    {
+      "symbol": "CNXFMCG",
+      "change": -0.46,
+      "close": 46815.0
+    },
+    {
+      "symbol": "CNXINFRA",
+      "change": 0.05,
+      "close": 9242.7
+    },
+    {
+      "symbol": "CNXIT",
+      "change": 3.51,
+      "close": 31281.7
+    },
+    {
+      "symbol": "CNXMEDIA",
+      "change": 0.39,
+      "close": 1602.9
+    },
+    {
+      "symbol": "CNXMETAL",
+      "change": 0.75,
+      "close": 13525.35
+    },
+    {
+      "symbol": "CNXMNC",
+      "change": -0.02,
+      "close": 33074.55
+    },
+    {
+      "symbol": "CNXPHARMA",
+      "change": 0.53,
+      "close": 26991.85
+    },
+    {
+      "symbol": "CNXPSE",
+      "change": -0.13,
+      "close": 9689.25
+    },
+    {
+      "symbol": "CNXPSUBANK",
+      "change": 0.19,
+      "close": 8604.3
+    },
+    {
+      "symbol": "CNXREALTY",
+      "change": -0.08,
+      "close": 908.85
+    },
+    {
+      "symbol": "CNXSERVICE",
+      "change": 0.49,
+      "close": 30900.2
+    },
+    {
+      "symbol": "CPSE",
+      "change": 0.11,
+      "close": 6385.15
+    },
+    {
+      "symbol": "NIFTY",
+      "change": 0.35,
+      "close": 24175.65
+    },
+    {
+      "symbol": "NIFTYPVTBANK",
+      "change": -0.08,
+      "close": 27737.2
+    },
+    {
+      "symbol": "NIFTY_CAPITAL_MKT",
+      "change": 0.78,
+      "close": 5507.85
     },
     {
       "symbol": "NIFTY_CONSR_DURBL",
-      "change": -0.48
+      "change": -0.48,
+      "close": 40543.45
     },
     {
       "symbol": "NIFTY_COREHOUSING",
-      "change": -0.43
+      "change": -0.43,
+      "close": 15768.75
     },
     {
       "symbol": "NIFTY_CORP_MAATR",
-      "change": 0.28
+      "change": 0.28,
+      "close": 39284.9
     },
     {
       "symbol": "NIFTY_EV",
-      "change": 0.33
+      "change": 0.33,
+      "close": 3333.0
     },
     {
       "symbol": "NIFTY_HEALTHCARE",
-      "change": 0.54
+      "change": 0.54,
+      "close": 16798.5
     },
     {
       "symbol": "NIFTY_HOUSING",
-      "change": -0.2
+      "change": -0.2,
+      "close": 11926.65
     },
     {
       "symbol": "NIFTY_INDIA_MFG",
-      "change": -0.0
+      "change": -0.0,
+      "close": 16558.45
     },
     {
       "symbol": "NIFTY_IND_DEFENCE",
-      "change": -0.52
+      "change": -0.52,
+      "close": 9751.65
     },
     {
       "symbol": "NIFTY_IND_TOURISM",
-      "change": -1.1
+      "change": -1.1,
+      "close": 7898.05
     },
     {
       "symbol": "NIFTY_IPO",
-      "change": -0.5
+      "change": -0.5,
+      "close": 2393.75
     },
     {
       "symbol": "NIFTY_MOBILITY",
-      "change": -0.23
+      "change": -0.23,
+      "close": 23676.1
     },
     {
       "symbol": "NIFTY_MS_IT_TELCM",
-      "change": 2.26
+      "change": 2.26,
+      "close": 10405.25
     },
     {
       "symbol": "NIFTY_MULTI_INFRA",
-      "change": -0.0
+      "change": -0.0,
+      "close": 14560.1
     },
     {
       "symbol": "NIFTY_MULTI_MFG",
-      "change": 0.22
+      "change": 0.22,
+      "close": 17039.35
     },
     {
       "symbol": "NIFTY_NEW_CONSUMP",
-      "change": -0.27
+      "change": -0.27,
+      "close": 12202.1
     },
     {
       "symbol": "NIFTY_NONCYC_CONS",
-      "change": -0.27
+      "change": -0.27,
+      "close": 15273.5
     },
     {
       "symbol": "NIFTY_OIL_AND_GAS",
-      "change": 0.06
+      "change": 0.06,
+      "close": 11067.7
     },
     {
       "symbol": "NIFTY_RURAL",
-      "change": -0.3
+      "change": -0.3,
+      "close": 15403.85
     },
     {
       "symbol": "NIFTY_TOP_10_EW",
-      "change": 0.79
+      "change": 0.79,
+      "close": 8641.5
     }
   ],
-  "sector_stocks": {},
+  "sector_stocks": {
+    "BANKNIFTY": {
+      "top5": [
+        {
+          "symbol": "HDFCBANK",
+          "change": 1.31,
+          "close": 720.3
+        },
+        {
+          "symbol": "UNIONBANK",
+          "change": 0.81,
+          "close": 186.0
+        },
+        {
+          "symbol": "AXISBANK",
+          "change": 0.72,
+          "close": 1265.0
+        },
+        {
+          "symbol": "SBIN",
+          "change": 0.44,
+          "close": 1047.5
+        },
+        {
+          "symbol": "BANKBARODA",
+          "change": 0.37,
+          "close": 241.9
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "ICICIBANK",
+          "change": -1.4,
+          "close": 1422.8
+        },
+        {
+          "symbol": "AUBANK",
+          "change": -1.27,
+          "close": 1077.1
+        },
+        {
+          "symbol": "INDUSINDBK",
+          "change": -0.89,
+          "close": 994.0
+        },
+        {
+          "symbol": "RBLBANK",
+          "change": -0.88,
+          "close": 382.0
+        },
+        {
+          "symbol": "BANDHANBNK",
+          "change": -0.85,
+          "close": 168.25
+        }
+      ],
+      "count": 18,
+      "avg_change": -0.22
+    },
+    "CNXAUTO": {
+      "top5": [
+        {
+          "symbol": "BAJAJ_AUTO",
+          "change": 1.62,
+          "close": 11910.0
+        },
+        {
+          "symbol": "EXIDEIND",
+          "change": 1.56,
+          "close": 444.6
+        },
+        {
+          "symbol": "TMPV",
+          "change": 1.08,
+          "close": 319.4
+        },
+        {
+          "symbol": "HEROMOTOCO",
+          "change": 0.9,
+          "close": 5600.0
+        },
+        {
+          "symbol": "M&M",
+          "change": 0.12,
+          "close": 3334.0
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "TVSMOTOR",
+          "change": -2.39,
+          "close": 4304.2
+        },
+        {
+          "symbol": "TIINDIA",
+          "change": -1.05,
+          "close": 2840.0
+        },
+        {
+          "symbol": "ASHOKLEY",
+          "change": -0.92,
+          "close": 175.77
+        },
+        {
+          "symbol": "BHARATFORG",
+          "change": -0.6,
+          "close": 2037.7
+        },
+        {
+          "symbol": "EICHERMOT",
+          "change": -0.51,
+          "close": 8059.0
+        }
+      ],
+      "count": 15,
+      "avg_change": -0.13
+    },
+    "CNXCOMMODITIES": {
+      "top5": [
+        {
+          "symbol": "AMBUJACEM",
+          "change": 0.24,
+          "close": 412.05
+        },
+        {
+          "symbol": "ULTRACEMCO",
+          "change": -1.09,
+          "close": 11589.0
+        },
+        {
+          "symbol": "DALBHARAT",
+          "change": -1.65,
+          "close": 1845.3
+        },
+        {
+          "symbol": "SHREECEM",
+          "change": -1.96,
+          "close": 24000.0
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "SHREECEM",
+          "change": -1.96,
+          "close": 24000.0
+        },
+        {
+          "symbol": "DALBHARAT",
+          "change": -1.65,
+          "close": 1845.3
+        },
+        {
+          "symbol": "ULTRACEMCO",
+          "change": -1.09,
+          "close": 11589.0
+        },
+        {
+          "symbol": "AMBUJACEM",
+          "change": 0.24,
+          "close": 412.05
+        }
+      ],
+      "count": 4,
+      "avg_change": -1.11
+    },
+    "CNXENERGY": {
+      "top5": [
+        {
+          "symbol": "OIL",
+          "change": 2.77,
+          "close": 482.85
+        },
+        {
+          "symbol": "PREMIERENE",
+          "change": 1.39,
+          "close": 1013.9
+        },
+        {
+          "symbol": "WAAREEENER",
+          "change": 0.61,
+          "close": 2640.0
+        },
+        {
+          "symbol": "POWERGRID",
+          "change": 0.43,
+          "close": 266.05
+        },
+        {
+          "symbol": "BPCL",
+          "change": 0.39,
+          "close": 319.25
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "NHPC",
+          "change": -2.26,
+          "close": 74.82
+        },
+        {
+          "symbol": "ADANIENSOL",
+          "change": -2.2,
+          "close": 1581.4
+        },
+        {
+          "symbol": "HINDPETRO",
+          "change": -1.89,
+          "close": 364.0
+        },
+        {
+          "symbol": "ADANIGREEN",
+          "change": -1.32,
+          "close": 1311.0
+        },
+        {
+          "symbol": "JSWENERGY",
+          "change": -1.25,
+          "close": 535.3
+        }
+      ],
+      "count": 23,
+      "avg_change": -0.25
+    },
+    "CNXFINANCE": {
+      "top5": [
+        {
+          "symbol": "BSE",
+          "change": 2.31,
+          "close": 3405.0
+        },
+        {
+          "symbol": "LICI",
+          "change": 1.94,
+          "close": 422.0
+        },
+        {
+          "symbol": "HDFCBANK",
+          "change": 1.31,
+          "close": 720.3
+        },
+        {
+          "symbol": "AXISBANK",
+          "change": 0.72,
+          "close": 1265.0
+        },
+        {
+          "symbol": "SBIN",
+          "change": 0.44,
+          "close": 1047.5
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "LTF",
+          "change": -2.36,
+          "close": 314.3
+        },
+        {
+          "symbol": "PAYTM",
+          "change": -1.67,
+          "close": 1650.9
+        },
+        {
+          "symbol": "ICICIGI",
+          "change": -1.64,
+          "close": 1562.0
+        },
+        {
+          "symbol": "ICICIBANK",
+          "change": -1.4,
+          "close": 1422.8
+        },
+        {
+          "symbol": "RECLTD",
+          "change": -1.28,
+          "close": 316.8
+        }
+      ],
+      "count": 29,
+      "avg_change": -0.36
+    },
+    "CNXFMCG": {
+      "top5": [
+        {
+          "symbol": "NESTLEIND",
+          "change": 0.32,
+          "close": 1454.6
+        },
+        {
+          "symbol": "BRITANNIA",
+          "change": 0.2,
+          "close": 5308.5
+        },
+        {
+          "symbol": "HINDUNILVR",
+          "change": 0.07,
+          "close": 2010.4
+        },
+        {
+          "symbol": "PATANJALI",
+          "change": 0.06,
+          "close": 348.45
+        },
+        {
+          "symbol": "DABUR",
+          "change": -0.05,
+          "close": 386.0
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "JUBLFOOD",
+          "change": -2.69,
+          "close": 490.45
+        },
+        {
+          "symbol": "VBL",
+          "change": -1.13,
+          "close": 414.0
+        },
+        {
+          "symbol": "ITC",
+          "change": -1.12,
+          "close": 266.0
+        },
+        {
+          "symbol": "COLPAL",
+          "change": -0.98,
+          "close": 1826.9
+        },
+        {
+          "symbol": "GODREJCP",
+          "change": -0.87,
+          "close": 915.0
+        }
+      ],
+      "count": 13,
+      "avg_change": -0.58
+    },
+    "CNXINFRA": {
+      "top5": [
+        {
+          "symbol": "LT",
+          "change": 0.47,
+          "close": 4045.8
+        },
+        {
+          "symbol": "GMRAIRPORT",
+          "change": -0.37,
+          "close": 98.31
+        },
+        {
+          "symbol": "ADANIPORTS",
+          "change": -0.38,
+          "close": 1707.5
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "ADANIPORTS",
+          "change": -0.38,
+          "close": 1707.5
+        },
+        {
+          "symbol": "GMRAIRPORT",
+          "change": -0.37,
+          "close": 98.31
+        },
+        {
+          "symbol": "LT",
+          "change": 0.47,
+          "close": 4045.8
+        }
+      ],
+      "count": 3,
+      "avg_change": -0.09
+    },
+    "CNXIT": {
+      "top5": [
+        {
+          "symbol": "COFORGE",
+          "change": 5.93,
+          "close": 2014.6
+        },
+        {
+          "symbol": "TCS",
+          "change": 4.16,
+          "close": 2342.0
+        },
+        {
+          "symbol": "PERSISTENT",
+          "change": 3.91,
+          "close": 5875.0
+        },
+        {
+          "symbol": "KPITTECH",
+          "change": 3.64,
+          "close": 609.4
+        },
+        {
+          "symbol": "TECHM",
+          "change": 3.53,
+          "close": 1640.9
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "TATAELXSI",
+          "change": 1.43,
+          "close": 3685.0
+        },
+        {
+          "symbol": "MPHASIS",
+          "change": 1.72,
+          "close": 2455.0
+        },
+        {
+          "symbol": "WIPRO",
+          "change": 2.58,
+          "close": 180.95
+        },
+        {
+          "symbol": "HCLTECH",
+          "change": 2.66,
+          "close": 1316.1
+        },
+        {
+          "symbol": "OFSS",
+          "change": 2.83,
+          "close": 12190.0
+        }
+      ],
+      "count": 11,
+      "avg_change": 3.22
+    },
+    "CNXMETAL": {
+      "top5": [
+        {
+          "symbol": "SAIL",
+          "change": 3.63,
+          "close": 200.0
+        },
+        {
+          "symbol": "APLAPOLLO",
+          "change": 3.55,
+          "close": 2265.6
+        },
+        {
+          "symbol": "VEDL",
+          "change": 2.47,
+          "close": 287.95
+        },
+        {
+          "symbol": "HINDZINC",
+          "change": 1.95,
+          "close": 622.0
+        },
+        {
+          "symbol": "NATIONALUM",
+          "change": 1.45,
+          "close": 394.95
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "JSWSTEEL",
+          "change": -0.19,
+          "close": 1334.9
+        },
+        {
+          "symbol": "TATASTEEL",
+          "change": -0.16,
+          "close": 186.5
+        },
+        {
+          "symbol": "ADANIENT",
+          "change": -0.02,
+          "close": 3168.5
+        },
+        {
+          "symbol": "JINDALSTEL",
+          "change": 0.79,
+          "close": 1179.2
+        },
+        {
+          "symbol": "NMDC",
+          "change": 1.21,
+          "close": 86.76
+        }
+      ],
+      "count": 11,
+      "avg_change": 1.45
+    },
+    "CNXPHARMA": {
+      "top5": [
+        {
+          "symbol": "GLENMARK",
+          "change": 2.24,
+          "close": 2515.0
+        },
+        {
+          "symbol": "DIVISLAB",
+          "change": 1.98,
+          "close": 9239.0
+        },
+        {
+          "symbol": "TORNTPHARM",
+          "change": 1.02,
+          "close": 5050.0
+        },
+        {
+          "symbol": "ALKEM",
+          "change": 0.66,
+          "close": 5355.0
+        },
+        {
+          "symbol": "LUPIN",
+          "change": 0.62,
+          "close": 2171.5
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "BIOCON",
+          "change": -1.74,
+          "close": 411.1
+        },
+        {
+          "symbol": "MANKIND",
+          "change": -1.43,
+          "close": 2382.9
+        },
+        {
+          "symbol": "DRREDDY",
+          "change": 0.08,
+          "close": 1178.0
+        },
+        {
+          "symbol": "ZYDUSLIFE",
+          "change": 0.15,
+          "close": 1191.0
+        },
+        {
+          "symbol": "CIPLA",
+          "change": 0.25,
+          "close": 1423.5
+        }
+      ],
+      "count": 13,
+      "avg_change": 0.4
+    },
+    "CNXPSE": {
+      "top5": [
+        {
+          "symbol": "RVNL",
+          "change": -0.82,
+          "close": 214.22
+        },
+        {
+          "symbol": "BDL",
+          "change": -3.16,
+          "close": 1306.0
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "BDL",
+          "change": -3.16,
+          "close": 1306.0
+        },
+        {
+          "symbol": "RVNL",
+          "change": -0.82,
+          "close": 214.22
+        }
+      ],
+      "count": 2,
+      "avg_change": -1.99
+    },
+    "CNXPSUBANK": {
+      "top5": [
+        {
+          "symbol": "UNIONBANK",
+          "change": 0.81,
+          "close": 186.0
+        },
+        {
+          "symbol": "SBIN",
+          "change": 0.44,
+          "close": 1047.5
+        },
+        {
+          "symbol": "BANKBARODA",
+          "change": 0.37,
+          "close": 241.9
+        },
+        {
+          "symbol": "CANBK",
+          "change": 0.16,
+          "close": 128.35
+        },
+        {
+          "symbol": "PNB",
+          "change": 0.0,
+          "close": 115.4
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "BANKINDIA",
+          "change": -0.41,
+          "close": 144.0
+        },
+        {
+          "symbol": "INDIANB",
+          "change": -0.23,
+          "close": 882.4
+        },
+        {
+          "symbol": "PNB",
+          "change": 0.0,
+          "close": 115.4
+        },
+        {
+          "symbol": "CANBK",
+          "change": 0.16,
+          "close": 128.35
+        },
+        {
+          "symbol": "BANKBARODA",
+          "change": 0.37,
+          "close": 241.9
+        }
+      ],
+      "count": 7,
+      "avg_change": 0.16
+    },
+    "CNXREALTY": {
+      "top5": [
+        {
+          "symbol": "LODHA",
+          "change": 2.22,
+          "close": 1274.0
+        },
+        {
+          "symbol": "PHOENIXLTD",
+          "change": 0.8,
+          "close": 1917.0
+        },
+        {
+          "symbol": "DLF",
+          "change": 0.54,
+          "close": 679.8
+        },
+        {
+          "symbol": "OBEROIRLTY",
+          "change": -0.15,
+          "close": 1870.0
+        },
+        {
+          "symbol": "GODREJPROP",
+          "change": -1.95,
+          "close": 2029.1
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "PRESTIGE",
+          "change": -2.16,
+          "close": 1588.0
+        },
+        {
+          "symbol": "GODREJPROP",
+          "change": -1.95,
+          "close": 2029.1
+        },
+        {
+          "symbol": "OBEROIRLTY",
+          "change": -0.15,
+          "close": 1870.0
+        },
+        {
+          "symbol": "DLF",
+          "change": 0.54,
+          "close": 679.8
+        },
+        {
+          "symbol": "PHOENIXLTD",
+          "change": 0.8,
+          "close": 1917.0
+        }
+      ],
+      "count": 6,
+      "avg_change": -0.12
+    },
+    "CNXSERVICE": {
+      "top5": [
+        {
+          "symbol": "NAUKRI",
+          "change": 1.8,
+          "close": 1354.0
+        },
+        {
+          "symbol": "ETERNAL",
+          "change": -0.15,
+          "close": 328.0
+        },
+        {
+          "symbol": "INDIGO",
+          "change": -0.44,
+          "close": 5166.0
+        },
+        {
+          "symbol": "POLICYBZR",
+          "change": -1.44,
+          "close": 1811.5
+        },
+        {
+          "symbol": "SWIGGY",
+          "change": -1.48,
+          "close": 280.5
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "INDHOTEL",
+          "change": -1.68,
+          "close": 706.4
+        },
+        {
+          "symbol": "SWIGGY",
+          "change": -1.48,
+          "close": 280.5
+        },
+        {
+          "symbol": "POLICYBZR",
+          "change": -1.44,
+          "close": 1811.5
+        },
+        {
+          "symbol": "INDIGO",
+          "change": -0.44,
+          "close": 5166.0
+        },
+        {
+          "symbol": "ETERNAL",
+          "change": -0.15,
+          "close": 328.0
+        }
+      ],
+      "count": 6,
+      "avg_change": -0.56
+    },
+    "CPSE": {
+      "top5": [
+        {
+          "symbol": "NBCC",
+          "change": -1.24,
+          "close": 87.5
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "NBCC",
+          "change": -1.24,
+          "close": 87.5
+        }
+      ],
+      "count": 1,
+      "avg_change": -1.24
+    },
+    "NIFTYPVTBANK": {
+      "top5": [
+        {
+          "symbol": "HDFCBANK",
+          "change": 1.31,
+          "close": 720.3
+        },
+        {
+          "symbol": "AXISBANK",
+          "change": 0.72,
+          "close": 1265.0
+        },
+        {
+          "symbol": "KOTAKBANK",
+          "change": -0.12,
+          "close": 423.7
+        },
+        {
+          "symbol": "FEDERALBNK",
+          "change": -0.16,
+          "close": 344.25
+        },
+        {
+          "symbol": "YESBANK",
+          "change": -0.72,
+          "close": 22.1
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "ICICIBANK",
+          "change": -1.4,
+          "close": 1422.8
+        },
+        {
+          "symbol": "AUBANK",
+          "change": -1.27,
+          "close": 1077.1
+        },
+        {
+          "symbol": "INDUSINDBK",
+          "change": -0.89,
+          "close": 994.0
+        },
+        {
+          "symbol": "RBLBANK",
+          "change": -0.88,
+          "close": 382.0
+        },
+        {
+          "symbol": "BANDHANBNK",
+          "change": -0.85,
+          "close": 168.25
+        }
+      ],
+      "count": 11,
+      "avg_change": -0.46
+    },
+    "NIFTY_CAPITAL_MKT": {
+      "top5": [
+        {
+          "symbol": "CAMS",
+          "change": 2.85,
+          "close": 762.0
+        },
+        {
+          "symbol": "MCX",
+          "change": 1.8,
+          "close": 3332.0
+        },
+        {
+          "symbol": "NUVAMA",
+          "change": 1.18,
+          "close": 1805.0
+        },
+        {
+          "symbol": "CDSL",
+          "change": 0.28,
+          "close": 1414.7
+        },
+        {
+          "symbol": "IEX",
+          "change": -0.16,
+          "close": 121.8
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "KFINTECH",
+          "change": -0.74,
+          "close": 949.95
+        },
+        {
+          "symbol": "ANGELONE",
+          "change": -0.64,
+          "close": 294.0
+        },
+        {
+          "symbol": "360ONE",
+          "change": -0.33,
+          "close": 1200.0
+        },
+        {
+          "symbol": "HDFCAMC",
+          "change": -0.23,
+          "close": 2569.0
+        },
+        {
+          "symbol": "IEX",
+          "change": -0.16,
+          "close": 121.8
+        }
+      ],
+      "count": 9,
+      "avg_change": 0.45
+    },
+    "NIFTY_CHEMICALS": {
+      "top5": [
+        {
+          "symbol": "GRASIM",
+          "change": 0.98,
+          "close": 3290.0
+        },
+        {
+          "symbol": "SRF",
+          "change": -0.58,
+          "close": 2589.9
+        },
+        {
+          "symbol": "ASIANPAINT",
+          "change": -0.85,
+          "close": 2608.7
+        },
+        {
+          "symbol": "SOLARINDS",
+          "change": -0.87,
+          "close": 20400.0
+        },
+        {
+          "symbol": "UPL",
+          "change": -1.23,
+          "close": 571.0
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "PIIND",
+          "change": -1.9,
+          "close": 2420.1
+        },
+        {
+          "symbol": "PIDILITIND",
+          "change": -1.6,
+          "close": 1629.5
+        },
+        {
+          "symbol": "UPL",
+          "change": -1.23,
+          "close": 571.0
+        },
+        {
+          "symbol": "SOLARINDS",
+          "change": -0.87,
+          "close": 20400.0
+        },
+        {
+          "symbol": "ASIANPAINT",
+          "change": -0.85,
+          "close": 2608.7
+        }
+      ],
+      "count": 7,
+      "avg_change": -0.86
+    },
+    "NIFTY_CONSR_DURBL": {
+      "top5": [
+        {
+          "symbol": "TRENT",
+          "change": 0.68,
+          "close": 2898.0
+        },
+        {
+          "symbol": "TITAN",
+          "change": 0.58,
+          "close": 5169.2
+        },
+        {
+          "symbol": "AMBER",
+          "change": -0.34,
+          "close": 7675.0
+        },
+        {
+          "symbol": "DIXON",
+          "change": -0.41,
+          "close": 14650.0
+        },
+        {
+          "symbol": "DMART",
+          "change": -0.44,
+          "close": 3830.6
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "KALYANKJIL",
+          "change": -2.15,
+          "close": 615.8
+        },
+        {
+          "symbol": "CROMPTON",
+          "change": -2.06,
+          "close": 233.0
+        },
+        {
+          "symbol": "PGEL",
+          "change": -1.7,
+          "close": 585.85
+        },
+        {
+          "symbol": "HAVELLS",
+          "change": -1.46,
+          "close": 1222.9
+        },
+        {
+          "symbol": "VOLTAS",
+          "change": -1.44,
+          "close": 1200.0
+        }
+      ],
+      "count": 12,
+      "avg_change": -0.88
+    },
+    "NIFTY_HEALTHCARE": {
+      "top5": [
+        {
+          "symbol": "GLENMARK",
+          "change": 2.24,
+          "close": 2515.0
+        },
+        {
+          "symbol": "DIVISLAB",
+          "change": 1.98,
+          "close": 9239.0
+        },
+        {
+          "symbol": "FORTIS",
+          "change": 1.21,
+          "close": 926.75
+        },
+        {
+          "symbol": "TORNTPHARM",
+          "change": 1.02,
+          "close": 5050.0
+        },
+        {
+          "symbol": "ALKEM",
+          "change": 0.66,
+          "close": 5355.0
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "BIOCON",
+          "change": -1.74,
+          "close": 411.1
+        },
+        {
+          "symbol": "MANKIND",
+          "change": -1.43,
+          "close": 2382.9
+        },
+        {
+          "symbol": "DRREDDY",
+          "change": 0.08,
+          "close": 1178.0
+        },
+        {
+          "symbol": "ZYDUSLIFE",
+          "change": 0.15,
+          "close": 1191.0
+        },
+        {
+          "symbol": "CIPLA",
+          "change": 0.25,
+          "close": 1423.5
+        }
+      ],
+      "count": 16,
+      "avg_change": 0.46
+    },
+    "NIFTY_INDIA_MFG": {
+      "top5": [
+        {
+          "symbol": "SUPREMEIND",
+          "change": 1.45,
+          "close": 3636.9
+        },
+        {
+          "symbol": "KEI",
+          "change": 0.61,
+          "close": 5570.0
+        },
+        {
+          "symbol": "ABB",
+          "change": 0.25,
+          "close": 7509.0
+        },
+        {
+          "symbol": "ASTRAL",
+          "change": 0.2,
+          "close": 1532.3
+        },
+        {
+          "symbol": "POLYCAB",
+          "change": 0.1,
+          "close": 9088.0
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "KAYNES",
+          "change": -1.88,
+          "close": 3943.1
+        },
+        {
+          "symbol": "CUMMINSIND",
+          "change": 0.06,
+          "close": 5193.0
+        },
+        {
+          "symbol": "POLYCAB",
+          "change": 0.1,
+          "close": 9088.0
+        },
+        {
+          "symbol": "ASTRAL",
+          "change": 0.2,
+          "close": 1532.3
+        },
+        {
+          "symbol": "ABB",
+          "change": 0.25,
+          "close": 7509.0
+        }
+      ],
+      "count": 7,
+      "avg_change": 0.11
+    },
+    "NIFTY_IND_DEFENCE": {
+      "top5": [
+        {
+          "symbol": "BEL",
+          "change": 0.22,
+          "close": 411.9
+        },
+        {
+          "symbol": "HAL",
+          "change": -0.77,
+          "close": 4861.1
+        },
+        {
+          "symbol": "MAZDOCK",
+          "change": -1.28,
+          "close": 2555.0
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "MAZDOCK",
+          "change": -1.28,
+          "close": 2555.0
+        },
+        {
+          "symbol": "HAL",
+          "change": -0.77,
+          "close": 4861.1
+        },
+        {
+          "symbol": "BEL",
+          "change": 0.22,
+          "close": 411.9
+        }
+      ],
+      "count": 3,
+      "avg_change": -0.61
+    },
+    "NIFTY_MS_IT_TELCM": {
+      "top5": [
+        {
+          "symbol": "BHARTIARTL",
+          "change": 0.22,
+          "close": 1882.4
+        },
+        {
+          "symbol": "INDUSTOWER",
+          "change": 0.01,
+          "close": 380.0
+        },
+        {
+          "symbol": "IDEA",
+          "change": -1.94,
+          "close": 14.68
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "IDEA",
+          "change": -1.94,
+          "close": 14.68
+        },
+        {
+          "symbol": "INDUSTOWER",
+          "change": 0.01,
+          "close": 380.0
+        },
+        {
+          "symbol": "BHARTIARTL",
+          "change": 0.22,
+          "close": 1882.4
+        }
+      ],
+      "count": 3,
+      "avg_change": -0.57
+    },
+    "NIFTY_NONCYC_CONS": {
+      "top5": [
+        {
+          "symbol": "PAGEIND",
+          "change": 0.52,
+          "close": 35985.0
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "PAGEIND",
+          "change": 0.52,
+          "close": 35985.0
+        }
+      ],
+      "count": 1,
+      "avg_change": 0.52
+    },
+    "NIFTY_OIL_AND_GAS": {
+      "top5": [
+        {
+          "symbol": "OIL",
+          "change": 2.77,
+          "close": 482.85
+        },
+        {
+          "symbol": "BPCL",
+          "change": 0.39,
+          "close": 319.25
+        },
+        {
+          "symbol": "RELIANCE",
+          "change": 0.37,
+          "close": 1287.0
+        },
+        {
+          "symbol": "PETRONET",
+          "change": 0.36,
+          "close": 292.0
+        },
+        {
+          "symbol": "ONGC",
+          "change": 0.11,
+          "close": 232.25
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "HINDPETRO",
+          "change": -1.89,
+          "close": 364.0
+        },
+        {
+          "symbol": "GAIL",
+          "change": -0.78,
+          "close": 171.1
+        },
+        {
+          "symbol": "IOC",
+          "change": -0.34,
+          "close": 137.1
+        },
+        {
+          "symbol": "ONGC",
+          "change": 0.11,
+          "close": 232.25
+        },
+        {
+          "symbol": "PETRONET",
+          "change": 0.36,
+          "close": 292.0
+        }
+      ],
+      "count": 8,
+      "avg_change": 0.12
+    },
+    "NIFTY_TRANS_LOGIS": {
+      "top5": [
+        {
+          "symbol": "CONCOR",
+          "change": 4.65,
+          "close": 516.0
+        },
+        {
+          "symbol": "DELHIVERY",
+          "change": 0.9,
+          "close": 470.2
+        }
+      ],
+      "bottom5": [
+        {
+          "symbol": "DELHIVERY",
+          "change": 0.9,
+          "close": 470.2
+        },
+        {
+          "symbol": "CONCOR",
+          "change": 4.65,
+          "close": 516.0
+        }
+      ],
+      "count": 2,
+      "avg_change": 2.78
+    }
+  },
   "fno": {
     "all": [
       {
         "symbol": "360ONE",
-        "change": 0.15
+        "change": -0.33,
+        "close": 1200.0
       },
       {
         "symbol": "ABB",
-        "change": -0.24
+        "change": 0.25,
+        "close": 7509.0
       },
       {
         "symbol": "ABCAPITAL",
-        "change": -0.82
+        "change": -1.09,
+        "close": 405.55
       },
       {
         "symbol": "ADANIENSOL",
-        "change": -2.97
+        "change": -2.2,
+        "close": 1581.4
       },
       {
         "symbol": "ADANIENT",
-        "change": -0.73
+        "change": -0.02,
+        "close": 3168.5
       },
       {
         "symbol": "ADANIGREEN",
-        "change": -1.78
+        "change": -1.32,
+        "close": 1311.0
       },
       {
         "symbol": "ADANIPORTS",
-        "change": -0.4
+        "change": -0.38,
+        "close": 1707.5
       },
       {
         "symbol": "ADANIPOWER",
-        "change": -1.7
+        "change": -1.1,
+        "close": 212.63
       },
       {
         "symbol": "ALKEM",
-        "change": 1.16
+        "change": 0.66,
+        "close": 5355.0
       },
       {
         "symbol": "AMBER",
-        "change": 0.08
+        "change": -0.34,
+        "close": 7675.0
       },
       {
         "symbol": "AMBUJACEM",
-        "change": 0.23
+        "change": 0.24,
+        "close": 412.05
       },
       {
         "symbol": "ANGELONE",
-        "change": -1.13
+        "change": -0.64,
+        "close": 294.0
       },
       {
         "symbol": "APLAPOLLO",
-        "change": 2.43
+        "change": 3.55,
+        "close": 2265.6
       },
       {
         "symbol": "APOLLOHOSP",
-        "change": 1.09
+        "change": 0.44,
+        "close": 8838.5
       },
       {
         "symbol": "ASHOKLEY",
-        "change": -0.64
+        "change": -0.92,
+        "close": 175.77
       },
       {
         "symbol": "ASIANPAINT",
-        "change": -1.28
+        "change": -0.85,
+        "close": 2608.7
       },
       {
         "symbol": "ASTRAL",
-        "change": 0.24
+        "change": 0.2,
+        "close": 1532.3
       },
       {
         "symbol": "AUBANK",
-        "change": -1.09
+        "change": -1.27,
+        "close": 1077.1
       },
       {
         "symbol": "AUROPHARMA",
-        "change": -0.53
+        "change": 0.51,
+        "close": 1645.3
       },
       {
         "symbol": "AXISBANK",
-        "change": 0.27
+        "change": 0.72,
+        "close": 1265.0
       },
       {
         "symbol": "BAJAJFINSV",
-        "change": -1.18
+        "change": -0.45,
+        "close": 2002.0
       },
       {
         "symbol": "BAJAJHLDNG",
-        "change": -0.42
+        "change": -0.52,
+        "close": 11340.0
       },
       {
         "symbol": "BAJAJ_AUTO",
-        "change": 1.78
+        "change": 1.62,
+        "close": 11910.0
       },
       {
         "symbol": "BAJFINANCE",
-        "change": -0.9
+        "change": -0.29,
+        "close": 1079.9
       },
       {
         "symbol": "BANDHANBNK",
-        "change": -0.56
+        "change": -0.85,
+        "close": 168.25
       },
       {
         "symbol": "BANKBARODA",
-        "change": -0.15
+        "change": 0.37,
+        "close": 241.9
       },
       {
         "symbol": "BANKINDIA",
-        "change": -0.64
+        "change": -0.41,
+        "close": 144.0
+      },
+      {
+        "symbol": "BANKNIFTY",
+        "change": -0.02,
+        "close": 57496.3
       },
       {
         "symbol": "BDL",
-        "change": -3.19
+        "change": -3.16,
+        "close": 1306.0
       },
       {
         "symbol": "BEL",
-        "change": -0.64
+        "change": 0.22,
+        "close": 411.9
       },
       {
         "symbol": "BHARATFORG",
-        "change": -1.4
+        "change": -0.6,
+        "close": 2037.7
       },
       {
         "symbol": "BHARTIARTL",
-        "change": -0.45
+        "change": 0.22,
+        "close": 1882.4
       },
       {
         "symbol": "BHEL",
-        "change": -1.49
+        "change": -0.71,
+        "close": 430.85
       },
       {
         "symbol": "BIOCON",
-        "change": -1.89
+        "change": -1.74,
+        "close": 411.1
       },
       {
         "symbol": "BLUESTARCO",
-        "change": -1.12
+        "change": -1.14,
+        "close": 1480.0
       },
       {
         "symbol": "BOSCHLTD",
-        "change": -0.5
+        "change": -0.29,
+        "close": 48640.0
       },
       {
         "symbol": "BPCL",
-        "change": 0.06
+        "change": 0.39,
+        "close": 319.25
       },
       {
         "symbol": "BRITANNIA",
-        "change": -0.29
+        "change": 0.2,
+        "close": 5308.5
       },
       {
         "symbol": "BSE",
-        "change": 1.65
+        "change": 2.31,
+        "close": 3405.0
       },
       {
         "symbol": "CAMS",
-        "change": 1.43
+        "change": 2.85,
+        "close": 762.0
       },
       {
         "symbol": "CANBK",
-        "change": -0.39
+        "change": 0.16,
+        "close": 128.35
       },
       {
         "symbol": "CDSL",
-        "change": 0.11
+        "change": 0.28,
+        "close": 1414.7
       },
       {
         "symbol": "CGPOWER",
-        "change": -1.01
+        "change": -0.99,
+        "close": 889.0
       },
       {
         "symbol": "CHOLAFIN",
-        "change": -1.21
+        "change": -0.67,
+        "close": 1862.9
       },
       {
         "symbol": "CIPLA",
-        "change": -0.42
+        "change": 0.25,
+        "close": 1423.5
+      },
+      {
+        "symbol": "CNXFINANCE",
+        "change": 0.02,
+        "close": 26286.5
       },
       {
         "symbol": "CNXMIDCAP",
-        "change": 0.01
+        "change": 0.05,
+        "close": 64069.5
       },
       {
         "symbol": "COALINDIA",
-        "change": 0.15
+        "change": 0.25,
+        "close": 401.0
       },
       {
         "symbol": "COCHINSHIP",
-        "change": -0.71
+        "change": -0.52,
+        "close": 1535.0
       },
       {
         "symbol": "COFORGE",
-        "change": 5.03
+        "change": 5.93,
+        "close": 2014.6
       },
       {
         "symbol": "COLPAL",
-        "change": -0.78
+        "change": -0.98,
+        "close": 1826.9
       },
       {
         "symbol": "CONCOR",
-        "change": 4.34
+        "change": 4.65,
+        "close": 516.0
       },
       {
         "symbol": "CROMPTON",
-        "change": -2.84
+        "change": -2.06,
+        "close": 233.0
       },
       {
         "symbol": "CUMMINSIND",
-        "change": -0.87
+        "change": 0.06,
+        "close": 5193.0
       },
       {
         "symbol": "DABUR",
-        "change": -0.32
+        "change": -0.05,
+        "close": 386.0
       },
       {
         "symbol": "DALBHARAT",
-        "change": -1.61
+        "change": -1.65,
+        "close": 1845.3
       },
       {
         "symbol": "DELHIVERY",
-        "change": -0.03
+        "change": 0.9,
+        "close": 470.2
       },
       {
         "symbol": "DIVISLAB",
-        "change": 1.61
+        "change": 1.98,
+        "close": 9239.0
       },
       {
         "symbol": "DIXON",
-        "change": 0.22
+        "change": -0.41,
+        "close": 14650.0
       },
       {
         "symbol": "DLF",
-        "change": -0.32
+        "change": 0.54,
+        "close": 679.8
       },
       {
         "symbol": "DMART",
-        "change": -0.31
+        "change": -0.44,
+        "close": 3830.6
       },
       {
         "symbol": "DRREDDY",
-        "change": 0.48
+        "change": 0.08,
+        "close": 1178.0
       },
       {
         "symbol": "EICHERMOT",
-        "change": -0.74
+        "change": -0.51,
+        "close": 8059.0
       },
       {
         "symbol": "ETERNAL",
-        "change": -0.37
+        "change": -0.15,
+        "close": 328.0
       },
       {
         "symbol": "EXIDEIND",
-        "change": 1.8
+        "change": 1.56,
+        "close": 444.6
       },
       {
         "symbol": "FEDERALBNK",
-        "change": -0.46
+        "change": -0.16,
+        "close": 344.25
       },
       {
         "symbol": "FORCEMOT",
-        "change": -0.31
+        "change": -0.03,
+        "close": 17370.0
       },
       {
         "symbol": "FORTIS",
-        "change": 1.93
+        "change": 1.21,
+        "close": 926.75
       },
       {
         "symbol": "GAIL",
-        "change": -0.85
+        "change": -0.78,
+        "close": 171.1
       },
       {
         "symbol": "GLENMARK",
-        "change": 0.04
+        "change": 2.24,
+        "close": 2515.0
       },
       {
         "symbol": "GMRAIRPORT",
-        "change": -0.13
+        "change": -0.37,
+        "close": 98.31
       },
       {
         "symbol": "GODFRYPHLP",
-        "change": 0.52
+        "change": 0.41,
+        "close": 2123.7
       },
       {
         "symbol": "GODREJCP",
-        "change": -1.21
+        "change": -0.87,
+        "close": 915.0
       },
       {
         "symbol": "GODREJPROP",
-        "change": -1.65
+        "change": -1.95,
+        "close": 2029.1
       },
       {
         "symbol": "GRASIM",
-        "change": -0.35
+        "change": 0.98,
+        "close": 3290.0
       },
       {
         "symbol": "GVT&D",
-        "change": -1.36
+        "change": -1.56,
+        "close": 4339.2
       },
       {
         "symbol": "HAL",
-        "change": -1.23
+        "change": -0.77,
+        "close": 4861.1
       },
       {
         "symbol": "HAVELLS",
-        "change": -1.35
+        "change": -1.46,
+        "close": 1222.9
       },
       {
         "symbol": "HCLTECH",
-        "change": 2.98
+        "change": 2.66,
+        "close": 1316.1
       },
       {
         "symbol": "HDFCAMC",
-        "change": -0.85
+        "change": -0.23,
+        "close": 2569.0
       },
       {
         "symbol": "HDFCBANK",
-        "change": 0.67
+        "change": 1.31,
+        "close": 720.3
       },
       {
         "symbol": "HDFCLIFE",
-        "change": -0.36
+        "change": 0.0,
+        "close": 548.0
       },
       {
         "symbol": "HEROMOTOCO",
-        "change": 1.23
+        "change": 0.9,
+        "close": 5600.0
       },
       {
         "symbol": "HINDALCO",
-        "change": 0.64
+        "change": 1.31,
+        "close": 1037.4
       },
       {
         "symbol": "HINDPETRO",
-        "change": -1.06
+        "change": -1.89,
+        "close": 364.0
       },
       {
         "symbol": "HINDUNILVR",
-        "change": -0.51
+        "change": 0.07,
+        "close": 2010.4
       },
       {
         "symbol": "HINDZINC",
-        "change": 1.53
+        "change": 1.95,
+        "close": 622.0
       },
       {
         "symbol": "HYUNDAI",
-        "change": 0.33
+        "change": 0.62,
+        "close": 2267.0
       },
       {
         "symbol": "ICICIBANK",
-        "change": -1.17
+        "change": -1.4,
+        "close": 1422.8
       },
       {
         "symbol": "ICICIGI",
-        "change": -2.19
+        "change": -1.64,
+        "close": 1562.0
       },
       {
         "symbol": "ICICIPRULI",
-        "change": -0.77
+        "change": -0.78,
+        "close": 506.0
       },
       {
         "symbol": "IDEA",
-        "change": -1.94
+        "change": -1.94,
+        "close": 14.68
       },
       {
         "symbol": "IDFCFIRSTB",
-        "change": -0.66
+        "change": -0.81,
+        "close": 83.12
       },
       {
         "symbol": "IEX",
-        "change": -0.43
+        "change": -0.16,
+        "close": 121.8
       },
       {
         "symbol": "INDHOTEL",
-        "change": -1.86
+        "change": -1.68,
+        "close": 706.4
       },
       {
         "symbol": "INDIANB",
-        "change": -0.54
+        "change": -0.23,
+        "close": 882.4
       },
       {
         "symbol": "INDIGO",
-        "change": -0.72
+        "change": -0.44,
+        "close": 5166.0
       },
       {
         "symbol": "INDUSINDBK",
-        "change": -1.36
+        "change": -0.89,
+        "close": 994.0
       },
       {
         "symbol": "INDUSTOWER",
-        "change": 0.64
+        "change": 0.01,
+        "close": 380.0
       },
       {
         "symbol": "INFY",
-        "change": 2.84
+        "change": 2.99,
+        "close": 1144.0
       },
       {
         "symbol": "INOXWIND",
-        "change": -0.85
+        "change": -0.29,
+        "close": 71.79
       },
       {
         "symbol": "IOC",
-        "change": -0.66
+        "change": -0.34,
+        "close": 137.1
       },
       {
         "symbol": "IREDA",
-        "change": -0.59
+        "change": -0.32,
+        "close": 117.02
       },
       {
         "symbol": "IRFC",
-        "change": -0.71
+        "change": -0.89,
+        "close": 83.9
       },
       {
         "symbol": "ITC",
-        "change": -0.97
+        "change": -1.12,
+        "close": 266.0
       },
       {
         "symbol": "JINDALSTEL",
-        "change": 0.46
+        "change": 0.79,
+        "close": 1179.2
       },
       {
         "symbol": "JIOFIN",
-        "change": -0.04
+        "change": 0.13,
+        "close": 238.4
       },
       {
         "symbol": "JSWENERGY",
-        "change": -0.57
+        "change": -1.25,
+        "close": 535.3
       },
       {
         "symbol": "JSWSTEEL",
-        "change": -0.87
+        "change": -0.19,
+        "close": 1334.9
       },
       {
         "symbol": "JUBLFOOD",
-        "change": -1.72
+        "change": -2.69,
+        "close": 490.45
       },
       {
         "symbol": "KALYANKJIL",
-        "change": -2.35
+        "change": -2.15,
+        "close": 615.8
       },
       {
         "symbol": "KAYNES",
-        "change": -1.49
+        "change": -1.88,
+        "close": 3943.1
       },
       {
         "symbol": "KEI",
-        "change": -0.08
+        "change": 0.61,
+        "close": 5570.0
       },
       {
         "symbol": "KFINTECH",
-        "change": -0.4
+        "change": -0.74,
+        "close": 949.95
       },
       {
         "symbol": "KOTAKBANK",
-        "change": 0.02
+        "change": -0.12,
+        "close": 423.7
       },
       {
         "symbol": "KPITTECH",
-        "change": 3.79
+        "change": 3.64,
+        "close": 609.4
       },
       {
         "symbol": "LAURUSLABS",
-        "change": -0.73
+        "change": 0.47,
+        "close": 1938.5
       },
       {
         "symbol": "LICHSGFIN",
-        "change": -0.23
+        "change": -0.09,
+        "close": 535.0
       },
       {
         "symbol": "LICI",
-        "change": -0.52
+        "change": 1.94,
+        "close": 422.0
       },
       {
         "symbol": "LODHA",
-        "change": 0.85
+        "change": 2.22,
+        "close": 1274.0
       },
       {
         "symbol": "LT",
-        "change": 0.32
+        "change": 0.47,
+        "close": 4045.8
       },
       {
         "symbol": "LTF",
-        "change": -1.96
+        "change": -2.36,
+        "close": 314.3
       },
       {
         "symbol": "LTM",
-        "change": 4.31
+        "change": 4.73,
+        "close": 4675.0
       },
       {
         "symbol": "LUPIN",
-        "change": 0.4
+        "change": 0.62,
+        "close": 2171.5
       },
       {
         "symbol": "M&M",
-        "change": -0.72
+        "change": 0.12,
+        "close": 3334.0
       },
       {
         "symbol": "MANAPPURAM",
-        "change": -0.03
+        "change": 0.26,
+        "close": 348.9
       },
       {
         "symbol": "MANKIND",
-        "change": -1.26
+        "change": -1.43,
+        "close": 2382.9
       },
       {
         "symbol": "MARICO",
-        "change": -0.7
+        "change": -0.46,
+        "close": 829.65
       },
       {
         "symbol": "MARUTI",
-        "change": -0.47
+        "change": -0.48,
+        "close": 13376.0
       },
       {
         "symbol": "MAXHEALTH",
-        "change": 0.15
+        "change": 0.51,
+        "close": 1014.1
       },
       {
         "symbol": "MAZDOCK",
-        "change": -1.41
+        "change": -1.28,
+        "close": 2555.0
       },
       {
         "symbol": "MCX",
-        "change": 1.37
+        "change": 1.8,
+        "close": 3332.0
       },
       {
         "symbol": "MFSL",
-        "change": 0.52
+        "change": -0.23,
+        "close": 1564.4
       },
       {
         "symbol": "MOTHERSON",
-        "change": 0.04
+        "change": -0.24,
+        "close": 165.6
       },
       {
         "symbol": "MOTILALOFS",
-        "change": 0.83
+        "change": 0.02,
+        "close": 1038.3
       },
       {
         "symbol": "MPHASIS",
-        "change": 1.72
+        "change": 1.72,
+        "close": 2455.0
       },
       {
         "symbol": "MUTHOOTFIN",
-        "change": 0.55
+        "change": 0.19,
+        "close": 3091.0
       },
       {
         "symbol": "NAM_INDIA",
-        "change": -0.63
+        "change": -0.8,
+        "close": 1194.4
       },
       {
         "symbol": "NATIONALUM",
-        "change": 0.64
+        "change": 1.45,
+        "close": 394.95
       },
       {
         "symbol": "NAUKRI",
-        "change": 2.07
+        "change": 1.8,
+        "close": 1354.0
       },
       {
         "symbol": "NBCC",
-        "change": -0.87
+        "change": -1.24,
+        "close": 87.5
       },
       {
         "symbol": "NESTLEIND",
-        "change": -0.58
+        "change": 0.32,
+        "close": 1454.6
       },
       {
         "symbol": "NHPC",
-        "change": -2.0
+        "change": -2.26,
+        "close": 74.82
+      },
+      {
+        "symbol": "NIFTY",
+        "change": 0.35,
+        "close": 24175.65
       },
       {
         "symbol": "NIFTYJR",
-        "change": -0.64
+        "change": -0.25,
+        "close": 74159.15
       },
       {
         "symbol": "NMDC",
-        "change": 0.63
+        "change": 1.21,
+        "close": 86.76
       },
       {
         "symbol": "NTPC",
-        "change": -0.11
+        "change": -0.26,
+        "close": 330.05
       },
       {
         "symbol": "NUVAMA",
-        "change": 1.56
+        "change": 1.18,
+        "close": 1805.0
       },
       {
         "symbol": "NYKAA",
-        "change": -0.65
+        "change": -0.7,
+        "close": 335.65
       },
       {
         "symbol": "OBEROIRLTY",
-        "change": -0.35
+        "change": -0.15,
+        "close": 1870.0
       },
       {
         "symbol": "OFSS",
-        "change": 2.91
+        "change": 2.83,
+        "close": 12190.0
       },
       {
         "symbol": "OIL",
-        "change": 2.09
+        "change": 2.77,
+        "close": 482.85
       },
       {
         "symbol": "ONGC",
-        "change": -0.17
+        "change": 0.11,
+        "close": 232.25
       },
       {
         "symbol": "PAGEIND",
-        "change": -0.41
+        "change": 0.52,
+        "close": 35985.0
       },
       {
         "symbol": "PATANJALI",
-        "change": -0.22
+        "change": 0.06,
+        "close": 348.45
       },
       {
         "symbol": "PAYTM",
-        "change": -0.45
+        "change": -1.67,
+        "close": 1650.9
       },
       {
         "symbol": "PERSISTENT",
-        "change": 4.18
+        "change": 3.91,
+        "close": 5875.0
       },
       {
         "symbol": "PETRONET",
-        "change": 0.43
+        "change": 0.36,
+        "close": 292.0
       },
       {
         "symbol": "PFC",
-        "change": -1.59
+        "change": -1.08,
+        "close": 352.0
       },
       {
         "symbol": "PGEL",
-        "change": -1.2
+        "change": -1.7,
+        "close": 585.85
       },
       {
         "symbol": "PHOENIXLTD",
-        "change": 0.16
+        "change": 0.8,
+        "close": 1917.0
       },
       {
         "symbol": "PIDILITIND",
-        "change": -1.36
+        "change": -1.6,
+        "close": 1629.5
       },
       {
         "symbol": "PIIND",
-        "change": -0.56
+        "change": -1.9,
+        "close": 2420.1
       },
       {
         "symbol": "PNB",
-        "change": -0.53
+        "change": 0.0,
+        "close": 115.4
       },
       {
         "symbol": "PNBHOUSING",
-        "change": -0.9
+        "change": -0.69,
+        "close": 1169.9
       },
       {
         "symbol": "POLICYBZR",
-        "change": -0.84
+        "change": -1.44,
+        "close": 1811.5
       },
       {
         "symbol": "POLYCAB",
-        "change": -0.31
+        "change": 0.1,
+        "close": 9088.0
       },
       {
         "symbol": "POWERGRID",
-        "change": 0.19
+        "change": 0.43,
+        "close": 266.05
       },
       {
         "symbol": "POWERINDIA",
-        "change": -1.55
+        "change": -1.62,
+        "close": 33330.0
       },
       {
         "symbol": "PREMIERENE",
-        "change": 1.17
+        "change": 1.39,
+        "close": 1013.9
       },
       {
         "symbol": "PRESTIGE",
-        "change": -2.01
+        "change": -2.16,
+        "close": 1588.0
       },
       {
         "symbol": "RADICO",
-        "change": -0.03
+        "change": -0.02,
+        "close": 4605.0
       },
       {
         "symbol": "RBLBANK",
-        "change": -0.8
+        "change": -0.88,
+        "close": 382.0
       },
       {
         "symbol": "RECLTD",
-        "change": -1.11
+        "change": -1.28,
+        "close": 316.8
       },
       {
         "symbol": "RELIANCE",
-        "change": -0.01
+        "change": 0.37,
+        "close": 1287.0
       },
       {
         "symbol": "RVNL",
-        "change": -0.38
+        "change": -0.82,
+        "close": 214.22
       },
       {
         "symbol": "SAIL",
-        "change": 1.81
+        "change": 3.63,
+        "close": 200.0
       },
       {
         "symbol": "SBICARD",
-        "change": -0.5
+        "change": -0.61,
+        "close": 641.05
       },
       {
         "symbol": "SBILIFE",
-        "change": -1.02
+        "change": -0.68,
+        "close": 1761.1
       },
       {
         "symbol": "SBIN",
-        "change": 0.41
+        "change": 0.44,
+        "close": 1047.5
       },
       {
         "symbol": "SHREECEM",
-        "change": -1.84
+        "change": -1.96,
+        "close": 24000.0
       },
       {
         "symbol": "SHRIRAMFIN",
-        "change": -1.29
+        "change": -1.28,
+        "close": 1086.9
       },
       {
         "symbol": "SIEMENS",
-        "change": -0.42
+        "change": -0.15,
+        "close": 4089.0
       },
       {
         "symbol": "SOLARINDS",
-        "change": -1.15
+        "change": -0.87,
+        "close": 20400.0
       },
       {
         "symbol": "SONACOMS",
-        "change": -1.5
+        "change": -0.49,
+        "close": 815.0
       },
       {
         "symbol": "SRF",
-        "change": -0.67
+        "change": -0.58,
+        "close": 2589.9
       },
       {
         "symbol": "SUNPHARMA",
-        "change": 0.29
+        "change": 0.35,
+        "close": 1920.0
       },
       {
         "symbol": "SUPREMEIND",
-        "change": 1.87
+        "change": 1.45,
+        "close": 3636.9
       },
       {
         "symbol": "SUZLON",
-        "change": 0.04
+        "change": -0.04,
+        "close": 46.79
       },
       {
         "symbol": "SWIGGY",
-        "change": -0.67
+        "change": -1.48,
+        "close": 280.5
       },
       {
         "symbol": "TATACONSUM",
-        "change": -0.96
+        "change": -0.12,
+        "close": 1040.7
       },
       {
         "symbol": "TATAELXSI",
-        "change": 1.49
+        "change": 1.43,
+        "close": 3685.0
       },
       {
         "symbol": "TATAPOWER",
-        "change": 0.06
+        "change": -0.04,
+        "close": 351.85
       },
       {
         "symbol": "TATASTEEL",
-        "change": -1.18
+        "change": -0.16,
+        "close": 186.5
       },
       {
         "symbol": "TCS",
-        "change": 4.03
+        "change": 4.16,
+        "close": 2342.0
       },
       {
         "symbol": "TECHM",
-        "change": 2.78
+        "change": 3.53,
+        "close": 1640.9
       },
       {
         "symbol": "TIINDIA",
-        "change": -1.05
+        "change": -1.05,
+        "close": 2840.0
       },
       {
         "symbol": "TITAN",
-        "change": 0.29
+        "change": 0.58,
+        "close": 5169.2
       },
       {
         "symbol": "TMPV",
-        "change": -0.32
+        "change": 1.08,
+        "close": 319.4
       },
       {
         "symbol": "TORNTPHARM",
-        "change": 0.17
+        "change": 1.02,
+        "close": 5050.0
       },
       {
         "symbol": "TRENT",
-        "change": 0.64
+        "change": 0.68,
+        "close": 2898.0
       },
       {
         "symbol": "TVSMOTOR",
-        "change": -3.92
+        "change": -2.39,
+        "close": 4304.2
       },
       {
         "symbol": "ULTRACEMCO",
-        "change": -1.17
+        "change": -1.09,
+        "close": 11589.0
       },
       {
         "symbol": "UNIONBANK",
-        "change": 0.25
+        "change": 0.81,
+        "close": 186.0
       },
       {
         "symbol": "UNITDSPR",
-        "change": -0.86
+        "change": -0.79,
+        "close": 1510.0
       },
       {
         "symbol": "UNOMINDA",
-        "change": -0.34
+        "change": -0.31,
+        "close": 1276.0
       },
       {
         "symbol": "UPL",
-        "change": -0.31
+        "change": -1.23,
+        "close": 571.0
       },
       {
         "symbol": "VBL",
-        "change": -1.17
+        "change": -1.13,
+        "close": 414.0
       },
       {
         "symbol": "VEDL",
-        "change": 1.99
+        "change": 2.47,
+        "close": 287.95
       },
       {
         "symbol": "VMM",
-        "change": -0.45
+        "change": -0.93,
+        "close": 107.0
       },
       {
         "symbol": "VOLTAS",
-        "change": -1.03
+        "change": -1.44,
+        "close": 1200.0
       },
       {
         "symbol": "WAAREEENER",
-        "change": 0.35
+        "change": 0.61,
+        "close": 2640.0
       },
       {
         "symbol": "WIPRO",
-        "change": 2.66
+        "change": 2.58,
+        "close": 180.95
       },
       {
         "symbol": "YESBANK",
-        "change": -0.67
+        "change": -0.72,
+        "close": 22.1
       },
       {
         "symbol": "ZYDUSLIFE",
-        "change": -0.82
+        "change": 0.15,
+        "close": 1191.0
       }
     ],
     "top5": [
       {
         "symbol": "COFORGE",
-        "change": 5.03
-      },
-      {
-        "symbol": "CONCOR",
-        "change": 4.34
+        "change": 5.93,
+        "close": 2014.6
       },
       {
         "symbol": "LTM",
-        "change": 4.31
+        "change": 4.73,
+        "close": 4675.0
       },
       {
-        "symbol": "PERSISTENT",
-        "change": 4.18
+        "symbol": "CONCOR",
+        "change": 4.65,
+        "close": 516.0
       },
       {
         "symbol": "TCS",
-        "change": 4.03
+        "change": 4.16,
+        "close": 2342.0
+      },
+      {
+        "symbol": "PERSISTENT",
+        "change": 3.91,
+        "close": 5875.0
       }
     ],
     "bottom5": [
       {
-        "symbol": "TVSMOTOR",
-        "change": -3.92
-      },
-      {
         "symbol": "BDL",
-        "change": -3.19
+        "change": -3.16,
+        "close": 1306.0
       },
       {
-        "symbol": "ADANIENSOL",
-        "change": -2.97
+        "symbol": "JUBLFOOD",
+        "change": -2.69,
+        "close": 490.45
       },
       {
-        "symbol": "CROMPTON",
-        "change": -2.84
+        "symbol": "TVSMOTOR",
+        "change": -2.39,
+        "close": 4304.2
       },
       {
-        "symbol": "KALYANKJIL",
-        "change": -2.35
+        "symbol": "LTF",
+        "change": -2.36,
+        "close": 314.3
+      },
+      {
+        "symbol": "NHPC",
+        "change": -2.26,
+        "close": 74.82
       }
     ]
   },
   "advance_decline": {
-    "advance": 73,
-    "decline": 139,
-    "unchanged": 0
+    "advance": 94,
+    "decline": 119,
+    "unchanged": 2
   },
   "momentum_streaks": {
     "up": [
-      {
-        "symbol": "AMBER",
-        "strength": 7
-      },
       {
         "symbol": "NUVAMA",
         "strength": 6
@@ -1083,6 +2706,14 @@
         "strength": 5
       },
       {
+        "symbol": "AUROPHARMA",
+        "strength": 4
+      },
+      {
+        "symbol": "DELHIVERY",
+        "strength": 4
+      },
+      {
         "symbol": "DIVISLAB",
         "strength": 4
       },
@@ -1091,11 +2722,15 @@
         "strength": 4
       },
       {
-        "symbol": "KOTAKBANK",
+        "symbol": "LAURUSLABS",
         "strength": 4
       },
       {
         "symbol": "OFSS",
+        "strength": 4
+      },
+      {
+        "symbol": "ZYDUSLIFE",
         "strength": 4
       },
       {
@@ -1115,10 +2750,6 @@
         "strength": 3
       },
       {
-        "symbol": "360ONE",
-        "strength": 2
-      },
-      {
         "symbol": "ALKEM",
         "strength": 2
       },
@@ -1131,7 +2762,19 @@
         "strength": 2
       },
       {
+        "symbol": "BEL",
+        "strength": 2
+      },
+      {
+        "symbol": "CIPLA",
+        "strength": 2
+      },
+      {
         "symbol": "COFORGE",
+        "strength": 2
+      },
+      {
+        "symbol": "DLF",
         "strength": 2
       },
       {
@@ -1151,10 +2794,6 @@
         "strength": 2
       },
       {
-        "symbol": "MOTHERSON",
-        "strength": 2
-      },
-      {
         "symbol": "MPHASIS",
         "strength": 2
       },
@@ -1163,11 +2802,23 @@
         "strength": 2
       },
       {
+        "symbol": "PAGEIND",
+        "strength": 2
+      },
+      {
+        "symbol": "PATANJALI",
+        "strength": 2
+      },
+      {
         "symbol": "PERSISTENT",
         "strength": 2
       },
       {
         "symbol": "PETRONET",
+        "strength": 2
+      },
+      {
+        "symbol": "POLYCAB",
         "strength": 2
       },
       {
@@ -1184,6 +2835,10 @@
       },
       {
         "symbol": "TITAN",
+        "strength": 2
+      },
+      {
+        "symbol": "TMPV",
         "strength": 2
       },
       {
@@ -1193,6 +2848,10 @@
     ],
     "down": [
       {
+        "symbol": "TATAPOWER",
+        "strength": 9
+      },
+      {
         "symbol": "COLPAL",
         "strength": 6
       },
@@ -1225,10 +2884,6 @@
         "strength": 5
       },
       {
-        "symbol": "HINDUNILVR",
-        "strength": 4
-      },
-      {
         "symbol": "ICICIGI",
         "strength": 4
       },
@@ -1238,10 +2893,6 @@
       },
       {
         "symbol": "INOXWIND",
-        "strength": 4
-      },
-      {
-        "symbol": "ONGC",
         "strength": 4
       },
       {
@@ -1257,10 +2908,6 @@
         "strength": 4
       },
       {
-        "symbol": "ABB",
-        "strength": 3
-      },
-      {
         "symbol": "ANGELONE",
         "strength": 3
       },
@@ -1273,15 +2920,7 @@
         "strength": 3
       },
       {
-        "symbol": "BHARTIARTL",
-        "strength": 3
-      },
-      {
-        "symbol": "BRITANNIA",
-        "strength": 3
-      },
-      {
-        "symbol": "CUMMINSIND",
+        "symbol": "DIXON",
         "strength": 3
       },
       {
@@ -1317,27 +2956,7 @@
         "strength": 3
       },
       {
-        "symbol": "JIOFIN",
-        "strength": 3
-      },
-      {
         "symbol": "JSWENERGY",
-        "strength": 3
-      },
-      {
-        "symbol": "KEI",
-        "strength": 3
-      },
-      {
-        "symbol": "LICI",
-        "strength": 3
-      },
-      {
-        "symbol": "M&M",
-        "strength": 3
-      },
-      {
-        "symbol": "MANAPPURAM",
         "strength": 3
       },
       {
@@ -1346,10 +2965,6 @@
       },
       {
         "symbol": "NBCC",
-        "strength": 3
-      },
-      {
-        "symbol": "NESTLEIND",
         "strength": 3
       },
       {
@@ -1370,10 +2985,6 @@
       },
       {
         "symbol": "RADICO",
-        "strength": 3
-      },
-      {
-        "symbol": "RELIANCE",
         "strength": 3
       },
       {
@@ -1401,11 +3012,11 @@
         "strength": 2
       },
       {
-        "symbol": "BANKBARODA",
+        "symbol": "BANKINDIA",
         "strength": 2
       },
       {
-        "symbol": "BANKINDIA",
+        "symbol": "BANKNIFTY",
         "strength": 2
       },
       {
@@ -1414,10 +3025,6 @@
       },
       {
         "symbol": "BOSCHLTD",
-        "strength": 2
-      },
-      {
-        "symbol": "CANBK",
         "strength": 2
       },
       {
@@ -1430,14 +3037,6 @@
       },
       {
         "symbol": "FORCEMOT",
-        "strength": 2
-      },
-      {
-        "symbol": "GRASIM",
-        "strength": 2
-      },
-      {
-        "symbol": "HDFCLIFE",
         "strength": 2
       },
       {
@@ -1485,15 +3084,15 @@
         "strength": 2
       },
       {
+        "symbol": "MFSL",
+        "strength": 2
+      },
+      {
         "symbol": "NYKAA",
         "strength": 2
       },
       {
         "symbol": "PIIND",
-        "strength": 2
-      },
-      {
-        "symbol": "PNB",
         "strength": 2
       },
       {
@@ -1514,6 +3113,10 @@
       },
       {
         "symbol": "SHREECEM",
+        "strength": 2
+      },
+      {
+        "symbol": "SUZLON",
         "strength": 2
       },
       {
@@ -4114,547 +5717,547 @@
     {
       "symbol": "360ONE",
       "tf": "DAY",
-      "rsi": 60.59,
-      "state": "BULLISH"
+      "rsi": 58.83,
+      "state": "NEUTRAL"
     },
     {
       "symbol": "ABB",
       "tf": "DAY",
-      "rsi": 49.16,
+      "rsi": 50.92,
       "state": "NEUTRAL"
     },
     {
       "symbol": "ABCAPITAL",
       "tf": "DAY",
-      "rsi": 50.98,
+      "rsi": 50.12,
       "state": "NEUTRAL"
     },
     {
       "symbol": "ADANIENSOL",
       "tf": "DAY",
-      "rsi": 45.14,
+      "rsi": 46.85,
       "state": "NEUTRAL"
     },
     {
       "symbol": "ADANIENT",
       "tf": "DAY",
-      "rsi": 62.76,
+      "rsi": 66.52,
       "state": "BULLISH"
     },
     {
       "symbol": "ADANIGREEN",
       "tf": "DAY",
-      "rsi": 39.68,
-      "state": "CHANGE_NOW"
+      "rsi": 40.6,
+      "state": "NEUTRAL"
     },
     {
       "symbol": "ADANIPORTS",
       "tf": "DAY",
-      "rsi": 48.54,
+      "rsi": 48.61,
       "state": "NEUTRAL"
     },
     {
       "symbol": "ADANIPOWER",
       "tf": "DAY",
-      "rsi": 52.62,
+      "rsi": 54.71,
       "state": "NEUTRAL"
     },
     {
       "symbol": "ALKEM",
       "tf": "DAY",
-      "rsi": 43.32,
+      "rsi": 41.06,
       "state": "NEUTRAL"
     },
     {
       "symbol": "AMBER",
       "tf": "DAY",
-      "rsi": 62.71,
+      "rsi": 61.19,
       "state": "BULLISH"
     },
     {
       "symbol": "AMBUJACEM",
       "tf": "DAY",
-      "rsi": 42.74,
+      "rsi": 42.78,
       "state": "NEUTRAL"
     },
     {
       "symbol": "ANGELONE",
       "tf": "DAY",
-      "rsi": 43.22,
+      "rsi": 44.39,
       "state": "NEUTRAL"
     },
     {
       "symbol": "APLAPOLLO",
       "tf": "DAY",
-      "rsi": 83.0,
+      "rsi": 84.19,
       "state": "BULLISH"
     },
     {
       "symbol": "APOLLOHOSP",
       "tf": "DAY",
-      "rsi": 54.42,
+      "rsi": 52.01,
       "state": "NEUTRAL"
     },
     {
       "symbol": "ASHOKLEY",
       "tf": "DAY",
-      "rsi": 58.89,
+      "rsi": 57.97,
       "state": "NEUTRAL"
     },
     {
       "symbol": "ASIANPAINT",
       "tf": "DAY",
-      "rsi": 33.49,
+      "rsi": 35.07,
       "state": "BEARISH"
     },
     {
       "symbol": "ASTRAL",
       "tf": "DAY",
-      "rsi": 58.31,
+      "rsi": 58.22,
       "state": "NEUTRAL"
     },
     {
       "symbol": "AUBANK",
       "tf": "DAY",
-      "rsi": 51.03,
+      "rsi": 50.48,
       "state": "NEUTRAL"
     },
     {
       "symbol": "AUROPHARMA",
       "tf": "DAY",
-      "rsi": 54.71,
+      "rsi": 58.42,
       "state": "NEUTRAL"
     },
     {
       "symbol": "AXISBANK",
       "tf": "DAY",
-      "rsi": 53.12,
+      "rsi": 54.96,
       "state": "NEUTRAL"
     },
     {
       "symbol": "BAJAJFINSV",
       "tf": "DAY",
-      "rsi": 50.26,
+      "rsi": 53.63,
       "state": "NEUTRAL"
     },
     {
       "symbol": "BAJAJHLDNG",
       "tf": "DAY",
-      "rsi": 54.0,
+      "rsi": 53.65,
       "state": "NEUTRAL"
     },
     {
       "symbol": "BAJAJ_AUTO",
       "tf": "DAY",
-      "rsi": 64.76,
+      "rsi": 64.32,
       "state": "CHANGE_NOW"
     },
     {
       "symbol": "BAJFINANCE",
       "tf": "DAY",
-      "rsi": 48.24,
+      "rsi": 50.28,
       "state": "NEUTRAL"
     },
     {
       "symbol": "BANDHANBNK",
       "tf": "DAY",
-      "rsi": 36.9,
+      "rsi": 36.36,
       "state": "BEARISH"
     },
     {
       "symbol": "BANKBARODA",
       "tf": "DAY",
-      "rsi": 40.76,
+      "rsi": 42.83,
       "state": "NEUTRAL"
     },
     {
       "symbol": "BANKINDIA",
       "tf": "DAY",
-      "rsi": 51.87,
+      "rsi": 52.71,
       "state": "NEUTRAL"
     },
     {
       "symbol": "BANKNIFTY",
       "tf": "DAY",
-      "rsi": 49.28,
+      "rsi": 49.81,
       "state": "NEUTRAL"
     },
     {
       "symbol": "BDL",
       "tf": "DAY",
-      "rsi": 45.87,
+      "rsi": 45.93,
       "state": "NEUTRAL"
     },
     {
       "symbol": "BEL",
       "tf": "DAY",
-      "rsi": 51.24,
+      "rsi": 55.2,
       "state": "NEUTRAL"
     },
     {
       "symbol": "BHARATFORG",
       "tf": "DAY",
-      "rsi": 40.27,
+      "rsi": 42.06,
       "state": "NEUTRAL"
     },
     {
       "symbol": "BHARTIARTL",
       "tf": "DAY",
-      "rsi": 38.6,
-      "state": "BEARISH"
+      "rsi": 40.77,
+      "state": "NEUTRAL"
     },
     {
       "symbol": "BHEL",
       "tf": "DAY",
-      "rsi": 57.28,
+      "rsi": 59.57,
       "state": "NEUTRAL"
     },
     {
       "symbol": "BIOCON",
       "tf": "DAY",
-      "rsi": 41.62,
+      "rsi": 42.04,
       "state": "NEUTRAL"
     },
     {
       "symbol": "BLUESTARCO",
       "tf": "DAY",
-      "rsi": 35.26,
+      "rsi": 35.23,
       "state": "BEARISH"
     },
     {
       "symbol": "BOSCHLTD",
       "tf": "DAY",
-      "rsi": 72.12,
+      "rsi": 73.25,
       "state": "BULLISH"
     },
     {
       "symbol": "BPCL",
       "tf": "DAY",
-      "rsi": 54.08,
+      "rsi": 55.32,
       "state": "NEUTRAL"
     },
     {
       "symbol": "BRITANNIA",
       "tf": "DAY",
-      "rsi": 40.4,
+      "rsi": 41.99,
       "state": "NEUTRAL"
     },
     {
       "symbol": "BSE",
       "tf": "DAY",
-      "rsi": 44.29,
+      "rsi": 46.0,
       "state": "NEUTRAL"
     },
     {
       "symbol": "CAMS",
       "tf": "DAY",
-      "rsi": 42.19,
+      "rsi": 47.4,
       "state": "NEUTRAL"
     },
     {
       "symbol": "CANBK",
       "tf": "DAY",
-      "rsi": 46.21,
+      "rsi": 48.32,
       "state": "NEUTRAL"
     },
     {
       "symbol": "CDSL",
       "tf": "DAY",
-      "rsi": 61.9,
+      "rsi": 62.3,
       "state": "BULLISH"
     },
     {
       "symbol": "CGPOWER",
       "tf": "DAY",
-      "rsi": 51.66,
+      "rsi": 51.71,
       "state": "NEUTRAL"
     },
     {
       "symbol": "CHOLAFIN",
       "tf": "DAY",
-      "rsi": 50.1,
+      "rsi": 51.79,
       "state": "NEUTRAL"
     },
     {
       "symbol": "CIPLA",
       "tf": "DAY",
-      "rsi": 42.52,
+      "rsi": 45.53,
       "state": "NEUTRAL"
     },
     {
       "symbol": "CNXFINANCE",
       "tf": "DAY",
-      "rsi": 48.97,
+      "rsi": 48.45,
       "state": "NEUTRAL"
     },
     {
       "symbol": "CNXMIDCAP",
       "tf": "DAY",
-      "rsi": 60.4,
+      "rsi": 60.75,
       "state": "BULLISH"
     },
     {
       "symbol": "COALINDIA",
       "tf": "DAY",
-      "rsi": 33.19,
+      "rsi": 33.94,
       "state": "BEARISH"
     },
     {
       "symbol": "COCHINSHIP",
       "tf": "DAY",
-      "rsi": 61.28,
+      "rsi": 62.11,
       "state": "BULLISH"
     },
     {
       "symbol": "COFORGE",
       "tf": "DAY",
-      "rsi": 76.75,
+      "rsi": 77.63,
       "state": "BULLISH"
     },
     {
       "symbol": "COLPAL",
       "tf": "DAY",
-      "rsi": 25.69,
+      "rsi": 25.36,
       "state": "BEARISH"
     },
     {
       "symbol": "CONCOR",
       "tf": "DAY",
-      "rsi": 52.44,
+      "rsi": 53.13,
       "state": "NEUTRAL"
     },
     {
       "symbol": "CROMPTON",
       "tf": "DAY",
-      "rsi": 30.0,
+      "rsi": 31.16,
       "state": "BEARISH"
     },
     {
       "symbol": "CUMMINSIND",
       "tf": "DAY",
-      "rsi": 36.93,
+      "rsi": 39.36,
       "state": "BEARISH"
     },
     {
       "symbol": "DABUR",
       "tf": "DAY",
-      "rsi": 23.52,
+      "rsi": 24.07,
       "state": "BEARISH"
     },
     {
       "symbol": "DALBHARAT",
       "tf": "DAY",
-      "rsi": 50.86,
+      "rsi": 50.76,
       "state": "NEUTRAL"
     },
     {
       "symbol": "DELHIVERY",
       "tf": "DAY",
-      "rsi": 51.35,
+      "rsi": 54.03,
       "state": "NEUTRAL"
     },
     {
       "symbol": "DIVISLAB",
       "tf": "DAY",
-      "rsi": 80.61,
+      "rsi": 81.03,
       "state": "BULLISH"
     },
     {
       "symbol": "DIXON",
       "tf": "DAY",
-      "rsi": 60.59,
-      "state": "BULLISH"
+      "rsi": 58.68,
+      "state": "NEUTRAL"
     },
     {
       "symbol": "DLF",
       "tf": "DAY",
-      "rsi": 54.69,
+      "rsi": 57.35,
       "state": "NEUTRAL"
     },
     {
       "symbol": "DMART",
       "tf": "DAY",
-      "rsi": 37.24,
+      "rsi": 36.91,
       "state": "BEARISH"
     },
     {
       "symbol": "DRREDDY",
       "tf": "DAY",
-      "rsi": 46.57,
+      "rsi": 44.77,
       "state": "NEUTRAL"
     },
     {
       "symbol": "EICHERMOT",
       "tf": "DAY",
-      "rsi": 57.91,
+      "rsi": 59.42,
       "state": "NEUTRAL"
     },
     {
       "symbol": "ETERNAL",
       "tf": "DAY",
-      "rsi": 64.7,
+      "rsi": 65.65,
       "state": "BULLISH"
     },
     {
       "symbol": "EXIDEIND",
       "tf": "DAY",
-      "rsi": 45.84,
+      "rsi": 45.2,
       "state": "NEUTRAL"
     },
     {
       "symbol": "FEDERALBNK",
       "tf": "DAY",
-      "rsi": 42.44,
+      "rsi": 43.35,
       "state": "NEUTRAL"
     },
     {
       "symbol": "FORCEMOT",
       "tf": "DAY",
-      "rsi": 39.35,
+      "rsi": 39.96,
       "state": "CHANGE_NOW"
     },
     {
       "symbol": "FORTIS",
       "tf": "DAY",
-      "rsi": 51.69,
+      "rsi": 49.47,
       "state": "NEUTRAL"
     },
     {
       "symbol": "GAIL",
       "tf": "DAY",
-      "rsi": 44.1,
+      "rsi": 44.34,
       "state": "NEUTRAL"
     },
     {
       "symbol": "GLENMARK",
       "tf": "DAY",
-      "rsi": 69.73,
+      "rsi": 73.46,
       "state": "BULLISH"
     },
     {
       "symbol": "GMRAIRPORT",
       "tf": "DAY",
-      "rsi": 30.85,
+      "rsi": 30.27,
       "state": "BEARISH"
     },
     {
       "symbol": "GODFRYPHLP",
       "tf": "DAY",
-      "rsi": 46.56,
+      "rsi": 46.26,
       "state": "NEUTRAL"
     },
     {
       "symbol": "GODREJCP",
       "tf": "DAY",
-      "rsi": 29.56,
+      "rsi": 30.12,
       "state": "BEARISH"
     },
     {
       "symbol": "GODREJPROP",
       "tf": "DAY",
-      "rsi": 49.51,
+      "rsi": 48.79,
       "state": "NEUTRAL"
     },
     {
       "symbol": "GRASIM",
       "tf": "DAY",
-      "rsi": 50.72,
+      "rsi": 55.82,
       "state": "NEUTRAL"
     },
     {
       "symbol": "GVT&D",
       "tf": "DAY",
-      "rsi": 51.3,
+      "rsi": 50.87,
       "state": "NEUTRAL"
     },
     {
       "symbol": "HAL",
       "tf": "DAY",
-      "rsi": 50.88,
+      "rsi": 52.74,
       "state": "NEUTRAL"
     },
     {
       "symbol": "HAVELLS",
       "tf": "DAY",
-      "rsi": 37.46,
+      "rsi": 37.09,
       "state": "CHANGE_NOW"
     },
     {
       "symbol": "HCLTECH",
       "tf": "DAY",
-      "rsi": 53.45,
+      "rsi": 52.68,
       "state": "NEUTRAL"
     },
     {
       "symbol": "HDFCAMC",
       "tf": "DAY",
-      "rsi": 46.53,
+      "rsi": 48.07,
       "state": "NEUTRAL"
     },
     {
       "symbol": "HDFCBANK",
       "tf": "DAY",
-      "rsi": 34.57,
+      "rsi": 38.4,
       "state": "BEARISH"
     },
     {
       "symbol": "HDFCLIFE",
       "tf": "DAY",
-      "rsi": 47.98,
+      "rsi": 49.35,
       "state": "NEUTRAL"
     },
     {
       "symbol": "HEROMOTOCO",
       "tf": "DAY",
-      "rsi": 55.12,
+      "rsi": 54.05,
       "state": "NEUTRAL"
     },
     {
       "symbol": "HINDALCO",
       "tf": "DAY",
-      "rsi": 51.67,
+      "rsi": 53.37,
       "state": "NEUTRAL"
     },
     {
       "symbol": "HINDPETRO",
       "tf": "DAY",
-      "rsi": 38.32,
+      "rsi": 36.45,
       "state": "CHANGE_NOW"
     },
     {
       "symbol": "HINDUNILVR",
       "tf": "DAY",
-      "rsi": 35.47,
+      "rsi": 37.42,
       "state": "BEARISH"
     },
     {
       "symbol": "HINDZINC",
       "tf": "DAY",
-      "rsi": 63.71,
+      "rsi": 64.28,
       "state": "BULLISH"
     },
     {
       "symbol": "HYUNDAI",
       "tf": "DAY",
-      "rsi": 67.72,
+      "rsi": 68.47,
       "state": "BULLISH"
     },
     {
       "symbol": "ICICIBANK",
       "tf": "DAY",
-      "rsi": 51.67,
+      "rsi": 50.51,
       "state": "NEUTRAL"
     },
     {
       "symbol": "ICICIGI",
       "tf": "DAY",
-      "rsi": 30.09,
+      "rsi": 31.29,
       "state": "BEARISH"
     },
     {
       "symbol": "ICICIPRULI",
       "tf": "DAY",
-      "rsi": 49.29,
+      "rsi": 49.25,
       "state": "NEUTRAL"
     },
     {
@@ -4666,259 +6269,259 @@
     {
       "symbol": "IDFCFIRSTB",
       "tf": "DAY",
-      "rsi": 45.51,
+      "rsi": 44.95,
       "state": "NEUTRAL"
     },
     {
       "symbol": "IEX",
       "tf": "DAY",
-      "rsi": 39.52,
-      "state": "CHANGE_NOW"
+      "rsi": 40.34,
+      "state": "NEUTRAL"
     },
     {
       "symbol": "INDHOTEL",
       "tf": "DAY",
-      "rsi": 36.14,
+      "rsi": 36.73,
       "state": "CHANGE_NOW"
     },
     {
       "symbol": "INDIANB",
       "tf": "DAY",
-      "rsi": 55.57,
+      "rsi": 56.97,
       "state": "NEUTRAL"
     },
     {
       "symbol": "INDIGO",
       "tf": "DAY",
-      "rsi": 45.57,
+      "rsi": 46.43,
       "state": "NEUTRAL"
     },
     {
       "symbol": "INDUSINDBK",
       "tf": "DAY",
-      "rsi": 42.01,
+      "rsi": 43.66,
       "state": "NEUTRAL"
     },
     {
       "symbol": "INDUSTOWER",
       "tf": "DAY",
-      "rsi": 49.32,
+      "rsi": 47.54,
       "state": "NEUTRAL"
     },
     {
       "symbol": "INFY",
       "tf": "DAY",
-      "rsi": 52.52,
+      "rsi": 52.86,
       "state": "NEUTRAL"
     },
     {
       "symbol": "INOXWIND",
       "tf": "DAY",
-      "rsi": 34.15,
+      "rsi": 35.09,
       "state": "BEARISH"
     },
     {
       "symbol": "IOC",
       "tf": "DAY",
-      "rsi": 41.77,
+      "rsi": 42.85,
       "state": "NEUTRAL"
     },
     {
       "symbol": "IREDA",
       "tf": "DAY",
-      "rsi": 44.23,
+      "rsi": 45.02,
       "state": "NEUTRAL"
     },
     {
       "symbol": "IRFC",
       "tf": "DAY",
-      "rsi": 30.52,
+      "rsi": 30.02,
       "state": "BEARISH"
     },
     {
       "symbol": "ITC",
       "tf": "DAY",
-      "rsi": 33.23,
+      "rsi": 32.81,
       "state": "BEARISH"
     },
     {
       "symbol": "JINDALSTEL",
       "tf": "DAY",
-      "rsi": 67.42,
+      "rsi": 68.11,
       "state": "BULLISH"
     },
     {
       "symbol": "JIOFIN",
       "tf": "DAY",
-      "rsi": 38.99,
+      "rsi": 39.6,
       "state": "BEARISH"
     },
     {
       "symbol": "JSWENERGY",
       "tf": "DAY",
-      "rsi": 39.33,
+      "rsi": 37.19,
       "state": "CHANGE_NOW"
     },
     {
       "symbol": "JSWSTEEL",
       "tf": "DAY",
-      "rsi": 60.04,
+      "rsi": 63.34,
       "state": "BULLISH"
     },
     {
       "symbol": "JUBLFOOD",
       "tf": "DAY",
-      "rsi": 56.29,
+      "rsi": 53.85,
       "state": "NEUTRAL"
     },
     {
       "symbol": "KALYANKJIL",
       "tf": "DAY",
-      "rsi": 60.15,
+      "rsi": 60.69,
       "state": "BULLISH"
     },
     {
       "symbol": "KAYNES",
       "tf": "DAY",
-      "rsi": 62.45,
+      "rsi": 61.41,
       "state": "BULLISH"
     },
     {
       "symbol": "KEI",
       "tf": "DAY",
-      "rsi": 53.02,
+      "rsi": 54.88,
       "state": "NEUTRAL"
     },
     {
       "symbol": "KFINTECH",
       "tf": "DAY",
-      "rsi": 53.23,
+      "rsi": 52.31,
       "state": "NEUTRAL"
     },
     {
       "symbol": "KOTAKBANK",
       "tf": "DAY",
-      "rsi": 74.81,
+      "rsi": 74.09,
       "state": "BULLISH"
     },
     {
       "symbol": "KPITTECH",
       "tf": "DAY",
-      "rsi": 52.73,
+      "rsi": 52.4,
       "state": "NEUTRAL"
     },
     {
       "symbol": "LAURUSLABS",
       "tf": "DAY",
-      "rsi": 70.78,
+      "rsi": 74.73,
       "state": "BULLISH"
     },
     {
       "symbol": "LICHSGFIN",
       "tf": "DAY",
-      "rsi": 59.13,
+      "rsi": 59.59,
       "state": "NEUTRAL"
     },
     {
       "symbol": "LICI",
       "tf": "DAY",
-      "rsi": 46.58,
+      "rsi": 54.44,
       "state": "NEUTRAL"
     },
     {
       "symbol": "LODHA",
       "tf": "DAY",
-      "rsi": 57.87,
-      "state": "NEUTRAL"
+      "rsi": 60.51,
+      "state": "CHANGE_NOW"
     },
     {
       "symbol": "LT",
       "tf": "DAY",
-      "rsi": 51.7,
+      "rsi": 52.41,
       "state": "NEUTRAL"
     },
     {
       "symbol": "LTF",
       "tf": "DAY",
-      "rsi": 50.84,
+      "rsi": 49.71,
       "state": "NEUTRAL"
     },
     {
       "symbol": "LTM",
       "tf": "DAY",
-      "rsi": 60.06,
+      "rsi": 60.82,
       "state": "CHANGE_NOW"
     },
     {
       "symbol": "LUPIN",
       "tf": "DAY",
-      "rsi": 28.83,
+      "rsi": 30.05,
       "state": "BEARISH"
     },
     {
       "symbol": "M&M",
       "tf": "DAY",
-      "rsi": 44.41,
+      "rsi": 47.15,
       "state": "NEUTRAL"
     },
     {
       "symbol": "MANAPPURAM",
       "tf": "DAY",
-      "rsi": 46.59,
+      "rsi": 47.28,
       "state": "NEUTRAL"
     },
     {
       "symbol": "MANKIND",
       "tf": "DAY",
-      "rsi": 42.97,
+      "rsi": 42.43,
       "state": "NEUTRAL"
     },
     {
       "symbol": "MARICO",
       "tf": "DAY",
-      "rsi": 38.07,
+      "rsi": 38.84,
       "state": "CHANGE_NOW"
     },
     {
       "symbol": "MARUTI",
       "tf": "DAY",
-      "rsi": 36.44,
+      "rsi": 36.42,
       "state": "BEARISH"
     },
     {
       "symbol": "MAXHEALTH",
       "tf": "DAY",
-      "rsi": 40.74,
+      "rsi": 42.15,
       "state": "NEUTRAL"
     },
     {
       "symbol": "MAZDOCK",
       "tf": "DAY",
-      "rsi": 54.74,
+      "rsi": 55.26,
       "state": "NEUTRAL"
     },
     {
       "symbol": "MCX",
       "tf": "DAY",
-      "rsi": 69.91,
+      "rsi": 70.4,
       "state": "BULLISH"
     },
     {
       "symbol": "MFSL",
       "tf": "DAY",
-      "rsi": 53.71,
+      "rsi": 51.44,
       "state": "NEUTRAL"
     },
     {
       "symbol": "MOTHERSON",
       "tf": "DAY",
-      "rsi": 60.9,
-      "state": "BULLISH"
+      "rsi": 59.7,
+      "state": "NEUTRAL"
     },
     {
       "symbol": "MOTILALOFS",
       "tf": "DAY",
-      "rsi": 75.7,
+      "rsi": 74.63,
       "state": "BULLISH"
     },
     {
@@ -4930,362 +6533,362 @@
     {
       "symbol": "MUTHOOTFIN",
       "tf": "DAY",
-      "rsi": 56.7,
+      "rsi": 55.99,
       "state": "NEUTRAL"
     },
     {
       "symbol": "NAM_INDIA",
       "tf": "DAY",
-      "rsi": 50.36,
+      "rsi": 49.94,
       "state": "NEUTRAL"
     },
     {
       "symbol": "NATIONALUM",
       "tf": "DAY",
-      "rsi": 55.23,
+      "rsi": 56.61,
       "state": "NEUTRAL"
     },
     {
       "symbol": "NAUKRI",
       "tf": "DAY",
-      "rsi": 63.93,
+      "rsi": 63.42,
       "state": "CHANGE_NOW"
     },
     {
       "symbol": "NBCC",
       "tf": "DAY",
-      "rsi": 33.55,
+      "rsi": 32.74,
       "state": "BEARISH"
     },
     {
       "symbol": "NESTLEIND",
       "tf": "DAY",
-      "rsi": 40.2,
+      "rsi": 43.8,
       "state": "NEUTRAL"
     },
     {
       "symbol": "NHPC",
       "tf": "DAY",
-      "rsi": 35.01,
+      "rsi": 34.14,
       "state": "CHANGE_NOW"
     },
     {
       "symbol": "NIFTY",
       "tf": "DAY",
-      "rsi": 47.1,
+      "rsi": 46.98,
       "state": "NEUTRAL"
     },
     {
       "symbol": "NIFTYJR",
       "tf": "DAY",
-      "rsi": 50.59,
+      "rsi": 54.53,
       "state": "NEUTRAL"
     },
     {
       "symbol": "NMDC",
       "tf": "DAY",
-      "rsi": 53.82,
+      "rsi": 55.5,
       "state": "NEUTRAL"
     },
     {
       "symbol": "NTPC",
       "tf": "DAY",
-      "rsi": 33.98,
+      "rsi": 33.51,
       "state": "BEARISH"
     },
     {
       "symbol": "NUVAMA",
       "tf": "DAY",
-      "rsi": 58.59,
+      "rsi": 57.74,
       "state": "NEUTRAL"
     },
     {
       "symbol": "NYKAA",
       "tf": "DAY",
-      "rsi": 56.85,
+      "rsi": 56.68,
       "state": "NEUTRAL"
     },
     {
       "symbol": "OBEROIRLTY",
       "tf": "DAY",
-      "rsi": 52.99,
+      "rsi": 53.62,
       "state": "NEUTRAL"
     },
     {
       "symbol": "OFSS",
       "tf": "DAY",
-      "rsi": 64.13,
+      "rsi": 63.97,
       "state": "CHANGE_NOW"
     },
     {
       "symbol": "OIL",
       "tf": "DAY",
-      "rsi": 60.39,
+      "rsi": 61.86,
       "state": "CHANGE_NOW"
     },
     {
       "symbol": "ONGC",
       "tf": "DAY",
-      "rsi": 31.11,
+      "rsi": 32.58,
       "state": "BEARISH"
     },
     {
       "symbol": "PAGEIND",
       "tf": "DAY",
-      "rsi": 34.56,
+      "rsi": 37.24,
       "state": "BEARISH"
     },
     {
       "symbol": "PATANJALI",
       "tf": "DAY",
-      "rsi": 36.69,
+      "rsi": 37.78,
       "state": "BEARISH"
     },
     {
       "symbol": "PAYTM",
       "tf": "DAY",
-      "rsi": 68.52,
+      "rsi": 65.21,
       "state": "BULLISH"
     },
     {
       "symbol": "PERSISTENT",
       "tf": "DAY",
-      "rsi": 69.66,
+      "rsi": 69.21,
       "state": "BULLISH"
     },
     {
       "symbol": "PETRONET",
       "tf": "DAY",
-      "rsi": 60.57,
+      "rsi": 60.35,
       "state": "CHANGE_NOW"
     },
     {
       "symbol": "PFC",
       "tf": "DAY",
-      "rsi": 19.75,
+      "rsi": 20.36,
       "state": "BEARISH"
     },
     {
       "symbol": "PGEL",
       "tf": "DAY",
-      "rsi": 45.6,
+      "rsi": 44.32,
       "state": "NEUTRAL"
     },
     {
       "symbol": "PHOENIXLTD",
       "tf": "DAY",
-      "rsi": 43.13,
+      "rsi": 45.92,
       "state": "NEUTRAL"
     },
     {
       "symbol": "PIDILITIND",
       "tf": "DAY",
-      "rsi": 47.18,
+      "rsi": 46.27,
       "state": "NEUTRAL"
     },
     {
       "symbol": "PIIND",
       "tf": "DAY",
-      "rsi": 33.5,
+      "rsi": 31.03,
       "state": "BEARISH"
     },
     {
       "symbol": "PNB",
       "tf": "DAY",
-      "rsi": 51.53,
+      "rsi": 53.95,
       "state": "NEUTRAL"
     },
     {
       "symbol": "PNBHOUSING",
       "tf": "DAY",
-      "rsi": 59.5,
-      "state": "NEUTRAL"
+      "rsi": 60.43,
+      "state": "BULLISH"
     },
     {
       "symbol": "POLICYBZR",
       "tf": "DAY",
-      "rsi": 69.17,
+      "rsi": 66.64,
       "state": "BULLISH"
     },
     {
       "symbol": "POLYCAB",
       "tf": "DAY",
-      "rsi": 45.64,
+      "rsi": 47.1,
       "state": "NEUTRAL"
     },
     {
       "symbol": "POWERGRID",
       "tf": "DAY",
-      "rsi": 37.87,
+      "rsi": 39.07,
       "state": "BEARISH"
     },
     {
       "symbol": "POWERINDIA",
       "tf": "DAY",
-      "rsi": 48.2,
+      "rsi": 48.06,
       "state": "NEUTRAL"
     },
     {
       "symbol": "PREMIERENE",
       "tf": "DAY",
-      "rsi": 45.29,
+      "rsi": 45.88,
       "state": "NEUTRAL"
     },
     {
       "symbol": "PRESTIGE",
       "tf": "DAY",
-      "rsi": 46.49,
+      "rsi": 46.1,
       "state": "NEUTRAL"
     },
     {
       "symbol": "RADICO",
       "tf": "DAY",
-      "rsi": 61.82,
+      "rsi": 61.88,
       "state": "BULLISH"
     },
     {
       "symbol": "RBLBANK",
       "tf": "DAY",
-      "rsi": 50.94,
+      "rsi": 50.63,
       "state": "NEUTRAL"
     },
     {
       "symbol": "RECLTD",
       "tf": "DAY",
-      "rsi": 25.25,
+      "rsi": 24.99,
       "state": "BEARISH"
     },
     {
       "symbol": "RELIANCE",
       "tf": "DAY",
-      "rsi": 40.94,
+      "rsi": 42.91,
       "state": "NEUTRAL"
     },
     {
       "symbol": "RVNL",
       "tf": "DAY",
-      "rsi": 34.73,
+      "rsi": 33.86,
       "state": "BEARISH"
     },
     {
       "symbol": "SAIL",
       "tf": "DAY",
-      "rsi": 72.54,
+      "rsi": 74.48,
       "state": "BULLISH"
     },
     {
       "symbol": "SBICARD",
       "tf": "DAY",
-      "rsi": 49.29,
+      "rsi": 48.98,
       "state": "NEUTRAL"
     },
     {
       "symbol": "SBILIFE",
       "tf": "DAY",
-      "rsi": 35.5,
+      "rsi": 36.67,
       "state": "BEARISH"
     },
     {
       "symbol": "SBIN",
       "tf": "DAY",
-      "rsi": 49.26,
+      "rsi": 49.39,
       "state": "NEUTRAL"
     },
     {
       "symbol": "SHREECEM",
       "tf": "DAY",
-      "rsi": 35.33,
+      "rsi": 35.08,
       "state": "BEARISH"
     },
     {
       "symbol": "SHRIRAMFIN",
       "tf": "DAY",
-      "rsi": 47.49,
+      "rsi": 47.51,
       "state": "NEUTRAL"
     },
     {
       "symbol": "SIEMENS",
       "tf": "DAY",
-      "rsi": 63.41,
+      "rsi": 64.55,
       "state": "BULLISH"
     },
     {
       "symbol": "SOLARINDS",
       "tf": "DAY",
-      "rsi": 63.8,
+      "rsi": 64.81,
       "state": "BULLISH"
     },
     {
       "symbol": "SONACOMS",
       "tf": "DAY",
-      "rsi": 58.93,
-      "state": "NEUTRAL"
+      "rsi": 62.43,
+      "state": "BULLISH"
     },
     {
       "symbol": "SRF",
       "tf": "DAY",
-      "rsi": 43.08,
+      "rsi": 43.42,
       "state": "NEUTRAL"
     },
     {
       "symbol": "SUNPHARMA",
       "tf": "DAY",
-      "rsi": 49.41,
+      "rsi": 49.73,
       "state": "NEUTRAL"
     },
     {
       "symbol": "SUPREMEIND",
       "tf": "DAY",
-      "rsi": 61.46,
+      "rsi": 60.39,
       "state": "CHANGE_NOW"
     },
     {
       "symbol": "SUZLON",
       "tf": "DAY",
-      "rsi": 37.34,
+      "rsi": 37.04,
       "state": "BEARISH"
     },
     {
       "symbol": "SWIGGY",
       "tf": "DAY",
-      "rsi": 54.29,
+      "rsi": 51.99,
       "state": "NEUTRAL"
     },
     {
       "symbol": "TATACONSUM",
       "tf": "DAY",
-      "rsi": 36.85,
+      "rsi": 38.89,
       "state": "BEARISH"
     },
     {
       "symbol": "TATAELXSI",
       "tf": "DAY",
-      "rsi": 48.93,
+      "rsi": 48.71,
       "state": "NEUTRAL"
     },
     {
       "symbol": "TATAPOWER",
       "tf": "DAY",
-      "rsi": 21.99,
+      "rsi": 21.55,
       "state": "BEARISH"
     },
     {
       "symbol": "TATASTEEL",
       "tf": "DAY",
-      "rsi": 44.42,
+      "rsi": 48.53,
       "state": "NEUTRAL"
     },
     {
       "symbol": "TCS",
       "tf": "DAY",
-      "rsi": 53.17,
+      "rsi": 53.45,
       "state": "NEUTRAL"
     },
     {
       "symbol": "TECHM",
       "tf": "DAY",
-      "rsi": 58.97,
-      "state": "NEUTRAL"
+      "rsi": 61.06,
+      "state": "CHANGE_NOW"
     },
     {
       "symbol": "TIINDIA",
@@ -5296,326 +6899,110 @@
     {
       "symbol": "TITAN",
       "tf": "DAY",
-      "rsi": 70.76,
+      "rsi": 71.67,
       "state": "BULLISH"
     },
     {
       "symbol": "TMPV",
       "tf": "DAY",
-      "rsi": 33.71,
+      "rsi": 38.85,
       "state": "BEARISH"
     },
     {
       "symbol": "TORNTPHARM",
       "tf": "DAY",
-      "rsi": 56.2,
+      "rsi": 58.64,
       "state": "NEUTRAL"
     },
     {
       "symbol": "TRENT",
       "tf": "DAY",
-      "rsi": 41.58,
+      "rsi": 41.74,
       "state": "NEUTRAL"
     },
     {
       "symbol": "TVSMOTOR",
       "tf": "DAY",
-      "rsi": 49.51,
+      "rsi": 54.12,
       "state": "NEUTRAL"
     },
     {
       "symbol": "ULTRACEMCO",
       "tf": "DAY",
-      "rsi": 45.16,
+      "rsi": 45.46,
       "state": "NEUTRAL"
     },
     {
       "symbol": "UNIONBANK",
       "tf": "DAY",
-      "rsi": 57.41,
+      "rsi": 58.95,
       "state": "NEUTRAL"
     },
     {
       "symbol": "UNITDSPR",
       "tf": "DAY",
-      "rsi": 50.62,
+      "rsi": 50.92,
       "state": "NEUTRAL"
     },
     {
       "symbol": "UNOMINDA",
       "tf": "DAY",
-      "rsi": 63.74,
+      "rsi": 63.86,
       "state": "BULLISH"
     },
     {
       "symbol": "UPL",
       "tf": "DAY",
-      "rsi": 46.96,
+      "rsi": 44.43,
       "state": "NEUTRAL"
     },
     {
       "symbol": "VBL",
       "tf": "DAY",
-      "rsi": 33.51,
+      "rsi": 33.57,
       "state": "BEARISH"
     },
     {
       "symbol": "VEDL",
       "tf": "DAY",
-      "rsi": 59.44,
-      "state": "NEUTRAL"
+      "rsi": 60.24,
+      "state": "CHANGE_NOW"
     },
     {
       "symbol": "VMM",
       "tf": "DAY",
-      "rsi": 46.74,
+      "rsi": 45.79,
       "state": "NEUTRAL"
     },
     {
       "symbol": "VOLTAS",
       "tf": "DAY",
-      "rsi": 33.88,
+      "rsi": 33.09,
       "state": "BEARISH"
     },
     {
       "symbol": "WAAREEENER",
       "tf": "DAY",
-      "rsi": 37.48,
+      "rsi": 38.87,
       "state": "BEARISH"
     },
     {
       "symbol": "WIPRO",
       "tf": "DAY",
-      "rsi": 50.18,
+      "rsi": 49.88,
       "state": "NEUTRAL"
     },
     {
       "symbol": "YESBANK",
       "tf": "DAY",
-      "rsi": 34.88,
+      "rsi": 34.73,
       "state": "BEARISH"
     },
     {
       "symbol": "ZYDUSLIFE",
       "tf": "DAY",
-      "rsi": 60.08,
+      "rsi": 62.92,
       "state": "BULLISH"
-    },
-    {
-      "symbol": "CNXAUTO",
-      "tf": "DAY",
-      "rsi": 49.6,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "CNXCONSUMPTION",
-      "tf": "DAY",
-      "rsi": 44.93,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "CNXENERGY",
-      "tf": "DAY",
-      "rsi": 41.23,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "CNXFMCG",
-      "tf": "DAY",
-      "rsi": 39.21,
-      "state": "CHANGE_NOW"
-    },
-    {
-      "symbol": "CNXINFRA",
-      "tf": "DAY",
-      "rsi": 42.99,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "CNXIT",
-      "tf": "DAY",
-      "rsi": 56.37,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "CNXMEDIA",
-      "tf": "DAY",
-      "rsi": 54.46,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "CNXMETAL",
-      "tf": "DAY",
-      "rsi": 60.48,
-      "state": "CHANGE_NOW"
-    },
-    {
-      "symbol": "CNXMNC",
-      "tf": "DAY",
-      "rsi": 46.44,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "CNXPHARMA",
-      "tf": "DAY",
-      "rsi": 61.28,
-      "state": "CHANGE_NOW"
-    },
-    {
-      "symbol": "CNXPSE",
-      "tf": "DAY",
-      "rsi": 40.29,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "CNXPSUBANK",
-      "tf": "DAY",
-      "rsi": 50.44,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "CNXREALTY",
-      "tf": "DAY",
-      "rsi": 53.04,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "CNXSERVICE",
-      "tf": "DAY",
-      "rsi": 47.79,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "CPSE",
-      "tf": "DAY",
-      "rsi": 41.4,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTYPVTBANK",
-      "tf": "DAY",
-      "rsi": 53.79,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_CAPITAL_MKT",
-      "tf": "DAY",
-      "rsi": 57.7,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_CONSR_DURBL",
-      "tf": "DAY",
-      "rsi": 54.82,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_COREHOUSING",
-      "tf": "DAY",
-      "rsi": 46.23,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_CORP_MAATR",
-      "tf": "DAY",
-      "rsi": 48.82,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_EV",
-      "tf": "DAY",
-      "rsi": 52.4,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_HEALTHCARE",
-      "tf": "DAY",
-      "rsi": 59.15,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_HOUSING",
-      "tf": "DAY",
-      "rsi": 46.77,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_INDIA_MFG",
-      "tf": "DAY",
-      "rsi": 55.63,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_IND_DEFENCE",
-      "tf": "DAY",
-      "rsi": 53.3,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_IND_TOURISM",
-      "tf": "DAY",
-      "rsi": 43.55,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_IPO",
-      "tf": "DAY",
-      "rsi": 59.23,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_MOBILITY",
-      "tf": "DAY",
-      "rsi": 51.83,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_MS_IT_TELCM",
-      "tf": "DAY",
-      "rsi": 61.8,
-      "state": "CHANGE_NOW"
-    },
-    {
-      "symbol": "NIFTY_MULTI_INFRA",
-      "tf": "DAY",
-      "rsi": 45.43,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_MULTI_MFG",
-      "tf": "DAY",
-      "rsi": 57.13,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_NEW_CONSUMP",
-      "tf": "DAY",
-      "rsi": 53.4,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_NONCYC_CONS",
-      "tf": "DAY",
-      "rsi": 43.54,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_OIL_AND_GAS",
-      "tf": "DAY",
-      "rsi": 43.31,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_RURAL",
-      "tf": "DAY",
-      "rsi": 43.31,
-      "state": "NEUTRAL"
-    },
-    {
-      "symbol": "NIFTY_TOP_10_EW",
-      "tf": "DAY",
-      "rsi": 50.48,
-      "state": "NEUTRAL"
     },
     {
       "symbol": "360ONE",
