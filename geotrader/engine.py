@@ -470,7 +470,9 @@ def main():
     fno_change = build_change_table(stock_data["D"], fno_symbols)
     fno_sorted_desc = sorted(fno_change, key=lambda r: r["change"], reverse=True)
     fno_sorted_asc = sorted(fno_change, key=lambda r: r["change"])
-    top5, bottom5 = fno_sorted_desc[:5], fno_sorted_asc[:5]
+    
+    top5 = fno_sorted_desc[:5]
+    bottom5 = fno_sorted_asc[:5] if len(fno_change) > 5 else []
 
     adv = sum(1 for r in fno_change if r["change"] > 0)
     dec = sum(1 for r in fno_change if r["change"] < 0)
@@ -484,9 +486,17 @@ def main():
         rows = build_change_table(stock_data["D"], members)
         if not rows:
             continue
+            
+        desc = sorted(rows, key=lambda r: r["change"], reverse=True)
+        asc = sorted(rows, key=lambda r: r["change"])
+        
+        # Guard: If sector has 5 or fewer stocks, leave bottom5 empty to prevent duplicates
+        sec_top5 = desc[:5]
+        sec_bottom5 = asc[:5] if len(rows) > 5 else []
+
         sector_stocks[sec] = {
-            "top5": sorted(rows, key=lambda r: r["change"], reverse=True)[:5],
-            "bottom5": sorted(rows, key=lambda r: r["change"])[:5],
+            "top5": sec_top5,
+            "bottom5": sec_bottom5,
             "count": len(rows),
             "avg_change": round(sum(r["change"] for r in rows) / len(rows), 2),
         }
@@ -529,12 +539,16 @@ def main():
         "intraday_events": intraday_events,
     }
 
-    # Clean data to guarantee valid, complete JSON output
+    # Clean data to guarantee valid JSON types
     clean_result = _clean_val(raw_result)
 
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    
+    # Save with explicit buffer flushing to prevent truncated JSON files
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(clean_result, f, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
 
     print(f"\n✅ wrote {out_path}")
     print(f"   FNO: {len(fno_symbols)} | Broader: {len(broader_market)} | "
