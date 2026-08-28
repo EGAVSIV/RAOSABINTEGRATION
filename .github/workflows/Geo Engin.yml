@@ -39,7 +39,7 @@ jobs:
         API_KEY: ${{ secrets.API_KEY }}
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
       run: |
-        python geotrader/engine.py
+        python geotrader/engine.py --out geotrader/result.json
 
     - name: Commit and Push geotrader/result.json
       run: |
