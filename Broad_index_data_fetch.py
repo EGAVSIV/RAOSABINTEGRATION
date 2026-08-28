@@ -68,7 +68,7 @@ def fetch_and_save_all(symbol):
 symbols = [
     'NIFTY', 'CNX100', 'CNX200', 'NIFTY_CAPITAL_MKT', 'NIFTYJR',
     'NIFTY_MID_SELECT', 'CNXSMALLCAP', 'CNXMIDCAP', 'BANKNIFTY', 
-    'CNXFINANCE', 'MCXBULLDEX'
+    'CNXFINANCE'
 ]
 
 if __name__ == "__main__":
