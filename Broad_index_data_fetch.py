@@ -16,7 +16,7 @@ interval_map = {
 }
 
 # === Output Folder ===
-output_dir = "sectorial_index_data"
+output_dir = "Broad_index_data"
 os.makedirs(output_dir, exist_ok=True)
 
 # === Delay for retries ===
@@ -63,16 +63,9 @@ def fetch_and_save_all(symbol):
 
 # === Symbols List ===
 symbols = [
-    'CNXREALTY','CNXMEDIA','NIFTY_IND_DEFENCE','NIFTY_CAPITAL_MKT','NIFTYPVTBANK',
-    'NIFTY_IPO','NIFTY_TOP_10_EW','CNXPSUBANK','NIFTY_NEW_CONSUMP','CNXMETAL',
-    'CNXFINANCE','CNXIT','CNXSERVICE', 'NIFTY_MULTI_INFRA', 'NIFTY_CONSR_DURBL', 
-    'NIFTY', 'NIFTY_COREHOUSING', 'CNXPSE', 'CNXCONSUMPTION', 'CNXINFRA', 
-    'NIFTY_RURAL', 'NIFTY_EV', 'BANKNIFTY', 'NIFTY_CORP_MAATR', 'CPSE', 
-    'NIFTY_HOUSING', 'NIFTY_IND_TOURISM', 'CNXENERGY', 'CNXMNC', 
-    'NIFTY_NONCYC_CONS', 'CNXAUTO', 'NIFTY_MOBILITY', 'NIFTY_INDIA_MFG', 
-    'NIFTY_MULTI_MFG', 'NIFTY_OIL_AND_GAS', 'NIFTY_MS_IT_TELCM', 
-    'NIFTY_HEALTHCARE', 'CNXFMCG', 'CNXPHARMA'
-]
+    'NIFTY','CNX100','CNX200','NIFTY_CAPITAL_MKT','NIFTYJR',
+    'NIFTY_MID_SELECT','CNXSMALLCAP','CNXMIDCAP','BANKNIFTY', 
+    'CNXFINANCE', 'MCXBULLDEX']
 
 # === Run for All Symbols ===
 for symbol in symbols:
