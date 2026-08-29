@@ -2,45 +2,6 @@
 dow_scan.py
 =====================================================================
 Dow Theory swing-structure + multi-level Fibonacci entry scan.
-
-Self-contained: no imports from common.py / indicators.py / anything
-else in this project. Only needs pandas + numpy.
-
-INPUT
------
-Reads OHLC candles that are ALREADY in JSON (one file per symbol per
-timeframe), from folders that sit next to this script's root:
-
-    <root>/stockdata_15/<SYMBOL>.json     (15 Min candles)
-    <root>/stockdata_1H/<SYMBOL>.json     (1 Hour candles)
-    <root>/stockdata_D/<SYMBOL>.json      (Daily candles)
-    <root>/stockdata_W/<SYMBOL>.json      (Weekly candles)
-    <root>/stockdata_M/<SYMBOL>.json      (Monthly candles)
-
-Each <SYMBOL>.json is expected to hold a list of candle records, e.g.:
-
-    [
-      {"date": "2026-01-02", "open": 101.2, "high": 103.4,
-       "low": 100.1, "close": 102.9, "volume": 15230},
-      ...
-    ]
-
-`load_ohlc_json()` below is deliberately permissive about the exact
-shape/field names (list-of-records, dict-of-columns, short field names
-t/o/h/l/c/v, a wrapper key like "data"/"records", etc). If your JSON
-uses something it doesn't recognise, edit that one function — nothing
-else in the file needs to change.
-
-OUTPUT
-------
-Writes a single file: resultdow.json (all 5 timeframes combined, each
-row tagged with its "timeframe").
-
-USAGE
------
-    python dow_scan.py --root .. --date 2026-08-28
-    python dow_scan.py --root .. --date 2026-08-28 --out resultdow.json
-    python dow_scan.py --root .. --timeframes Daily Weekly
 """
 
 from __future__ import annotations
@@ -53,11 +14,6 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-# =====================================================
-# CONFIG
-# =====================================================
-
-# label shown in the UI -> folder name on disk (matches the real project layout)
 TIMEFRAME_FOLDERS = {
     "15 Min": "stockdata_15",
     "1 Hour": "stockdata_1H",
@@ -68,19 +24,13 @@ TIMEFRAME_FOLDERS = {
 
 REQUIRED_COLS = ["open", "high", "low", "close"]
 
-# common short/alternate field names -> canonical column name
 FIELD_ALIASES = {
     "o": "open", "h": "high", "l": "low", "c": "close", "v": "volume",
     "t": "date", "time": "date", "timestamp": "date", "datetime": "date", "dt": "date",
 }
 
 
-# =====================================================
-# JSON I/O HELPERS
-# =====================================================
 def resolve_root(root: str | None) -> Path:
-    """Root = folder that directly contains stockdata_* folders.
-    Defaults to the parent of this script's folder (Root/wgat/dow_scan.py -> Root)."""
     if root:
         return Path(root).resolve()
     return Path(__file__).resolve().parent.parent
@@ -97,14 +47,9 @@ def list_symbols(folder: Path) -> list[str]:
 
 
 def load_ohlc_json(folder: Path, symbol: str) -> pd.DataFrame:
-    """Load one symbol's candles from JSON into a DataFrame with a
-    DatetimeIndex and open/high/low/close(/volume) columns.
-    Tolerant of a few common JSON export shapes — edit here if your
-    schema differs."""
     with open(folder / f"{symbol}.json", "r") as f:
         raw = json.load(f)
 
-    # unwrap a common wrapper key, if present
     if isinstance(raw, dict):
         for key in ("data", "records", "rows", "result", "bars", "ohlc", "candles"):
             if key in raw and isinstance(raw[key], (list, dict)):
@@ -114,7 +59,6 @@ def load_ohlc_json(folder: Path, symbol: str) -> pd.DataFrame:
     if isinstance(raw, list):
         df = pd.DataFrame(raw)
     elif isinstance(raw, dict):
-        # could be {col: {idx: val}} or {col: [vals]} (pandas-style columnar export)
         df = pd.DataFrame(raw)
     else:
         raise ValueError(f"{symbol}.json: unrecognised JSON shape")
@@ -145,8 +89,15 @@ def load_ohlc_json(folder: Path, symbol: str) -> pd.DataFrame:
 
 
 def filter_until_date(df: pd.DataFrame, until) -> pd.DataFrame:
-    until = pd.to_datetime(until)
-    return df[df.index <= until].copy()
+    if until is None:
+        return df.copy()
+    until_dt = pd.to_datetime(until)
+    # Include entire target date regardless of timestamp time parts
+    if until_dt.time() == datetime.min.time():
+        until_dt = until_dt.replace(hour=23, minute=59, second=59, microsecond=999999)
+    filtered = df[df.index <= until_dt].copy()
+    # Fallback to full DataFrame if filter returns empty
+    return filtered if not filtered.empty else df.copy()
 
 
 def latest_date_for_folder(folder: Path):
@@ -192,9 +143,6 @@ def write_json(path: Path, payload) -> None:
         json.dump(payload, f, indent=2, cls=NpEncoder, allow_nan=False)
 
 
-# =====================================================
-# DOW THEORY SWING + TREND
-# =====================================================
 def detect_swings(df: pd.DataFrame, order: int = 3) -> pd.DataFrame:
     high = df["high"].values
     low = df["low"].values
@@ -265,9 +213,6 @@ def classify_last_bucket(swings: pd.DataFrame) -> str:
     return "Triangle / Sideways"
 
 
-# =====================================================
-# FIBONACCI RETRACEMENTS (MULTI LEVEL)
-# =====================================================
 FIB_LEVELS = {
     "23%": 0.23,
     "38%": 0.38,
@@ -376,9 +321,6 @@ def check_fib_entries(df: pd.DataFrame, swings: pd.DataFrame, bucket: str):
     return fib_hits, fib_prices
 
 
-# =====================================================
-# SCAN ONE TIMEFRAME / ALL TIMEFRAMES
-# =====================================================
 def scan_timeframe(root: Path, timeframe_label: str, scan_date) -> list[dict]:
     folder = data_folder(root, timeframe_label)
     symbols = list_symbols(folder)
@@ -388,15 +330,13 @@ def scan_timeframe(root: Path, timeframe_label: str, scan_date) -> list[dict]:
         try:
             df = load_ohlc_json(folder, symbol)
             df = filter_until_date(df, scan_date)
-            if len(df) < 150:
+            if len(df) < 10:  # Relaxed minimum bar threshold
                 continue
 
             df_sw = detect_swings(df, order=3)
             swings = label_structure(df_sw)
-            if swings.empty or swings["label"].dropna().shape[0] < 4:
-                continue
 
-            bucket = classify_last_bucket(swings)
+            bucket = classify_last_bucket(swings) if not swings.empty else "Triangle / Sideways"
             fib_hits, fib_prices = check_fib_entries(df, swings, bucket)
 
             row = {
@@ -410,6 +350,8 @@ def scan_timeframe(root: Path, timeframe_label: str, scan_date) -> list[dict]:
                         for k, v in fib_hits.items()})
             row.update({k.lower().replace(" ", "_").replace("%", "pct").replace(".", ""): v
                         for k, v in fib_prices.items()})
+            
+            # Always append row to payload
             results.append(row)
         except Exception:
             continue
@@ -435,7 +377,7 @@ def run_full_scan(root: Path, scan_date, timeframes: list[str] | None = None) ->
 
     payload = {
         "scan_type": "dow_theory_fib",
-        "scan_date": pd.to_datetime(scan_date).date().isoformat(),
+        "scan_date": pd.to_datetime(scan_date).date().isoformat() if scan_date else None,
         "generated_at": pd.Timestamp.now("UTC").isoformat(),
         "timeframes": per_tf_meta,
         "results": all_rows,
@@ -443,19 +385,16 @@ def run_full_scan(root: Path, scan_date, timeframes: list[str] | None = None) ->
     return payload
 
 
-# =====================================================
-# CLI
-# =====================================================
 def main():
     ap = argparse.ArgumentParser(description="Dow Theory + Fibonacci scan (single-file, JSON input)")
-    ap.add_argument("--root", default=None, help="Folder containing stockdata_* folders (default: parent of this script's folder)")
-    ap.add_argument("--date", default=None, help="Scan date YYYY-MM-DD (default: today)")
-    ap.add_argument("--timeframes", nargs="*", default=None, help="Subset of timeframes to scan (default: all 5)")
-    ap.add_argument("--out", default="resultdow.json", help="Output JSON path (relative to this script unless absolute)")
+    ap.add_argument("--root", default=None, help="Folder containing stockdata_* folders")
+    ap.add_argument("--date", default=None, help="Scan date YYYY-MM-DD")
+    ap.add_argument("--timeframes", nargs="*", default=None, help="Subset of timeframes to scan")
+    ap.add_argument("--out", default="resultdow.json", help="Output JSON path")
     args = ap.parse_args()
 
     root = resolve_root(args.root)
-    scan_date = pd.to_datetime(args.date) if args.date else pd.Timestamp.today()
+    scan_date = pd.to_datetime(args.date) if args.date else None
 
     payload = run_full_scan(root, scan_date, args.timeframes)
 
