@@ -1,0 +1,83 @@
+name: Run Dow + WGAT Scans
+
+# Runs dow_scan.py and wgat_scan.py against the stockdata_* JSON folders
+# and commits the refreshed resultdow.json / resultwgat.json back to the
+# repo so the dashboard (wgat/index.html) always shows the latest scan.
+
+on:
+  # Manual run from the Actions tab
+  workflow_dispatch:
+    inputs:
+      scan_date:
+        description: "Scan as-of date (YYYY-MM-DD). Leave blank for today."
+        required: false
+        default: ""
+
+  # Auto-run whenever the stock data folders or scan scripts change
+  push:
+    branches: [ main ]
+    paths:
+      - "stockdata_15/**"
+      - "stockdata_1H/**"
+      - "stockdata_D/**"
+      - "stockdata_W/**"
+      - "stockdata_M/**"
+      - "wgat/dow_scan.py"
+      - "wgat/wgat_scan.py"
+
+  # Also run on a daily schedule (adjust/remove as needed)
+  schedule:
+    - cron: "30 11 * * 1-5"   # 11:30 UTC = 17:00 IST, Mon-Fri after market close
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scan-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas numpy
+
+      - name: Resolve scan date
+        id: date
+        run: |
+          if [ -n "${{ github.event.inputs.scan_date }}" ]; then
+            echo "value=${{ github.event.inputs.scan_date }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run Dow Theory scan
+        working-directory: wgat
+        run: python dow_scan.py --date "${{ steps.date.outputs.value }}" --out resultdow.json
+
+      - name: Run WGAT scan
+        working-directory: wgat
+        run: python wgat_scan.py --date "${{ steps.date.outputs.value }}" --out resultwgat.json
+
+      - name: Commit updated results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add wgat/resultdow.json wgat/resultwgat.json
+          if git diff --cached --quiet; then
+            echo "No changes in scan results — nothing to commit."
+          else
+            git commit -m "chore: refresh scan results (${{ steps.date.outputs.value }})"
+            git push
+          fi
