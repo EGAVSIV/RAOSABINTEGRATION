@@ -1,7 +1,11 @@
 """
-dow_scan.py
+generate_dow_json.py
 =====================================================================
-Dow Theory swing-structure + multi-level Fibonacci entry scan.
+Dow Theory + Multi-Level Fibonacci Entry Scanner
+
+Reads OHLC Parquet data from the exact folder structure defined in
+the second file, performs swing & Fibonacci calculations, and exports
+the results to `resultdow.json`.
 """
 
 from __future__ import annotations
@@ -14,6 +18,9 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+# =====================================================
+# CONFIG & FOLDER MAPPING (Matched to Second File)
+# =====================================================
 TIMEFRAME_FOLDERS = {
     "15 Min": "stockdata_15",
     "1 Hour": "stockdata_1H",
@@ -22,101 +29,25 @@ TIMEFRAME_FOLDERS = {
     "Monthly": "stockdata_M",
 }
 
-REQUIRED_COLS = ["open", "high", "low", "close"]
-
-FIELD_ALIASES = {
-    "o": "open", "h": "high", "l": "low", "c": "close", "v": "volume",
-    "t": "date", "time": "date", "timestamp": "date", "datetime": "date", "dt": "date",
+FIB_LEVELS = {
+    "23%": 0.23,
+    "38%": 0.38,
+    "50%": 0.50,
+    "61.8%": 0.618,
+    "78%": 0.78,
 }
 
+FIB_RANGES = {
+    "23%": (0.21, 0.25),
+    "38%": (0.36, 0.40),
+    "50%": (0.49, 0.52),
+    "61.8%": (0.60, 0.62),
+    "78%": (0.76, 0.78),
+}
 
-def resolve_root(root: str | None) -> Path:
-    if root:
-        return Path(root).resolve()
-    return Path(__file__).resolve().parent.parent
-
-
-def data_folder(root: Path, timeframe_label: str) -> Path:
-    return root / TIMEFRAME_FOLDERS[timeframe_label]
-
-
-def list_symbols(folder: Path) -> list[str]:
-    if not folder.exists():
-        return []
-    return sorted(f.stem for f in folder.glob("*.json") if not f.stem.startswith("_"))
-
-
-def load_ohlc_json(folder: Path, symbol: str) -> pd.DataFrame:
-    with open(folder / f"{symbol}.json", "r") as f:
-        raw = json.load(f)
-
-    if isinstance(raw, dict):
-        for key in ("data", "records", "rows", "result", "bars", "ohlc", "candles"):
-            if key in raw and isinstance(raw[key], (list, dict)):
-                raw = raw[key]
-                break
-
-    if isinstance(raw, list):
-        df = pd.DataFrame(raw)
-    elif isinstance(raw, dict):
-        df = pd.DataFrame(raw)
-    else:
-        raise ValueError(f"{symbol}.json: unrecognised JSON shape")
-
-    df.columns = [str(c).strip().lower() for c in df.columns]
-    df = df.rename(columns={k: v for k, v in FIELD_ALIASES.items() if k in df.columns})
-
-    date_col = None
-    for cand in ("date", "index"):
-        if cand in df.columns:
-            date_col = cand
-            break
-    if date_col is not None:
-        df = df.set_index(date_col)
-
-    df.index = pd.to_datetime(df.index)
-
-    missing = [c for c in REQUIRED_COLS if c not in df.columns]
-    if missing:
-        raise ValueError(f"{symbol}.json: missing columns {missing}")
-
-    for c in REQUIRED_COLS + (["volume"] if "volume" in df.columns else []):
-        df[c] = pd.to_numeric(df[c], errors="coerce")
-
-    df = df.sort_index()
-    df = df[~df.index.duplicated(keep="last")]
-    return df
-
-
-def filter_until_date(df: pd.DataFrame, until) -> pd.DataFrame:
-    if until is None:
-        return df.copy()
-    until_dt = pd.to_datetime(until)
-    # Include entire target date regardless of timestamp time parts
-    if until_dt.time() == datetime.min.time():
-        until_dt = until_dt.replace(hour=23, minute=59, second=59, microsecond=999999)
-    filtered = df[df.index <= until_dt].copy()
-    # Fallback to full DataFrame if filter returns empty
-    return filtered if not filtered.empty else df.copy()
-
-
-def latest_date_for_folder(folder: Path):
-    if not folder.exists():
-        return None
-    latest = None
-    for f in folder.glob("*.json"):
-        if f.stem.startswith("_"):
-            continue
-        try:
-            df = load_ohlc_json(folder, f.stem)
-            m = df.index.max()
-        except Exception:
-            continue
-        if latest is None or m > latest:
-            latest = m
-    return latest
-
-
+# =====================================================
+# JSON ENCODER
+# =====================================================
 class NpEncoder(json.JSONEncoder):
     def default(self, o):
         if isinstance(o, (np.integer,)):
@@ -136,13 +67,51 @@ class NpEncoder(json.JSONEncoder):
             pass
         return super().default(o)
 
-
 def write_json(path: Path, payload) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w") as f:
         json.dump(payload, f, indent=2, cls=NpEncoder, allow_nan=False)
 
+# =====================================================
+# PARQUET DATA LOADERS & HELPERS
+# =====================================================
+def list_symbols(folder: Path) -> list[str]:
+    if not folder.exists():
+        return []
+    return sorted(f.stem for f in folder.glob("*.parquet") if not f.stem.startswith("_"))
 
+def load_ohlc_parquet(folder: Path, symbol: str) -> pd.DataFrame:
+    filepath = folder / f"{symbol}.parquet"
+    df = pd.read_parquet(filepath)
+    df.index = pd.to_datetime(df.index)
+    df.columns = [str(c).strip().lower() for c in df.columns]
+    df = df.sort_index()
+    return df[~df.index.duplicated(keep="last")]
+
+def filter_until_date(df: pd.DataFrame, until) -> pd.DataFrame:
+    until = pd.to_datetime(until)
+    return df[df.index <= until].copy()
+
+def latest_date_for_folder(folder: Path):
+    if not folder.exists():
+        return None
+    latest = None
+    for f in folder.glob("*.parquet"):
+        if f.stem.startswith("_"):
+            continue
+        try:
+            df = pd.read_parquet(f)
+            df.index = pd.to_datetime(df.index)
+            m = df.index.max()
+        except Exception:
+            continue
+        if latest is None or m > latest:
+            latest = m
+    return latest
+
+# =====================================================
+# DOW THEORY SWING + TREND
+# =====================================================
 def detect_swings(df: pd.DataFrame, order: int = 3) -> pd.DataFrame:
     high = df["high"].values
     low = df["low"].values
@@ -160,7 +129,6 @@ def detect_swings(df: pd.DataFrame, order: int = 3) -> pd.DataFrame:
     out["swing_high"] = swing_high
     out["swing_low"] = swing_low
     return out
-
 
 def label_structure(df: pd.DataFrame) -> pd.DataFrame:
     swings = df[(df["swing_high"]) | (df["swing_low"])].copy()
@@ -191,7 +159,6 @@ def label_structure(df: pd.DataFrame) -> pd.DataFrame:
 
     return swings
 
-
 def classify_last_bucket(swings: pd.DataFrame) -> str:
     labels = list(swings["label"].dropna())
     if len(labels) < 4:
@@ -212,24 +179,9 @@ def classify_last_bucket(swings: pd.DataFrame) -> str:
 
     return "Triangle / Sideways"
 
-
-FIB_LEVELS = {
-    "23%": 0.23,
-    "38%": 0.38,
-    "50%": 0.50,
-    "61.8%": 0.618,
-    "78%": 0.78,
-}
-
-FIB_RANGES = {
-    "23%": (0.21, 0.25),
-    "38%": (0.36, 0.40),
-    "50%": (0.49, 0.52),
-    "61.8%": (0.60, 0.62),
-    "78%": (0.76, 0.78),
-}
-
-
+# =====================================================
+# FIBONACCI RETRACEMENTS
+# =====================================================
 def fib_levels_up(swings: pd.DataFrame):
     sw = swings.copy()
     last_HL = sw[sw["label"] == "HL"].tail(1)
@@ -251,7 +203,6 @@ def fib_levels_up(swings: pd.DataFrame):
         out[name] = high_price - leg * pct
     return out, low_price, high_price
 
-
 def fib_levels_down(swings: pd.DataFrame):
     sw = swings.copy()
     last_LH = sw[sw["label"] == "LH"].tail(1)
@@ -272,7 +223,6 @@ def fib_levels_down(swings: pd.DataFrame):
     for name, pct in FIB_LEVELS.items():
         out[name] = low_price + leg * pct
     return out, low_price, high_price
-
 
 def check_fib_entries(df: pd.DataFrame, swings: pd.DataFrame, bucket: str):
     close = df["close"].iloc[-1]
@@ -320,23 +270,27 @@ def check_fib_entries(df: pd.DataFrame, swings: pd.DataFrame, bucket: str):
 
     return fib_hits, fib_prices
 
-
+# =====================================================
+# TIMEFRAME SCANNER & EXECUTION
+# =====================================================
 def scan_timeframe(root: Path, timeframe_label: str, scan_date) -> list[dict]:
-    folder = data_folder(root, timeframe_label)
+    folder = root / TIMEFRAME_FOLDERS[timeframe_label]
     symbols = list_symbols(folder)
     results = []
 
     for symbol in symbols:
         try:
-            df = load_ohlc_json(folder, symbol)
+            df = load_ohlc_parquet(folder, symbol)
             df = filter_until_date(df, scan_date)
-            if len(df) < 10:  # Relaxed minimum bar threshold
+            if len(df) < 150:
                 continue
 
             df_sw = detect_swings(df, order=3)
             swings = label_structure(df_sw)
+            if swings.empty or swings["label"].dropna().shape[0] < 4:
+                continue
 
-            bucket = classify_last_bucket(swings) if not swings.empty else "Triangle / Sideways"
+            bucket = classify_last_bucket(swings)
             fib_hits, fib_prices = check_fib_entries(df, swings, bucket)
 
             row = {
@@ -350,14 +304,11 @@ def scan_timeframe(root: Path, timeframe_label: str, scan_date) -> list[dict]:
                         for k, v in fib_hits.items()})
             row.update({k.lower().replace(" ", "_").replace("%", "pct").replace(".", ""): v
                         for k, v in fib_prices.items()})
-            
-            # Always append row to payload
             results.append(row)
         except Exception:
             continue
 
     return results
-
 
 def run_full_scan(root: Path, scan_date, timeframes: list[str] | None = None) -> dict:
     timeframes = timeframes or list(TIMEFRAME_FOLDERS.keys())
@@ -365,7 +316,7 @@ def run_full_scan(root: Path, scan_date, timeframes: list[str] | None = None) ->
     per_tf_meta = {}
 
     for tf in timeframes:
-        folder = data_folder(root, tf)
+        folder = root / TIMEFRAME_FOLDERS[tf]
         latest = latest_date_for_folder(folder)
         rows = scan_timeframe(root, tf, scan_date)
         all_rows.extend(rows)
@@ -375,35 +326,36 @@ def run_full_scan(root: Path, scan_date, timeframes: list[str] | None = None) ->
             "matched": len(rows),
         }
 
-    payload = {
+    return {
         "scan_type": "dow_theory_fib",
-        "scan_date": pd.to_datetime(scan_date).date().isoformat() if scan_date else None,
+        "scan_date": pd.to_datetime(scan_date).date().isoformat(),
         "generated_at": pd.Timestamp.now("UTC").isoformat(),
         "timeframes": per_tf_meta,
         "results": all_rows,
     }
-    return payload
 
-
+# =====================================================
+# CLI COMMANDS
+# =====================================================
 def main():
-    ap = argparse.ArgumentParser(description="Dow Theory + Fibonacci scan (single-file, JSON input)")
-    ap.add_argument("--root", default=None, help="Folder containing stockdata_* folders")
+    ap = argparse.ArgumentParser(description="Dow Theory scanner using Parquet input and JSON output")
+    ap.add_argument("--root", default=".", help="Directory containing stockdata_* Parquet folders")
     ap.add_argument("--date", default=None, help="Scan date YYYY-MM-DD")
-    ap.add_argument("--timeframes", nargs="*", default=None, help="Subset of timeframes to scan")
+    ap.add_argument("--timeframes", nargs="*", default=None, help="Specific timeframes to scan")
     ap.add_argument("--out", default="resultdow.json", help="Output JSON path")
     args = ap.parse_args()
 
-    root = resolve_root(args.root)
-    scan_date = pd.to_datetime(args.date) if args.date else None
+    root = Path(args.root).resolve()
+    scan_date = pd.to_datetime(args.date) if args.date else pd.Timestamp.today()
 
     payload = run_full_scan(root, scan_date, args.timeframes)
 
     out_path = Path(args.out)
     if not out_path.is_absolute():
-        out_path = Path(__file__).resolve().parent / out_path
+        out_path = root / out_path
+    
     write_json(out_path, payload)
-    print(f"Dow scan complete: {len(payload['results'])} rows -> {out_path}")
-
+    print(f"✅ Scan Complete! {len(payload['results'])} entries saved to {out_path}")
 
 if __name__ == "__main__":
     main()
