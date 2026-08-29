@@ -22,8 +22,8 @@ on:
       - "stockdata_D/**"
       - "stockdata_W/**"
       - "stockdata_M/**"
-      - "wgat/dow_scan.py"
-      - "wgat/wgat_scan.py"
+      - "wgat/DOW_JSON.py"
+      - "wgat/WGAT_JSON.py"
 
   # Also run on a daily schedule (adjust/remove as needed)
   schedule:
@@ -64,11 +64,11 @@ jobs:
 
       - name: Run Dow Theory scan
         working-directory: wgat
-        run: python dow_scan.py --date "${{ steps.date.outputs.value }}" --out resultdow.json
+        run: python DOW_JSON.py --date "${{ steps.date.outputs.value }}" --out resultdow.json
 
       - name: Run WGAT scan
         working-directory: wgat
-        run: python wgat_scan.py --date "${{ steps.date.outputs.value }}" --out resultwgat.json
+        run: python WGAT_JSON.py --date "${{ steps.date.outputs.value }}" --out resultwgat.json
 
       - name: Commit updated results
         run: |
