@@ -143,10 +143,26 @@ def run_scan(scan_date):
             dd["ema13"] = ema(dd.close, 13); dd["ema50"] = ema(dd.close, 50); dd["ema100"] = ema(dd.close, 100)
             dd["rsi"] = rsi(dd.close, 14); dd["adx"] = adx(dd.high, dd.low, dd.close, 14)
             x = dd.iloc[-1]
+
+            # RSI/ADX are written to JSON so the dashboard can display the
+            # actual indicator values used by the momentum/swing logic.
+            rsi_value = None if pd.isna(x.rsi) else float(x.rsi)
+            adx_value = None if pd.isna(x.adx) else float(x.adx)
+
             results.append({
-                "Stock": symbol, "Scan Date": x.name.isoformat(), "Close": float(x.close),
-                "Daily MACD": d_now, "Previous Daily MACD": d_prev, "Weekly MACD": w_now, "Monthly MACD": m_now,
+                "Stock": symbol,
+                "Scan Date": x.name.isoformat(),
+                "Close": float(x.close),
+                "Daily MACD": d_now,
+                "Previous Daily MACD": d_prev,
+                "Weekly MACD": w_now,
+                "Monthly MACD": m_now,
                 "Category 1": classify_trend(d_now, d_prev, w_now, m_now),
+                "RSI": rsi_value,
+                "ADX": adx_value,
+                "EMA 13": None if pd.isna(x.ema13) else float(x.ema13),
+                "EMA 50": None if pd.isna(x.ema50) else float(x.ema50),
+                "EMA 100": None if pd.isna(x.ema100) else float(x.ema100),
                 "Bullish Momentum": bool(x.ema13 > x.ema50 > x.ema100 and x.adx > 20 and x.rsi > 55 and x.close > x.ema13),
                 "Bearish Momentum": bool(x.ema13 < x.ema50 < x.ema100 and x.adx > 20 and x.rsi < 45 and x.close < x.ema13),
                 "Bullish Swing": bool(x.ema13 > x.ema50 and x.rsi < 55),
