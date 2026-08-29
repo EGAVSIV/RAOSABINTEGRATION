@@ -43,7 +43,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -79,5 +79,6 @@ jobs:
             echo "No changes in scan results — nothing to commit."
           else
             git commit -m "chore: refresh scan results (${{ steps.date.outputs.value }})"
+            git pull --rebase origin main
             git push
           fi
