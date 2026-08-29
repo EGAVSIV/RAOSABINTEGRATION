@@ -1,14 +1,21 @@
-"""Dow Theory Trend + Fibonacci Entry Scanner - JSON version."""
+"""Dow Theory Trend + Fibonacci Entry Scanner.
+
+Streamlit-free JSON scanner.
+Script location: ROOT/wgat/DOW_JSON.py
+Data location:   ROOT/stockdata_*/
+Output location: ROOT/wgat/resultdow.json
+"""
+
 from __future__ import annotations
 
 import argparse
 import json
 from pathlib import Path
 from typing import Any
+
 import numpy as np
 import pandas as pd
 
-# DOW_JSON.py is ROOT/wgat/DOW_JSON.py; stockdata_* are ROOT-level folders.
 SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT_DIR = SCRIPT_DIR.parent
 
@@ -22,6 +29,9 @@ DATA_FOLDERS = {
 
 MIN_BARS = 150
 SWING_ORDER = 3
+
+FIB_LEVELS = {"23%": 0.23, "38%": 0.38, "50%": 0.50, "61.8%": 0.618, "78%": 0.78}
+FIB_RANGES = {"23%": (0.21, 0.25), "38%": (0.36, 0.40), "50%": (0.49, 0.52), "61.8%": (0.60, 0.62), "78%": (0.76, 0.78)}
 
 
 def _unwrap_json(obj: Any) -> Any:
@@ -56,21 +66,22 @@ def load_json_ohlcv(path: Path) -> pd.DataFrame:
         return df
 
     df.columns = [str(c).strip().lower() for c in df.columns]
-    datetime_col = next((c for c in ("datetime", "date", "time", "timestamp", "t") if c in df.columns), None)
+    dt_col = next((c for c in ("datetime", "date", "time", "timestamp", "t") if c in df.columns), None)
 
-    if datetime_col:
-        if pd.api.types.is_numeric_dtype(df[datetime_col]):
-            n = pd.to_numeric(df[datetime_col], errors="coerce")
-            valid = n.dropna()
-            unit = "ms" if (not valid.empty and valid.median() > 10_000_000_000) else "s"
-            dt = pd.to_datetime(n, unit=unit, errors="coerce", utc=True)
-        else:
-            dt = pd.to_datetime(df[datetime_col], errors="coerce", utc=True)
-        mask = dt.notna()
-        df = df.loc[mask].copy()
-        df.index = dt.loc[mask]
-    else:
+    if dt_col is None:
         raise ValueError(f"No datetime field found in {path.name}")
+
+    if pd.api.types.is_numeric_dtype(df[dt_col]):
+        n = pd.to_numeric(df[dt_col], errors="coerce")
+        valid = n.dropna()
+        unit = "ms" if (not valid.empty and valid.median() > 10_000_000_000) else "s"
+        dt = pd.to_datetime(n, unit=unit, errors="coerce", utc=True)
+    else:
+        dt = pd.to_datetime(df[dt_col], errors="coerce", utc=True)
+
+    mask = dt.notna()
+    df = df.loc[mask].copy()
+    df.index = dt.loc[mask]
 
     required = ["open", "high", "low", "close"]
     missing = [c for c in required if c not in df.columns]
@@ -84,9 +95,12 @@ def load_json_ohlcv(path: Path) -> pd.DataFrame:
     return df[~df.index.duplicated(keep="last")].sort_index().dropna(subset=required)
 
 
+def filter_until_date(df: pd.DataFrame, scan_date: pd.Timestamp) -> pd.DataFrame:
+    return df[df.index <= scan_date].copy()
+
+
 def detect_swings(df: pd.DataFrame, order: int = 3) -> pd.DataFrame:
-    high = df["high"].values
-    low = df["low"].values
+    high, low = df["high"].values, df["low"].values
     swing_high = np.zeros(len(df), dtype=bool)
     swing_low = np.zeros(len(df), dtype=bool)
     for i in range(order, len(df) - order):
@@ -128,15 +142,11 @@ def classify_last_bucket(swings: pd.DataFrame) -> str:
         return "Reversal To Downtrend"
     if last4 == ["LL", "LH", "HL", "HH"]:
         return "Reversal To Uptrend"
-    if all(x in ["HH", "HL"] for x in last4):
+    if all(x in ("HH", "HL") for x in last4):
         return "Uptrend"
-    if all(x in ["LL", "LH"] for x in last4):
+    if all(x in ("LL", "LH") for x in last4):
         return "Downtrend"
     return "Triangle / Sideways"
-
-
-FIB_LEVELS = {"23%": 0.23, "38%": 0.38, "50%": 0.50, "61.8%": 0.618, "78%": 0.78}
-FIB_RANGES = {"23%": (0.21, 0.25), "38%": (0.36, 0.40), "50%": (0.49, 0.52), "61.8%": (0.60, 0.62), "78%": (0.76, 0.78)}
 
 
 def fib_levels_up(swings):
@@ -148,7 +158,7 @@ def fib_levels_up(swings):
     if high_price == low_price:
         return None
     leg = high_price - low_price
-    return {name: high_price - leg * pct for name, pct in FIB_LEVELS.items()}, low_price, high_price
+    return {k: high_price - leg * p for k, p in FIB_LEVELS.items()}, low_price, high_price
 
 
 def fib_levels_down(swings):
@@ -160,15 +170,15 @@ def fib_levels_down(swings):
     if high_price == low_price:
         return None
     leg = high_price - low_price
-    return {name: low_price + leg * pct for name, pct in FIB_LEVELS.items()}, low_price, high_price
+    return {k: low_price + leg * p for k, p in FIB_LEVELS.items()}, low_price, high_price
 
 
 def check_fib_entries(df, swings, bucket):
     close = df["close"].iloc[-1]
-    fib_hits = {f"{x} Bull": False for x in FIB_LEVELS}
-    fib_hits.update({f"{x} Bear": False for x in FIB_LEVELS})
-    fib_prices = {f"{x} Up": None for x in FIB_LEVELS}
-    fib_prices.update({f"{x} Down": None for x in FIB_LEVELS})
+    fib_hits = {f"{k} Bull": False for k in FIB_LEVELS}
+    fib_hits.update({f"{k} Bear": False for k in FIB_LEVELS})
+    fib_prices = {f"{k} Up": None for k in FIB_LEVELS}
+    fib_prices.update({f"{k} Down": None for k in FIB_LEVELS})
 
     if bucket == "Uptrend":
         res = fib_levels_up(swings)
@@ -201,57 +211,81 @@ def check_fib_entries(df, swings, bucket):
     return fib_hits, fib_prices
 
 
-def scan_timeframe(folder: Path, timeframe: str, scan_date=None):
+def scan_timeframe(folder: Path, timeframe: str, scan_date: pd.Timestamp) -> dict:
     files = sorted(folder.glob("*.json")) if folder.exists() else []
     results, errors = [], []
+    effective_latest = None
+
     if not folder.exists():
-        return {"timeframe": timeframe, "folder": str(folder), "symbols_scanned": 0, "results_count": 0, "results": [], "errors": [f"Folder not found: {folder}"]}
+        return {"timeframe": timeframe, "folder": folder.name, "scan_date": None, "symbols_scanned": 0, "results_count": 0, "results": [], "errors": [f"Folder not found: {folder}"]}
 
     for path in files:
         try:
-            df = load_json_ohlcv(path)
-            if scan_date is not None:
-                df = df[df.index <= scan_date].copy()
-            if len(df) < MIN_BARS:
+            df = filter_until_date(load_json_ohlcv(path), scan_date)
+            if df.empty or len(df) < MIN_BARS:
                 continue
-            swings = label_structure(detect_swings(df, SWING_ORDER))
+            effective_latest = df.index[-1] if effective_latest is None else max(effective_latest, df.index[-1])
+            df_sw = detect_swings(df, SWING_ORDER)
+            swings = label_structure(df_sw)
             if swings.empty or swings["label"].dropna().shape[0] < 4:
                 continue
             bucket = classify_last_bucket(swings)
             fib_hits, fib_prices = check_fib_entries(df, swings, bucket)
-            row = {"Stock": path.stem, "Timeframe": timeframe, "Trend Bucket": bucket, "Scan Date": df.index[-1].isoformat(), "Close": float(df["close"].iloc[-1])}
+            row = {
+                "Stock": path.stem,
+                "Timeframe": timeframe,
+                "Trend Bucket": bucket,
+                "Scan Date": df.index[-1].isoformat(),
+                "Close": float(df["close"].iloc[-1]),
+            }
             row.update(fib_hits)
             row.update(fib_prices)
             results.append(row)
         except Exception as exc:
             errors.append({"Stock": path.stem, "Error": str(exc)})
 
-    return {"timeframe": timeframe, "folder": str(folder), "symbols_scanned": len(files), "results_count": len(results), "results": results, "errors": errors}
+    return {
+        "timeframe": timeframe,
+        "folder": folder.name,
+        "scan_date": effective_latest.isoformat() if effective_latest is not None else scan_date.isoformat(),
+        "symbols_scanned": len(files),
+        "results_count": len(results),
+        "results": results,
+        "errors": errors,
+    }
 
 
-def latest_date():
+def latest_available_date() -> pd.Timestamp:
     latest = None
-    daily = DATA_FOLDERS["Daily"]
-    for path in daily.glob("*.json") if daily.exists() else []:
+    folder = DATA_FOLDERS["Daily"]
+    for path in folder.glob("*.json") if folder.exists() else []:
         try:
             df = load_json_ohlcv(path)
             if not df.empty:
                 latest = df.index.max() if latest is None else max(latest, df.index.max())
-        except Exception as exc:
-            print(f"Skipping {path.name}: {exc}")
+        except Exception:
+            pass
     if latest is None:
-        raise RuntimeError(f"No valid JSON OHLC data found in {daily}. Expected ROOT/stockdata_D/*.json")
+        raise RuntimeError(f"No valid JSON OHLC data found in {folder}")
     return latest
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--date", help="Scan date YYYY-MM-DD; defaults to latest Daily candle")
-    parser.add_argument("--out", default="resultdow.json", help="Output filename")
+    parser = argparse.ArgumentParser(description="Dow Theory JSON scanner")
+    parser.add_argument("--date", help="Scan as-of date YYYY-MM-DD")
+    parser.add_argument("--out", default="resultdow.json", help="Output JSON filename")
     args = parser.parse_args()
-    scan_date = pd.Timestamp(args.date, tz="UTC") if args.date else latest_date()
 
-    output = {"scanner": "Dow Theory Trend + Fibonacci Entry Scanner", "source_format": "JSON", "generated_at": pd.Timestamp.now(tz="UTC").isoformat(), "data_root": str(ROOT_DIR), "timeframes": {}}
+    scan_date = pd.Timestamp(args.date, tz="UTC") if args.date else latest_available_date()
+    output = {
+        "scanner": "Dow Theory Trend + Fibonacci Entry Scanner",
+        "source_format": "JSON",
+        "generated_at": pd.Timestamp.now(tz="UTC").isoformat(),
+        "data_root": str(ROOT_DIR),
+        "scan_date": scan_date.isoformat(),
+        "timeframes": {},
+    }
+
     for timeframe, folder in DATA_FOLDERS.items():
         print(f"Scanning {timeframe}: {folder}")
         output["timeframes"][timeframe] = scan_timeframe(folder, timeframe, scan_date)
@@ -262,6 +296,7 @@ def main():
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False, allow_nan=False)
+
     print(f"Data root: {ROOT_DIR}")
     print(f"Output: {out_path}")
 
