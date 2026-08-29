@@ -1,0 +1,489 @@
+{
+  "generated_at": "2026-08-29T05:45:13.149626",
+  "generated_at_utc": "2026-08-29T05:45:13.149632+00:00",
+  "meta": {
+    "benchmark": "NIFTY",
+    "latest_date": "2026-08-28",
+    "anchor_date": "2026-08-28",
+    "sector_count": 5,
+    "lookback_options": [
+      10,
+      15,
+      20,
+      30,
+      45,
+      60
+    ],
+    "default_lookback": 30,
+    "sector_map_loaded": true,
+    "stocks_loaded": 13
+  },
+  "nifty_returns": {
+    "10": -0.78,
+    "15": -1.61,
+    "20": -0.85,
+    "30": -0.65,
+    "45": 0.5,
+    "60": 3.24
+  },
+  "performance_table": {
+    "10": [
+      {
+        "symbol": "CNXFINANCE",
+        "return": 0.28,
+        "nifty_return": -0.78,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "BANKNIFTY",
+        "return": 0.01,
+        "nifty_return": -0.78,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXAUTO",
+        "return": -1.22,
+        "nifty_return": -0.78,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXENERGY",
+        "return": -1.43,
+        "nifty_return": -0.78,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXCONSUMPTION",
+        "return": -1.97,
+        "nifty_return": -0.78,
+        "status": "Underperforming"
+      }
+    ],
+    "15": [
+      {
+        "symbol": "BANKNIFTY",
+        "return": -0.43,
+        "nifty_return": -1.61,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXFINANCE",
+        "return": -0.68,
+        "nifty_return": -1.61,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXENERGY",
+        "return": -1.93,
+        "nifty_return": -1.61,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXCONSUMPTION",
+        "return": -2.4,
+        "nifty_return": -1.61,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXAUTO",
+        "return": -2.69,
+        "nifty_return": -1.61,
+        "status": "Underperforming"
+      }
+    ],
+    "20": [
+      {
+        "symbol": "BANKNIFTY",
+        "return": 0.4,
+        "nifty_return": -0.85,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXAUTO",
+        "return": 0.37,
+        "nifty_return": -0.85,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXFINANCE",
+        "return": -1.16,
+        "nifty_return": -0.85,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXCONSUMPTION",
+        "return": -1.47,
+        "nifty_return": -0.85,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXENERGY",
+        "return": -1.87,
+        "nifty_return": -0.85,
+        "status": "Underperforming"
+      }
+    ],
+    "30": [
+      {
+        "symbol": "CNXAUTO",
+        "return": 6.47,
+        "nifty_return": -0.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXCONSUMPTION",
+        "return": 1.7,
+        "nifty_return": -0.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "BANKNIFTY",
+        "return": -1.75,
+        "nifty_return": -0.65,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXFINANCE",
+        "return": -2.29,
+        "nifty_return": -0.65,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXENERGY",
+        "return": -3.24,
+        "nifty_return": -0.65,
+        "status": "Underperforming"
+      }
+    ],
+    "45": [
+      {
+        "symbol": "CNXAUTO",
+        "return": 6.95,
+        "nifty_return": 0.5,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXCONSUMPTION",
+        "return": 2.69,
+        "nifty_return": 0.5,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "BANKNIFTY",
+        "return": -1.17,
+        "nifty_return": 0.5,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXFINANCE",
+        "return": -1.81,
+        "nifty_return": 0.5,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXENERGY",
+        "return": -4.12,
+        "nifty_return": 0.5,
+        "status": "Underperforming"
+      }
+    ],
+    "60": [
+      {
+        "symbol": "CNXAUTO",
+        "return": 10.36,
+        "nifty_return": 3.24,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXCONSUMPTION",
+        "return": 6.42,
+        "nifty_return": 3.24,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "BANKNIFTY",
+        "return": 5.87,
+        "nifty_return": 3.24,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXFINANCE",
+        "return": 5.01,
+        "nifty_return": 3.24,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXENERGY",
+        "return": -6.04,
+        "nifty_return": 3.24,
+        "status": "Underperforming"
+      }
+    ]
+  },
+  "rotation_table": [
+    {
+      "sector": "CNXAUTO",
+      "r1m": 2.03,
+      "r3m": 11.43,
+      "r6m": 2.76,
+      "rotation": "Leading",
+      "rs_vs_nifty": 2.61,
+      "momentum": -9.4,
+      "rs_rank": 1
+    },
+    {
+      "sector": "BANKNIFTY",
+      "r1m": 0.61,
+      "r3m": 7.18,
+      "r6m": -6.15,
+      "rotation": "Leading",
+      "rs_vs_nifty": 1.19,
+      "momentum": -6.57,
+      "rs_rank": 2
+    },
+    {
+      "sector": "CNXFINANCE",
+      "r1m": 0.13,
+      "r3m": 5.11,
+      "r6m": -7.62,
+      "rotation": "Leading",
+      "rs_vs_nifty": 0.71,
+      "momentum": -4.98,
+      "rs_rank": 3
+    },
+    {
+      "sector": "CNXENERGY",
+      "r1m": -0.81,
+      "r3m": -5.59,
+      "r6m": 3.44,
+      "rotation": "Lagging",
+      "rs_vs_nifty": -0.23,
+      "momentum": 4.78,
+      "rs_rank": 4
+    },
+    {
+      "sector": "CNXCONSUMPTION",
+      "r1m": -1.49,
+      "r3m": 7.4,
+      "r6m": 1.18,
+      "rotation": "Weakening",
+      "rs_vs_nifty": -0.91,
+      "momentum": -8.89,
+      "rs_rank": 5
+    }
+  ],
+  "top_sectors": [
+    {
+      "sector": "CNXAUTO",
+      "r1m": 2.03,
+      "r3m": 11.43,
+      "r6m": 2.76,
+      "rotation": "Leading",
+      "rs_vs_nifty": 2.61,
+      "momentum": -9.4,
+      "rs_rank": 1
+    },
+    {
+      "sector": "BANKNIFTY",
+      "r1m": 0.61,
+      "r3m": 7.18,
+      "r6m": -6.15,
+      "rotation": "Leading",
+      "rs_vs_nifty": 1.19,
+      "momentum": -6.57,
+      "rs_rank": 2
+    },
+    {
+      "sector": "CNXFINANCE",
+      "r1m": 0.13,
+      "r3m": 5.11,
+      "r6m": -7.62,
+      "rotation": "Leading",
+      "rs_vs_nifty": 0.71,
+      "momentum": -4.98,
+      "rs_rank": 3
+    },
+    {
+      "sector": "CNXENERGY",
+      "r1m": -0.81,
+      "r3m": -5.59,
+      "r6m": 3.44,
+      "rotation": "Lagging",
+      "rs_vs_nifty": -0.23,
+      "momentum": 4.78,
+      "rs_rank": 4
+    },
+    {
+      "sector": "CNXCONSUMPTION",
+      "r1m": -1.49,
+      "r3m": 7.4,
+      "r6m": 1.18,
+      "rotation": "Weakening",
+      "rs_vs_nifty": -0.91,
+      "momentum": -8.89,
+      "rs_rank": 5
+    }
+  ],
+  "rotation_alerts": [],
+  "model_portfolio": [
+    {
+      "sector": "CNXAUTO",
+      "rotation": "Leading",
+      "rs_rank": 1,
+      "weight_pct": 50.0
+    },
+    {
+      "sector": "BANKNIFTY",
+      "rotation": "Leading",
+      "rs_rank": 2,
+      "weight_pct": 33.33
+    },
+    {
+      "sector": "CNXFINANCE",
+      "rotation": "Leading",
+      "rs_rank": 3,
+      "weight_pct": 16.67
+    }
+  ],
+  "stock_rrg": {
+    "CNXAUTO": {
+      "points": [
+        {
+          "symbol": "MARUTI",
+          "rs_vs_sector": -7.75,
+          "momentum": -9.04,
+          "r1m": -5.72
+        }
+      ],
+      "as_of": "2026-08-28",
+      "sector_1m": 2.03
+    },
+    "CNXFINANCE": {
+      "points": [
+        {
+          "symbol": "HDFCBANK",
+          "rs_vs_sector": -4.59,
+          "momentum": -1.44,
+          "r1m": -4.46
+        },
+        {
+          "symbol": "ICICIBANK",
+          "rs_vs_sector": -0.9,
+          "momentum": -15.54,
+          "r1m": -0.77
+        },
+        {
+          "symbol": "AXISBANK",
+          "rs_vs_sector": 2.81,
+          "momentum": 3.79,
+          "r1m": 2.94
+        },
+        {
+          "symbol": "SBIN",
+          "rs_vs_sector": 2.04,
+          "momentum": -7.62,
+          "r1m": 2.17
+        },
+        {
+          "symbol": "BAJFINANCE",
+          "rs_vs_sector": 2.38,
+          "momentum": -18.96,
+          "r1m": 2.51
+        }
+      ],
+      "as_of": "2026-08-28",
+      "sector_1m": 0.13
+    },
+    "BANKNIFTY": {
+      "points": [
+        {
+          "symbol": "HDFCBANK",
+          "rs_vs_sector": -5.07,
+          "momentum": -1.44,
+          "r1m": -4.46
+        },
+        {
+          "symbol": "ICICIBANK",
+          "rs_vs_sector": -1.38,
+          "momentum": -15.54,
+          "r1m": -0.77
+        },
+        {
+          "symbol": "AXISBANK",
+          "rs_vs_sector": 2.33,
+          "momentum": 3.79,
+          "r1m": 2.94
+        },
+        {
+          "symbol": "SBIN",
+          "rs_vs_sector": 1.56,
+          "momentum": -7.62,
+          "r1m": 2.17
+        }
+      ],
+      "as_of": "2026-08-28",
+      "sector_1m": 0.61
+    },
+    "CNXENERGY": {
+      "points": [
+        {
+          "symbol": "RELIANCE",
+          "rs_vs_sector": 0.35,
+          "momentum": 2.04,
+          "r1m": -0.46
+        },
+        {
+          "symbol": "ABB",
+          "rs_vs_sector": 3.79,
+          "momentum": -3.87,
+          "r1m": 2.98
+        },
+        {
+          "symbol": "ADANIENSOL",
+          "rs_vs_sector": -3.87,
+          "momentum": -10.35,
+          "r1m": -4.68
+        }
+      ],
+      "as_of": "2026-08-28",
+      "sector_1m": -0.81
+    }
+  },
+  "sector_scanner": [
+    {
+      "sector": "CNXFINANCE",
+      "stock": "AXISBANK",
+      "stock_1m": 2.94,
+      "sector_1m": 0.13,
+      "signal": "Sector Leader"
+    },
+    {
+      "sector": "CNXFINANCE",
+      "stock": "BAJFINANCE",
+      "stock_1m": 2.51,
+      "sector_1m": 0.13,
+      "signal": "Sector Leader"
+    },
+    {
+      "sector": "BANKNIFTY",
+      "stock": "AXISBANK",
+      "stock_1m": 2.94,
+      "sector_1m": 0.61,
+      "signal": "Sector Leader"
+    },
+    {
+      "sector": "CNXFINANCE",
+      "stock": "SBIN",
+      "stock_1m": 2.17,
+      "sector_1m": 0.13,
+      "signal": "Sector Leader"
+    },
+    {
+      "sector": "BANKNIFTY",
+      "stock": "SBIN",
+      "stock_1m": 2.17,
+      "sector_1m": 0.61,
+      "signal": "Sector Leader"
+    }
+  ]
+}
