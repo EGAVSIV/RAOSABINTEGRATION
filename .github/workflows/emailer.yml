@@ -1,10 +1,10 @@
 name: FNO Emailer
 on:
-  # 1. Scheduled Run: Daily at 5:00 PM IST (which is 11:30 AM UTC)
+  # 1. Scheduled Run: Daily at 5:00 PM IST (11:30 AM UTC)
   schedule:
     - cron: '30 11 * * *'
 
-  # 2. Manual Run: Provides a "Run workflow" button in the GitHub Actions UI
+  # 2. Manual Run
   workflow_dispatch:
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out your repository code
+      # Step 1: Check out repository code
       - name: Checkout Repository Code
         uses: actions/checkout@v4
 
@@ -21,9 +21,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip' # Speeds up future runs by caching dependencies
+          cache: 'pip'
 
-      # Step 3: Install TA-Lib (Required C-library dependency)
+      # Step 3: Install TA-Lib C-library
       - name: Install TA-Lib dependencies
         run: |
           sudo apt-get update
@@ -40,21 +40,13 @@ jobs:
       - name: Install Python Packages
         run: |
           python -m pip install --upgrade pip
-          pip install numpy pandas openpyxl TA-Lib pyarrow fastparquet
+          pip install -r FNO_EMAILER/requirements.txt
 
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      # Step 5: Run your scanner script
-      - name: Run NSE Scanner Script
+      # Step 5: Run scanner scripts
+      - name: Run EMAIL1 HTPL Script
         run: |
           python FNO_EMAILER/EMAIL1_HTPL.py
 
-      - name: Run NSE Scanner Script
+      - name: Run EMAIL2 Script
         run: |
           python FNO_EMAILER/EMAIL2.py
-
-    
