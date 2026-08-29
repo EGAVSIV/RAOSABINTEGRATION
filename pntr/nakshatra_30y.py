@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """Generate Moon Nakshatra transition timings for the next 30 years.
 
-IST is used throughout. Swiss Ephemeris is configured to sidereal Lahiri,
-matching the existing FNO_REVERSAL_P&T.py implementation.
-
-Output:
-    pntr/data/moon_nakshatra_30y.json
+Uses IST and Swiss Ephemeris Lahiri sidereal mode, matching the existing
+FNO_REVERSAL_P&T.py scanner. The calculation is boundary-driven: the exact
+Nakshatra boundary is located by binary search, rather than by reporting the
+coarse scan step.
 """
 from __future__ import annotations
 
@@ -37,7 +36,10 @@ swe.set_sid_mode(swe.SIDM_LAHIRI)
 
 def jd_from_ist(value: dt.datetime) -> float:
     utc = value.astimezone(dt.timezone.utc)
-    return swe.julday(utc.year, utc.month, utc.day, utc.hour + utc.minute / 60 + utc.second / 3600)
+    return swe.julday(
+        utc.year, utc.month, utc.day,
+        utc.hour + utc.minute / 60 + utc.second / 3600,
+    )
 
 
 def moon_longitude(value: dt.datetime) -> float:
@@ -49,31 +51,33 @@ def nak_index(lon: float) -> int:
     return min(26, int(lon // NAK_SIZE))
 
 
-def nak_pada(lon: float) -> tuple[str, int]:
-    idx = nak_index(lon)
-    inside = lon - idx * NAK_SIZE
+def get_nak_pada(lon: float) -> tuple[str, int]:
+    i = nak_index(lon)
+    inside = lon - i * NAK_SIZE
     pada = min(4, int(inside / (NAK_SIZE / 4.0)) + 1)
-    return NAKSHATRAS[idx], pada
+    return NAKSHATRAS[i], pada
 
 
-def unwrap_forward(prev: float, curr: float) -> float:
-    return curr if curr >= prev else curr + 360.0
+def forward_delta(a: float, b: float) -> float:
+    """Forward angular distance from a to b in [0, 360)."""
+    return (b - a) % 360.0
 
 
-def refine_boundary(a: dt.datetime, b: dt.datetime, target_index: int) -> dt.datetime:
-    """Binary-search a Nakshatra boundary to one-second resolution."""
-    # Target boundary is the first longitude belonging to target_index.
-    boundary = target_index * NAK_SIZE
-    for _ in range(24):
+def boundary_crossed(a: float, b: float, boundary: float) -> bool:
+    return forward_delta(a, b) >= forward_delta(a, boundary % 360.0)
+
+
+def refine_boundary(a: dt.datetime, b: dt.datetime, boundary: float) -> dt.datetime:
+    """Binary-search the first instant at which longitude reaches boundary."""
+    boundary %= 360.0
+    before = moon_longitude(a)
+    # Caller guarantees the boundary occurs between a and b.
+    for _ in range(32):
         if (b - a).total_seconds() <= REFINE_SECONDS:
             break
         m = a + (b - a) / 2
-        la = moon_longitude(a)
-        lm = moon_longitude(m)
-        # Normalize forward from la to lm.
-        lm_u = unwrap_forward(la, lm)
-        crossed = lm_u >= boundary if la < boundary else lm_u >= boundary + 360.0
-        if crossed:
+        mlon = moon_longitude(m)
+        if forward_delta(before, mlon) >= forward_delta(before, boundary):
             b = m
         else:
             a = m
@@ -83,8 +87,8 @@ def refine_boundary(a: dt.datetime, b: dt.datetime, target_index: int) -> dt.dat
 def generate(start_date: dt.date, end_date: dt.date) -> list[dict]:
     start = dt.datetime.combine(start_date, dt.time(0, 0), tzinfo=IST)
     end = dt.datetime.combine(end_date, dt.time(23, 59, 59), tzinfo=IST)
-
     rows: list[dict] = []
+
     t = start
     prev_lon = moon_longitude(t)
     prev_idx = nak_index(prev_lon)
@@ -95,24 +99,24 @@ def generate(start_date: dt.date, end_date: dt.date) -> list[dict]:
         curr_idx = nak_index(curr_lon)
 
         if curr_idx != prev_idx:
-            # If there are multiple boundaries across a coarse interval, walk them.
             idx = prev_idx
-            cursor_a = t
+            cursor = t
             while idx != curr_idx:
                 target = (idx + 1) % 27
-                boundary_dt = refine_boundary(cursor_a, nt, target)
-                from_nak = NAKSHATRAS[idx]
-                to_nak = NAKSHATRAS[target]
-                lon_at = moon_longitude(boundary_dt)
+                boundary = target * NAK_SIZE
+                event_t = refine_boundary(cursor, nt, boundary)
                 rows.append({
-                    "datetime_ist": boundary_dt.isoformat(),
+                    "datetime_ist": event_t.isoformat(),
                     "event": "Moon Nakshatra Change",
-                    "from": from_nak,
-                    "to": to_nak,
-                    "to_pada": nak_pada(lon_at)[1],
+                    "from": NAKSHATRAS[idx],
+                    "to": NAKSHATRAS[target],
+                    "to_pada": get_nak_pada(moon_longitude(event_t))[1],
                 })
                 idx = target
-                cursor_a = boundary_dt + dt.timedelta(seconds=1)
+                cursor = event_t + dt.timedelta(seconds=1)
+                if cursor >= nt:
+                    break
+
         prev_lon = curr_lon
         prev_idx = curr_idx
         t = nt
