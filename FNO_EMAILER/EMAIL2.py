@@ -42,7 +42,10 @@ BCC_RECIPIENTS = ["dipti.gorwadia@gmail.com", "yadav.gauravsingh34@gmail.com", "
 TELEGRAM_BOT_TOKEN = "8344354642:AAG_S7mavtiLP_yXPh4YM4u31QD5BBWJmuM"
 TELEGRAM_CHAT_IDS = ["5332984891", "-1002622207173"]
 
-BASE_PATH = os.path.dirname(os.path.abspath(__file__)) if "__file__" in locals() else os.getcwd()
+# New BASE_PATH (points to the parent repository root folder):
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__)) if "__file__" in locals() else os.getcwd()
+BASE_PATH = os.path.dirname(SCRIPT_DIR) # Moves 1 level up to the root folder
+#BASE_PATH = os.path.dirname(os.path.abspath(__file__)) if "__file__" in locals() else os.getcwd()
 OUTPUT_DIR = os.path.join(BASE_PATH, "Output")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
