@@ -1,8 +1,9 @@
 /* =========================================================
    Master Scanner — dashboard logic
-   Reads data/dow_results.json and data/wgat_results.json
-   (produced by run_all.py) and renders two filterable,
-   sortable tables with an expandable detail row per stock.
+   Reads resultdow.json and resultwgat.json — both sit in this
+   same wgat/ folder (produced by dow_scan.py / wgat_scan.py) —
+   and renders two filterable, sortable tables with an
+   expandable detail row per stock.
    ========================================================= */
 
 const DATA = {
