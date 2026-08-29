@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Scanner — Dow Theory + WGAT</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ========================= TOP BAR ========================= -->
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">MS</div>
+    <div class="brand-text">
+      <h1>Master Scanner</h1>
+      <p>DOW THEORY // WAVE vs TIDE</p>
+    </div>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab-btn active" data-tab="dow" role="tab" aria-selected="true">
+      <span class="dot"></span> DOW THEORY
+    </button>
+    <button class="tab-btn" data-tab="wgat" role="tab" aria-selected="false">
+      <span class="dot"></span> WGAT
+    </button>
+  </div>
+
+  <div class="meta">
+    <span class="live"><span class="pulse"></span> <span id="metaLive">loading…</span></span>
+    <span class="meta-date" id="metaDate">—</span>
+  </div>
+</header>
+
+<!-- ========================= TICKER STRIP ========================= -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="tickerTrack"><!-- filled by JS, duplicated for seamless loop --></div>
+</div>
+
+<main>
+
+  <!-- ========================= DOW TAB ========================= -->
+  <section id="tab-dow" class="tab-panel">
+    <div class="panel">
+      <div class="filterbar">
+        <div class="field">
+          <label for="dowTimeframe">Timeframe</label>
+          <select id="dowTimeframe">
+            <option value="All">All Timeframes</option>
+            <option>15 Min</option>
+            <option>1 Hour</option>
+            <option selected>Daily</option>
+            <option>Weekly</option>
+            <option>Monthly</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="dowTrend">Trend Bucket</label>
+          <select id="dowTrend">
+            <option value="All">All</option>
+            <option>Uptrend</option>
+            <option>Downtrend</option>
+            <option>Reversal To Uptrend</option>
+            <option>Reversal To Downtrend</option>
+            <option>Triangle / Sideways</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="dowFib">Fib Entry</label>
+          <select id="dowFib">
+            <option value="All">All</option>
+            <optgroup label="Bullish Retracement">
+              <option value="23pct_bull">23% Bull</option>
+              <option value="38pct_bull">38% Bull</option>
+              <option value="50pct_bull">50% Bull</option>
+              <option value="618pct_bull">61.8% Bull</option>
+              <option value="78pct_bull">78% Bull</option>
+            </optgroup>
+            <optgroup label="Bearish Retracement">
+              <option value="23pct_bear">23% Bear</option>
+              <option value="38pct_bear">38% Bear</option>
+              <option value="50pct_bear">50% Bear</option>
+              <option value="618pct_bear">61.8% Bear</option>
+              <option value="78pct_bear">78% Bear</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="field search">
+          <label for="dowSearch">Search Stock</label>
+          <input type="text" id="dowSearch" placeholder="e.g. RELIANCE">
+        </div>
+        <button class="btn" id="dowReset">Reset Filters</button>
+        <span class="count-pill" id="dowCount">— rows</span>
+      </div>
+
+      <div class="table-scroll">
+        <table id="dowTable">
+          <thead>
+            <tr>
+              <th data-key="stock" class="sortable">Stock</th>
+              <th data-key="timeframe" class="sortable">Timeframe</th>
+              <th data-key="trend_bucket" class="sortable">Trend Bucket</th>
+              <th data-key="last_close" class="sortable">Last Close</th>
+              <th>Bull Fib Hits</th>
+              <th>Bear Fib Hits</th>
+              <th data-key="last_date" class="sortable">Last Candle</th>
+            </tr>
+          </thead>
+          <tbody id="dowBody"></tbody>
+        </table>
+      </div>
+
+      <div id="dowState" class="state hidden"></div>
+    </div>
+  </section>
+
+  <!-- ========================= WGAT TAB ========================= -->
+  <section id="tab-wgat" class="tab-panel hidden">
+    <div class="panel">
+      <div class="filterbar">
+        <div class="field">
+          <label for="wgatCat1">Wave vs Tide</label>
+          <select id="wgatCat1">
+            <option value="All">All</option>
+            <option>Running Uptrend</option>
+            <option>Running Down Trend</option>
+            <option>D Aligned Up With W_M</option>
+            <option>D Aligned Down With W_M</option>
+            <option>D (Wave) Going Down/W_M_UP(TIDE)</option>
+            <option>D(Wave) Going Up /W_M_DN(TIDE)</option>
+            <option>No Clear Trend</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="wgatCat2">Momentum / Swing</label>
+          <select id="wgatCat2">
+            <option value="All">All</option>
+            <option value="bullish_momentum">Bullish Momentum</option>
+            <option value="bearish_momentum">Bearish Momentum</option>
+            <option value="bullish_swing">Bullish Swing</option>
+            <option value="bearish_swing">Bearish Swing</option>
+          </select>
+        </div>
+        <div class="field search">
+          <label for="wgatSearch">Search Stock</label>
+          <input type="text" id="wgatSearch" placeholder="e.g. TCS">
+        </div>
+        <button class="btn" id="wgatReset">Reset Filters</button>
+        <span class="count-pill" id="wgatCount">— rows</span>
+      </div>
+
+      <div class="table-scroll">
+        <table id="wgatTable">
+          <thead>
+            <tr>
+              <th data-key="stock" class="sortable">Stock</th>
+              <th data-key="category_1" class="sortable">Wave vs Tide</th>
+              <th>Signals</th>
+              <th data-key="last_close" class="sortable">Last Close</th>
+              <th data-key="rsi" class="sortable">RSI</th>
+              <th data-key="adx" class="sortable">ADX</th>
+              <th data-key="last_date" class="sortable">Last Candle</th>
+            </tr>
+          </thead>
+          <tbody id="wgatBody"></tbody>
+        </table>
+      </div>
+
+      <div id="wgatState" class="state hidden"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-brand">Designed by <b>Gaurav Singh Yadav</b> — Energyx 🔥 | Commodity 🛢️ | Quant Intelligence 🧠</div>
+  <div class="footer-links">
+    <a href="https://wa.me/918003994518" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a>
+    <a href="mailto:yadav.gauravsingh@gmail.com"><i class="fa fa-envelope"></i> Email</a>
+    <a href="tel:+918003994518"><i class="fa fa-phone"></i> +91-8003994518</a>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
