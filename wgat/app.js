@@ -18,11 +18,11 @@ const SORT = {
 const EXPANDED = { dow: new Set(), wgat: new Set() };
 
 const TF_FOLDER = {
-  "15 Min": "stock_data_15",
-  "1 Hour": "stock_data_1H",
-  "Daily": "stock_data_D",
-  "Weekly": "stock_data_W",
-  "Monthly": "stock_data_M",
+  "15 Min": "stockdata_15",
+  "1 Hour": "stockdata_1H",
+  "Daily": "stockdata_D",
+  "Weekly": "stockdata_W",
+  "Monthly": "stockdata_M",
 };
 
 const FIB_ORDER = ["23pct", "38pct", "50pct", "618pct", "78pct"];
@@ -40,8 +40,8 @@ async function init() {
 
   try {
     const [dow, wgat] = await Promise.all([
-      fetchJSON("data/dow_results.json"),
-      fetchJSON("data/wgat_results.json"),
+      fetchJSON("resultdow.json"),
+      fetchJSON("resultwgat.json"),
     ]);
     DATA.dow = dow;
     DATA.wgat = wgat;
@@ -70,10 +70,10 @@ function showFetchError(err) {
     <p>
       ${isFileProtocol
         ? "Browsers block <code>fetch()</code> of local JSON when a page is opened directly as a file. Serve this folder over HTTP instead:"
-        : "The dashboard could not reach <code>data/dow_results.json</code> / <code>data/wgat_results.json</code>."}
+        : "The dashboard could not reach <code>resultdow.json</code> / <code>resultwgat.json</code>."}
     </p>
     ${isFileProtocol ? '<p><code>cd wgat && python -m http.server 8000</code><br>then open <code>http://localhost:8000</code></p>' : ""}
-    <p style="color:var(--text-faint)">Also make sure you've run <code>python run_all.py --root .. --date YYYY-MM-DD</code> at least once to generate the JSON files.</p>
+    <p style="color:var(--text-faint)">Also make sure you've run <code>python dow_scan.py --root .. --date YYYY-MM-DD</code> and <code>python wgat_scan.py --root .. --date YYYY-MM-DD</code> at least once to generate resultdow.json / resultwgat.json.</p>
   `;
   ["dowState", "wgatState"].forEach(id => {
     const el = document.getElementById(id);
@@ -442,7 +442,9 @@ function toggleExpand(scope, rowId) {
 }
 
 /* --------------------------------------------------------
-   SPARKLINE (reads data/raw/<timeframe_folder>/<symbol>.json)
+   SPARKLINE (reads the source OHLC JSON directly:
+   ../<timeframe_folder>/<symbol>.json, one level up from this
+   dashboard's own folder, i.e. Root/stockdata_D/SYMBOL.json)
    -------------------------------------------------------- */
 async function loadSparkline(canvas) {
   if (!canvas) return;
@@ -451,12 +453,32 @@ async function loadSparkline(canvas) {
   const folder = TF_FOLDER[tf];
   const wrap = canvas.parentElement;
   try {
-    const bars = await fetchJSON(`data/raw/${folder}/${symbol}.json`);
+    const raw = await fetchJSON(`../${folder}/${symbol}.json`);
+    const bars = normalizeBars(raw);
     if (!bars || bars.length < 2) throw new Error("not enough bars");
     drawSparkline(canvas, bars);
   } catch (e) {
-    wrap.innerHTML = `<h4>Price (last bars)</h4><div class="spark-empty">No raw OHLC JSON found for ${symbol} (${tf}). Run parquet_to_json.py to enable charts.</div>`;
+    wrap.innerHTML = `<h4>Price (last bars)</h4><div class="spark-empty">Couldn't load ../${folder}/${symbol}.json for the chart preview.</div>`;
   }
+}
+
+/** Accepts the source candle JSON as-is (list of records with
+ * open/high/low/close or o/h/l/c fields, optionally wrapped in a
+ * {data:[...]} / {records:[...]} object) and returns a plain
+ * array of {c: closePrice} the sparkline renderer can use. */
+function normalizeBars(raw) {
+  if (raw && !Array.isArray(raw)) {
+    for (const key of ["data", "records", "rows", "result", "bars", "ohlc", "candles"]) {
+      if (Array.isArray(raw[key])) { raw = raw[key]; break; }
+    }
+  }
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .map(r => {
+      const c = r.close ?? r.c ?? r.Close ?? r.CLOSE;
+      return c == null ? null : { c: Number(c) };
+    })
+    .filter(Boolean);
 }
 
 function drawSparkline(canvas, bars) {

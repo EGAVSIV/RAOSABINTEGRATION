@@ -1,148 +1,140 @@
 # Master Scanner — Dow Theory + WGAT
 
-Combines the two original Streamlit apps (`DOW.py` and `WGAT.py`) into a
-headless scan pipeline that writes JSON, plus a static two-tab HTML/CSS/JS
-dashboard that reads that JSON. No Streamlit is needed to view results
-anymore — the dashboard is a plain static site.
+Two self-contained Python scripts (no shared helper modules, no talib,
+no parquet) that scan your **existing JSON** candle data and write
+`resultdow.json` / `resultwgat.json`, plus a static two-tab HTML/CSS/JS
+dashboard that reads those two files. HTML/CSS are unchanged from the
+previous version — only the JS data-loading paths were updated.
 
 ## 1. Folder layout
 
 Put this `wgat` folder **inside** the same root folder that already
-contains your parquet data:
+contains your JSON candle data (matches your actual folder names):
 
 ```
 Root/
-├── stock_data_15/      <symbol>.parquet   (15 Min candles)
-├── stock_data_1H/      <symbol>.parquet   (1 Hour candles)
-├── stock_data_D/       <symbol>.parquet   (Daily candles)
-├── stock_data_W/       <symbol>.parquet   (Weekly candles)
-├── stock_data_M/       <symbol>.parquet   (Monthly candles)
-└── wgat/                                   <- this folder
-    ├── common.py
-    ├── indicators.py
-    ├── dow_scan.py
-    ├── wgat_scan.py
-    ├── parquet_to_json.py
-    ├── run_all.py
+├── stockdata_15/     <SYMBOL>.json   (15 Min candles)
+├── stockdata_1H/     <SYMBOL>.json   (1 Hour candles)
+├── stockdata_D/      <SYMBOL>.json   (Daily candles)
+├── stockdata_W/      <SYMBOL>.json   (Weekly candles)
+├── stockdata_M/      <SYMBOL>.json   (Monthly candles)
+└── wgat/                              <- this folder
+    ├── dow_scan.py       (single file — Dow Theory + Fib scan)
+    ├── wgat_scan.py      (single file — Wave-vs-Tide scan)
     ├── index.html
     ├── style.css
     ├── app.js
     ├── README.md
-    └── data/
-        ├── dow_results.json
-        ├── wgat_results.json
-        ├── manifest.json
-        └── raw/
-            ├── stock_data_15/<symbol>.json
-            ├── stock_data_1H/<symbol>.json
-            ├── stock_data_D/<symbol>.json
-            ├── stock_data_W/<symbol>.json
-            └── stock_data_M/<symbol>.json
+    ├── resultdow.json    (written by dow_scan.py)
+    └── resultwgat.json   (written by wgat_scan.py)
 ```
 
-Every parquet file needs a date/datetime index (or a `date`/`datetime`
-column) and `open`, `high`, `low`, `close` columns (`volume` optional,
-column names are case-insensitive).
+Each `<SYMBOL>.json` is expected to hold a list of candle records:
+
+```json
+[
+  {"date": "2026-01-02", "open": 101.2, "high": 103.4, "low": 100.1, "close": 102.9, "volume": 15230},
+  ...
+]
+```
+
+Both scripts are tolerant of common variations (short field names
+`t/o/h/l/c/v`, a wrapper key like `"data"`/`"records"`, columnar JSON,
+etc.) via a single `load_ohlc_json()` function near the top of each
+file. **If your JSON schema doesn't match, that's the only function you
+need to edit** — nothing else in either script depends on the exact
+shape.
 
 ## 2. Install dependencies
 
 ```bash
-cd Root/wgat
-pip install pandas numpy pyarrow --break-system-packages
+pip install pandas numpy --break-system-packages
 ```
 
-`talib` is **not required** — `indicators.py` reimplements EMA, MACD, RSI
-and ADX in pure pandas/numpy (same formulas TA-Lib uses: Wilder smoothing
-for RSI/ADX), since TA-Lib's C library is often painful to install.
+That's it — no `pyarrow`, no `talib`. Each script is fully self-contained
+(indicator math, scan logic, and JSON I/O all live in the one file).
 
 ## 3. Run the scans
 
-One command refreshes everything the dashboard needs:
-
 ```bash
-python run_all.py --root .. --date 2026-08-28
+cd Root/wgat
+python dow_scan.py --date 2026-08-28
+python wgat_scan.py --date 2026-08-28
 ```
 
-- `--root` — the folder that directly contains `stock_data_*` (defaults to
-  the parent of `wgat/`, i.e. you can usually omit it).
-- `--date` — scan as-of date (defaults to today). Both scans only look at
-  candles up to and including this date, exactly like the original apps'
-  date picker.
-- `--skip-raw` — skip regenerating the OHLC JSON used for the in-dashboard
-  price sparklines (faster re-runs when you only need updated signals).
-- `--raw-timeframes Daily Weekly Monthly` — limit which timeframes get
-  converted to raw JSON (default: all five).
-- `--raw-bars 300` — how many trailing candles per symbol to keep in the
-  raw JSON (default 300, use `0` for full history).
+- `--root` — folder containing `stockdata_*` (defaults to the parent of
+  wherever the script lives, i.e. you can omit it when `wgat/` sits
+  directly inside `Root/`, as above).
+- `--date` — scan as-of date (defaults to today). Only candles up to and
+  including this date are considered.
+- `dow_scan.py --timeframes Daily Weekly` — scan a subset of timeframes
+  instead of all 5.
+- `--out custom.json` — write somewhere else.
 
-This writes/overwrites:
-- `data/dow_results.json` — Dow Theory swing structure + multi-level Fib
-  entries, scanned across **all five timeframes** in one file.
-- `data/wgat_results.json` — Wave-vs-Tide MACD alignment + EMA/RSI/ADX
-  momentum & swing signals (Daily vs Weekly vs Monthly, same as the
-  original `WGAT.py` — this strategy is defined around that specific
-  timeframe relationship, so it doesn't run separately per 15 Min/1 Hour).
-- `data/raw/<timeframe>/<symbol>.json` — trimmed OHLC series per symbol,
-  used only to draw the small price chart when you expand a row.
-- `data/manifest.json` — small summary (row counts, scan date, generated
-  timestamp) for quick sanity checks / automation.
+This writes:
+- **`resultdow.json`** — Dow Theory swing structure + multi-level Fib
+  entries, scanned across **all five timeframes** in one file (each row
+  tagged with its `timeframe`).
+- **`resultwgat.json`** — Wave-vs-Tide MACD alignment + EMA/RSI/ADX
+  momentum & swing signals. This strategy is defined around Daily vs
+  Weekly vs Monthly specifically, so it always reads `stockdata_D` /
+  `stockdata_W` / `stockdata_M` regardless of what other timeframes
+  exist.
 
-You can also run either scan alone:
-
-```bash
-python dow_scan.py --root .. --date 2026-08-28
-python wgat_scan.py --root .. --date 2026-08-28
-python parquet_to_json.py --root .. --timeframes Daily Weekly Monthly --bars 300
-```
-
-### Automating daily refresh
-
-Schedule `run_all.py` (cron / Windows Task Scheduler / Streamlit-independent
-script) to run after your data pipeline updates the parquet files each day,
-then just refresh the dashboard in the browser.
+Re-run either script any time your JSON data updates — each run simply
+overwrites its result file.
 
 ## 4. View the dashboard
 
-Browsers block `fetch()` of local JSON files opened directly as
-`file://...`, so serve the folder over HTTP:
+Browsers block `fetch()` of local JSON opened as a `file://` page, so
+serve the **Root** folder over HTTP (not the `wgat` folder itself — the
+dashboard's price-preview charts read sibling folders one level up, e.g.
+`../stockdata_D/RELIANCE.json`):
 
 ```bash
-cd Root/wgat
+cd Root
 python -m http.server 8000
 ```
 
-Then open **http://localhost:8000** in your browser.
+Then open **http://localhost:8000/wgat/** in your browser.
 
-The dashboard has two tabs:
+Two tabs:
+- **DOW THEORY** — filter by timeframe, trend bucket, Fib entry type;
+  click a row for Fib retracement levels + a mini price chart.
+- **WGAT** — filter by Wave-vs-Tide category and Momentum/Swing signal;
+  click a row for EMA13/50/100, RSI, ADX + a mini price chart.
 
-- **DOW THEORY** — filter by timeframe, trend bucket (Uptrend / Downtrend /
-  Reversal.../ Triangle-Sideways) and Fib entry type; click a row to see
-  every Fib retracement price level plus a mini price chart.
-- **WGAT** — filter by Wave-vs-Tide category and by
-  Bullish/Bearish Momentum/Swing; click a row to see EMA13/50/100, RSI, ADX
-  and a mini price chart.
-
-Both tables are sortable (click any column header) and searchable by
-symbol. The scrolling strip under the top bar shows live counts for the
-currently filtered view.
+Both tables are sortable (click a column header) and searchable by
+symbol; the scrolling strip under the top bar shows live counts for the
+current filtered view.
 
 ## 5. Demo data included
 
-`data/` currently ships with output generated from **synthetic placeholder
-data** (random walks for 8 dummy symbols) purely so you can open
-`index.html` immediately and see the dashboard working end-to-end. The
-first time you run `python run_all.py --root .. --date <your date>` against
-your real `stock_data_*` parquet files, these demo JSON files are
-overwritten with your real scan results.
+`resultdow.json` / `resultwgat.json` currently ship with output from
+**synthetic placeholder data** (8 dummy symbols) purely so you can open
+the dashboard immediately and see it working. Running `dow_scan.py` /
+`wgat_scan.py` against your real `stockdata_*` JSON overwrites these
+with real results. Because the placeholder run didn't sit next to real
+`stockdata_*` folders, the sparkline charts in this demo won't have data
+to draw from until you drop this folder into your real `Root/` — that's
+expected and the dashboard shows a clear inline message instead of
+breaking.
 
-## 6. Notes / design choices
+## 6. What changed from the earlier version
 
-- All scan **logic** (swing detection, HH/HL/LH/LL labelling, trend bucket
-  classification, Fib level + entry-zone math, MACD tick trend, EMA/RSI/ADX
-  momentum & swing rules) is copied unchanged from `DOW.py` / `WGAT.py` —
-  only the interface changed (Streamlit UI → JSON files → static HTML).
-- Column keys in the JSON are lower-cased/underscored versions of the
-  original Streamlit column names (e.g. `"61.8% Bull"` → `618pct_bull`,
-  `"Category 1"` → `category_1`) so they're safe to use as JS object keys.
-- `run_all.py` is idempotent — re-running it just overwrites the JSON with
-  a fresh scan as-of the given date.
+- `dow_scan.py` / `wgat_scan.py` are now **single files** — no more
+  `common.py` / `indicators.py` imports.
+- Input is **JSON**, not parquet — no `pyarrow` needed, no
+  `parquet_to_json.py` conversion step.
+- Folder names match your actual layout: `stockdata_15`, `stockdata_1H`,
+  `stockdata_D`, `stockdata_W`, `stockdata_M` (no underscore after
+  "stock").
+- Output files are `resultdow.json` / `resultwgat.json`, written
+  directly inside `wgat/` (no `data/` subfolder).
+- `app.js` was updated only where it touches file paths (which files to
+  fetch, and where sparkline source candles live); the HTML structure
+  and CSS are untouched.
+- All Dow Theory / Fib / MACD-alignment / EMA-RSI-ADX **logic is
+  unchanged** — same swing detection, HH/HL/LH/LL labelling, trend
+  bucket rules, Fib level + entry-zone math, and momentum/swing rules as
+  the original Streamlit apps.
