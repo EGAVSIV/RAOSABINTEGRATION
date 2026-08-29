@@ -3,43 +3,6 @@ wgat_scan.py
 =====================================================================
 Wave Going Against The Tide (multi-timeframe MACD alignment) +
 Swing/Momentum scan.
-
-Self-contained: no imports from common.py / indicators.py / anything
-else in this project. Only needs pandas + numpy. TA-Lib is NOT used —
-EMA/MACD/RSI/ADX are reimplemented below in pure pandas (same formulas:
-Wilder smoothing for RSI/ADX, EMA-based MACD) so there's no C-library
-install to fight with.
-
-INPUT
------
-The strategy is intentionally daily-vs-weekly-vs-monthly ("wave" vs
-"tide"), so this always reads exactly these three folders, next to
-this script's root:
-
-    <root>/stockdata_D/<SYMBOL>.json   (Daily candles)
-    <root>/stockdata_W/<SYMBOL>.json   (Weekly candles)
-    <root>/stockdata_M/<SYMBOL>.json   (Monthly candles)
-
-Each <SYMBOL>.json is expected to hold a list of candle records, e.g.:
-
-    [
-      {"date": "2026-01-02", "open": 101.2, "high": 103.4,
-       "low": 100.1, "close": 102.9, "volume": 15230},
-      ...
-    ]
-
-`load_ohlc_json()` below is deliberately permissive about the exact
-shape/field names. If your JSON uses something it doesn't recognise,
-edit that one function — nothing else in the file needs to change.
-
-OUTPUT
-------
-Writes a single file: resultwgat.json
-
-USAGE
------
-    python wgat_scan.py --root .. --date 2026-08-28
-    python wgat_scan.py --root .. --date 2026-08-28 --out resultwgat.json
 """
 
 from __future__ import annotations
@@ -52,9 +15,6 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-# =====================================================
-# CONFIG
-# =====================================================
 TIMEFRAME_FOLDERS = {
     "Daily": "stockdata_D",
     "Weekly": "stockdata_W",
@@ -69,9 +29,6 @@ FIELD_ALIASES = {
 }
 
 
-# =====================================================
-# JSON I/O HELPERS
-# =====================================================
 def resolve_root(root: str | None) -> Path:
     if root:
         return Path(root).resolve()
@@ -89,10 +46,6 @@ def list_symbols(folder: Path) -> list[str]:
 
 
 def load_ohlc_json(folder: Path, symbol: str) -> pd.DataFrame:
-    """Load one symbol's candles from JSON into a DataFrame with a
-    DatetimeIndex and open/high/low/close(/volume) columns. Tolerant
-    of a few common JSON export shapes — edit here if your schema
-    differs."""
     with open(folder / f"{symbol}.json", "r") as f:
         raw = json.load(f)
 
@@ -135,8 +88,13 @@ def load_ohlc_json(folder: Path, symbol: str) -> pd.DataFrame:
 
 
 def filter_until_date(df: pd.DataFrame, until) -> pd.DataFrame:
-    until = pd.to_datetime(until)
-    return df[df.index <= until].copy()
+    if until is None:
+        return df.copy()
+    until_dt = pd.to_datetime(until)
+    if until_dt.time() == datetime.min.time():
+        until_dt = until_dt.replace(hour=23, minute=59, second=59, microsecond=999999)
+    filtered = df[df.index <= until_dt].copy()
+    return filtered if not filtered.empty else df.copy()
 
 
 class NpEncoder(json.JSONEncoder):
@@ -165,9 +123,6 @@ def write_json(path: Path, payload) -> None:
         json.dump(payload, f, indent=2, cls=NpEncoder, allow_nan=False)
 
 
-# =====================================================
-# INDICATORS (pure pandas — no talib)
-# =====================================================
 def EMA(series: pd.Series, period: int) -> pd.Series:
     return series.ewm(span=period, adjust=False, min_periods=period).mean()
 
@@ -221,9 +176,6 @@ def ADX(high: pd.Series, low: pd.Series, close: pd.Series, period: int = 14) -> 
     return adx
 
 
-# =====================================================
-# WGAT LOGIC
-# =====================================================
 def get_macd_trend(series: pd.Series):
     macd, signal, hist = MACD(series, 12, 26, 9)
     macd = macd.dropna()
@@ -260,16 +212,24 @@ def run_scan(root: Path, scan_date) -> list[dict]:
 
     for symbol in symbols:
         try:
+            # Load Daily Data
             df_d = load_ohlc_json(folder_d, symbol)
-            df_w = load_ohlc_json(folder_w, symbol)
-            df_m = load_ohlc_json(folder_m, symbol)
-
             df_d = filter_until_date(df_d, scan_date)
-            df_w = filter_until_date(df_w, scan_date)
-            df_m = filter_until_date(df_m, scan_date)
-
-            if len(df_d) < 100:
+            if len(df_d) < 10:
                 continue
+
+            # Fallback resampling for missing timeframe files
+            try:
+                df_w = load_ohlc_json(folder_w, symbol)
+                df_w = filter_until_date(df_w, scan_date)
+            except Exception:
+                df_w = df_d.resample('W').agg({'open': 'first', 'high': 'max', 'low': 'min', 'close': 'last'}).dropna()
+
+            try:
+                df_m = load_ohlc_json(folder_m, symbol)
+                df_m = filter_until_date(df_m, scan_date)
+            except Exception:
+                df_m = df_d.resample('ME').agg({'open': 'first', 'high': 'max', 'low': 'min', 'close': 'last'}).dropna()
 
             d_now, d_prev = get_macd_trend(df_d["close"])
             w_now, _ = get_macd_trend(df_w["close"])
@@ -327,24 +287,21 @@ def run_scan(root: Path, scan_date) -> list[dict]:
     return results
 
 
-# =====================================================
-# CLI
-# =====================================================
 def main():
     ap = argparse.ArgumentParser(description="WGAT (wave vs tide) scan (single-file, JSON input)")
-    ap.add_argument("--root", default=None, help="Folder containing stockdata_* folders (default: parent of this script's folder)")
-    ap.add_argument("--date", default=None, help="Scan date YYYY-MM-DD (default: today)")
-    ap.add_argument("--out", default="resultwgat.json", help="Output JSON path (relative to this script unless absolute)")
+    ap.add_argument("--root", default=None, help="Folder containing stockdata_* folders")
+    ap.add_argument("--date", default=None, help="Scan date YYYY-MM-DD")
+    ap.add_argument("--out", default="resultwgat.json", help="Output JSON path")
     args = ap.parse_args()
 
     root = resolve_root(args.root)
-    scan_date = pd.to_datetime(args.date) if args.date else pd.Timestamp.today()
+    scan_date = pd.to_datetime(args.date) if args.date else None
 
     rows = run_scan(root, scan_date)
 
     payload = {
         "scan_type": "wgat_wave_vs_tide",
-        "scan_date": pd.to_datetime(scan_date).date().isoformat(),
+        "scan_date": pd.to_datetime(scan_date).date().isoformat() if scan_date else None,
         "generated_at": pd.Timestamp.now("UTC").isoformat(),
         "symbol_count": len(list_symbols(data_folder(root, "Daily"))),
         "matched": len(rows),
