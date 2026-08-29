@@ -33,18 +33,12 @@ jobs:
       - name: Generate Ascendant 30Y JSON
         run: python pntr/ascendant_30y.py
 
-      - name: Remove obsolete Pada data
-        run: |
-          rm -f pntr/pada_30y.py
-          rm -f pntr/data/moon_pada_30y.json
-
       - name: Commit generated 30Y JSON
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add pntr/data/moon_nakshatra_30y.json pntr/data/ascendant_30y.json
-          git rm --cached --ignore-unmatch pntr/data/moon_pada_30y.json || true
-          git add -u pntr/pada_30y.py pntr/data/moon_pada_30y.json
 
           if git diff --cached --quiet; then
             echo "No astro data changes to commit."
@@ -53,8 +47,8 @@ jobs:
 
           git commit -m "Update PNTR 30Y astro timing data"
 
-          # Rebase onto the latest main to avoid non-fast-forward failures
-          # when another workflow or commit updated main while this job ran.
+          # Another workflow/commit may update main while the 30Y
+          # calculation is running. Rebase before pushing.
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main
