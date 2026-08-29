@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Generate Moon Pada transition timings for the next 30 years.
 
-Uses the same sidereal Lahiri Swiss Ephemeris setup as the existing FNO scanner.
-Output: pntr/data/moon_pada_30y.json
+Uses Swiss Ephemeris with Lahiri sidereal mode, matching the existing FNO
+reversal scanner. Each Pada is 1/108 of the zodiac and transitions are
+located to approximately one-second precision by binary search.
 """
 from __future__ import annotations
 
@@ -23,8 +24,7 @@ NAKSHATRAS = [
     "Jyeshtha", "Mula", "Purva Ashadha", "Uttara Ashadha", "Shravana",
     "Dhanishtha", "Shatabhisha", "Purva Bhadrapada", "Uttara Bhadrapada", "Revati"
 ]
-NAK_SIZE = 360.0 / 27.0
-PADA_SIZE = NAK_SIZE / 4.0
+PADA_SIZE = 360.0 / 108.0
 FLAGS = swe.FLG_SWIEPH | swe.FLG_SIDEREAL
 STEP_MINUTES = 10
 REFINE_SECONDS = 1
@@ -41,34 +41,32 @@ def moon_longitude(value: dt.datetime) -> float:
     return pos[0] % 360.0
 
 
-def index_for(lon: float) -> int:
+def pada_index(lon: float) -> int:
     return min(107, int(lon / PADA_SIZE))
 
 
-def details(lon: float) -> tuple[int, int, str, int]:
-    idx = min(107, int(lon / PADA_SIZE))
-    nak_idx = idx // 4
-    pada = idx % 4 + 1
-    return idx, nak_idx, NAKSHATRAS[nak_idx], pada
+def details(idx: int) -> tuple[str, int]:
+    idx %= 108
+    return NAKSHATRAS[idx // 4], idx % 4 + 1
 
 
-def crossed(prev_lon: float, curr_lon: float, boundary: float) -> bool:
-    # Moon normally moves forward. Work with an unwrapped current longitude.
-    curr_u = curr_lon if curr_lon >= prev_lon else curr_lon + 360.0
-    bound = boundary
-    while bound < prev_lon:
-        bound += 360.0
-    return curr_u >= bound
+def forward_delta(a: float, b: float) -> float:
+    return (b - a) % 360.0
+
+
+def crossed(a: float, b: float, boundary: float) -> bool:
+    return forward_delta(a, b) >= forward_delta(a, boundary % 360.0)
 
 
 def refine(a: dt.datetime, b: dt.datetime, boundary: float) -> dt.datetime:
-    for _ in range(25):
+    boundary %= 360.0
+    before = moon_longitude(a)
+    for _ in range(32):
         if (b - a).total_seconds() <= REFINE_SECONDS:
             break
         m = a + (b - a) / 2
-        la = moon_longitude(a)
-        lm = moon_longitude(m)
-        if crossed(la, lm, boundary):
+        mlon = moon_longitude(m)
+        if crossed(before, mlon, boundary):
             b = m
         else:
             a = m
@@ -81,30 +79,32 @@ def generate(start_date: dt.date, end_date: dt.date) -> list[dict]:
     rows: list[dict] = []
     t = start
     prev_lon = moon_longitude(t)
-    prev_idx = index_for(prev_lon)
+    prev_idx = pada_index(prev_lon)
 
     while t < end:
         nt = min(t + dt.timedelta(minutes=STEP_MINUTES), end)
         curr_lon = moon_longitude(nt)
-        curr_idx = index_for(curr_lon)
+        curr_idx = pada_index(curr_lon)
         if curr_idx != prev_idx:
-            # Handle each boundary in the interval, including wrap at 360°.
-            for target in range(prev_idx + 1, curr_idx + 1) if curr_idx > prev_idx else list(range(prev_idx + 1, 108)) + list(range(0, curr_idx + 1)):
-                boundary = target * PADA_SIZE
-                if target == 0:
-                    boundary = 360.0
-                event_t = refine(t, nt, boundary)
-                _, _, nak, pada = details(boundary % 360.0 if boundary < 360 else 0.0)
-                from_idx = (target - 1) % 108
-                _, _, from_nak, from_pada = details(from_idx * PADA_SIZE)
+            idx = prev_idx
+            cursor = t
+            while idx != curr_idx:
+                target = (idx + 1) % 108
+                event_t = refine(cursor, nt, target * PADA_SIZE)
+                from_nak, from_pada = details(idx)
+                to_nak, to_pada = details(target)
                 rows.append({
                     "datetime_ist": event_t.isoformat(),
                     "event": "Moon Pada Change",
                     "from_nakshatra": from_nak,
                     "from_pada": from_pada,
-                    "to_nakshatra": nak,
-                    "to_pada": pada,
+                    "to_nakshatra": to_nak,
+                    "to_pada": to_pada,
                 })
+                idx = target
+                cursor = event_t + dt.timedelta(seconds=1)
+                if cursor >= nt:
+                    break
         prev_lon = curr_lon
         prev_idx = curr_idx
         t = nt
