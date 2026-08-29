@@ -1,16 +1,12 @@
 name: Run Dow + WGAT Scans
 
-# Runs the JSON scanners against stockdata_* and commits the refreshed
-# resultdow.json / resultwgat.json back to the repository.
-
 on:
   workflow_dispatch:
     inputs:
       scan_date:
-        description: "Scan as-of date (YYYY-MM-DD). Leave blank for latest data."
+        description: "Scan as-of date (YYYY-MM-DD). Leave blank for today."
         required: false
         default: ""
-
   push:
     branches: [ main ]
     paths:
@@ -21,10 +17,9 @@ on:
       - "stockdata_M/**"
       - "wgat/DOW_JSON.py"
       - "wgat/WGAT_JSON.py"
-      - "requirements.txt"
-
+      - "wgat/requirements.txt"
   schedule:
-    - cron: "30 11 * * 1-5"   # 11:30 UTC = 17:00 IST, Mon-Fri
+    - cron: "30 11 * * 1-5"
 
 permissions:
   contents: write
@@ -48,7 +43,9 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r wgat/requirements.txt
 
       - name: Resolve scan date
         id: date
@@ -67,6 +64,12 @@ jobs:
       - name: Run WGAT scan
         working-directory: wgat
         run: python WGAT_JSON.py --date "${{ steps.date.outputs.value }}" --out resultwgat.json
+
+      - name: Verify result files
+        run: |
+          test -f wgat/resultdow.json
+          test -f wgat/resultwgat.json
+          ls -lh wgat/resultdow.json wgat/resultwgat.json
 
       - name: Commit updated results
         run: |
