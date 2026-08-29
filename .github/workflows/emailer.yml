@@ -1,10 +1,11 @@
 name: FNO Emailer
-on:
-  # 1. Scheduled Run: Daily at 5:00 PM IST (11:30 AM UTC)
-  schedule:
-    - cron: '30 11 * * *'
 
-  # 2. Manual Run
+on:
+  # Monday to Friday at 4:30 PM IST = 11:00 UTC
+  schedule:
+    - cron: '0 11 * * 1-5'
+
+  # Manual Run
   workflow_dispatch:
 
 jobs:
