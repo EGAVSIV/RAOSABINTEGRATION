@@ -1,0 +1,206 @@
+name: Datasync+DB update master
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/Datasync-DB-update-master.yml"
+  schedule:
+    - cron: "*/30 * * * 1-5"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: datasync-db-update-master
+  cancel-in-progress: false
+
+env:
+  TZ: Asia/Kolkata
+
+jobs:
+  master-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      # ============================================================
+      # 1) INITIAL / DATA SYNC
+      # ============================================================
+      - name: 1. Sync stock data folders
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install requests
+          python Datacopier.py
+
+      # If Datacopier changed the stock data, commit it first so every
+      # downstream stage works from the synchronized repository state.
+      - name: 1a. Commit synchronized stock data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stockdata_15 stockdata_1H stockdata_D stockdata_W stockdata_M .copy_manifest.json
+          if git diff --cached --quiet; then
+            echo "No stock data changes detected."
+          else
+            git commit -m "chore: sync stock data folders [master pipeline]"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+      # ============================================================
+      # 2) INDEX DATA FETCH
+      # ============================================================
+      - name: 2. Index data fetch - install dependencies
+        run: |
+          python -m pip install pandas pyarrow
+          python -m pip install git+https://github.com/rongardF/tvdatafeed.git
+
+      - name: 2. Index data fetch - run scripts
+        env:
+          TV_USERNAME: ${{ secrets.TV_USERNAME }}
+          TV_PASSWORD: ${{ secrets.TV_PASSWORD }}
+        run: |
+          python Sectordatafetch.py
+          python Broad_index_data_fetch.py
+
+      - name: 2a. Commit index data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sectorial_index_data Broad_index_data
+          if git diff --cached --quiet; then
+            echo "No index data changes detected."
+          else
+            git commit -m "chore: update index data [master pipeline]"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+      # ============================================================
+      # 3) DOW + WGAT SCANS
+      # ============================================================
+      - name: 3. Dow + WGAT scans - install dependencies
+        run: |
+          python -m pip install numpy pandas
+
+      - name: 3. Dow + WGAT scans
+        working-directory: wgat
+        run: |
+          python DOW_JSON.py --date "$(date -u +%Y-%m-%d)" --out resultdow.json
+          python WGAT_JSON.py --date "$(date -u +%Y-%m-%d)" --out resultwgat.json
+
+      - name: 3a. Commit Dow + WGAT results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add wgat/resultdow.json wgat/resultwgat.json
+          if git diff --cached --quiet; then
+            echo "No Dow/WGAT result changes detected."
+          else
+            git commit -m "chore: refresh Dow and WGAT results [master pipeline]"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+      # ============================================================
+      # 4) FIB ENGINE SCAN
+      # ============================================================
+      - name: 4. FIB engine scan
+        run: |
+          python -m pip install pandas
+          python fib/engine.py
+
+      - name: 4a. Commit FIB result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add fib/results.json
+          if git diff --cached --quiet; then
+            echo "No FIB result changes detected."
+          else
+            git commit -m "chore: refresh FIB results [master pipeline]"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+      # ============================================================
+      # 5) SECTOR DB OUTPUT
+      # ============================================================
+      - name: 5. Sector DB output - install dependencies
+        run: |
+          python -m pip install -r sector/requirements.txt
+
+      - name: 5. Sector DB output
+        working-directory: sector
+        run: python engine.py
+
+      - name: 5a. Commit sector output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sector/result.json sector/state/previous_rotation.json
+          if git diff --cached --quiet; then
+            echo "No sector result changes detected."
+          else
+            git commit -m "chore: refresh sector results [master pipeline]"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+      # ============================================================
+      # 6) GEOTRADER ENGINE
+      # ============================================================
+      - name: 6. Geotrader engine - install dependencies
+        run: |
+          python -m pip install -r geotrader/requirements.txt
+
+      - name: 6. Geotrader engine
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          python geotrader/engine.py --root . --out geotrader/result.json
+
+      - name: 6a. Commit Geotrader result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add geotrader/result.json
+          if git diff --cached --quiet; then
+            echo "No Geotrader result changes detected."
+          else
+            git commit -m "chore: refresh Geotrader result [master pipeline]"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+      # ============================================================
+      # FINAL STATUS
+      # ============================================================
+      - name: Pipeline summary
+        run: |
+          echo "============================================================"
+          echo " Datasync+DB update master completed successfully"
+          echo "============================================================"
+          echo "1. Stock data sync       : DONE"
+          echo "2. Index data fetch      : DONE"
+          echo "3. Dow + WGAT scans      : DONE"
+          echo "4. FIB engine scan       : DONE"
+          echo "5. Sector DB output      : DONE"
+          echo "6. Geotrader engine      : DONE"
+          echo "============================================================"
