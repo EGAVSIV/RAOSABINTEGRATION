@@ -1,12 +1,14 @@
 {
   "scanner": "Dow Theory Trend + Fibonacci Entry Scanner",
   "source_format": "JSON",
-  "generated_at": "2026-08-29T12:43:21.437264+00:00",
+  "generated_at": "2026-08-29T12:53:11.029299+00:00",
   "data_root": "/home/runner/work/RAOSABINTEGRATION/RAOSABINTEGRATION",
+  "scan_date": "2026-08-29T00:00:00+00:00",
   "timeframes": {
     "15 Min": {
       "timeframe": "15 Min",
-      "folder": "/home/runner/work/RAOSABINTEGRATION/RAOSABINTEGRATION/stockdata_15",
+      "folder": "stockdata_15",
+      "scan_date": "2026-08-28T09:45:00+00:00",
       "symbols_scanned": 215,
       "results_count": 215,
       "results": [
@@ -5820,7 +5822,8 @@
     },
     "1 Hour": {
       "timeframe": "1 Hour",
-      "folder": "/home/runner/work/RAOSABINTEGRATION/RAOSABINTEGRATION/stockdata_1H",
+      "folder": "stockdata_1H",
+      "scan_date": "2026-08-28T09:45:00+00:00",
       "symbols_scanned": 215,
       "results_count": 215,
       "results": [
@@ -11634,7 +11637,8 @@
     },
     "Daily": {
       "timeframe": "Daily",
-      "folder": "/home/runner/work/RAOSABINTEGRATION/RAOSABINTEGRATION/stockdata_D",
+      "folder": "stockdata_D",
+      "scan_date": "2026-08-28T03:45:00+00:00",
       "symbols_scanned": 215,
       "results_count": 215,
       "results": [
@@ -17448,7 +17452,8 @@
     },
     "Weekly": {
       "timeframe": "Weekly",
-      "folder": "/home/runner/work/RAOSABINTEGRATION/RAOSABINTEGRATION/stockdata_W",
+      "folder": "stockdata_W",
+      "scan_date": "2026-08-24T03:45:00+00:00",
       "symbols_scanned": 215,
       "results_count": 209,
       "results": [
@@ -23100,7 +23105,8 @@
     },
     "Monthly": {
       "timeframe": "Monthly",
-      "folder": "/home/runner/work/RAOSABINTEGRATION/RAOSABINTEGRATION/stockdata_M",
+      "folder": "stockdata_M",
+      "scan_date": "2026-08-03T03:45:00+00:00",
       "symbols_scanned": 215,
       "results_count": 151,
       "results": [
