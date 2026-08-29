@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading Rulebook</title>
+<style>
+:root{--bg:#0b0e11;--panel:#12161c;--panel2:#181d25;--border:#242a34;--text:#f1f3f5;--muted:#8891a0;--gold:#ffd700;--cyan:#00e5ff;--red:#ff5c5c;--green:#3ddc84}
+*{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#0b0e11,#11151b);color:var(--text);font-family:Inter,system-ui,sans-serif;min-height:100vh} a{color:inherit}
+.wrap{max-width:1200px;margin:auto;padding:28px 20px 60px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.brand{font-family:monospace;letter-spacing:.08em;color:var(--gold);font-weight:700}.actions{display:flex;gap:10px}.btn{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:9px 14px;border-radius:8px;cursor:pointer}.btn.primary{border-color:var(--gold);color:#0b0e11;background:var(--gold)}.btn.danger{border-color:var(--red);color:var(--red)}
+h1{font-size:clamp(36px,6vw,64px);margin:45px 0 10px}.sub{color:var(--muted);max-width:720px}.meta{display:flex;gap:16px;flex-wrap:wrap;margin:24px 0}.pill{border:1px solid var(--border);background:var(--panel);padding:8px 12px;border-radius:999px;font-family:monospace;font-size:12px;color:var(--muted)}
+.rule-grid{display:grid;gap:18px}.rule{background:rgba(18,22,28,.88);border:1px solid var(--border);border-left:5px solid var(--gold);border-radius:12px;padding:22px}.rule h2{margin:0 0 14px;color:var(--cyan);font-size:25px}.rule ol,.rule ul{padding-left:24px}.rule li{margin:7px 0;line-height:1.6}.attachments{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.attachment{border:1px solid var(--border);padding:8px;border-radius:10px;background:var(--panel2)}.attachment img{max-width:100%;max-height:360px;display:block;border-radius:8px}.pdf{display:inline-flex;gap:8px;align-items:center;padding:10px 12px}
+.empty{padding:36px;text-align:center;color:var(--muted);border:1px dashed var(--border);border-radius:12px}.hidden{display:none!important}
+.overlay{position:fixed;inset:0;background:rgba(5,7,9,.88);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;z-index:10;padding:20px}.modal{width:min(430px,100%);background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:24px}.modal h3{margin-top:0}.field{margin:12px 0}.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}.field input,.field textarea{width:100%;padding:11px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text)}.field textarea{min-height:120px}.row{display:flex;gap:10px}.row>*{flex:1}.small{font-size:12px;color:var(--muted)}.notice{margin-top:10px;font-size:13px;color:var(--muted)}
+@media(max-width:700px){.row{flex-direction:column}}
+</style>
+</head>
+<body>
+<div id="auth" class="overlay">
+  <div class="modal">
+    <h3>🔐 Trading Rulebook</h3>
+    <p class="small">Enter the rulebook password.</p>
+    <div class="field"><label>Password</label><input id="loginPassword" type="password" autocomplete="current-password"></div>
+    <button class="btn primary" style="width:100%" onclick="login()">Unlock Rulebook</button>
+    <div id="loginMsg" class="notice"></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="top">
+    <div class="brand">RAOSAB.IN // RULEBOOK</div>
+    <div class="actions">
+      <button class="btn" onclick="lock()">Lock</button>
+      <button class="btn primary" onclick="openEditor()">➕ Add Rule</button>
+    </div>
+  </div>
+  <h1>📊 MY TRADING RULEBOOK</h1>
+  <p class="sub">Store, review and maintain your trading rules with supporting images and PDF references.</p>
+  <div class="meta"><span class="pill" id="count">0 RULES</span><span class="pill">LOCAL JSON STORAGE</span><span class="pill">IMAGE + PDF SUPPORT</span></div>
+  <div id="rules" class="rule-grid"></div>
+</div>
+
+<div id="editor" class="overlay hidden">
+  <div class="modal" style="max-height:92vh;overflow:auto">
+    <h3 id="editorTitle">Add New Rule</h3>
+    <div class="field"><label>Rule Title</label><input id="title"></div>
+    <div class="field"><label>Rule Points (one per line)</label><textarea id="description"></textarea></div>
+    <div class="field"><label>Images</label><input id="images" type="file" accept="image/png,image/jpeg,image/webp" multiple></div>
+    <div class="field"><label>PDF Files</label><input id="pdfs" type="file" accept="application/pdf" multiple></div>
+    <div class="row"><button class="btn" onclick="closeEditor()">Cancel</button><button class="btn primary" onclick="saveRule()">Save Rule</button></div>
+    <div class="notice">Files are uploaded to GitHub under <code>rulebook/uploads/</code>. The rule index is stored in <code>rulebook/rules.json</code>.</div>
+  </div>
+</div>
+
+<script>
+const PASSWORD = "admin123"; // Change before publishing
+const RULES_URL = "rules.json";
+const AUTH_KEY = "rulebook_unlocked";
+let rules = [];
+let editingId = null;
+
+async function loadRules(){
+  try{ const r = await fetch(RULES_URL+"?v="+Date.now(),{cache:"no-store"}); if(r.ok) rules=await r.json(); }
+  catch(e){ rules=[]; }
+  render();
+}
+function render(){
+  document.getElementById('count').textContent = `${rules.length} RULES`;
+  const el=document.getElementById('rules');
+  if(!rules.length){el.innerHTML='<div class="empty">No rules added yet.</div>';return;}
+  el.innerHTML=rules.map(r=>`<article class="rule"><h2>${esc(r.title)}</h2><ul>${(r.description||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>${attachments(r)}</article>`).join('');
+}
+function attachments(r){
+ let out='';
+ if((r.images||[]).length){out+='<div class="attachments">'+r.images.map(p=>`<a class="attachment" href="${escAttr(p)}" target="_blank"><img src="${escAttr(p)}" alt="Rule image"></a>`).join('')+'</div>';}
+ if((r.pdfs||[]).length){out+='<div class="attachments">'+r.pdfs.map(p=>`<a class="attachment pdf" href="${escAttr(p)}" target="_blank">📄 ${esc(p.split('/').pop())}</a>`).join('')+'</div>';}
+ return out;
+}
+function login(){const p=document.getElementById('loginPassword').value;if(p===PASSWORD){sessionStorage.setItem(AUTH_KEY,'1');document.getElementById('auth').classList.add('hidden');}else document.getElementById('loginMsg').textContent='Wrong password.';}
+function lock(){sessionStorage.removeItem(AUTH_KEY);document.getElementById('auth').classList.remove('hidden');}
+function openEditor(id=null){editingId=id;document.getElementById('editorTitle').textContent=id?'Edit Rule':'Add New Rule';document.getElementById('editor').classList.remove('hidden');}
+function closeEditor(){document.getElementById('editor').classList.add('hidden');}
+async function saveRule(){
+  alert('The browser-only page cannot securely upload files or write rules.json back to GitHub without a server/API layer. The viewer, password lock, and rule structure are ready; use a GitHub-backed endpoint or GitHub API function to persist new rules and attachments.');
+}
+function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function escAttr(s=''){return esc(s);}
+if(sessionStorage.getItem(AUTH_KEY)==='1') document.getElementById('auth').classList.add('hidden');
+loadRules();
+document.getElementById('loginPassword').addEventListener('keydown',e=>{if(e.key==='Enter')login()});
+</script>
+</body>
+</html>
