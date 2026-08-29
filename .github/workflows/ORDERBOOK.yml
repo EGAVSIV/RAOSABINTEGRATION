@@ -1,8 +1,10 @@
 name: Hourly NSE ORDERBOOK Data Fetcher
 
 on:
+  # Every 2 hours, all 7 days
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 */2 * * *'
+
   workflow_dispatch:
 
 permissions:
@@ -35,7 +37,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
+
           git add orderbook/nse_orders_data.json
           git status
           git diff --quiet && git diff --staged --quiet || git commit -m "auto: update nse_orders_data.json [skip ci]"
