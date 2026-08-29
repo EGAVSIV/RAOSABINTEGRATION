@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAOSAB FNO Reversal Dashboard</title>
+<style>
+:root{--bg:#08111f;--card:#0f1d31;--line:#213550;--text:#e7eef8;--muted:#8fa2ba;--green:#45e09a;--red:#ff6678;--amber:#ffc857;--blue:#5da9ff}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:linear-gradient(135deg,#07101c,#0b1728 55%,#091321);color:var(--text)}
+.wrap{max-width:1500px;margin:auto;padding:22px}.hero{padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(15,29,49,.85);box-shadow:0 12px 35px rgba(0,0,0,.22)}
+h1{margin:0 0 8px;font-size:28px}.sub{color:var(--muted)}.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}.toolbar input,.toolbar select,.toolbar button{background:#0a1525;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px}.toolbar button{cursor:pointer}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(180px,1fr));gap:14px;margin:18px 0}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}.k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}.v{font-size:22px;font-weight:800;margin-top:6px}
+.grid{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;overflow:auto}.panel h2{margin:0 0 12px;font-size:18px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{color:var(--muted);position:sticky;top:0;background:var(--card)}.r{color:var(--red)}.s{color:var(--green)}.a{color:var(--amber)}
+.badge{display:inline-block;padding:4px 8px;border-radius:999px;font-size:12px;background:#12243b;color:#cddaf0}.foot{margin-top:18px;color:var(--muted);font-size:12px}.status{margin-left:auto;color:var(--muted)}
+@media(max-width:1000px){.grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.wrap{padding:12px}.cards{grid-template-columns:1fr 1fr}.v{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+<h1>📈 RAOSAB FNO Weekly Levels & Astro Reversal Dashboard</h1>
+<div class="sub">Weekly price-cycle levels from <b>stockdata_W</b>, ATR(10) from <b>stockdata_D</b>, and Moon Nakshatra/Pada transition timings.</div>
+<div class="toolbar">
+<select id="symbol"></select>
+<button id="load">Load Symbol</button>
+<input id="date" type="date">
+<span class="status" id="status">Loading…</span>
+</div>
+</section>
+
+<div class="cards" id="cards"></div>
+<div class="grid">
+<section class="panel"><h2>🎯 Price Levels</h2><table><thead><tr><th>Level</th><th>Price</th><th>Type</th></tr></thead><tbody id="levels"></tbody></table></section>
+<section class="panel"><h2>🔮 Reversal / Moon Events</h2><table><thead><tr><th>Time (IST)</th><th>Event</th><th>From</th><th>To</th></tr></thead><tbody id="events"></tbody></table></section>
+</div>
+<div class="foot">Research tool only. Astro timings are astronomical transition calculations and do not guarantee market direction.</div>
+</div>
+<script>
+const $=id=>document.getElementById(id);let LEVELS=[],NAK=[],PADA=[];
+const fmt=(x,d=2)=>x==null?'—':Number(x).toFixed(d);
+function card(k,v,cls=''){return `<div class="card"><div class="k">${k}</div><div class="v ${cls}">${v}</div></div>`}
+function renderSymbols(){const s=$('symbol');s.innerHTML=LEVELS.map(x=>`<option value="${x.symbol}">${x.symbol}</option>`).join('');}
+function selected(){return LEVELS.find(x=>x.symbol===$('symbol').value)||LEVELS[0]}
+function render(){const x=selected();if(!x)return;$('cards').innerHTML=[card('Weekly Close',fmt(x.weekly_close)),card('Daily Close',fmt(x.daily_close)),card('ATR(10)',fmt(x.atr)),card('ATR %',x.atr_pct==null?'—':fmt(x.atr_pct)+'%','a')].join('');
+let rows=[];(x.resistance||[]).forEach((v,i)=>rows.push(`<tr><td>R${i+1}</td><td class="r">${fmt(v)}</td><td>Resistance</td></tr>`));rows.push(`<tr><td>PRICE</td><td class="a">${fmt(x.daily_close)}</td><td>Current/Daily Close</td></tr>`);(x.support||[]).forEach((v,i)=>rows.push(`<tr><td>S${i+1}</td><td class="s">${fmt(v)}</td><td>Support</td></tr>`));$('levels').innerHTML=rows.join('');renderEvents();}
+function eventDate(e){return (e.datetime_ist||'').slice(0,10)}
+function renderEvents(){const d=$('date').value;const nak=NAK.filter(e=>!d||eventDate(e)===d);const p=PADA.filter(e=>!d||eventDate(e)===d);let rows=[];nak.slice(0,30).forEach(e=>rows.push(`<tr><td>${new Date(e.datetime_ist).toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:false})}</td><td><span class="badge">Nakshatra</span></td><td>${e.from}</td><td>${e.to}</td></tr>`));p.slice(0,30).forEach(e=>rows.push(`<tr><td>${new Date(e.datetime_ist).toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:false})}</td><td><span class="badge">Pada</span></td><td>${e.from_nakshatra} P${e.from_pada}</td><td>${e.to_nakshatra} P${e.to_pada}</td></tr>`));$('events').innerHTML=rows.length?rows.join(''):'<tr><td colspan="4">No stored transitions for selected date.</td></tr>'}
+async function load(){try{const a=await Promise.all([fetch('data/weekly_levels.json'),fetch('data/moon_nakshatra_30y.json'),fetch('data/moon_pada_30y.json')]);[LEVELS,NAK,PADA]=await Promise.all(a.map(r=>r.json().then(x=>x.symbols||x.events||x)));renderSymbols();const today=new Date();$('date').value=today.toLocaleDateString('en-CA');$('status').textContent=`${LEVELS.length} symbols loaded`;render()}catch(e){$('status').textContent='Data load error: '+e.message;console.error(e)}}
+$('load').onclick=render;$('symbol').onchange=render;$('date').onchange=render;load();
+</script>
+</body></html>
