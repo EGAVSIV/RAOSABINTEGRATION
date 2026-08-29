@@ -46,10 +46,10 @@ jobs:
       # Step 4: Execute the Divergence Scanner script
       - name: Run Divergence Scanner Script_HTPL
         run: |
-          python New_Scan_30_July.py
+          python EMAIL1_HTPL.py
 
 
       - name: Run NSE Scanner Script_OLD
         run: |
-          python scanner.py
+          python EMAIL2.py
 
