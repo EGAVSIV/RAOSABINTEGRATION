@@ -122,6 +122,27 @@ def detect_macd_divergence(df, lookback=30):
 
     return None
 
+def get_macd_crossover_state(df):
+    """
+    Determines current MACD crossover state:
+    - PCO (Positive Cross Over): MACD line > Signal line
+    - NCO (Negative Cross Over): MACD line <= Signal line
+    """
+    if len(df) < 35:
+        return "N/A"
+
+    macd, signal, _ = talib.MACD(df["close"], 12, 26, 9)
+    if macd.empty or signal.empty:
+        return "N/A"
+
+    last_macd = macd.iloc[-1]
+    last_signal = signal.iloc[-1]
+
+    if pd.isna(last_macd) or pd.isna(last_signal):
+        return "N/A"
+
+    return "PCO" if last_macd > last_signal else "NCO"
+
 # ==============================================================================
 # 4. BATCH PROCESSING ENGINE FOR INDIVIDUAL TIMEFRAMES
 # ==============================================================================
@@ -150,12 +171,14 @@ def process_timeframe(folder_name):
                 continue
 
             div_type = detect_macd_divergence(df)
+            macd_state = get_macd_crossover_state(df)
             sample_df_dict[sym] = df
 
             if div_type:
                 divergence_results[sym] = {
                     "Symbol": sym,
                     "Divergence": div_type,
+                    "MACD_State": macd_state,
                     "Close": round(df["close"].iloc[-1], 2),
                     "TV_Link": make_tradingview_link(sym)
                 }
@@ -185,6 +208,8 @@ def generate_analytics_data(tf_divergences):
         for sym in common_symbols:
             htf_div = htf_data[sym]["Divergence"]
             ltf_div = ltf_data[sym]["Divergence"]
+            htf_macd_state = htf_data[sym].get("MACD_State", "N/A")
+            ltf_macd_state = ltf_data[sym].get("MACD_State", "N/A")
 
             recommendation = None
             remark = ""
@@ -214,6 +239,8 @@ def generate_analytics_data(tf_divergences):
                 analytics_rows.append({
                     "Stock": sym,
                     "Pairing & Signals": pairing_signals,
+                    "HTF MACD": htf_macd_state,
+                    "LTF MACD": ltf_macd_state,
                     "Recommendation": recommendation,
                     "Remarks": remark,
                     "Chart": make_tradingview_link(sym)
@@ -224,61 +251,142 @@ def generate_analytics_data(tf_divergences):
 # ==============================================================================
 # 6. HTML EMAIL DASHBOARD GENERATOR (MATCHING DASHBOARD DESIGN)
 # ==============================================================================
+def _rec_badge(rec: str) -> str:
+    """Returns a pill-style badge (table-based, email-safe) for the recommendation."""
+    styles = {
+        "STRONG BUY":  ("#ecfdf5", "#059669", "#a7f3d0", "🚀"),
+        "BUY":         ("#f0fdf4", "#16a34a", "#bbf7d0", "📈"),
+        "STRONG SELL": ("#fef2f2", "#dc2626", "#fecaca", "🔻"),
+        "SELL":        ("#fff1f2", "#e11d48", "#fecdd3", "📉"),
+    }
+    bg, fg, border, icon = styles.get(rec, ("#f1f5f9", "#475569", "#e2e8f0", "•"))
+    return f"""<span style="display:inline-block; padding:5px 12px; border-radius:20px; background-color:{bg}; color:{fg}; border:1px solid {border}; font-size:11px; font-weight:800; letter-spacing:0.4px; white-space:nowrap;">{icon} {rec}</span>"""
+
+
+def _macd_badge(state: str) -> str:
+    """Returns a small colored badge for MACD crossover state (PCO / NCO)."""
+    if state == "PCO":
+        bg, fg, border, icon = "#ecfdf5", "#059669", "#a7f3d0", "▲"
+    elif state == "NCO":
+        bg, fg, border, icon = "#fef2f2", "#dc2626", "#fecaca", "▼"
+    else:
+        bg, fg, border, icon = "#f1f5f9", "#64748b", "#e2e8f0", "–"
+    return f"""<span style="display:inline-block; padding:3px 9px; border-radius:12px; background-color:{bg}; color:{fg}; border:1px solid {border}; font-size:10px; font-weight:700; letter-spacing:0.3px; white-space:nowrap;">{icon} {state}</span>"""
+
+
 def build_html_dashboard(analytics_df, date_str):
     table_rows = ""
 
+    # Summary counts for the stat strip up top
+    counts = {"STRONG BUY": 0, "BUY": 0, "STRONG SELL": 0, "SELL": 0}
     if not analytics_df.empty:
-        for _, row in analytics_df.iterrows():
+        for rec in analytics_df["Recommendation"]:
+            if rec in counts:
+                counts[rec] += 1
+
+    if not analytics_df.empty:
+        for idx, row in analytics_df.iterrows():
             rec = row['Recommendation']
-            
-            # Text Color & Styling based on Buy/Sell
-            if rec == "STRONG BUY":
-                rec_style = "color: #059669; font-weight: bold;"
-            elif rec == "BUY":
-                rec_style = "color: #10b981; font-weight: bold;"
-            elif rec == "STRONG SELL":
-                rec_style = "color: #dc2626; font-weight: bold;"
-            elif rec == "SELL":
-                rec_style = "color: #ef4444; font-weight: bold;"
+            row_bg = "#ffffff" if idx % 2 == 0 else "#f8fafc"
+
+            # Left accent bar color matches the recommendation sentiment
+            if "BUY" in rec:
+                accent = "#22c55e"
             else:
-                rec_style = "color: #475569;"
+                accent = "#ef4444"
+
+            htf_badge = _macd_badge(row.get('HTF MACD', 'N/A'))
+            ltf_badge = _macd_badge(row.get('LTF MACD', 'N/A'))
 
             table_rows += f"""
-            <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td style="padding: 12px; font-weight: bold; color: #0f172a; font-size: 13px;">{row['Stock']}</td>
-                <td style="padding: 12px; color: #334155; font-size: 12px;">{row['Pairing & Signals']}</td>
-                <td style="padding: 12px; {rec_style} font-size: 12px;">{row['Recommendation']}</td>
-                <td style="padding: 12px; color: #475569; font-size: 12px;">{row['Remarks']}</td>
-                <td style="padding: 12px;"><a href="{row['Chart']}" style="color: #7e22ce; text-decoration: none; font-weight: bold; font-size: 12px;" target="_blank">Chart ↗</a></td>
+            <tr style="background-color:{row_bg};">
+                <td style="padding:0; border-left:4px solid {accent};"></td>
+                <td style="padding:14px 10px; font-weight:800; color:#0f172a; font-size:13px;">{row['Stock']}</td>
+                <td style="padding:14px 10px; color:#334155; font-size:11.5px; line-height:1.5;">{row['Pairing & Signals']}</td>
+                <td style="padding:14px 10px; text-align:center;">{htf_badge}</td>
+                <td style="padding:14px 10px; text-align:center;">{ltf_badge}</td>
+                <td style="padding:14px 10px;">{_rec_badge(rec)}</td>
+                <td style="padding:14px 10px; color:#64748b; font-size:11.5px; line-height:1.5;">{row['Remarks']}</td>
+                <td style="padding:14px 10px; text-align:center;">
+                    <a href="{row['Chart']}" style="display:inline-block; padding:6px 12px; border-radius:6px; background-color:#7c3aed; color:#ffffff; text-decoration:none; font-weight:700; font-size:11px;" target="_blank">Chart ↗</a>
+                </td>
             </tr>
+            <tr><td colspan="8" style="border-bottom:1px solid #eef1f5; line-height:0; font-size:0;">&nbsp;</td></tr>
             """
     else:
-        table_rows = """<tr><td colspan="5" style="padding: 20px; text-align: center; color: #94a3b8; font-size: 13px;">No buy/sell recommendations generated today. Check individual timeframe sheets.</td></tr>"""
+        table_rows = """<tr><td colspan="8" style="padding: 30px; text-align: center; color: #94a3b8; font-size: 13px;">No buy/sell recommendations generated today. Check individual timeframe sheets.</td></tr>"""
+
+    def stat_card(label, value, bg, fg, border):
+        return f"""
+        <td style="padding:6px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color:{bg}; border:1px solid {border}; border-radius:10px;">
+                <tr>
+                    <td style="padding:12px 14px; text-align:center;">
+                        <div style="font-size:20px; font-weight:800; color:{fg};">{value}</div>
+                        <div style="font-size:10px; font-weight:700; color:{fg}; text-transform:uppercase; letter-spacing:0.5px; margin-top:2px;">{label}</div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        """
+
+    stats_row = (
+        stat_card("Strong Buy", counts["STRONG BUY"], "#ecfdf5", "#059669", "#a7f3d0")
+        + stat_card("Buy", counts["BUY"], "#f0fdf4", "#16a34a", "#bbf7d0")
+        + stat_card("Strong Sell", counts["STRONG SELL"], "#fef2f2", "#dc2626", "#fecaca")
+        + stat_card("Sell", counts["SELL"], "#fff1f2", "#e11d48", "#fecdd3")
+    )
 
     html_body = f"""
     <!DOCTYPE html>
     <html>
-    <head><meta charset="utf-8"></head>
-    <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; margin: 0; padding: 20px; color: #1e293b;">
-        <div style="max-width: 900px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
-            
-            <!-- Dashboard Title Header -->
-            <div style="background-color: #f1f5f9; padding: 16px 20px; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center;">
-                <h2 style="margin: 0; font-size: 16px; color: #1e3a8a; font-weight: 700; text-transform: uppercase;">
-                    🎯 HTPL DASHBOARD (BUY / SELL RECOMMENDATIONS)
-                </h2>
-            </div>
-            
+    <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+    <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #eef2f9; margin: 0; padding: 24px; color: #1e293b;">
+        <div style="max-width: 1080px; margin: 0 auto; background-color: #ffffff; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 30px rgba(30, 41, 59, 0.12); border: 1px solid #e2e8f0;">
+
+            <!-- Dashboard Title Header (gradient banner) -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#1e1b4b; background-image: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 45%, #7e22ce 100%);">
+                <tr>
+                    <td style="padding: 26px 28px;">
+                        <div style="font-size: 11px; font-weight:700; letter-spacing:2px; color:#c4b5fd; text-transform:uppercase; margin-bottom:6px;">
+                            ⚡ MACD MULTI-TIMEFRAME SCANNER
+                        </div>
+                        <div style="font-size: 22px; font-weight: 800; color: #ffffff; letter-spacing:0.3px;">
+                            🎯 HTPL DASHBOARD &nbsp;<span style="color:#c4b5fd; font-weight:600;">(Buy / Sell Recommendations)</span>
+                        </div>
+                        <div style="font-size:12px; color:#ddd6fe; margin-top:6px;">
+                            📅 {date_str} &nbsp;•&nbsp; HTF + LTF Divergence Confluence &amp; MACD Crossover State
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Summary Stat Strip -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f8fafc; border-bottom:1px solid #e2e8f0;">
+                <tr>
+                    <td style="padding: 14px 20px;">
+                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                {stats_row}
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
             <!-- Dashboard Table -->
-            <div style="padding: 0;">
-                <table style="width: 100%; border-collapse: collapse; text-align: left; background-color: #ffffff;">
+            <div style="padding: 0; overflow-x:auto;">
+                <table role="presentation" style="width: 100%; border-collapse: collapse; text-align: left; background-color: #ffffff;">
                     <thead>
-                        <tr style="background-color: #f8fafc; color: #64748b; font-size: 11px; text-transform: uppercase; border-bottom: 1px solid #e2e8f0;">
-                            <th style="padding: 12px; width: 15%;">Stock</th>
-                            <th style="padding: 12px; width: 28%;">Pairing & Signals</th>
-                            <th style="padding: 12px; width: 17%;">Recommendation</th>
-                            <th style="padding: 12px; width: 30%;">Remarks</th>
-                            <th style="padding: 12px; width: 10%;">Chart</th>
+                        <tr style="background-color: #eef2ff; color: #4338ca; font-size: 10.5px; text-transform: uppercase; letter-spacing:0.4px;">
+                            <th style="padding: 12px 0;"></th>
+                            <th style="padding: 12px 10px;">Stock</th>
+                            <th style="padding: 12px 10px;">Pairing & Signals</th>
+                            <th style="padding: 12px 10px; text-align:center;">HTF MACD</th>
+                            <th style="padding: 12px 10px; text-align:center;">LTF MACD</th>
+                            <th style="padding: 12px 10px;">Recommendation</th>
+                            <th style="padding: 12px 10px;">Remarks</th>
+                            <th style="padding: 12px 10px; text-align:center;">Chart</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -286,10 +394,17 @@ def build_html_dashboard(analytics_df, date_str):
                     </tbody>
                 </table>
             </div>
-            
+
+            <!-- Legend -->
+            <div style="padding: 14px 20px; background-color:#f8fafc; border-top:1px solid #e2e8f0; font-size:10.5px; color:#94a3b8;">
+                <strong style="color:#64748b;">Legend:</strong>&nbsp;
+                PCO = MACD Line above Signal Line (Positive Cross Over) &nbsp;|&nbsp;
+                NCO = MACD Line below/equal Signal Line (Negative Cross Over)
+            </div>
+
             <!-- Footer -->
-            <div style="padding: 12px 20px; background-color: #f8fafc; border-top: 1px solid #e2e8f0; text-align: right; color: #94a3b8; font-size: 11px;">
-                Generated on {date_str} &bull; MACD Divergence Scanner Engine
+            <div style="padding: 14px 20px; background-color: #1e1b4b; text-align: center; color: #c4b5fd; font-size: 11px;">
+                Generated on {date_str} &bull; MACD Divergence Scanner Engine &bull; HTPL
             </div>
         </div>
     </body>
