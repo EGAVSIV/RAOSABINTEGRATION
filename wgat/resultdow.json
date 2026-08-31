@@ -1,7 +1,7 @@
 {
   "scanner": "Dow Theory Trend + Fibonacci Entry Scanner",
   "source_format": "JSON",
-  "generated_at": "2026-08-31T17:04:49.388562+00:00",
+  "generated_at": "2026-08-31T20:11:38.997110+00:00",
   "data_root": "/home/runner/work/RAOSABINTEGRATION/RAOSABINTEGRATION",
   "scan_date": "2026-08-31T00:00:00+00:00",
   "timeframes": {
@@ -3877,8 +3877,8 @@
           "Stock": "NIFTY",
           "Timeframe": "15 Min",
           "Trend Bucket": "Triangle / Sideways",
-          "Scan Date": "2026-08-28T09:45:00+00:00",
-          "Close": 24175.65,
+          "Scan Date": "2026-08-28T09:30:00+00:00",
+          "Close": 24142.95,
           "23% Bull": false,
           "38% Bull": false,
           "50% Bull": false,
@@ -9691,9 +9691,9 @@
         {
           "Stock": "NIFTY",
           "Timeframe": "1 Hour",
-          "Trend Bucket": "Downtrend",
-          "Scan Date": "2026-08-28T09:45:00+00:00",
-          "Close": 24175.65,
+          "Trend Bucket": "Triangle / Sideways",
+          "Scan Date": "2026-08-28T08:45:00+00:00",
+          "Close": 24142.95,
           "23% Bull": false,
           "38% Bull": false,
           "50% Bull": false,
@@ -9709,11 +9709,11 @@
           "50% Up": null,
           "61.8% Up": null,
           "78% Up": null,
-          "23% Down": 24102.4835,
-          "38% Down": 24119.200999999997,
-          "50% Down": 24132.574999999997,
-          "61.8% Down": 24145.7261,
-          "78% Down": 24163.781
+          "23% Down": null,
+          "38% Down": null,
+          "50% Down": null,
+          "61.8% Down": null,
+          "78% Down": null
         },
         {
           "Stock": "NIFTYJR",
