@@ -1,0 +1,5604 @@
+{
+  "generated_at_utc": "2026-09-04T15:01:53+00:00",
+  "atr_period": 10,
+  "cycle_steps": [
+    30,
+    60,
+    90,
+    120,
+    150
+  ],
+  "count": 215,
+  "symbols": [
+    {
+      "symbol": "360ONE",
+      "weekly_close": 1129.7,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1127.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 31.722659,
+      "atr_pct": 2.814,
+      "resistance": [
+        1159.7,
+        1219.7,
+        1309.7,
+        1429.7,
+        1579.7
+      ],
+      "support": [
+        1099.7,
+        1039.7,
+        949.7,
+        829.7,
+        679.7
+      ],
+      "source_weekly": "stockdata_W/360ONE.json",
+      "source_daily": "stockdata_D/360ONE.json"
+    },
+    {
+      "symbol": "ABB",
+      "weekly_close": 7422.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 7434.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 171.279391,
+      "atr_pct": 2.304,
+      "resistance": [
+        7452.5,
+        7512.5,
+        7602.5,
+        7722.5,
+        7872.5
+      ],
+      "support": [
+        7392.5,
+        7332.5,
+        7242.5,
+        7122.5,
+        6972.5
+      ],
+      "source_weekly": "stockdata_W/ABB.json",
+      "source_daily": "stockdata_D/ABB.json"
+    },
+    {
+      "symbol": "ABCAPITAL",
+      "weekly_close": 405.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 405.25,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 9.295632,
+      "atr_pct": 2.2938,
+      "resistance": [
+        435.0,
+        495.0,
+        585.0,
+        705.0,
+        855.0
+      ],
+      "support": [
+        375.0,
+        315.0,
+        225.0,
+        105.0,
+        -45.0
+      ],
+      "source_weekly": "stockdata_W/ABCAPITAL.json",
+      "source_daily": "stockdata_D/ABCAPITAL.json"
+    },
+    {
+      "symbol": "ADANIENSOL",
+      "weekly_close": 1408.4,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1406.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 56.460381,
+      "atr_pct": 4.0142,
+      "resistance": [
+        1438.4,
+        1498.4,
+        1588.4,
+        1708.4,
+        1858.4
+      ],
+      "support": [
+        1378.4,
+        1318.4,
+        1228.4,
+        1108.4,
+        958.4
+      ],
+      "source_weekly": "stockdata_W/ADANIENSOL.json",
+      "source_daily": "stockdata_D/ADANIENSOL.json"
+    },
+    {
+      "symbol": "ADANIENT",
+      "weekly_close": 2939.4,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2939.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 81.444407,
+      "atr_pct": 2.7707,
+      "resistance": [
+        2969.4,
+        3029.4,
+        3119.4,
+        3239.4,
+        3389.4
+      ],
+      "support": [
+        2909.4,
+        2849.4,
+        2759.4,
+        2639.4,
+        2489.4
+      ],
+      "source_weekly": "stockdata_W/ADANIENT.json",
+      "source_daily": "stockdata_D/ADANIENT.json"
+    },
+    {
+      "symbol": "ADANIGREEN",
+      "weekly_close": 1300.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1299.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 40.508088,
+      "atr_pct": 3.1184,
+      "resistance": [
+        1330.0,
+        1390.0,
+        1480.0,
+        1600.0,
+        1750.0
+      ],
+      "support": [
+        1270.0,
+        1210.0,
+        1120.0,
+        1000.0,
+        850.0
+      ],
+      "source_weekly": "stockdata_W/ADANIGREEN.json",
+      "source_daily": "stockdata_D/ADANIGREEN.json"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "weekly_close": 1707.6,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1707.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 38.694821,
+      "atr_pct": 2.2667,
+      "resistance": [
+        1737.6,
+        1797.6,
+        1887.6,
+        2007.6,
+        2157.6
+      ],
+      "support": [
+        1677.6,
+        1617.6,
+        1527.6,
+        1407.6,
+        1257.6
+      ],
+      "source_weekly": "stockdata_W/ADANIPORTS.json",
+      "source_daily": "stockdata_D/ADANIPORTS.json"
+    },
+    {
+      "symbol": "ADANIPOWER",
+      "weekly_close": 207.14,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 207.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 5.869716,
+      "atr_pct": 2.8342,
+      "resistance": [
+        237.14,
+        297.14,
+        387.14,
+        507.14,
+        657.14
+      ],
+      "support": [
+        177.14,
+        117.14,
+        27.14,
+        -92.86,
+        -242.86
+      ],
+      "source_weekly": "stockdata_W/ADANIPOWER.json",
+      "source_daily": "stockdata_D/ADANIPOWER.json"
+    },
+    {
+      "symbol": "ALKEM",
+      "weekly_close": 5193.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 5194.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 98.239172,
+      "atr_pct": 1.8912,
+      "resistance": [
+        5223.0,
+        5283.0,
+        5373.0,
+        5493.0,
+        5643.0
+      ],
+      "support": [
+        5163.0,
+        5103.0,
+        5013.0,
+        4893.0,
+        4743.0
+      ],
+      "source_weekly": "stockdata_W/ALKEM.json",
+      "source_daily": "stockdata_D/ALKEM.json"
+    },
+    {
+      "symbol": "AMBER",
+      "weekly_close": 7502.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 7497.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 173.117263,
+      "atr_pct": 2.3092,
+      "resistance": [
+        7532.0,
+        7592.0,
+        7682.0,
+        7802.0,
+        7952.0
+      ],
+      "support": [
+        7472.0,
+        7412.0,
+        7322.0,
+        7202.0,
+        7052.0
+      ],
+      "source_weekly": "stockdata_W/AMBER.json",
+      "source_daily": "stockdata_D/AMBER.json"
+    },
+    {
+      "symbol": "AMBUJACEM",
+      "weekly_close": 405.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 405.65,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 7.594497,
+      "atr_pct": 1.8722,
+      "resistance": [
+        435.8,
+        495.8,
+        585.8,
+        705.8,
+        855.8
+      ],
+      "support": [
+        375.8,
+        315.8,
+        225.8,
+        105.8,
+        -44.2
+      ],
+      "source_weekly": "stockdata_W/AMBUJACEM.json",
+      "source_daily": "stockdata_D/AMBUJACEM.json"
+    },
+    {
+      "symbol": "ANGELONE",
+      "weekly_close": 299.1,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 298.85,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 10.089664,
+      "atr_pct": 3.3762,
+      "resistance": [
+        329.1,
+        389.1,
+        479.1,
+        599.1,
+        749.1
+      ],
+      "support": [
+        269.1,
+        209.1,
+        119.1,
+        -0.9,
+        -150.9
+      ],
+      "source_weekly": "stockdata_W/ANGELONE.json",
+      "source_daily": "stockdata_D/ANGELONE.json"
+    },
+    {
+      "symbol": "APLAPOLLO",
+      "weekly_close": 2245.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2247.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 60.389506,
+      "atr_pct": 2.6876,
+      "resistance": [
+        2275.3,
+        2335.3,
+        2425.3,
+        2545.3,
+        2695.3
+      ],
+      "support": [
+        2215.3,
+        2155.3,
+        2065.3,
+        1945.3,
+        1795.3
+      ],
+      "source_weekly": "stockdata_W/APLAPOLLO.json",
+      "source_daily": "stockdata_D/APLAPOLLO.json"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "weekly_close": 8661.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 8661.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 140.831547,
+      "atr_pct": 1.6259,
+      "resistance": [
+        8691.0,
+        8751.0,
+        8841.0,
+        8961.0,
+        9111.0
+      ],
+      "support": [
+        8631.0,
+        8571.0,
+        8481.0,
+        8361.0,
+        8211.0
+      ],
+      "source_weekly": "stockdata_W/APOLLOHOSP.json",
+      "source_daily": "stockdata_D/APOLLOHOSP.json"
+    },
+    {
+      "symbol": "ASHOKLEY",
+      "weekly_close": 169.77,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 169.72,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 4.451571,
+      "atr_pct": 2.6229,
+      "resistance": [
+        199.77,
+        259.77,
+        349.77,
+        469.77,
+        619.77
+      ],
+      "support": [
+        139.77,
+        79.77,
+        -10.23,
+        -130.23,
+        -280.23
+      ],
+      "source_weekly": "stockdata_W/ASHOKLEY.json",
+      "source_daily": "stockdata_D/ASHOKLEY.json"
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "weekly_close": 2526.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2526.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 52.026186,
+      "atr_pct": 2.0594,
+      "resistance": [
+        2556.5,
+        2616.5,
+        2706.5,
+        2826.5,
+        2976.5
+      ],
+      "support": [
+        2496.5,
+        2436.5,
+        2346.5,
+        2226.5,
+        2076.5
+      ],
+      "source_weekly": "stockdata_W/ASIANPAINT.json",
+      "source_daily": "stockdata_D/ASIANPAINT.json"
+    },
+    {
+      "symbol": "ASTRAL",
+      "weekly_close": 1486.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1486.6,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 34.348848,
+      "atr_pct": 2.3106,
+      "resistance": [
+        1516.5,
+        1576.5,
+        1666.5,
+        1786.5,
+        1936.5
+      ],
+      "support": [
+        1456.5,
+        1396.5,
+        1306.5,
+        1186.5,
+        1036.5
+      ],
+      "source_weekly": "stockdata_W/ASTRAL.json",
+      "source_daily": "stockdata_D/ASTRAL.json"
+    },
+    {
+      "symbol": "AUBANK",
+      "weekly_close": 1070.1,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1069.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 21.341558,
+      "atr_pct": 1.9958,
+      "resistance": [
+        1100.1,
+        1160.1,
+        1250.1,
+        1370.1,
+        1520.1
+      ],
+      "support": [
+        1040.1,
+        980.1,
+        890.1,
+        770.1,
+        620.1
+      ],
+      "source_weekly": "stockdata_W/AUBANK.json",
+      "source_daily": "stockdata_D/AUBANK.json"
+    },
+    {
+      "symbol": "AUROPHARMA",
+      "weekly_close": 1653.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1653.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 40.39343,
+      "atr_pct": 2.4436,
+      "resistance": [
+        1683.3,
+        1743.3,
+        1833.3,
+        1953.3,
+        2103.3
+      ],
+      "support": [
+        1623.3,
+        1563.3,
+        1473.3,
+        1353.3,
+        1203.3
+      ],
+      "source_weekly": "stockdata_W/AUROPHARMA.json",
+      "source_daily": "stockdata_D/AUROPHARMA.json"
+    },
+    {
+      "symbol": "AXISBANK",
+      "weekly_close": 1279.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1279.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 23.227016,
+      "atr_pct": 1.816,
+      "resistance": [
+        1309.0,
+        1369.0,
+        1459.0,
+        1579.0,
+        1729.0
+      ],
+      "support": [
+        1249.0,
+        1189.0,
+        1099.0,
+        979.0,
+        829.0
+      ],
+      "source_weekly": "stockdata_W/AXISBANK.json",
+      "source_daily": "stockdata_D/AXISBANK.json"
+    },
+    {
+      "symbol": "BAJAJFINSV",
+      "weekly_close": 1975.1,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1975.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 36.46215,
+      "atr_pct": 1.8461,
+      "resistance": [
+        2005.1,
+        2065.1,
+        2155.1,
+        2275.1,
+        2425.1
+      ],
+      "support": [
+        1945.1,
+        1885.1,
+        1795.1,
+        1675.1,
+        1525.1
+      ],
+      "source_weekly": "stockdata_W/BAJAJFINSV.json",
+      "source_daily": "stockdata_D/BAJAJFINSV.json"
+    },
+    {
+      "symbol": "BAJAJHLDNG",
+      "weekly_close": 11135.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 11129.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 259.176444,
+      "atr_pct": 2.3288,
+      "resistance": [
+        11165.0,
+        11225.0,
+        11315.0,
+        11435.0,
+        11585.0
+      ],
+      "support": [
+        11105.0,
+        11045.0,
+        10955.0,
+        10835.0,
+        10685.0
+      ],
+      "source_weekly": "stockdata_W/BAJAJHLDNG.json",
+      "source_daily": "stockdata_D/BAJAJHLDNG.json"
+    },
+    {
+      "symbol": "BAJAJ_AUTO",
+      "weekly_close": 11891.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 11894.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 236.40476,
+      "atr_pct": 1.9876,
+      "resistance": [
+        11921.0,
+        11981.0,
+        12071.0,
+        12191.0,
+        12341.0
+      ],
+      "support": [
+        11861.0,
+        11801.0,
+        11711.0,
+        11591.0,
+        11441.0
+      ],
+      "source_weekly": "stockdata_W/BAJAJ_AUTO.json",
+      "source_daily": "stockdata_D/BAJAJ_AUTO.json"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "weekly_close": 1056.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1056.6,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 20.739209,
+      "atr_pct": 1.9628,
+      "resistance": [
+        1086.5,
+        1146.5,
+        1236.5,
+        1356.5,
+        1506.5
+      ],
+      "support": [
+        1026.5,
+        966.5,
+        876.5,
+        756.5,
+        606.5
+      ],
+      "source_weekly": "stockdata_W/BAJFINANCE.json",
+      "source_daily": "stockdata_D/BAJFINANCE.json"
+    },
+    {
+      "symbol": "BANDHANBNK",
+      "weekly_close": 164.73,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 164.71,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 4.336956,
+      "atr_pct": 2.6331,
+      "resistance": [
+        194.73,
+        254.73,
+        344.73,
+        464.73,
+        614.73
+      ],
+      "support": [
+        134.73,
+        74.73,
+        -15.27,
+        -135.27,
+        -285.27
+      ],
+      "source_weekly": "stockdata_W/BANDHANBNK.json",
+      "source_daily": "stockdata_D/BANDHANBNK.json"
+    },
+    {
+      "symbol": "BANKBARODA",
+      "weekly_close": 239.75,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 239.69,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 4.221568,
+      "atr_pct": 1.7613,
+      "resistance": [
+        269.75,
+        329.75,
+        419.75,
+        539.75,
+        689.75
+      ],
+      "support": [
+        209.75,
+        149.75,
+        59.75,
+        -60.25,
+        -210.25
+      ],
+      "source_weekly": "stockdata_W/BANKBARODA.json",
+      "source_daily": "stockdata_D/BANKBARODA.json"
+    },
+    {
+      "symbol": "BANKINDIA",
+      "weekly_close": 144.84,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 144.82,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 2.850636,
+      "atr_pct": 1.9684,
+      "resistance": [
+        174.84,
+        234.84,
+        324.84,
+        444.84,
+        594.84
+      ],
+      "support": [
+        114.84,
+        54.84,
+        -35.16,
+        -155.16,
+        -305.16
+      ],
+      "source_weekly": "stockdata_W/BANKINDIA.json",
+      "source_daily": "stockdata_D/BANKINDIA.json"
+    },
+    {
+      "symbol": "BANKNIFTY",
+      "weekly_close": 57522.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 57526.25,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 536.948497,
+      "atr_pct": 0.9334,
+      "resistance": [
+        57552.3,
+        57612.3,
+        57702.3,
+        57822.3,
+        57972.3
+      ],
+      "support": [
+        57492.3,
+        57432.3,
+        57342.3,
+        57222.3,
+        57072.3
+      ],
+      "source_weekly": "stockdata_W/BANKNIFTY.json",
+      "source_daily": "stockdata_D/BANKNIFTY.json"
+    },
+    {
+      "symbol": "BDL",
+      "weekly_close": 1262.4,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1262.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 37.716719,
+      "atr_pct": 2.9877,
+      "resistance": [
+        1292.4,
+        1352.4,
+        1442.4,
+        1562.4,
+        1712.4
+      ],
+      "support": [
+        1232.4,
+        1172.4,
+        1082.4,
+        962.4,
+        812.4
+      ],
+      "source_weekly": "stockdata_W/BDL.json",
+      "source_daily": "stockdata_D/BDL.json"
+    },
+    {
+      "symbol": "BEL",
+      "weekly_close": 407.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 407.85,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 6.43479,
+      "atr_pct": 1.5777,
+      "resistance": [
+        437.8,
+        497.8,
+        587.8,
+        707.8,
+        857.8
+      ],
+      "support": [
+        377.8,
+        317.8,
+        227.8,
+        107.8,
+        -42.2
+      ],
+      "source_weekly": "stockdata_W/BEL.json",
+      "source_daily": "stockdata_D/BEL.json"
+    },
+    {
+      "symbol": "BHARATFORG",
+      "weekly_close": 1955.6,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1955.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 52.821312,
+      "atr_pct": 2.7013,
+      "resistance": [
+        1985.6,
+        2045.6,
+        2135.6,
+        2255.6,
+        2405.6
+      ],
+      "support": [
+        1925.6,
+        1865.6,
+        1775.6,
+        1655.6,
+        1505.6
+      ],
+      "source_weekly": "stockdata_W/BHARATFORG.json",
+      "source_daily": "stockdata_D/BHARATFORG.json"
+    },
+    {
+      "symbol": "BHARTIARTL",
+      "weekly_close": 1852.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1851.8,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 34.698899,
+      "atr_pct": 1.8738,
+      "resistance": [
+        1882.5,
+        1942.5,
+        2032.5,
+        2152.5,
+        2302.5
+      ],
+      "support": [
+        1822.5,
+        1762.5,
+        1672.5,
+        1552.5,
+        1402.5
+      ],
+      "source_weekly": "stockdata_W/BHARTIARTL.json",
+      "source_daily": "stockdata_D/BHARTIARTL.json"
+    },
+    {
+      "symbol": "BHEL",
+      "weekly_close": 432.55,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 432.8,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 11.83807,
+      "atr_pct": 2.7352,
+      "resistance": [
+        462.55,
+        522.55,
+        612.55,
+        732.55,
+        882.55
+      ],
+      "support": [
+        402.55,
+        342.55,
+        252.55,
+        132.55,
+        -17.45
+      ],
+      "source_weekly": "stockdata_W/BHEL.json",
+      "source_daily": "stockdata_D/BHEL.json"
+    },
+    {
+      "symbol": "BIOCON",
+      "weekly_close": 399.1,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 398.9,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 7.693144,
+      "atr_pct": 1.9286,
+      "resistance": [
+        429.1,
+        489.1,
+        579.1,
+        699.1,
+        849.1
+      ],
+      "support": [
+        369.1,
+        309.1,
+        219.1,
+        99.1,
+        -50.9
+      ],
+      "source_weekly": "stockdata_W/BIOCON.json",
+      "source_daily": "stockdata_D/BIOCON.json"
+    },
+    {
+      "symbol": "BLUESTARCO",
+      "weekly_close": 1482.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1483.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 40.233902,
+      "atr_pct": 2.7123,
+      "resistance": [
+        1512.3,
+        1572.3,
+        1662.3,
+        1782.3,
+        1932.3
+      ],
+      "support": [
+        1452.3,
+        1392.3,
+        1302.3,
+        1182.3,
+        1032.3
+      ],
+      "source_weekly": "stockdata_W/BLUESTARCO.json",
+      "source_daily": "stockdata_D/BLUESTARCO.json"
+    },
+    {
+      "symbol": "BOSCHLTD",
+      "weekly_close": 46825.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 46830.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 1133.072133,
+      "atr_pct": 2.4195,
+      "resistance": [
+        46855.0,
+        46915.0,
+        47005.0,
+        47125.0,
+        47275.0
+      ],
+      "support": [
+        46795.0,
+        46735.0,
+        46645.0,
+        46525.0,
+        46375.0
+      ],
+      "source_weekly": "stockdata_W/BOSCHLTD.json",
+      "source_daily": "stockdata_D/BOSCHLTD.json"
+    },
+    {
+      "symbol": "BPCL",
+      "weekly_close": 318.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 318.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 6.896507,
+      "atr_pct": 2.1653,
+      "resistance": [
+        348.5,
+        408.5,
+        498.5,
+        618.5,
+        768.5
+      ],
+      "support": [
+        288.5,
+        228.5,
+        138.5,
+        18.5,
+        -131.5
+      ],
+      "source_weekly": "stockdata_W/BPCL.json",
+      "source_daily": "stockdata_D/BPCL.json"
+    },
+    {
+      "symbol": "BRITANNIA",
+      "weekly_close": 5129.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 5129.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 97.805263,
+      "atr_pct": 1.9067,
+      "resistance": [
+        5159.5,
+        5219.5,
+        5309.5,
+        5429.5,
+        5579.5
+      ],
+      "support": [
+        5099.5,
+        5039.5,
+        4949.5,
+        4829.5,
+        4679.5
+      ],
+      "source_weekly": "stockdata_W/BRITANNIA.json",
+      "source_daily": "stockdata_D/BRITANNIA.json"
+    },
+    {
+      "symbol": "BSE",
+      "weekly_close": 3401.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 3400.2,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 116.366741,
+      "atr_pct": 3.4223,
+      "resistance": [
+        3431.5,
+        3491.5,
+        3581.5,
+        3701.5,
+        3851.5
+      ],
+      "support": [
+        3371.5,
+        3311.5,
+        3221.5,
+        3101.5,
+        2951.5
+      ],
+      "source_weekly": "stockdata_W/BSE.json",
+      "source_daily": "stockdata_D/BSE.json"
+    },
+    {
+      "symbol": "CAMS",
+      "weekly_close": 747.65,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 747.6,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 18.559591,
+      "atr_pct": 2.4826,
+      "resistance": [
+        777.65,
+        837.65,
+        927.65,
+        1047.65,
+        1197.65
+      ],
+      "support": [
+        717.65,
+        657.65,
+        567.65,
+        447.65,
+        297.65
+      ],
+      "source_weekly": "stockdata_W/CAMS.json",
+      "source_daily": "stockdata_D/CAMS.json"
+    },
+    {
+      "symbol": "CANBK",
+      "weekly_close": 126.45,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 126.48,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 2.458478,
+      "atr_pct": 1.9438,
+      "resistance": [
+        156.45,
+        216.45,
+        306.45,
+        426.45,
+        576.45
+      ],
+      "support": [
+        96.45,
+        36.45,
+        -53.55,
+        -173.55,
+        -323.55
+      ],
+      "source_weekly": "stockdata_W/CANBK.json",
+      "source_daily": "stockdata_D/CANBK.json"
+    },
+    {
+      "symbol": "CDSL",
+      "weekly_close": 1391.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1391.6,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 30.896476,
+      "atr_pct": 2.2202,
+      "resistance": [
+        1421.8,
+        1481.8,
+        1571.8,
+        1691.8,
+        1841.8
+      ],
+      "support": [
+        1361.8,
+        1301.8,
+        1211.8,
+        1091.8,
+        941.8
+      ],
+      "source_weekly": "stockdata_W/CDSL.json",
+      "source_daily": "stockdata_D/CDSL.json"
+    },
+    {
+      "symbol": "CGPOWER",
+      "weekly_close": 894.55,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 894.55,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 22.03824,
+      "atr_pct": 2.4636,
+      "resistance": [
+        924.55,
+        984.55,
+        1074.55,
+        1194.55,
+        1344.55
+      ],
+      "support": [
+        864.55,
+        804.55,
+        714.55,
+        594.55,
+        444.55
+      ],
+      "source_weekly": "stockdata_W/CGPOWER.json",
+      "source_daily": "stockdata_D/CGPOWER.json"
+    },
+    {
+      "symbol": "CHOLAFIN",
+      "weekly_close": 1833.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1833.7,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 42.876733,
+      "atr_pct": 2.3383,
+      "resistance": [
+        1863.8,
+        1923.8,
+        2013.8,
+        2133.8,
+        2283.8
+      ],
+      "support": [
+        1803.8,
+        1743.8,
+        1653.8,
+        1533.8,
+        1383.8
+      ],
+      "source_weekly": "stockdata_W/CHOLAFIN.json",
+      "source_daily": "stockdata_D/CHOLAFIN.json"
+    },
+    {
+      "symbol": "CIPLA",
+      "weekly_close": 1380.1,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1380.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 22.125788,
+      "atr_pct": 1.6032,
+      "resistance": [
+        1410.1,
+        1470.1,
+        1560.1,
+        1680.1,
+        1830.1
+      ],
+      "support": [
+        1350.1,
+        1290.1,
+        1200.1,
+        1080.1,
+        930.1
+      ],
+      "source_weekly": "stockdata_W/CIPLA.json",
+      "source_daily": "stockdata_D/CIPLA.json"
+    },
+    {
+      "symbol": "CNXFINANCE",
+      "weekly_close": 26092.15,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 26095.65,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 255.411678,
+      "atr_pct": 0.9788,
+      "resistance": [
+        26122.15,
+        26182.15,
+        26272.15,
+        26392.15,
+        26542.15
+      ],
+      "support": [
+        26062.15,
+        26002.15,
+        25912.15,
+        25792.15,
+        25642.15
+      ],
+      "source_weekly": "stockdata_W/CNXFINANCE.json",
+      "source_daily": "stockdata_D/CNXFINANCE.json"
+    },
+    {
+      "symbol": "CNXMIDCAP",
+      "weekly_close": 63098.15,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 63095.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 527.521996,
+      "atr_pct": 0.8361,
+      "resistance": [
+        63128.15,
+        63188.15,
+        63278.15,
+        63398.15,
+        63548.15
+      ],
+      "support": [
+        63068.15,
+        63008.15,
+        62918.15,
+        62798.15,
+        62648.15
+      ],
+      "source_weekly": "stockdata_W/CNXMIDCAP.json",
+      "source_daily": "stockdata_D/CNXMIDCAP.json"
+    },
+    {
+      "symbol": "COALINDIA",
+      "weekly_close": 413.9,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 413.9,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 8.100294,
+      "atr_pct": 1.9571,
+      "resistance": [
+        443.9,
+        503.9,
+        593.9,
+        713.9,
+        863.9
+      ],
+      "support": [
+        383.9,
+        323.9,
+        233.9,
+        113.9,
+        -36.1
+      ],
+      "source_weekly": "stockdata_W/COALINDIA.json",
+      "source_daily": "stockdata_D/COALINDIA.json"
+    },
+    {
+      "symbol": "COCHINSHIP",
+      "weekly_close": 1510.7,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1510.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 34.871222,
+      "atr_pct": 2.3087,
+      "resistance": [
+        1540.7,
+        1600.7,
+        1690.7,
+        1810.7,
+        1960.7
+      ],
+      "support": [
+        1480.7,
+        1420.7,
+        1330.7,
+        1210.7,
+        1060.7
+      ],
+      "source_weekly": "stockdata_W/COCHINSHIP.json",
+      "source_daily": "stockdata_D/COCHINSHIP.json"
+    },
+    {
+      "symbol": "COFORGE",
+      "weekly_close": 1970.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1969.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 47.086575,
+      "atr_pct": 2.3908,
+      "resistance": [
+        2000.3,
+        2060.3,
+        2150.3,
+        2270.3,
+        2420.3
+      ],
+      "support": [
+        1940.3,
+        1880.3,
+        1790.3,
+        1670.3,
+        1520.3
+      ],
+      "source_weekly": "stockdata_W/COFORGE.json",
+      "source_daily": "stockdata_D/COFORGE.json"
+    },
+    {
+      "symbol": "COLPAL",
+      "weekly_close": 1841.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1839.6,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 38.709185,
+      "atr_pct": 2.1042,
+      "resistance": [
+        1871.3,
+        1931.3,
+        2021.3,
+        2141.3,
+        2291.3
+      ],
+      "support": [
+        1811.3,
+        1751.3,
+        1661.3,
+        1541.3,
+        1391.3
+      ],
+      "source_weekly": "stockdata_W/COLPAL.json",
+      "source_daily": "stockdata_D/COLPAL.json"
+    },
+    {
+      "symbol": "CONCOR",
+      "weekly_close": 504.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 504.15,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 12.126895,
+      "atr_pct": 2.4054,
+      "resistance": [
+        534.0,
+        594.0,
+        684.0,
+        804.0,
+        954.0
+      ],
+      "support": [
+        474.0,
+        414.0,
+        324.0,
+        204.0,
+        54.0
+      ],
+      "source_weekly": "stockdata_W/CONCOR.json",
+      "source_daily": "stockdata_D/CONCOR.json"
+    },
+    {
+      "symbol": "CROMPTON",
+      "weekly_close": 232.36,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 232.44,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 6.88427,
+      "atr_pct": 2.9617,
+      "resistance": [
+        262.36,
+        322.36,
+        412.36,
+        532.36,
+        682.36
+      ],
+      "support": [
+        202.36,
+        142.36,
+        52.36,
+        -67.64,
+        -217.64
+      ],
+      "source_weekly": "stockdata_W/CROMPTON.json",
+      "source_daily": "stockdata_D/CROMPTON.json"
+    },
+    {
+      "symbol": "CUMMINSIND",
+      "weekly_close": 5017.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 5017.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 101.434827,
+      "atr_pct": 2.0218,
+      "resistance": [
+        5047.0,
+        5107.0,
+        5197.0,
+        5317.0,
+        5467.0
+      ],
+      "support": [
+        4987.0,
+        4927.0,
+        4837.0,
+        4717.0,
+        4567.0
+      ],
+      "source_weekly": "stockdata_W/CUMMINSIND.json",
+      "source_daily": "stockdata_D/CUMMINSIND.json"
+    },
+    {
+      "symbol": "DABUR",
+      "weekly_close": 380.7,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 380.75,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 5.904499,
+      "atr_pct": 1.5508,
+      "resistance": [
+        410.7,
+        470.7,
+        560.7,
+        680.7,
+        830.7
+      ],
+      "support": [
+        350.7,
+        290.7,
+        200.7,
+        80.7,
+        -69.3
+      ],
+      "source_weekly": "stockdata_W/DABUR.json",
+      "source_daily": "stockdata_D/DABUR.json"
+    },
+    {
+      "symbol": "DALBHARAT",
+      "weekly_close": 1764.7,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1763.6,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 51.95701,
+      "atr_pct": 2.9461,
+      "resistance": [
+        1794.7,
+        1854.7,
+        1944.7,
+        2064.7,
+        2214.7
+      ],
+      "support": [
+        1734.7,
+        1674.7,
+        1584.7,
+        1464.7,
+        1314.7
+      ],
+      "source_weekly": "stockdata_W/DALBHARAT.json",
+      "source_daily": "stockdata_D/DALBHARAT.json"
+    },
+    {
+      "symbol": "DELHIVERY",
+      "weekly_close": 459.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 459.2,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 10.993381,
+      "atr_pct": 2.394,
+      "resistance": [
+        489.3,
+        549.3,
+        639.3,
+        759.3,
+        909.3
+      ],
+      "support": [
+        429.3,
+        369.3,
+        279.3,
+        159.3,
+        9.3
+      ],
+      "source_weekly": "stockdata_W/DELHIVERY.json",
+      "source_daily": "stockdata_D/DELHIVERY.json"
+    },
+    {
+      "symbol": "DIVISLAB",
+      "weekly_close": 9136.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 9135.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 192.538885,
+      "atr_pct": 2.1077,
+      "resistance": [
+        9166.0,
+        9226.0,
+        9316.0,
+        9436.0,
+        9586.0
+      ],
+      "support": [
+        9106.0,
+        9046.0,
+        8956.0,
+        8836.0,
+        8686.0
+      ],
+      "source_weekly": "stockdata_W/DIVISLAB.json",
+      "source_daily": "stockdata_D/DIVISLAB.json"
+    },
+    {
+      "symbol": "DIXON",
+      "weekly_close": 14209.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 14209.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 351.343235,
+      "atr_pct": 2.4727,
+      "resistance": [
+        14239.0,
+        14299.0,
+        14389.0,
+        14509.0,
+        14659.0
+      ],
+      "support": [
+        14179.0,
+        14119.0,
+        14029.0,
+        13909.0,
+        13759.0
+      ],
+      "source_weekly": "stockdata_W/DIXON.json",
+      "source_daily": "stockdata_D/DIXON.json"
+    },
+    {
+      "symbol": "DLF",
+      "weekly_close": 687.1,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 687.35,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 16.757616,
+      "atr_pct": 2.438,
+      "resistance": [
+        717.1,
+        777.1,
+        867.1,
+        987.1,
+        1137.1
+      ],
+      "support": [
+        657.1,
+        597.1,
+        507.1,
+        387.1,
+        237.1
+      ],
+      "source_weekly": "stockdata_W/DLF.json",
+      "source_daily": "stockdata_D/DLF.json"
+    },
+    {
+      "symbol": "DMART",
+      "weekly_close": 3757.7,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 3759.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 83.370902,
+      "atr_pct": 2.2177,
+      "resistance": [
+        3787.7,
+        3847.7,
+        3937.7,
+        4057.7,
+        4207.7
+      ],
+      "support": [
+        3727.7,
+        3667.7,
+        3577.7,
+        3457.7,
+        3307.7
+      ],
+      "source_weekly": "stockdata_W/DMART.json",
+      "source_daily": "stockdata_D/DMART.json"
+    },
+    {
+      "symbol": "DRREDDY",
+      "weekly_close": 1158.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1157.6,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 18.713053,
+      "atr_pct": 1.6165,
+      "resistance": [
+        1188.3,
+        1248.3,
+        1338.3,
+        1458.3,
+        1608.3
+      ],
+      "support": [
+        1128.3,
+        1068.3,
+        978.3,
+        858.3,
+        708.3
+      ],
+      "source_weekly": "stockdata_W/DRREDDY.json",
+      "source_daily": "stockdata_D/DRREDDY.json"
+    },
+    {
+      "symbol": "EICHERMOT",
+      "weekly_close": 7621.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 7622.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 152.854895,
+      "atr_pct": 2.0053,
+      "resistance": [
+        7651.5,
+        7711.5,
+        7801.5,
+        7921.5,
+        8071.5
+      ],
+      "support": [
+        7591.5,
+        7531.5,
+        7441.5,
+        7321.5,
+        7171.5
+      ],
+      "source_weekly": "stockdata_W/EICHERMOT.json",
+      "source_daily": "stockdata_D/EICHERMOT.json"
+    },
+    {
+      "symbol": "ETERNAL",
+      "weekly_close": 322.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 322.45,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 7.589302,
+      "atr_pct": 2.3536,
+      "resistance": [
+        352.5,
+        412.5,
+        502.5,
+        622.5,
+        772.5
+      ],
+      "support": [
+        292.5,
+        232.5,
+        142.5,
+        22.5,
+        -127.5
+      ],
+      "source_weekly": "stockdata_W/ETERNAL.json",
+      "source_daily": "stockdata_D/ETERNAL.json"
+    },
+    {
+      "symbol": "EXIDEIND",
+      "weekly_close": 424.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 423.6,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 12.252531,
+      "atr_pct": 2.8925,
+      "resistance": [
+        454.0,
+        514.0,
+        604.0,
+        724.0,
+        874.0
+      ],
+      "support": [
+        394.0,
+        334.0,
+        244.0,
+        124.0,
+        -26.0
+      ],
+      "source_weekly": "stockdata_W/EXIDEIND.json",
+      "source_daily": "stockdata_D/EXIDEIND.json"
+    },
+    {
+      "symbol": "FEDERALBNK",
+      "weekly_close": 343.15,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 343.2,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 7.792302,
+      "atr_pct": 2.2705,
+      "resistance": [
+        373.15,
+        433.15,
+        523.15,
+        643.15,
+        793.15
+      ],
+      "support": [
+        313.15,
+        253.15,
+        163.15,
+        43.15,
+        -106.85
+      ],
+      "source_weekly": "stockdata_W/FEDERALBNK.json",
+      "source_daily": "stockdata_D/FEDERALBNK.json"
+    },
+    {
+      "symbol": "FORCEMOT",
+      "weekly_close": 17710.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 17707.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 448.825567,
+      "atr_pct": 2.5347,
+      "resistance": [
+        17740.0,
+        17800.0,
+        17890.0,
+        18010.0,
+        18160.0
+      ],
+      "support": [
+        17680.0,
+        17620.0,
+        17530.0,
+        17410.0,
+        17260.0
+      ],
+      "source_weekly": "stockdata_W/FORCEMOT.json",
+      "source_daily": "stockdata_D/FORCEMOT.json"
+    },
+    {
+      "symbol": "FORTIS",
+      "weekly_close": 906.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 906.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 19.600756,
+      "atr_pct": 2.1634,
+      "resistance": [
+        936.0,
+        996.0,
+        1086.0,
+        1206.0,
+        1356.0
+      ],
+      "support": [
+        876.0,
+        816.0,
+        726.0,
+        606.0,
+        456.0
+      ],
+      "source_weekly": "stockdata_W/FORTIS.json",
+      "source_daily": "stockdata_D/FORTIS.json"
+    },
+    {
+      "symbol": "GAIL",
+      "weekly_close": 173.08,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 173.08,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 3.428198,
+      "atr_pct": 1.9807,
+      "resistance": [
+        203.08,
+        263.08,
+        353.08,
+        473.08,
+        623.08
+      ],
+      "support": [
+        143.08,
+        83.08,
+        -6.92,
+        -126.92,
+        -276.92
+      ],
+      "source_weekly": "stockdata_W/GAIL.json",
+      "source_daily": "stockdata_D/GAIL.json"
+    },
+    {
+      "symbol": "GLENMARK",
+      "weekly_close": 2436.6,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2436.7,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 57.537272,
+      "atr_pct": 2.3613,
+      "resistance": [
+        2466.6,
+        2526.6,
+        2616.6,
+        2736.6,
+        2886.6
+      ],
+      "support": [
+        2406.6,
+        2346.6,
+        2256.6,
+        2136.6,
+        1986.6
+      ],
+      "source_weekly": "stockdata_W/GLENMARK.json",
+      "source_daily": "stockdata_D/GLENMARK.json"
+    },
+    {
+      "symbol": "GMRAIRPORT",
+      "weekly_close": 97.56,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 97.56,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 2.341614,
+      "atr_pct": 2.4002,
+      "resistance": [
+        127.56,
+        187.56,
+        277.56,
+        397.56,
+        547.56
+      ],
+      "support": [
+        67.56,
+        7.56,
+        -82.44,
+        -202.44,
+        -352.44
+      ],
+      "source_weekly": "stockdata_W/GMRAIRPORT.json",
+      "source_daily": "stockdata_D/GMRAIRPORT.json"
+    },
+    {
+      "symbol": "GODFRYPHLP",
+      "weekly_close": 2045.4,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2045.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 47.997468,
+      "atr_pct": 2.3466,
+      "resistance": [
+        2075.4,
+        2135.4,
+        2225.4,
+        2345.4,
+        2495.4
+      ],
+      "support": [
+        2015.4,
+        1955.4,
+        1865.4,
+        1745.4,
+        1595.4
+      ],
+      "source_weekly": "stockdata_W/GODFRYPHLP.json",
+      "source_daily": "stockdata_D/GODFRYPHLP.json"
+    },
+    {
+      "symbol": "GODREJCP",
+      "weekly_close": 877.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 877.45,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 21.068739,
+      "atr_pct": 2.4011,
+      "resistance": [
+        907.8,
+        967.8,
+        1057.8,
+        1177.8,
+        1327.8
+      ],
+      "support": [
+        847.8,
+        787.8,
+        697.8,
+        577.8,
+        427.8
+      ],
+      "source_weekly": "stockdata_W/GODREJCP.json",
+      "source_daily": "stockdata_D/GODREJCP.json"
+    },
+    {
+      "symbol": "GODREJPROP",
+      "weekly_close": 1976.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1977.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 59.773386,
+      "atr_pct": 3.0227,
+      "resistance": [
+        2006.8,
+        2066.8,
+        2156.8,
+        2276.8,
+        2426.8
+      ],
+      "support": [
+        1946.8,
+        1886.8,
+        1796.8,
+        1676.8,
+        1526.8
+      ],
+      "source_weekly": "stockdata_W/GODREJPROP.json",
+      "source_daily": "stockdata_D/GODREJPROP.json"
+    },
+    {
+      "symbol": "GRASIM",
+      "weekly_close": 3315.6,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 3315.6,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 70.72987,
+      "atr_pct": 2.1332,
+      "resistance": [
+        3345.6,
+        3405.6,
+        3495.6,
+        3615.6,
+        3765.6
+      ],
+      "support": [
+        3285.6,
+        3225.6,
+        3135.6,
+        3015.6,
+        2865.6
+      ],
+      "source_weekly": "stockdata_W/GRASIM.json",
+      "source_daily": "stockdata_D/GRASIM.json"
+    },
+    {
+      "symbol": "GVT&D",
+      "weekly_close": 4317.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 4318.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 148.147081,
+      "atr_pct": 3.4305,
+      "resistance": [
+        4347.8,
+        4407.8,
+        4497.8,
+        4617.8,
+        4767.8
+      ],
+      "support": [
+        4287.8,
+        4227.8,
+        4137.8,
+        4017.8,
+        3867.8
+      ],
+      "source_weekly": "stockdata_W/GVT&D.json",
+      "source_daily": "stockdata_D/GVT&D.json"
+    },
+    {
+      "symbol": "HAL",
+      "weekly_close": 4902.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 4903.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 99.919293,
+      "atr_pct": 2.0379,
+      "resistance": [
+        4932.3,
+        4992.3,
+        5082.3,
+        5202.3,
+        5352.3
+      ],
+      "support": [
+        4872.3,
+        4812.3,
+        4722.3,
+        4602.3,
+        4452.3
+      ],
+      "source_weekly": "stockdata_W/HAL.json",
+      "source_daily": "stockdata_D/HAL.json"
+    },
+    {
+      "symbol": "HAVELLS",
+      "weekly_close": 1151.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1151.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 31.540755,
+      "atr_pct": 2.7401,
+      "resistance": [
+        1181.5,
+        1241.5,
+        1331.5,
+        1451.5,
+        1601.5
+      ],
+      "support": [
+        1121.5,
+        1061.5,
+        971.5,
+        851.5,
+        701.5
+      ],
+      "source_weekly": "stockdata_W/HAVELLS.json",
+      "source_daily": "stockdata_D/HAVELLS.json"
+    },
+    {
+      "symbol": "HCLTECH",
+      "weekly_close": 1299.1,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1299.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 33.381862,
+      "atr_pct": 2.5692,
+      "resistance": [
+        1329.1,
+        1389.1,
+        1479.1,
+        1599.1,
+        1749.1
+      ],
+      "support": [
+        1269.1,
+        1209.1,
+        1119.1,
+        999.1,
+        849.1
+      ],
+      "source_weekly": "stockdata_W/HCLTECH.json",
+      "source_daily": "stockdata_D/HCLTECH.json"
+    },
+    {
+      "symbol": "HDFCAMC",
+      "weekly_close": 2468.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2470.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 63.300236,
+      "atr_pct": 2.5628,
+      "resistance": [
+        2498.0,
+        2558.0,
+        2648.0,
+        2768.0,
+        2918.0
+      ],
+      "support": [
+        2438.0,
+        2378.0,
+        2288.0,
+        2168.0,
+        2018.0
+      ],
+      "source_weekly": "stockdata_W/HDFCAMC.json",
+      "source_daily": "stockdata_D/HDFCAMC.json"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "weekly_close": 716.05,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 715.75,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 12.52344,
+      "atr_pct": 1.7497,
+      "resistance": [
+        746.05,
+        806.05,
+        896.05,
+        1016.05,
+        1166.05
+      ],
+      "support": [
+        686.05,
+        626.05,
+        536.05,
+        416.05,
+        266.05
+      ],
+      "source_weekly": "stockdata_W/HDFCBANK.json",
+      "source_daily": "stockdata_D/HDFCBANK.json"
+    },
+    {
+      "symbol": "HDFCLIFE",
+      "weekly_close": 543.75,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 543.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 9.773329,
+      "atr_pct": 1.7982,
+      "resistance": [
+        573.75,
+        633.75,
+        723.75,
+        843.75,
+        993.75
+      ],
+      "support": [
+        513.75,
+        453.75,
+        363.75,
+        243.75,
+        93.75
+      ],
+      "source_weekly": "stockdata_W/HDFCLIFE.json",
+      "source_daily": "stockdata_D/HDFCLIFE.json"
+    },
+    {
+      "symbol": "HEROMOTOCO",
+      "weekly_close": 5305.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 5306.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 133.416164,
+      "atr_pct": 2.5144,
+      "resistance": [
+        5335.5,
+        5395.5,
+        5485.5,
+        5605.5,
+        5755.5
+      ],
+      "support": [
+        5275.5,
+        5215.5,
+        5125.5,
+        5005.5,
+        4855.5
+      ],
+      "source_weekly": "stockdata_W/HEROMOTOCO.json",
+      "source_daily": "stockdata_D/HEROMOTOCO.json"
+    },
+    {
+      "symbol": "HINDALCO",
+      "weekly_close": 1018.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1018.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 22.699066,
+      "atr_pct": 2.2296,
+      "resistance": [
+        1048.5,
+        1108.5,
+        1198.5,
+        1318.5,
+        1468.5
+      ],
+      "support": [
+        988.5,
+        928.5,
+        838.5,
+        718.5,
+        568.5
+      ],
+      "source_weekly": "stockdata_W/HINDALCO.json",
+      "source_daily": "stockdata_D/HINDALCO.json"
+    },
+    {
+      "symbol": "HINDPETRO",
+      "weekly_close": 357.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 357.7,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 7.31579,
+      "atr_pct": 2.0452,
+      "resistance": [
+        387.8,
+        447.8,
+        537.8,
+        657.8,
+        807.8
+      ],
+      "support": [
+        327.8,
+        267.8,
+        177.8,
+        57.8,
+        -92.2
+      ],
+      "source_weekly": "stockdata_W/HINDPETRO.json",
+      "source_daily": "stockdata_D/HINDPETRO.json"
+    },
+    {
+      "symbol": "HINDUNILVR",
+      "weekly_close": 1971.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1971.2,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 30.046891,
+      "atr_pct": 1.5243,
+      "resistance": [
+        2001.5,
+        2061.5,
+        2151.5,
+        2271.5,
+        2421.5
+      ],
+      "support": [
+        1941.5,
+        1881.5,
+        1791.5,
+        1671.5,
+        1521.5
+      ],
+      "source_weekly": "stockdata_W/HINDUNILVR.json",
+      "source_daily": "stockdata_D/HINDUNILVR.json"
+    },
+    {
+      "symbol": "HINDZINC",
+      "weekly_close": 598.95,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 598.7,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 18.706435,
+      "atr_pct": 3.1245,
+      "resistance": [
+        628.95,
+        688.95,
+        778.95,
+        898.95,
+        1048.95
+      ],
+      "support": [
+        568.95,
+        508.95,
+        418.95,
+        298.95,
+        148.95
+      ],
+      "source_weekly": "stockdata_W/HINDZINC.json",
+      "source_daily": "stockdata_D/HINDZINC.json"
+    },
+    {
+      "symbol": "HYUNDAI",
+      "weekly_close": 2205.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2205.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 56.309954,
+      "atr_pct": 2.5537,
+      "resistance": [
+        2235.0,
+        2295.0,
+        2385.0,
+        2505.0,
+        2655.0
+      ],
+      "support": [
+        2175.0,
+        2115.0,
+        2025.0,
+        1905.0,
+        1755.0
+      ],
+      "source_weekly": "stockdata_W/HYUNDAI.json",
+      "source_daily": "stockdata_D/HYUNDAI.json"
+    },
+    {
+      "symbol": "ICICIBANK",
+      "weekly_close": 1430.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1430.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 21.655164,
+      "atr_pct": 1.514,
+      "resistance": [
+        1460.3,
+        1520.3,
+        1610.3,
+        1730.3,
+        1880.3
+      ],
+      "support": [
+        1400.3,
+        1340.3,
+        1250.3,
+        1130.3,
+        980.3
+      ],
+      "source_weekly": "stockdata_W/ICICIBANK.json",
+      "source_daily": "stockdata_D/ICICIBANK.json"
+    },
+    {
+      "symbol": "ICICIGI",
+      "weekly_close": 1513.1,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1512.7,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 31.831682,
+      "atr_pct": 2.1043,
+      "resistance": [
+        1543.1,
+        1603.1,
+        1693.1,
+        1813.1,
+        1963.1
+      ],
+      "support": [
+        1483.1,
+        1423.1,
+        1333.1,
+        1213.1,
+        1063.1
+      ],
+      "source_weekly": "stockdata_W/ICICIGI.json",
+      "source_daily": "stockdata_D/ICICIGI.json"
+    },
+    {
+      "symbol": "ICICIPRULI",
+      "weekly_close": 496.55,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 496.45,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 12.748424,
+      "atr_pct": 2.5679,
+      "resistance": [
+        526.55,
+        586.55,
+        676.55,
+        796.55,
+        946.55
+      ],
+      "support": [
+        466.55,
+        406.55,
+        316.55,
+        196.55,
+        46.55
+      ],
+      "source_weekly": "stockdata_W/ICICIPRULI.json",
+      "source_daily": "stockdata_D/ICICIPRULI.json"
+    },
+    {
+      "symbol": "IDEA",
+      "weekly_close": 15.08,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 15.07,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 0.51431,
+      "atr_pct": 3.4128,
+      "resistance": [
+        45.08,
+        105.08,
+        195.08,
+        315.08,
+        465.08
+      ],
+      "support": [
+        -14.92,
+        -74.92,
+        -164.92,
+        -284.92,
+        -434.92
+      ],
+      "source_weekly": "stockdata_W/IDEA.json",
+      "source_daily": "stockdata_D/IDEA.json"
+    },
+    {
+      "symbol": "IDFCFIRSTB",
+      "weekly_close": 86.53,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 86.52,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 1.734247,
+      "atr_pct": 2.0044,
+      "resistance": [
+        116.53,
+        176.53,
+        266.53,
+        386.53,
+        536.53
+      ],
+      "support": [
+        56.53,
+        -3.47,
+        -93.47,
+        -213.47,
+        -363.47
+      ],
+      "source_weekly": "stockdata_W/IDFCFIRSTB.json",
+      "source_daily": "stockdata_D/IDFCFIRSTB.json"
+    },
+    {
+      "symbol": "IEX",
+      "weekly_close": 119.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 119.32,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 2.070784,
+      "atr_pct": 1.7355,
+      "resistance": [
+        149.0,
+        209.0,
+        299.0,
+        419.0,
+        569.0
+      ],
+      "support": [
+        89.0,
+        29.0,
+        -61.0,
+        -181.0,
+        -331.0
+      ],
+      "source_weekly": "stockdata_W/IEX.json",
+      "source_daily": "stockdata_D/IEX.json"
+    },
+    {
+      "symbol": "INDHOTEL",
+      "weekly_close": 719.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 719.55,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 16.28667,
+      "atr_pct": 2.2635,
+      "resistance": [
+        749.5,
+        809.5,
+        899.5,
+        1019.5,
+        1169.5
+      ],
+      "support": [
+        689.5,
+        629.5,
+        539.5,
+        419.5,
+        269.5
+      ],
+      "source_weekly": "stockdata_W/INDHOTEL.json",
+      "source_daily": "stockdata_D/INDHOTEL.json"
+    },
+    {
+      "symbol": "INDIANB",
+      "weekly_close": 884.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 884.85,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 20.127151,
+      "atr_pct": 2.2746,
+      "resistance": [
+        914.8,
+        974.8,
+        1064.8,
+        1184.8,
+        1334.8
+      ],
+      "support": [
+        854.8,
+        794.8,
+        704.8,
+        584.8,
+        434.8
+      ],
+      "source_weekly": "stockdata_W/INDIANB.json",
+      "source_daily": "stockdata_D/INDIANB.json"
+    },
+    {
+      "symbol": "INDIGO",
+      "weekly_close": 5005.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 5005.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 113.71794,
+      "atr_pct": 2.2721,
+      "resistance": [
+        5035.0,
+        5095.0,
+        5185.0,
+        5305.0,
+        5455.0
+      ],
+      "support": [
+        4975.0,
+        4915.0,
+        4825.0,
+        4705.0,
+        4555.0
+      ],
+      "source_weekly": "stockdata_W/INDIGO.json",
+      "source_daily": "stockdata_D/INDIGO.json"
+    },
+    {
+      "symbol": "INDUSINDBK",
+      "weekly_close": 1006.7,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1007.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 20.709623,
+      "atr_pct": 2.0566,
+      "resistance": [
+        1036.7,
+        1096.7,
+        1186.7,
+        1306.7,
+        1456.7
+      ],
+      "support": [
+        976.7,
+        916.7,
+        826.7,
+        706.7,
+        556.7
+      ],
+      "source_weekly": "stockdata_W/INDUSINDBK.json",
+      "source_daily": "stockdata_D/INDUSINDBK.json"
+    },
+    {
+      "symbol": "INDUSTOWER",
+      "weekly_close": 377.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 377.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 9.2773,
+      "atr_pct": 2.4589,
+      "resistance": [
+        407.3,
+        467.3,
+        557.3,
+        677.3,
+        827.3
+      ],
+      "support": [
+        347.3,
+        287.3,
+        197.3,
+        77.3,
+        -72.7
+      ],
+      "source_weekly": "stockdata_W/INDUSTOWER.json",
+      "source_daily": "stockdata_D/INDUSTOWER.json"
+    },
+    {
+      "symbol": "INFY",
+      "weekly_close": 1129.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1129.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 26.7311,
+      "atr_pct": 2.3671,
+      "resistance": [
+        1159.0,
+        1219.0,
+        1309.0,
+        1429.0,
+        1579.0
+      ],
+      "support": [
+        1099.0,
+        1039.0,
+        949.0,
+        829.0,
+        679.0
+      ],
+      "source_weekly": "stockdata_W/INFY.json",
+      "source_daily": "stockdata_D/INFY.json"
+    },
+    {
+      "symbol": "INOXWIND",
+      "weekly_close": 74.22,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 74.31,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 2.344012,
+      "atr_pct": 3.1544,
+      "resistance": [
+        104.22,
+        164.22,
+        254.22,
+        374.22,
+        524.22
+      ],
+      "support": [
+        44.22,
+        -15.78,
+        -105.78,
+        -225.78,
+        -375.78
+      ],
+      "source_weekly": "stockdata_W/INOXWIND.json",
+      "source_daily": "stockdata_D/INOXWIND.json"
+    },
+    {
+      "symbol": "IOC",
+      "weekly_close": 137.49,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 137.49,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 2.349094,
+      "atr_pct": 1.7086,
+      "resistance": [
+        167.49,
+        227.49,
+        317.49,
+        437.49,
+        587.49
+      ],
+      "support": [
+        107.49,
+        47.49,
+        -42.51,
+        -162.51,
+        -312.51
+      ],
+      "source_weekly": "stockdata_W/IOC.json",
+      "source_daily": "stockdata_D/IOC.json"
+    },
+    {
+      "symbol": "IREDA",
+      "weekly_close": 113.86,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 113.81,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 2.297775,
+      "atr_pct": 2.019,
+      "resistance": [
+        143.86,
+        203.86,
+        293.86,
+        413.86,
+        563.86
+      ],
+      "support": [
+        83.86,
+        23.86,
+        -66.14,
+        -186.14,
+        -336.14
+      ],
+      "source_weekly": "stockdata_W/IREDA.json",
+      "source_daily": "stockdata_D/IREDA.json"
+    },
+    {
+      "symbol": "IRFC",
+      "weekly_close": 83.13,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 83.12,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 1.407114,
+      "atr_pct": 1.6929,
+      "resistance": [
+        113.13,
+        173.13,
+        263.13,
+        383.13,
+        533.13
+      ],
+      "support": [
+        53.13,
+        -6.87,
+        -96.87,
+        -216.87,
+        -366.87
+      ],
+      "source_weekly": "stockdata_W/IRFC.json",
+      "source_daily": "stockdata_D/IRFC.json"
+    },
+    {
+      "symbol": "ITC",
+      "weekly_close": 264.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 264.2,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 5.419865,
+      "atr_pct": 2.0514,
+      "resistance": [
+        294.3,
+        354.3,
+        444.3,
+        564.3,
+        714.3
+      ],
+      "support": [
+        234.3,
+        174.3,
+        84.3,
+        -35.7,
+        -185.7
+      ],
+      "source_weekly": "stockdata_W/ITC.json",
+      "source_daily": "stockdata_D/ITC.json"
+    },
+    {
+      "symbol": "JINDALSTEL",
+      "weekly_close": 1166.2,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1167.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 29.079892,
+      "atr_pct": 2.4919,
+      "resistance": [
+        1196.2,
+        1256.2,
+        1346.2,
+        1466.2,
+        1616.2
+      ],
+      "support": [
+        1136.2,
+        1076.2,
+        986.2,
+        866.2,
+        716.2
+      ],
+      "source_weekly": "stockdata_W/JINDALSTEL.json",
+      "source_daily": "stockdata_D/JINDALSTEL.json"
+    },
+    {
+      "symbol": "JIOFIN",
+      "weekly_close": 240.1,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 240.25,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 4.638194,
+      "atr_pct": 1.9306,
+      "resistance": [
+        270.1,
+        330.1,
+        420.1,
+        540.1,
+        690.1
+      ],
+      "support": [
+        210.1,
+        150.1,
+        60.1,
+        -59.9,
+        -209.9
+      ],
+      "source_weekly": "stockdata_W/JIOFIN.json",
+      "source_daily": "stockdata_D/JIOFIN.json"
+    },
+    {
+      "symbol": "JSWENERGY",
+      "weekly_close": 537.45,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 537.45,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 12.324914,
+      "atr_pct": 2.2932,
+      "resistance": [
+        567.45,
+        627.45,
+        717.45,
+        837.45,
+        987.45
+      ],
+      "support": [
+        507.45,
+        447.45,
+        357.45,
+        237.45,
+        87.45
+      ],
+      "source_weekly": "stockdata_W/JSWENERGY.json",
+      "source_daily": "stockdata_D/JSWENERGY.json"
+    },
+    {
+      "symbol": "JSWSTEEL",
+      "weekly_close": 1328.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1327.7,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 24.928434,
+      "atr_pct": 1.8776,
+      "resistance": [
+        1358.8,
+        1418.8,
+        1508.8,
+        1628.8,
+        1778.8
+      ],
+      "support": [
+        1298.8,
+        1238.8,
+        1148.8,
+        1028.8,
+        878.8
+      ],
+      "source_weekly": "stockdata_W/JSWSTEEL.json",
+      "source_daily": "stockdata_D/JSWSTEEL.json"
+    },
+    {
+      "symbol": "JUBLFOOD",
+      "weekly_close": 482.45,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 482.15,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 13.279695,
+      "atr_pct": 2.7543,
+      "resistance": [
+        512.45,
+        572.45,
+        662.45,
+        782.45,
+        932.45
+      ],
+      "support": [
+        452.45,
+        392.45,
+        302.45,
+        182.45,
+        32.45
+      ],
+      "source_weekly": "stockdata_W/JUBLFOOD.json",
+      "source_daily": "stockdata_D/JUBLFOOD.json"
+    },
+    {
+      "symbol": "KALYANKJIL",
+      "weekly_close": 599.05,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 599.25,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 22.365467,
+      "atr_pct": 3.7322,
+      "resistance": [
+        629.05,
+        689.05,
+        779.05,
+        899.05,
+        1049.05
+      ],
+      "support": [
+        569.05,
+        509.05,
+        419.05,
+        299.05,
+        149.05
+      ],
+      "source_weekly": "stockdata_W/KALYANKJIL.json",
+      "source_daily": "stockdata_D/KALYANKJIL.json"
+    },
+    {
+      "symbol": "KAYNES",
+      "weekly_close": 3579.2,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 3579.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 147.568167,
+      "atr_pct": 4.1228,
+      "resistance": [
+        3609.2,
+        3669.2,
+        3759.2,
+        3879.2,
+        4029.2
+      ],
+      "support": [
+        3549.2,
+        3489.2,
+        3399.2,
+        3279.2,
+        3129.2
+      ],
+      "source_weekly": "stockdata_W/KAYNES.json",
+      "source_daily": "stockdata_D/KAYNES.json"
+    },
+    {
+      "symbol": "KEI",
+      "weekly_close": 4872.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 4880.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 219.9985,
+      "atr_pct": 4.5082,
+      "resistance": [
+        4902.0,
+        4962.0,
+        5052.0,
+        5172.0,
+        5322.0
+      ],
+      "support": [
+        4842.0,
+        4782.0,
+        4692.0,
+        4572.0,
+        4422.0
+      ],
+      "source_weekly": "stockdata_W/KEI.json",
+      "source_daily": "stockdata_D/KEI.json"
+    },
+    {
+      "symbol": "KFINTECH",
+      "weekly_close": 929.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 932.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 27.450705,
+      "atr_pct": 2.945,
+      "resistance": [
+        959.0,
+        1019.0,
+        1109.0,
+        1229.0,
+        1379.0
+      ],
+      "support": [
+        899.0,
+        839.0,
+        749.0,
+        629.0,
+        479.0
+      ],
+      "source_weekly": "stockdata_W/KFINTECH.json",
+      "source_daily": "stockdata_D/KFINTECH.json"
+    },
+    {
+      "symbol": "KOTAKBANK",
+      "weekly_close": 424.2,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 424.35,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 7.224715,
+      "atr_pct": 1.7025,
+      "resistance": [
+        454.2,
+        514.2,
+        604.2,
+        724.2,
+        874.2
+      ],
+      "support": [
+        394.2,
+        334.2,
+        244.2,
+        124.2,
+        -25.8
+      ],
+      "source_weekly": "stockdata_W/KOTAKBANK.json",
+      "source_daily": "stockdata_D/KOTAKBANK.json"
+    },
+    {
+      "symbol": "KPITTECH",
+      "weekly_close": 577.4,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 577.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 16.219633,
+      "atr_pct": 2.8096,
+      "resistance": [
+        607.4,
+        667.4,
+        757.4,
+        877.4,
+        1027.4
+      ],
+      "support": [
+        547.4,
+        487.4,
+        397.4,
+        277.4,
+        127.4
+      ],
+      "source_weekly": "stockdata_W/KPITTECH.json",
+      "source_daily": "stockdata_D/KPITTECH.json"
+    },
+    {
+      "symbol": "LAURUSLABS",
+      "weekly_close": 1843.1,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1843.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 45.71085,
+      "atr_pct": 2.4797,
+      "resistance": [
+        1873.1,
+        1933.1,
+        2023.1,
+        2143.1,
+        2293.1
+      ],
+      "support": [
+        1813.1,
+        1753.1,
+        1663.1,
+        1543.1,
+        1393.1
+      ],
+      "source_weekly": "stockdata_W/LAURUSLABS.json",
+      "source_daily": "stockdata_D/LAURUSLABS.json"
+    },
+    {
+      "symbol": "LICHSGFIN",
+      "weekly_close": 569.6,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 569.95,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 14.652718,
+      "atr_pct": 2.5709,
+      "resistance": [
+        599.6,
+        659.6,
+        749.6,
+        869.6,
+        1019.6
+      ],
+      "support": [
+        539.6,
+        479.6,
+        389.6,
+        269.6,
+        119.6
+      ],
+      "source_weekly": "stockdata_W/LICHSGFIN.json",
+      "source_daily": "stockdata_D/LICHSGFIN.json"
+    },
+    {
+      "symbol": "LICI",
+      "weekly_close": 416.35,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 416.2,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 8.583123,
+      "atr_pct": 2.0623,
+      "resistance": [
+        446.35,
+        506.35,
+        596.35,
+        716.35,
+        866.35
+      ],
+      "support": [
+        386.35,
+        326.35,
+        236.35,
+        116.35,
+        -33.65
+      ],
+      "source_weekly": "stockdata_W/LICI.json",
+      "source_daily": "stockdata_D/LICI.json"
+    },
+    {
+      "symbol": "LODHA",
+      "weekly_close": 1213.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1213.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 39.663618,
+      "atr_pct": 3.2685,
+      "resistance": [
+        1243.3,
+        1303.3,
+        1393.3,
+        1513.3,
+        1663.3
+      ],
+      "support": [
+        1183.3,
+        1123.3,
+        1033.3,
+        913.3,
+        763.3
+      ],
+      "source_weekly": "stockdata_W/LODHA.json",
+      "source_daily": "stockdata_D/LODHA.json"
+    },
+    {
+      "symbol": "LT",
+      "weekly_close": 3992.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 3993.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 51.595825,
+      "atr_pct": 1.2921,
+      "resistance": [
+        4022.0,
+        4082.0,
+        4172.0,
+        4292.0,
+        4442.0
+      ],
+      "support": [
+        3962.0,
+        3902.0,
+        3812.0,
+        3692.0,
+        3542.0
+      ],
+      "source_weekly": "stockdata_W/LT.json",
+      "source_daily": "stockdata_D/LT.json"
+    },
+    {
+      "symbol": "LTF",
+      "weekly_close": 314.6,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 314.25,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 9.04993,
+      "atr_pct": 2.8799,
+      "resistance": [
+        344.6,
+        404.6,
+        494.6,
+        614.6,
+        764.6
+      ],
+      "support": [
+        284.6,
+        224.6,
+        134.6,
+        14.6,
+        -135.4
+      ],
+      "source_weekly": "stockdata_W/LTF.json",
+      "source_daily": "stockdata_D/LTF.json"
+    },
+    {
+      "symbol": "LTM",
+      "weekly_close": 4562.2,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 4562.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 127.725567,
+      "atr_pct": 2.7997,
+      "resistance": [
+        4592.2,
+        4652.2,
+        4742.2,
+        4862.2,
+        5012.2
+      ],
+      "support": [
+        4532.2,
+        4472.2,
+        4382.2,
+        4262.2,
+        4112.2
+      ],
+      "source_weekly": "stockdata_W/LTM.json",
+      "source_daily": "stockdata_D/LTM.json"
+    },
+    {
+      "symbol": "LUPIN",
+      "weekly_close": 2110.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2109.2,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 40.022977,
+      "atr_pct": 1.8975,
+      "resistance": [
+        2140.0,
+        2200.0,
+        2290.0,
+        2410.0,
+        2560.0
+      ],
+      "support": [
+        2080.0,
+        2020.0,
+        1930.0,
+        1810.0,
+        1660.0
+      ],
+      "source_weekly": "stockdata_W/LUPIN.json",
+      "source_daily": "stockdata_D/LUPIN.json"
+    },
+    {
+      "symbol": "M&M",
+      "weekly_close": 3168.1,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 3174.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 69.768176,
+      "atr_pct": 2.1981,
+      "resistance": [
+        3198.1,
+        3258.1,
+        3348.1,
+        3468.1,
+        3618.1
+      ],
+      "support": [
+        3138.1,
+        3078.1,
+        2988.1,
+        2868.1,
+        2718.1
+      ],
+      "source_weekly": "stockdata_W/M&M.json",
+      "source_daily": "stockdata_D/M&M.json"
+    },
+    {
+      "symbol": "MANAPPURAM",
+      "weekly_close": 339.35,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 339.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 10.05792,
+      "atr_pct": 2.9661,
+      "resistance": [
+        369.35,
+        429.35,
+        519.35,
+        639.35,
+        789.35
+      ],
+      "support": [
+        309.35,
+        249.35,
+        159.35,
+        39.35,
+        -110.65
+      ],
+      "source_weekly": "stockdata_W/MANAPPURAM.json",
+      "source_daily": "stockdata_D/MANAPPURAM.json"
+    },
+    {
+      "symbol": "MANKIND",
+      "weekly_close": 2330.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2330.9,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 51.829781,
+      "atr_pct": 2.2236,
+      "resistance": [
+        2360.5,
+        2420.5,
+        2510.5,
+        2630.5,
+        2780.5
+      ],
+      "support": [
+        2300.5,
+        2240.5,
+        2150.5,
+        2030.5,
+        1880.5
+      ],
+      "source_weekly": "stockdata_W/MANKIND.json",
+      "source_daily": "stockdata_D/MANKIND.json"
+    },
+    {
+      "symbol": "MARICO",
+      "weekly_close": 818.55,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 818.55,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 14.794007,
+      "atr_pct": 1.8073,
+      "resistance": [
+        848.55,
+        908.55,
+        998.55,
+        1118.55,
+        1268.55
+      ],
+      "support": [
+        788.55,
+        728.55,
+        638.55,
+        518.55,
+        368.55
+      ],
+      "source_weekly": "stockdata_W/MARICO.json",
+      "source_daily": "stockdata_D/MARICO.json"
+    },
+    {
+      "symbol": "MARUTI",
+      "weekly_close": 12676.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 12685.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 253.29451,
+      "atr_pct": 1.9968,
+      "resistance": [
+        12706.0,
+        12766.0,
+        12856.0,
+        12976.0,
+        13126.0
+      ],
+      "support": [
+        12646.0,
+        12586.0,
+        12496.0,
+        12376.0,
+        12226.0
+      ],
+      "source_weekly": "stockdata_W/MARUTI.json",
+      "source_daily": "stockdata_D/MARUTI.json"
+    },
+    {
+      "symbol": "MAXHEALTH",
+      "weekly_close": 986.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 986.6,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 24.625256,
+      "atr_pct": 2.496,
+      "resistance": [
+        1016.8,
+        1076.8,
+        1166.8,
+        1286.8,
+        1436.8
+      ],
+      "support": [
+        956.8,
+        896.8,
+        806.8,
+        686.8,
+        536.8
+      ],
+      "source_weekly": "stockdata_W/MAXHEALTH.json",
+      "source_daily": "stockdata_D/MAXHEALTH.json"
+    },
+    {
+      "symbol": "MAZDOCK",
+      "weekly_close": 2498.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2498.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 60.455057,
+      "atr_pct": 2.42,
+      "resistance": [
+        2528.5,
+        2588.5,
+        2678.5,
+        2798.5,
+        2948.5
+      ],
+      "support": [
+        2468.5,
+        2408.5,
+        2318.5,
+        2198.5,
+        2048.5
+      ],
+      "source_weekly": "stockdata_W/MAZDOCK.json",
+      "source_daily": "stockdata_D/MAZDOCK.json"
+    },
+    {
+      "symbol": "MCX",
+      "weekly_close": 3197.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 3197.7,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 105.134302,
+      "atr_pct": 3.2878,
+      "resistance": [
+        3227.0,
+        3287.0,
+        3377.0,
+        3497.0,
+        3647.0
+      ],
+      "support": [
+        3167.0,
+        3107.0,
+        3017.0,
+        2897.0,
+        2747.0
+      ],
+      "source_weekly": "stockdata_W/MCX.json",
+      "source_daily": "stockdata_D/MCX.json"
+    },
+    {
+      "symbol": "MFSL",
+      "weekly_close": 1549.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1550.9,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 36.555105,
+      "atr_pct": 2.357,
+      "resistance": [
+        1579.8,
+        1639.8,
+        1729.8,
+        1849.8,
+        1999.8
+      ],
+      "support": [
+        1519.8,
+        1459.8,
+        1369.8,
+        1249.8,
+        1099.8
+      ],
+      "source_weekly": "stockdata_W/MFSL.json",
+      "source_daily": "stockdata_D/MFSL.json"
+    },
+    {
+      "symbol": "MOTHERSON",
+      "weekly_close": 160.66,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 160.62,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 4.078958,
+      "atr_pct": 2.5395,
+      "resistance": [
+        190.66,
+        250.66,
+        340.66,
+        460.66,
+        610.66
+      ],
+      "support": [
+        130.66,
+        70.66,
+        -19.34,
+        -139.34,
+        -289.34
+      ],
+      "source_weekly": "stockdata_W/MOTHERSON.json",
+      "source_daily": "stockdata_D/MOTHERSON.json"
+    },
+    {
+      "symbol": "MOTILALOFS",
+      "weekly_close": 1037.2,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1036.8,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 29.243124,
+      "atr_pct": 2.8205,
+      "resistance": [
+        1067.2,
+        1127.2,
+        1217.2,
+        1337.2,
+        1487.2
+      ],
+      "support": [
+        1007.2,
+        947.2,
+        857.2,
+        737.2,
+        587.2
+      ],
+      "source_weekly": "stockdata_W/MOTILALOFS.json",
+      "source_daily": "stockdata_D/MOTILALOFS.json"
+    },
+    {
+      "symbol": "MPHASIS",
+      "weekly_close": 2438.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2437.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 69.377661,
+      "atr_pct": 2.8464,
+      "resistance": [
+        2468.0,
+        2528.0,
+        2618.0,
+        2738.0,
+        2888.0
+      ],
+      "support": [
+        2408.0,
+        2348.0,
+        2258.0,
+        2138.0,
+        1988.0
+      ],
+      "source_weekly": "stockdata_W/MPHASIS.json",
+      "source_daily": "stockdata_D/MPHASIS.json"
+    },
+    {
+      "symbol": "MUTHOOTFIN",
+      "weekly_close": 2920.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2920.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 88.996675,
+      "atr_pct": 3.0473,
+      "resistance": [
+        2950.3,
+        3010.3,
+        3100.3,
+        3220.3,
+        3370.3
+      ],
+      "support": [
+        2890.3,
+        2830.3,
+        2740.3,
+        2620.3,
+        2470.3
+      ],
+      "source_weekly": "stockdata_W/MUTHOOTFIN.json",
+      "source_daily": "stockdata_D/MUTHOOTFIN.json"
+    },
+    {
+      "symbol": "NAM_INDIA",
+      "weekly_close": 1159.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1159.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 33.359787,
+      "atr_pct": 2.8773,
+      "resistance": [
+        1189.8,
+        1249.8,
+        1339.8,
+        1459.8,
+        1609.8
+      ],
+      "support": [
+        1129.8,
+        1069.8,
+        979.8,
+        859.8,
+        709.8
+      ],
+      "source_weekly": "stockdata_W/NAM_INDIA.json",
+      "source_daily": "stockdata_D/NAM_INDIA.json"
+    },
+    {
+      "symbol": "NATIONALUM",
+      "weekly_close": 375.1,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 375.2,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 11.017964,
+      "atr_pct": 2.9366,
+      "resistance": [
+        405.1,
+        465.1,
+        555.1,
+        675.1,
+        825.1
+      ],
+      "support": [
+        345.1,
+        285.1,
+        195.1,
+        75.1,
+        -74.9
+      ],
+      "source_weekly": "stockdata_W/NATIONALUM.json",
+      "source_daily": "stockdata_D/NATIONALUM.json"
+    },
+    {
+      "symbol": "NAUKRI",
+      "weekly_close": 1318.4,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1318.6,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 36.658352,
+      "atr_pct": 2.7801,
+      "resistance": [
+        1348.4,
+        1408.4,
+        1498.4,
+        1618.4,
+        1768.4
+      ],
+      "support": [
+        1288.4,
+        1228.4,
+        1138.4,
+        1018.4,
+        868.4
+      ],
+      "source_weekly": "stockdata_W/NAUKRI.json",
+      "source_daily": "stockdata_D/NAUKRI.json"
+    },
+    {
+      "symbol": "NBCC",
+      "weekly_close": 86.49,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 86.49,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 1.688288,
+      "atr_pct": 1.952,
+      "resistance": [
+        116.49,
+        176.49,
+        266.49,
+        386.49,
+        536.49
+      ],
+      "support": [
+        56.49,
+        -3.51,
+        -93.51,
+        -213.51,
+        -363.51
+      ],
+      "source_weekly": "stockdata_W/NBCC.json",
+      "source_daily": "stockdata_D/NBCC.json"
+    },
+    {
+      "symbol": "NESTLEIND",
+      "weekly_close": 1406.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1408.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 32.590711,
+      "atr_pct": 2.3142,
+      "resistance": [
+        1436.3,
+        1496.3,
+        1586.3,
+        1706.3,
+        1856.3
+      ],
+      "support": [
+        1376.3,
+        1316.3,
+        1226.3,
+        1106.3,
+        956.3
+      ],
+      "source_weekly": "stockdata_W/NESTLEIND.json",
+      "source_daily": "stockdata_D/NESTLEIND.json"
+    },
+    {
+      "symbol": "NHPC",
+      "weekly_close": 76.29,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 76.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 1.422211,
+      "atr_pct": 1.864,
+      "resistance": [
+        106.29,
+        166.29,
+        256.29,
+        376.29,
+        526.29
+      ],
+      "support": [
+        46.29,
+        -13.71,
+        -103.71,
+        -223.71,
+        -373.71
+      ],
+      "source_weekly": "stockdata_W/NHPC.json",
+      "source_daily": "stockdata_D/NHPC.json"
+    },
+    {
+      "symbol": "NIFTY",
+      "weekly_close": 23945.75,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 23949.55,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 172.37866,
+      "atr_pct": 0.7198,
+      "resistance": [
+        23975.75,
+        24035.75,
+        24125.75,
+        24245.75,
+        24395.75
+      ],
+      "support": [
+        23915.75,
+        23855.75,
+        23765.75,
+        23645.75,
+        23495.75
+      ],
+      "source_weekly": "stockdata_W/NIFTY.json",
+      "source_daily": "stockdata_D/NIFTY.json"
+    },
+    {
+      "symbol": "NIFTYJR",
+      "weekly_close": 73004.4,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 72997.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 633.914238,
+      "atr_pct": 0.8684,
+      "resistance": [
+        73034.4,
+        73094.4,
+        73184.4,
+        73304.4,
+        73454.4
+      ],
+      "support": [
+        72974.4,
+        72914.4,
+        72824.4,
+        72704.4,
+        72554.4
+      ],
+      "source_weekly": "stockdata_W/NIFTYJR.json",
+      "source_daily": "stockdata_D/NIFTYJR.json"
+    },
+    {
+      "symbol": "NMDC",
+      "weekly_close": 84.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 84.72,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 2.123912,
+      "atr_pct": 2.507,
+      "resistance": [
+        114.8,
+        174.8,
+        264.8,
+        384.8,
+        534.8
+      ],
+      "support": [
+        54.8,
+        -5.2,
+        -95.2,
+        -215.2,
+        -365.2
+      ],
+      "source_weekly": "stockdata_W/NMDC.json",
+      "source_daily": "stockdata_D/NMDC.json"
+    },
+    {
+      "symbol": "NTPC",
+      "weekly_close": 332.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 331.8,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 5.682639,
+      "atr_pct": 1.7127,
+      "resistance": [
+        362.3,
+        422.3,
+        512.3,
+        632.3,
+        782.3
+      ],
+      "support": [
+        302.3,
+        242.3,
+        152.3,
+        32.3,
+        -117.7
+      ],
+      "source_weekly": "stockdata_W/NTPC.json",
+      "source_daily": "stockdata_D/NTPC.json"
+    },
+    {
+      "symbol": "NUVAMA",
+      "weekly_close": 1826.2,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1827.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 64.501837,
+      "atr_pct": 3.5303,
+      "resistance": [
+        1856.2,
+        1916.2,
+        2006.2,
+        2126.2,
+        2276.2
+      ],
+      "support": [
+        1796.2,
+        1736.2,
+        1646.2,
+        1526.2,
+        1376.2
+      ],
+      "source_weekly": "stockdata_W/NUVAMA.json",
+      "source_daily": "stockdata_D/NUVAMA.json"
+    },
+    {
+      "symbol": "NYKAA",
+      "weekly_close": 333.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 333.75,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 7.828642,
+      "atr_pct": 2.3457,
+      "resistance": [
+        363.8,
+        423.8,
+        513.8,
+        633.8,
+        783.8
+      ],
+      "support": [
+        303.8,
+        243.8,
+        153.8,
+        33.8,
+        -116.2
+      ],
+      "source_weekly": "stockdata_W/NYKAA.json",
+      "source_daily": "stockdata_D/NYKAA.json"
+    },
+    {
+      "symbol": "OBEROIRLTY",
+      "weekly_close": 1886.2,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1888.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 44.283625,
+      "atr_pct": 2.3449,
+      "resistance": [
+        1916.2,
+        1976.2,
+        2066.2,
+        2186.2,
+        2336.2
+      ],
+      "support": [
+        1856.2,
+        1796.2,
+        1706.2,
+        1586.2,
+        1436.2
+      ],
+      "source_weekly": "stockdata_W/OBEROIRLTY.json",
+      "source_daily": "stockdata_D/OBEROIRLTY.json"
+    },
+    {
+      "symbol": "OFSS",
+      "weekly_close": 12058.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 12060.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 340.147984,
+      "atr_pct": 2.8205,
+      "resistance": [
+        12088.0,
+        12148.0,
+        12238.0,
+        12358.0,
+        12508.0
+      ],
+      "support": [
+        12028.0,
+        11968.0,
+        11878.0,
+        11758.0,
+        11608.0
+      ],
+      "source_weekly": "stockdata_W/OFSS.json",
+      "source_daily": "stockdata_D/OFSS.json"
+    },
+    {
+      "symbol": "OIL",
+      "weekly_close": 488.45,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 488.35,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 12.212746,
+      "atr_pct": 2.5008,
+      "resistance": [
+        518.45,
+        578.45,
+        668.45,
+        788.45,
+        938.45
+      ],
+      "support": [
+        458.45,
+        398.45,
+        308.45,
+        188.45,
+        38.45
+      ],
+      "source_weekly": "stockdata_W/OIL.json",
+      "source_daily": "stockdata_D/OIL.json"
+    },
+    {
+      "symbol": "ONGC",
+      "weekly_close": 234.66,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 234.61,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 3.441028,
+      "atr_pct": 1.4667,
+      "resistance": [
+        264.66,
+        324.66,
+        414.66,
+        534.66,
+        684.66
+      ],
+      "support": [
+        204.66,
+        144.66,
+        54.66,
+        -65.34,
+        -215.34
+      ],
+      "source_weekly": "stockdata_W/ONGC.json",
+      "source_daily": "stockdata_D/ONGC.json"
+    },
+    {
+      "symbol": "PAGEIND",
+      "weekly_close": 36160.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 36095.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 774.398018,
+      "atr_pct": 2.1454,
+      "resistance": [
+        36190.0,
+        36250.0,
+        36340.0,
+        36460.0,
+        36610.0
+      ],
+      "support": [
+        36130.0,
+        36070.0,
+        35980.0,
+        35860.0,
+        35710.0
+      ],
+      "source_weekly": "stockdata_W/PAGEIND.json",
+      "source_daily": "stockdata_D/PAGEIND.json"
+    },
+    {
+      "symbol": "PATANJALI",
+      "weekly_close": 341.75,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 341.8,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 6.699272,
+      "atr_pct": 1.96,
+      "resistance": [
+        371.75,
+        431.75,
+        521.75,
+        641.75,
+        791.75
+      ],
+      "support": [
+        311.75,
+        251.75,
+        161.75,
+        41.75,
+        -108.25
+      ],
+      "source_weekly": "stockdata_W/PATANJALI.json",
+      "source_daily": "stockdata_D/PATANJALI.json"
+    },
+    {
+      "symbol": "PAYTM",
+      "weekly_close": 1667.1,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1666.7,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 57.369418,
+      "atr_pct": 3.4421,
+      "resistance": [
+        1697.1,
+        1757.1,
+        1847.1,
+        1967.1,
+        2117.1
+      ],
+      "support": [
+        1637.1,
+        1577.1,
+        1487.1,
+        1367.1,
+        1217.1
+      ],
+      "source_weekly": "stockdata_W/PAYTM.json",
+      "source_daily": "stockdata_D/PAYTM.json"
+    },
+    {
+      "symbol": "PERSISTENT",
+      "weekly_close": 5662.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 5661.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 160.734027,
+      "atr_pct": 2.8393,
+      "resistance": [
+        5692.0,
+        5752.0,
+        5842.0,
+        5962.0,
+        6112.0
+      ],
+      "support": [
+        5632.0,
+        5572.0,
+        5482.0,
+        5362.0,
+        5212.0
+      ],
+      "source_weekly": "stockdata_W/PERSISTENT.json",
+      "source_daily": "stockdata_D/PERSISTENT.json"
+    },
+    {
+      "symbol": "PETRONET",
+      "weekly_close": 289.7,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 289.7,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 5.86475,
+      "atr_pct": 2.0244,
+      "resistance": [
+        319.7,
+        379.7,
+        469.7,
+        589.7,
+        739.7
+      ],
+      "support": [
+        259.7,
+        199.7,
+        109.7,
+        -10.3,
+        -160.3
+      ],
+      "source_weekly": "stockdata_W/PETRONET.json",
+      "source_daily": "stockdata_D/PETRONET.json"
+    },
+    {
+      "symbol": "PFC",
+      "weekly_close": 356.15,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 356.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 8.873963,
+      "atr_pct": 2.492,
+      "resistance": [
+        386.15,
+        446.15,
+        536.15,
+        656.15,
+        806.15
+      ],
+      "support": [
+        326.15,
+        266.15,
+        176.15,
+        56.15,
+        -93.85
+      ],
+      "source_weekly": "stockdata_W/PFC.json",
+      "source_daily": "stockdata_D/PFC.json"
+    },
+    {
+      "symbol": "PGEL",
+      "weekly_close": 562.85,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 563.15,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 15.813614,
+      "atr_pct": 2.8081,
+      "resistance": [
+        592.85,
+        652.85,
+        742.85,
+        862.85,
+        1012.85
+      ],
+      "support": [
+        532.85,
+        472.85,
+        382.85,
+        262.85,
+        112.85
+      ],
+      "source_weekly": "stockdata_W/PGEL.json",
+      "source_daily": "stockdata_D/PGEL.json"
+    },
+    {
+      "symbol": "PHOENIXLTD",
+      "weekly_close": 1942.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1941.7,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 40.295425,
+      "atr_pct": 2.0753,
+      "resistance": [
+        1972.5,
+        2032.5,
+        2122.5,
+        2242.5,
+        2392.5
+      ],
+      "support": [
+        1912.5,
+        1852.5,
+        1762.5,
+        1642.5,
+        1492.5
+      ],
+      "source_weekly": "stockdata_W/PHOENIXLTD.json",
+      "source_daily": "stockdata_D/PHOENIXLTD.json"
+    },
+    {
+      "symbol": "PIDILITIND",
+      "weekly_close": 1631.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1631.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 30.070439,
+      "atr_pct": 1.8436,
+      "resistance": [
+        1661.5,
+        1721.5,
+        1811.5,
+        1931.5,
+        2081.5
+      ],
+      "support": [
+        1601.5,
+        1541.5,
+        1451.5,
+        1331.5,
+        1181.5
+      ],
+      "source_weekly": "stockdata_W/PIDILITIND.json",
+      "source_daily": "stockdata_D/PIDILITIND.json"
+    },
+    {
+      "symbol": "PIIND",
+      "weekly_close": 2473.9,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2472.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 58.510324,
+      "atr_pct": 2.3668,
+      "resistance": [
+        2503.9,
+        2563.9,
+        2653.9,
+        2773.9,
+        2923.9
+      ],
+      "support": [
+        2443.9,
+        2383.9,
+        2293.9,
+        2173.9,
+        2023.9
+      ],
+      "source_weekly": "stockdata_W/PIIND.json",
+      "source_daily": "stockdata_D/PIIND.json"
+    },
+    {
+      "symbol": "PNB",
+      "weekly_close": 117.29,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 117.22,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 2.137109,
+      "atr_pct": 1.8232,
+      "resistance": [
+        147.29,
+        207.29,
+        297.29,
+        417.29,
+        567.29
+      ],
+      "support": [
+        87.29,
+        27.29,
+        -62.71,
+        -182.71,
+        -332.71
+      ],
+      "source_weekly": "stockdata_W/PNB.json",
+      "source_daily": "stockdata_D/PNB.json"
+    },
+    {
+      "symbol": "PNBHOUSING",
+      "weekly_close": 1167.4,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1164.6,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 29.898703,
+      "atr_pct": 2.5673,
+      "resistance": [
+        1197.4,
+        1257.4,
+        1347.4,
+        1467.4,
+        1617.4
+      ],
+      "support": [
+        1137.4,
+        1077.4,
+        987.4,
+        867.4,
+        717.4
+      ],
+      "source_weekly": "stockdata_W/PNBHOUSING.json",
+      "source_daily": "stockdata_D/PNBHOUSING.json"
+    },
+    {
+      "symbol": "POLICYBZR",
+      "weekly_close": 1836.9,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1836.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 48.570175,
+      "atr_pct": 2.645,
+      "resistance": [
+        1866.9,
+        1926.9,
+        2016.9,
+        2136.9,
+        2286.9
+      ],
+      "support": [
+        1806.9,
+        1746.9,
+        1656.9,
+        1536.9,
+        1386.9
+      ],
+      "source_weekly": "stockdata_W/POLICYBZR.json",
+      "source_daily": "stockdata_D/POLICYBZR.json"
+    },
+    {
+      "symbol": "POLYCAB",
+      "weekly_close": 8291.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 8300.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 259.346941,
+      "atr_pct": 3.1247,
+      "resistance": [
+        8321.0,
+        8381.0,
+        8471.0,
+        8591.0,
+        8741.0
+      ],
+      "support": [
+        8261.0,
+        8201.0,
+        8111.0,
+        7991.0,
+        7841.0
+      ],
+      "source_weekly": "stockdata_W/POLYCAB.json",
+      "source_daily": "stockdata_D/POLYCAB.json"
+    },
+    {
+      "symbol": "POWERGRID",
+      "weekly_close": 265.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 265.8,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 4.435846,
+      "atr_pct": 1.6689,
+      "resistance": [
+        295.8,
+        355.8,
+        445.8,
+        565.8,
+        715.8
+      ],
+      "support": [
+        235.8,
+        175.8,
+        85.8,
+        -34.2,
+        -184.2
+      ],
+      "source_weekly": "stockdata_W/POWERGRID.json",
+      "source_daily": "stockdata_D/POWERGRID.json"
+    },
+    {
+      "symbol": "POWERINDIA",
+      "weekly_close": 31620.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 31620.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 994.550413,
+      "atr_pct": 3.1453,
+      "resistance": [
+        31650.0,
+        31710.0,
+        31800.0,
+        31920.0,
+        32070.0
+      ],
+      "support": [
+        31590.0,
+        31530.0,
+        31440.0,
+        31320.0,
+        31170.0
+      ],
+      "source_weekly": "stockdata_W/POWERINDIA.json",
+      "source_daily": "stockdata_D/POWERINDIA.json"
+    },
+    {
+      "symbol": "PREMIERENE",
+      "weekly_close": 998.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 998.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 27.798985,
+      "atr_pct": 2.7855,
+      "resistance": [
+        1028.0,
+        1088.0,
+        1178.0,
+        1298.0,
+        1448.0
+      ],
+      "support": [
+        968.0,
+        908.0,
+        818.0,
+        698.0,
+        548.0
+      ],
+      "source_weekly": "stockdata_W/PREMIERENE.json",
+      "source_daily": "stockdata_D/PREMIERENE.json"
+    },
+    {
+      "symbol": "PRESTIGE",
+      "weekly_close": 1584.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1583.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 54.877905,
+      "atr_pct": 3.4656,
+      "resistance": [
+        1614.0,
+        1674.0,
+        1764.0,
+        1884.0,
+        2034.0
+      ],
+      "support": [
+        1554.0,
+        1494.0,
+        1404.0,
+        1284.0,
+        1134.0
+      ],
+      "source_weekly": "stockdata_W/PRESTIGE.json",
+      "source_daily": "stockdata_D/PRESTIGE.json"
+    },
+    {
+      "symbol": "RADICO",
+      "weekly_close": 4480.9,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 4482.2,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 100.811002,
+      "atr_pct": 2.2491,
+      "resistance": [
+        4510.9,
+        4570.9,
+        4660.9,
+        4780.9,
+        4930.9
+      ],
+      "support": [
+        4450.9,
+        4390.9,
+        4300.9,
+        4180.9,
+        4030.9
+      ],
+      "source_weekly": "stockdata_W/RADICO.json",
+      "source_daily": "stockdata_D/RADICO.json"
+    },
+    {
+      "symbol": "RBLBANK",
+      "weekly_close": 416.55,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 416.6,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 9.410047,
+      "atr_pct": 2.2588,
+      "resistance": [
+        446.55,
+        506.55,
+        596.55,
+        716.55,
+        866.55
+      ],
+      "support": [
+        386.55,
+        326.55,
+        236.55,
+        116.55,
+        -33.45
+      ],
+      "source_weekly": "stockdata_W/RBLBANK.json",
+      "source_daily": "stockdata_D/RBLBANK.json"
+    },
+    {
+      "symbol": "RECLTD",
+      "weekly_close": 319.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 319.15,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 7.905573,
+      "atr_pct": 2.4771,
+      "resistance": [
+        349.0,
+        409.0,
+        499.0,
+        619.0,
+        769.0
+      ],
+      "support": [
+        289.0,
+        229.0,
+        139.0,
+        19.0,
+        -131.0
+      ],
+      "source_weekly": "stockdata_W/RECLTD.json",
+      "source_daily": "stockdata_D/RECLTD.json"
+    },
+    {
+      "symbol": "RELIANCE",
+      "weekly_close": 1327.9,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1327.8,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 21.831434,
+      "atr_pct": 1.6442,
+      "resistance": [
+        1357.9,
+        1417.9,
+        1507.9,
+        1627.9,
+        1777.9
+      ],
+      "support": [
+        1297.9,
+        1237.9,
+        1147.9,
+        1027.9,
+        877.9
+      ],
+      "source_weekly": "stockdata_W/RELIANCE.json",
+      "source_daily": "stockdata_D/RELIANCE.json"
+    },
+    {
+      "symbol": "RVNL",
+      "weekly_close": 211.28,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 211.28,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 5.109569,
+      "atr_pct": 2.4184,
+      "resistance": [
+        241.28,
+        301.28,
+        391.28,
+        511.28,
+        661.28
+      ],
+      "support": [
+        181.28,
+        121.28,
+        31.28,
+        -88.72,
+        -238.72
+      ],
+      "source_weekly": "stockdata_W/RVNL.json",
+      "source_daily": "stockdata_D/RVNL.json"
+    },
+    {
+      "symbol": "SAIL",
+      "weekly_close": 198.99,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 198.97,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 7.06232,
+      "atr_pct": 3.5494,
+      "resistance": [
+        228.99,
+        288.99,
+        378.99,
+        498.99,
+        648.99
+      ],
+      "support": [
+        168.99,
+        108.99,
+        18.99,
+        -101.01,
+        -251.01
+      ],
+      "source_weekly": "stockdata_W/SAIL.json",
+      "source_daily": "stockdata_D/SAIL.json"
+    },
+    {
+      "symbol": "SBICARD",
+      "weekly_close": 656.65,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 656.85,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 19.977091,
+      "atr_pct": 3.0413,
+      "resistance": [
+        686.65,
+        746.65,
+        836.65,
+        956.65,
+        1106.65
+      ],
+      "support": [
+        626.65,
+        566.65,
+        476.65,
+        356.65,
+        206.65
+      ],
+      "source_weekly": "stockdata_W/SBICARD.json",
+      "source_daily": "stockdata_D/SBICARD.json"
+    },
+    {
+      "symbol": "SBILIFE",
+      "weekly_close": 1762.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1762.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 33.825488,
+      "atr_pct": 1.9193,
+      "resistance": [
+        1792.8,
+        1852.8,
+        1942.8,
+        2062.8,
+        2212.8
+      ],
+      "support": [
+        1732.8,
+        1672.8,
+        1582.8,
+        1462.8,
+        1312.8
+      ],
+      "source_weekly": "stockdata_W/SBILIFE.json",
+      "source_daily": "stockdata_D/SBILIFE.json"
+    },
+    {
+      "symbol": "SBIN",
+      "weekly_close": 1018.9,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1018.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 17.521619,
+      "atr_pct": 1.7203,
+      "resistance": [
+        1048.9,
+        1108.9,
+        1198.9,
+        1318.9,
+        1468.9
+      ],
+      "support": [
+        988.9,
+        928.9,
+        838.9,
+        718.9,
+        568.9
+      ],
+      "source_weekly": "stockdata_W/SBIN.json",
+      "source_daily": "stockdata_D/SBIN.json"
+    },
+    {
+      "symbol": "SHREECEM",
+      "weekly_close": 23980.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 23985.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 549.827084,
+      "atr_pct": 2.2924,
+      "resistance": [
+        24010.0,
+        24070.0,
+        24160.0,
+        24280.0,
+        24430.0
+      ],
+      "support": [
+        23950.0,
+        23890.0,
+        23800.0,
+        23680.0,
+        23530.0
+      ],
+      "source_weekly": "stockdata_W/SHREECEM.json",
+      "source_daily": "stockdata_D/SHREECEM.json"
+    },
+    {
+      "symbol": "SHRIRAMFIN",
+      "weekly_close": 1039.2,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1039.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 30.243356,
+      "atr_pct": 2.9108,
+      "resistance": [
+        1069.2,
+        1129.2,
+        1219.2,
+        1339.2,
+        1489.2
+      ],
+      "support": [
+        1009.2,
+        949.2,
+        859.2,
+        739.2,
+        589.2
+      ],
+      "source_weekly": "stockdata_W/SHRIRAMFIN.json",
+      "source_daily": "stockdata_D/SHRIRAMFIN.json"
+    },
+    {
+      "symbol": "SIEMENS",
+      "weekly_close": 4000.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 4000.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 92.167905,
+      "atr_pct": 2.3042,
+      "resistance": [
+        4030.0,
+        4090.0,
+        4180.0,
+        4300.0,
+        4450.0
+      ],
+      "support": [
+        3970.0,
+        3910.0,
+        3820.0,
+        3700.0,
+        3550.0
+      ],
+      "source_weekly": "stockdata_W/SIEMENS.json",
+      "source_daily": "stockdata_D/SIEMENS.json"
+    },
+    {
+      "symbol": "SOLARINDS",
+      "weekly_close": 21445.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 21440.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 553.065223,
+      "atr_pct": 2.5796,
+      "resistance": [
+        21475.0,
+        21535.0,
+        21625.0,
+        21745.0,
+        21895.0
+      ],
+      "support": [
+        21415.0,
+        21355.0,
+        21265.0,
+        21145.0,
+        20995.0
+      ],
+      "source_weekly": "stockdata_W/SOLARINDS.json",
+      "source_daily": "stockdata_D/SOLARINDS.json"
+    },
+    {
+      "symbol": "SONACOMS",
+      "weekly_close": 784.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 785.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 22.187695,
+      "atr_pct": 2.8265,
+      "resistance": [
+        814.8,
+        874.8,
+        964.8,
+        1084.8,
+        1234.8
+      ],
+      "support": [
+        754.8,
+        694.8,
+        604.8,
+        484.8,
+        334.8
+      ],
+      "source_weekly": "stockdata_W/SONACOMS.json",
+      "source_daily": "stockdata_D/SONACOMS.json"
+    },
+    {
+      "symbol": "SRF",
+      "weekly_close": 2557.2,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2554.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 48.869735,
+      "atr_pct": 1.9132,
+      "resistance": [
+        2587.2,
+        2647.2,
+        2737.2,
+        2857.2,
+        3007.2
+      ],
+      "support": [
+        2527.2,
+        2467.2,
+        2377.2,
+        2257.2,
+        2107.2
+      ],
+      "source_weekly": "stockdata_W/SRF.json",
+      "source_daily": "stockdata_D/SRF.json"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "weekly_close": 1899.2,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1899.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 34.912255,
+      "atr_pct": 1.8381,
+      "resistance": [
+        1929.2,
+        1989.2,
+        2079.2,
+        2199.2,
+        2349.2
+      ],
+      "support": [
+        1869.2,
+        1809.2,
+        1719.2,
+        1599.2,
+        1449.2
+      ],
+      "source_weekly": "stockdata_W/SUNPHARMA.json",
+      "source_daily": "stockdata_D/SUNPHARMA.json"
+    },
+    {
+      "symbol": "SUPREMEIND",
+      "weekly_close": 3484.5,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 3487.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 84.831539,
+      "atr_pct": 2.4325,
+      "resistance": [
+        3514.5,
+        3574.5,
+        3664.5,
+        3784.5,
+        3934.5
+      ],
+      "support": [
+        3454.5,
+        3394.5,
+        3304.5,
+        3184.5,
+        3034.5
+      ],
+      "source_weekly": "stockdata_W/SUPREMEIND.json",
+      "source_daily": "stockdata_D/SUPREMEIND.json"
+    },
+    {
+      "symbol": "SUZLON",
+      "weekly_close": 45.27,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 45.25,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 1.078375,
+      "atr_pct": 2.3831,
+      "resistance": [
+        75.27,
+        135.27,
+        225.27,
+        345.27,
+        495.27
+      ],
+      "support": [
+        15.27,
+        -44.73,
+        -134.73,
+        -254.73,
+        -404.73
+      ],
+      "source_weekly": "stockdata_W/SUZLON.json",
+      "source_daily": "stockdata_D/SUZLON.json"
+    },
+    {
+      "symbol": "SWIGGY",
+      "weekly_close": 277.9,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 277.85,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 9.119585,
+      "atr_pct": 3.2822,
+      "resistance": [
+        307.9,
+        367.9,
+        457.9,
+        577.9,
+        727.9
+      ],
+      "support": [
+        247.9,
+        187.9,
+        97.9,
+        -22.1,
+        -172.1
+      ],
+      "source_weekly": "stockdata_W/SWIGGY.json",
+      "source_daily": "stockdata_D/SWIGGY.json"
+    },
+    {
+      "symbol": "TATACONSUM",
+      "weekly_close": 1011.2,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1011.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 18.217495,
+      "atr_pct": 1.801,
+      "resistance": [
+        1041.2,
+        1101.2,
+        1191.2,
+        1311.2,
+        1461.2
+      ],
+      "support": [
+        981.2,
+        921.2,
+        831.2,
+        711.2,
+        561.2
+      ],
+      "source_weekly": "stockdata_W/TATACONSUM.json",
+      "source_daily": "stockdata_D/TATACONSUM.json"
+    },
+    {
+      "symbol": "TATAELXSI",
+      "weekly_close": 3536.7,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 3537.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 90.313554,
+      "atr_pct": 2.5533,
+      "resistance": [
+        3566.7,
+        3626.7,
+        3716.7,
+        3836.7,
+        3986.7
+      ],
+      "support": [
+        3506.7,
+        3446.7,
+        3356.7,
+        3236.7,
+        3086.7
+      ],
+      "source_weekly": "stockdata_W/TATAELXSI.json",
+      "source_daily": "stockdata_D/TATAELXSI.json"
+    },
+    {
+      "symbol": "TATAPOWER",
+      "weekly_close": 368.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 368.15,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 7.326096,
+      "atr_pct": 1.99,
+      "resistance": [
+        398.3,
+        458.3,
+        548.3,
+        668.3,
+        818.3
+      ],
+      "support": [
+        338.3,
+        278.3,
+        188.3,
+        68.3,
+        -81.7
+      ],
+      "source_weekly": "stockdata_W/TATAPOWER.json",
+      "source_daily": "stockdata_D/TATAPOWER.json"
+    },
+    {
+      "symbol": "TATASTEEL",
+      "weekly_close": 189.06,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 188.99,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 4.509987,
+      "atr_pct": 2.3864,
+      "resistance": [
+        219.06,
+        279.06,
+        369.06,
+        489.06,
+        639.06
+      ],
+      "support": [
+        159.06,
+        99.06,
+        9.06,
+        -110.94,
+        -260.94
+      ],
+      "source_weekly": "stockdata_W/TATASTEEL.json",
+      "source_daily": "stockdata_D/TATASTEEL.json"
+    },
+    {
+      "symbol": "TCS",
+      "weekly_close": 2308.7,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2309.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 59.79025,
+      "atr_pct": 2.5893,
+      "resistance": [
+        2338.7,
+        2398.7,
+        2488.7,
+        2608.7,
+        2758.7
+      ],
+      "support": [
+        2278.7,
+        2218.7,
+        2128.7,
+        2008.7,
+        1858.7
+      ],
+      "source_weekly": "stockdata_W/TCS.json",
+      "source_daily": "stockdata_D/TCS.json"
+    },
+    {
+      "symbol": "TECHM",
+      "weekly_close": 1588.6,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1588.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 35.729313,
+      "atr_pct": 2.2495,
+      "resistance": [
+        1618.6,
+        1678.6,
+        1768.6,
+        1888.6,
+        2038.6
+      ],
+      "support": [
+        1558.6,
+        1498.6,
+        1408.6,
+        1288.6,
+        1138.6
+      ],
+      "source_weekly": "stockdata_W/TECHM.json",
+      "source_daily": "stockdata_D/TECHM.json"
+    },
+    {
+      "symbol": "TIINDIA",
+      "weekly_close": 2695.6,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2695.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 72.216502,
+      "atr_pct": 2.6796,
+      "resistance": [
+        2725.6,
+        2785.6,
+        2875.6,
+        2995.6,
+        3145.6
+      ],
+      "support": [
+        2665.6,
+        2605.6,
+        2515.6,
+        2395.6,
+        2245.6
+      ],
+      "source_weekly": "stockdata_W/TIINDIA.json",
+      "source_daily": "stockdata_D/TIINDIA.json"
+    },
+    {
+      "symbol": "TITAN",
+      "weekly_close": 4993.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 4993.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 83.478678,
+      "atr_pct": 1.6717,
+      "resistance": [
+        5023.0,
+        5083.0,
+        5173.0,
+        5293.0,
+        5443.0
+      ],
+      "support": [
+        4963.0,
+        4903.0,
+        4813.0,
+        4693.0,
+        4543.0
+      ],
+      "source_weekly": "stockdata_W/TITAN.json",
+      "source_daily": "stockdata_D/TITAN.json"
+    },
+    {
+      "symbol": "TMPV",
+      "weekly_close": 312.4,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 312.35,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 6.859674,
+      "atr_pct": 2.1961,
+      "resistance": [
+        342.4,
+        402.4,
+        492.4,
+        612.4,
+        762.4
+      ],
+      "support": [
+        282.4,
+        222.4,
+        132.4,
+        12.4,
+        -137.6
+      ],
+      "source_weekly": "stockdata_W/TMPV.json",
+      "source_daily": "stockdata_D/TMPV.json"
+    },
+    {
+      "symbol": "TORNTPHARM",
+      "weekly_close": 4841.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 4839.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 112.478016,
+      "atr_pct": 2.3242,
+      "resistance": [
+        4871.0,
+        4931.0,
+        5021.0,
+        5141.0,
+        5291.0
+      ],
+      "support": [
+        4811.0,
+        4751.0,
+        4661.0,
+        4541.0,
+        4391.0
+      ],
+      "source_weekly": "stockdata_W/TORNTPHARM.json",
+      "source_daily": "stockdata_D/TORNTPHARM.json"
+    },
+    {
+      "symbol": "TRENT",
+      "weekly_close": 2854.2,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2853.4,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 56.127096,
+      "atr_pct": 1.967,
+      "resistance": [
+        2884.2,
+        2944.2,
+        3034.2,
+        3154.2,
+        3304.2
+      ],
+      "support": [
+        2824.2,
+        2764.2,
+        2674.2,
+        2554.2,
+        2404.2
+      ],
+      "source_weekly": "stockdata_W/TRENT.json",
+      "source_daily": "stockdata_D/TRENT.json"
+    },
+    {
+      "symbol": "TVSMOTOR",
+      "weekly_close": 4157.9,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 4157.8,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 108.272096,
+      "atr_pct": 2.6041,
+      "resistance": [
+        4187.9,
+        4247.9,
+        4337.9,
+        4457.9,
+        4607.9
+      ],
+      "support": [
+        4127.9,
+        4067.9,
+        3977.9,
+        3857.9,
+        3707.9
+      ],
+      "source_weekly": "stockdata_W/TVSMOTOR.json",
+      "source_daily": "stockdata_D/TVSMOTOR.json"
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "weekly_close": 11371.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 11378.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 183.161403,
+      "atr_pct": 1.6098,
+      "resistance": [
+        11401.0,
+        11461.0,
+        11551.0,
+        11671.0,
+        11821.0
+      ],
+      "support": [
+        11341.0,
+        11281.0,
+        11191.0,
+        11071.0,
+        10921.0
+      ],
+      "source_weekly": "stockdata_W/ULTRACEMCO.json",
+      "source_daily": "stockdata_D/ULTRACEMCO.json"
+    },
+    {
+      "symbol": "UNIONBANK",
+      "weekly_close": 188.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 188.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 4.431301,
+      "atr_pct": 2.3558,
+      "resistance": [
+        218.0,
+        278.0,
+        368.0,
+        488.0,
+        638.0
+      ],
+      "support": [
+        158.0,
+        98.0,
+        8.0,
+        -112.0,
+        -262.0
+      ],
+      "source_weekly": "stockdata_W/UNIONBANK.json",
+      "source_daily": "stockdata_D/UNIONBANK.json"
+    },
+    {
+      "symbol": "UNITDSPR",
+      "weekly_close": 1472.7,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1471.1,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 30.503867,
+      "atr_pct": 2.0735,
+      "resistance": [
+        1502.7,
+        1562.7,
+        1652.7,
+        1772.7,
+        1922.7
+      ],
+      "support": [
+        1442.7,
+        1382.7,
+        1292.7,
+        1172.7,
+        1022.7
+      ],
+      "source_weekly": "stockdata_W/UNITDSPR.json",
+      "source_daily": "stockdata_D/UNITDSPR.json"
+    },
+    {
+      "symbol": "UNOMINDA",
+      "weekly_close": 1242.3,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1241.9,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 30.281952,
+      "atr_pct": 2.4384,
+      "resistance": [
+        1272.3,
+        1332.3,
+        1422.3,
+        1542.3,
+        1692.3
+      ],
+      "support": [
+        1212.3,
+        1152.3,
+        1062.3,
+        942.3,
+        792.3
+      ],
+      "source_weekly": "stockdata_W/UNOMINDA.json",
+      "source_daily": "stockdata_D/UNOMINDA.json"
+    },
+    {
+      "symbol": "UPL",
+      "weekly_close": 586.2,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 586.0,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 11.129838,
+      "atr_pct": 1.8993,
+      "resistance": [
+        616.2,
+        676.2,
+        766.2,
+        886.2,
+        1036.2
+      ],
+      "support": [
+        556.2,
+        496.2,
+        406.2,
+        286.2,
+        136.2
+      ],
+      "source_weekly": "stockdata_W/UPL.json",
+      "source_daily": "stockdata_D/UPL.json"
+    },
+    {
+      "symbol": "VBL",
+      "weekly_close": 407.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 406.9,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 11.180395,
+      "atr_pct": 2.7477,
+      "resistance": [
+        437.0,
+        497.0,
+        587.0,
+        707.0,
+        857.0
+      ],
+      "support": [
+        377.0,
+        317.0,
+        227.0,
+        107.0,
+        -43.0
+      ],
+      "source_weekly": "stockdata_W/VBL.json",
+      "source_daily": "stockdata_D/VBL.json"
+    },
+    {
+      "symbol": "VEDL",
+      "weekly_close": 272.55,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 272.7,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 7.926986,
+      "atr_pct": 2.9069,
+      "resistance": [
+        302.55,
+        362.55,
+        452.55,
+        572.55,
+        722.55
+      ],
+      "support": [
+        242.55,
+        182.55,
+        92.55,
+        -27.45,
+        -177.45
+      ],
+      "source_weekly": "stockdata_W/VEDL.json",
+      "source_daily": "stockdata_D/VEDL.json"
+    },
+    {
+      "symbol": "VMM",
+      "weekly_close": 106.57,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 106.5,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 3.485453,
+      "atr_pct": 3.2727,
+      "resistance": [
+        136.57,
+        196.57,
+        286.57,
+        406.57,
+        556.57
+      ],
+      "support": [
+        76.57,
+        16.57,
+        -73.43,
+        -193.43,
+        -343.43
+      ],
+      "source_weekly": "stockdata_W/VMM.json",
+      "source_daily": "stockdata_D/VMM.json"
+    },
+    {
+      "symbol": "VOLTAS",
+      "weekly_close": 1174.0,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1174.7,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 30.416681,
+      "atr_pct": 2.5893,
+      "resistance": [
+        1204.0,
+        1264.0,
+        1354.0,
+        1474.0,
+        1624.0
+      ],
+      "support": [
+        1144.0,
+        1084.0,
+        994.0,
+        874.0,
+        724.0
+      ],
+      "source_weekly": "stockdata_W/VOLTAS.json",
+      "source_daily": "stockdata_D/VOLTAS.json"
+    },
+    {
+      "symbol": "WAAREEENER",
+      "weekly_close": 2623.8,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 2623.7,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 51.53604,
+      "atr_pct": 1.9643,
+      "resistance": [
+        2653.8,
+        2713.8,
+        2803.8,
+        2923.8,
+        3073.8
+      ],
+      "support": [
+        2593.8,
+        2533.8,
+        2443.8,
+        2323.8,
+        2173.8
+      ],
+      "source_weekly": "stockdata_W/WAAREEENER.json",
+      "source_daily": "stockdata_D/WAAREEENER.json"
+    },
+    {
+      "symbol": "WIPRO",
+      "weekly_close": 177.21,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 177.3,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 3.8867,
+      "atr_pct": 2.1922,
+      "resistance": [
+        207.21,
+        267.21,
+        357.21,
+        477.21,
+        627.21
+      ],
+      "support": [
+        147.21,
+        87.21,
+        -2.79,
+        -122.79,
+        -272.79
+      ],
+      "source_weekly": "stockdata_W/WIPRO.json",
+      "source_daily": "stockdata_D/WIPRO.json"
+    },
+    {
+      "symbol": "YESBANK",
+      "weekly_close": 22.49,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 22.48,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 0.406898,
+      "atr_pct": 1.81,
+      "resistance": [
+        52.49,
+        112.49,
+        202.49,
+        322.49,
+        472.49
+      ],
+      "support": [
+        -7.51,
+        -67.51,
+        -157.51,
+        -277.51,
+        -427.51
+      ],
+      "source_weekly": "stockdata_W/YESBANK.json",
+      "source_daily": "stockdata_D/YESBANK.json"
+    },
+    {
+      "symbol": "ZYDUSLIFE",
+      "weekly_close": 1129.7,
+      "weekly_bar_date": "2026-08-31T03:45:00+00:00",
+      "daily_close": 1130.8,
+      "daily_bar_date": "2026-09-04T03:45:00+00:00",
+      "atr_period": 10,
+      "atr": 29.656775,
+      "atr_pct": 2.6226,
+      "resistance": [
+        1159.7,
+        1219.7,
+        1309.7,
+        1429.7,
+        1579.7
+      ],
+      "support": [
+        1099.7,
+        1039.7,
+        949.7,
+        829.7,
+        679.7
+      ],
+      "source_weekly": "stockdata_W/ZYDUSLIFE.json",
+      "source_daily": "stockdata_D/ZYDUSLIFE.json"
+    }
+  ]
+}
