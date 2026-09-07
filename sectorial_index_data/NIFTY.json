@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-08-25T09:15:00.000",
-        "symbol":"NSE:NIFTY",
-        "open":17679.0,
-        "high":17726.5,
-        "low":17487.449,
-        "close":17522.449,
-        "volume":230181848.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-08-26T09:15:00.000",
         "symbol":"NSE:NIFTY",
         "open":17619.301,
@@ -11000,15 +10989,15 @@
         "timeframe":"D"
     },
     {
-        "Timeframe":"W",
-        "datetime":"2007-07-09T09:15:00.000",
+        "Timeframe":"D",
+        "datetime":"2026-09-07T09:15:00.000",
         "symbol":"NSE:NIFTY",
-        "open":4385.4502,
-        "high":4513.8999,
-        "low":4344.7002,
-        "close":4504.5498,
-        "volume":429931000.0,
-        "timeframe":"W"
+        "open":23883.15,
+        "high":23890.0,
+        "low":23738.7,
+        "close":23774.75,
+        "volume":149212638.0,
+        "timeframe":"D"
     },
     {
         "Timeframe":"W",
@@ -22000,6 +21989,17 @@
         "timeframe":"W"
     },
     {
+        "Timeframe":"W",
+        "datetime":"2026-09-07T09:15:00.000",
+        "symbol":"NSE:NIFTY",
+        "open":23883.15,
+        "high":23890.0,
+        "low":23738.7,
+        "close":23774.75,
+        "volume":149212638.0,
+        "timeframe":"W"
+    },
+    {
         "Timeframe":"M",
         "datetime":"1990-07-02T09:15:00.000",
         "symbol":"NSE:NIFTY",
@@ -26779,9 +26779,9 @@
         "symbol":"NSE:NIFTY",
         "open":24077.55,
         "high":24143.15,
-        "low":23786.8,
-        "close":23897.7,
-        "volume":1123659924.0,
+        "low":23738.7,
+        "close":23774.75,
+        "volume":1272872562.0,
         "timeframe":"M"
     }
 ]
