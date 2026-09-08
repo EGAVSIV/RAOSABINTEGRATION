@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-08-25T09:15:00.000",
-        "symbol":"NSE:CNXREALTY",
-        "open":451.3999939,
-        "high":460.29998779,
-        "low":451.0,
-        "close":455.45001221,
-        "volume":28668468.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-08-26T09:15:00.000",
         "symbol":"NSE:CNXREALTY",
         "open":456.6000061,
@@ -10997,6 +10986,17 @@
         "low":892.4,
         "close":892.5,
         "volume":9253344.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-09-08T09:15:00.000",
+        "symbol":"NSE:CNXREALTY",
+        "open":892.35,
+        "high":895.85,
+        "low":881.75,
+        "close":891.7,
+        "volume":4296227.0,
         "timeframe":"D"
     },
     {
@@ -21994,9 +21994,9 @@
         "symbol":"NSE:CNXREALTY",
         "open":910.65,
         "high":910.7,
-        "low":892.4,
-        "close":892.5,
-        "volume":9253344.0,
+        "low":881.75,
+        "close":891.7,
+        "volume":13549642.0,
         "timeframe":"W"
     },
     {
@@ -24613,8 +24613,8 @@
         "open":897.65,
         "high":923.2,
         "low":868.2,
-        "close":892.5,
-        "volume":74736392.0,
+        "close":891.75,
+        "volume":79032690.0,
         "timeframe":"M"
     }
 ]
