@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-08-30T09:15:00.000",
-        "symbol":"NSE:CNXCONSUMPTION",
-        "open":7824.8501,
-        "high":7963.5,
-        "low":7824.25,
-        "close":7952.75,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-09-01T09:15:00.000",
         "symbol":"NSE:CNXCONSUMPTION",
         "open":7876.0,
@@ -10996,6 +10985,17 @@
         "high":11538.9,
         "low":11478.0,
         "close":11514.75,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-09-11T09:15:00.000",
+        "symbol":"NSE:CNXCONSUMPTION",
+        "open":11418.4,
+        "high":11482.25,
+        "low":11384.55,
+        "close":11452.3,
         "volume":0.0,
         "timeframe":"D"
     },
@@ -21994,8 +21994,8 @@
         "symbol":"NSE:CNXCONSUMPTION",
         "open":11590.5,
         "high":11594.5,
-        "low":11478.0,
-        "close":11514.75,
+        "low":11384.55,
+        "close":11452.65,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -24733,8 +24733,8 @@
         "symbol":"NSE:CNXCONSUMPTION",
         "open":11863.1,
         "high":11866.95,
-        "low":11478.0,
-        "close":11514.75,
+        "low":11384.55,
+        "close":11452.3,
         "volume":0.0,
         "timeframe":"M"
     }
