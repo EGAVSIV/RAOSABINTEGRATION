@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-11T19:13:02.133301",
-  "generated_at_utc": "2026-09-11T13:43:02.133314+00:00",
+  "generated_at": "2026-09-14T14:50:10.756668",
+  "generated_at_utc": "2026-09-14T09:20:10.756682+00:00",
   "meta": {
     "benchmark": "NIFTY",
     "latest_date": "2026-09-11",
@@ -1842,18 +1842,7 @@
       "rs_rank": 5
     }
   ],
-  "rotation_alerts": [
-    {
-      "sector": "NIFTY_CAPITAL_MKT",
-      "from": "Lagging",
-      "to": "Improving"
-    },
-    {
-      "sector": "CNXMETAL",
-      "from": "Improving",
-      "to": "Lagging"
-    }
-  ],
+  "rotation_alerts": [],
   "model_portfolio": [
     {
       "sector": "NIFTY_IPO",
