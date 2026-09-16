@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-09-02T09:15:00.000",
-        "symbol":"NSE:CNXPHARMA",
-        "open":12587.65039063,
-        "high":12634.95019531,
-        "low":12485.45019531,
-        "close":12506.15039063,
-        "volume":14412476.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-09-05T09:15:00.000",
         "symbol":"NSE:CNXPHARMA",
         "open":12507.95019531,
@@ -10997,6 +10986,17 @@
         "low":26158.25,
         "close":26188.4,
         "volume":17119668.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-09-16T09:15:00.000",
+        "symbol":"NSE:CNXPHARMA",
+        "open":26185.55,
+        "high":26298.6,
+        "low":25854.8,
+        "close":26129.05,
+        "volume":14334484.0,
         "timeframe":"D"
     },
     {
@@ -21994,9 +21994,9 @@
         "symbol":"NSE:CNXPHARMA",
         "open":26597.6,
         "high":26640.7,
-        "low":26158.25,
-        "close":26188.4,
-        "volume":17119668.0,
+        "low":25854.8,
+        "close":26128.05,
+        "volume":31454422.0,
         "timeframe":"W"
     },
     {
@@ -25393,9 +25393,9 @@
         "symbol":"NSE:CNXPHARMA",
         "open":27004.4,
         "high":27004.4,
-        "low":26158.25,
-        "close":26188.4,
-        "volume":219993484.0,
+        "low":25854.8,
+        "close":26128.05,
+        "volume":234328238.0,
         "timeframe":"M"
     }
 ]
