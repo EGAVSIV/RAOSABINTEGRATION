@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-18T19:15:23.494639",
-  "generated_at_utc": "2026-09-18T13:45:23.494651+00:00",
+  "generated_at": "2026-09-21T14:53:46.457381",
+  "generated_at_utc": "2026-09-21T09:23:46.457392+00:00",
   "meta": {
     "benchmark": "NIFTY",
-    "latest_date": "2026-09-18",
-    "anchor_date": "2026-09-18",
+    "latest_date": "2026-09-21",
+    "anchor_date": "2026-09-21",
     "sector_count": 38,
     "lookback_options": [
       10,
@@ -19,688 +19,1154 @@
     "stocks_loaded": 159
   },
   "nifty_returns": {
-    "10": -2.21,
-    "15": -3.09,
-    "20": -3.65,
-    "30": -5.23,
-    "45": -3.02,
-    "60": -2.81
+    "10": -1.89,
+    "15": -3.02,
+    "20": -3.32,
+    "30": -4.58,
+    "45": -3.65,
+    "60": -2.53
   },
   "performance_table": {
     "10": [
       {
-        "symbol": "NIFTY_IPO",
-        "return": 1.12,
-        "nifty_return": -2.21,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_IND_TOURISM",
-        "return": 0.49,
-        "nifty_return": -2.21,
-        "status": "Outperforming"
-      },
-      {
         "symbol": "NIFTY_HEALTHCARE",
-        "return": 0.37,
-        "nifty_return": -2.21,
+        "return": 2.36,
+        "nifty_return": -1.89,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXPHARMA",
-        "return": 0.19,
-        "nifty_return": -2.21,
+        "return": 2.01,
+        "nifty_return": -1.89,
         "status": "Outperforming"
       },
       {
-        "symbol": "CNXMEDIA",
-        "return": -0.45,
-        "nifty_return": -2.21,
+        "symbol": "NIFTY_IND_TOURISM",
+        "return": 0.99,
+        "nifty_return": -1.89,
         "status": "Outperforming"
       },
       {
-        "symbol": "NIFTY_CAPITAL_MKT",
-        "return": -0.58,
-        "nifty_return": -2.21,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXMETAL",
-        "return": -0.94,
-        "nifty_return": -2.21,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXENERGY",
-        "return": -0.96,
-        "nifty_return": -2.21,
+        "symbol": "NIFTY_IPO",
+        "return": 0.54,
+        "nifty_return": -1.89,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXFMCG",
-        "return": -1.06,
-        "nifty_return": -2.21,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXPSE",
-        "return": -1.13,
-        "nifty_return": -2.21,
+        "return": 0.25,
+        "nifty_return": -1.89,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTY_NONCYC_CONS",
-        "return": -1.38,
-        "nifty_return": -2.21,
+        "return": -0.38,
+        "nifty_return": -1.89,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXENERGY",
+        "return": -0.51,
+        "nifty_return": -1.89,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXCONSUMPTION",
+        "return": -0.64,
+        "nifty_return": -1.89,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXMEDIA",
+        "return": -0.65,
+        "nifty_return": -1.89,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXPSE",
+        "return": -0.83,
+        "nifty_return": -1.89,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CPSE",
+        "return": -0.87,
+        "nifty_return": -1.89,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTY_MOBILITY",
+        "return": -0.87,
+        "nifty_return": -1.89,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTYPVTBANK",
+        "return": -1.36,
+        "nifty_return": -1.89,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "BANKNIFTY",
+        "return": -1.39,
+        "nifty_return": -1.89,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_MULTI_MFG",
+        "return": -1.41,
+        "nifty_return": -1.89,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_NEW_CONSUMP",
         "return": -1.42,
-        "nifty_return": -2.21,
+        "nifty_return": -1.89,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXINFRA",
         "return": -1.44,
-        "nifty_return": -2.21,
+        "nifty_return": -1.89,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTY_MULTI_INFRA",
-        "return": -1.45,
-        "nifty_return": -2.21,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXCONSUMPTION",
-        "return": -1.58,
-        "nifty_return": -2.21,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXFINANCE",
-        "return": -1.59,
-        "nifty_return": -2.21,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_RURAL",
-        "return": -1.6,
-        "nifty_return": -2.21,
+        "return": -1.48,
+        "nifty_return": -1.89,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXSERVICE",
-        "return": -1.64,
-        "nifty_return": -2.21,
+        "return": -1.51,
+        "nifty_return": -1.89,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXMNC",
-        "return": -1.65,
-        "nifty_return": -2.21,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTYPVTBANK",
-        "return": -1.65,
-        "nifty_return": -2.21,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CPSE",
-        "return": -1.74,
-        "nifty_return": -2.21,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "BANKNIFTY",
-        "return": -1.78,
-        "nifty_return": -2.21,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_OIL_AND_GAS",
-        "return": -1.93,
-        "nifty_return": -2.21,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_MULTI_MFG",
-        "return": -1.97,
-        "nifty_return": -2.21,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_NEW_CONSUMP",
-        "return": -2.04,
-        "nifty_return": -2.21,
+        "return": -1.53,
+        "nifty_return": -1.89,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTY_INDIA_MFG",
-        "return": -2.1,
-        "nifty_return": -2.21,
+        "return": -1.58,
+        "nifty_return": -1.89,
         "status": "Outperforming"
       },
       {
-        "symbol": "NIFTY_CORP_MAATR",
-        "return": -2.2,
-        "nifty_return": -2.21,
+        "symbol": "NIFTY_OIL_AND_GAS",
+        "return": -1.62,
+        "nifty_return": -1.89,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_RURAL",
+        "return": -1.66,
+        "nifty_return": -1.89,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXFINANCE",
+        "return": -1.73,
+        "nifty_return": -1.89,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_EV",
+        "return": -1.74,
+        "nifty_return": -1.89,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXAUTO",
+        "return": -1.81,
+        "nifty_return": -1.89,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTY_HOUSING",
-        "return": -2.45,
-        "nifty_return": -2.21,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_EV",
-        "return": -2.47,
-        "nifty_return": -2.21,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXAUTO",
-        "return": -2.54,
-        "nifty_return": -2.21,
+        "return": -2.25,
+        "nifty_return": -1.89,
         "status": "Underperforming"
       },
       {
         "symbol": "CNXPSUBANK",
-        "return": -2.75,
-        "nifty_return": -2.21,
+        "return": -2.39,
+        "nifty_return": -1.89,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXMETAL",
+        "return": -2.51,
+        "nifty_return": -1.89,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_CORP_MAATR",
+        "return": -2.71,
+        "nifty_return": -1.89,
         "status": "Underperforming"
       },
       {
         "symbol": "NIFTY_TOP_10_EW",
-        "return": -3.13,
-        "nifty_return": -2.21,
+        "return": -2.89,
+        "nifty_return": -1.89,
         "status": "Underperforming"
       },
       {
         "symbol": "NIFTY_IND_DEFENCE",
-        "return": -3.3,
-        "nifty_return": -2.21,
+        "return": -2.91,
+        "nifty_return": -1.89,
         "status": "Underperforming"
       },
       {
-        "symbol": "NIFTY_MS_IT_TELCM",
-        "return": -3.55,
-        "nifty_return": -2.21,
+        "symbol": "NIFTY_CAPITAL_MKT",
+        "return": -3.02,
+        "nifty_return": -1.89,
         "status": "Underperforming"
       },
       {
         "symbol": "NIFTY_CONSR_DURBL",
-        "return": -4.55,
-        "nifty_return": -2.21,
+        "return": -3.22,
+        "nifty_return": -1.89,
         "status": "Underperforming"
       },
       {
         "symbol": "NIFTY_COREHOUSING",
-        "return": -4.73,
-        "nifty_return": -2.21,
+        "return": -3.45,
+        "nifty_return": -1.89,
         "status": "Underperforming"
       },
       {
-        "symbol": "CNXIT",
-        "return": -6.43,
-        "nifty_return": -2.21,
+        "symbol": "NIFTY_MS_IT_TELCM",
+        "return": -4.77,
+        "nifty_return": -1.89,
         "status": "Underperforming"
       },
       {
         "symbol": "CNXREALTY",
-        "return": -7.85,
-        "nifty_return": -2.21,
+        "return": -5.91,
+        "nifty_return": -1.89,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXIT",
+        "return": -5.97,
+        "nifty_return": -1.89,
         "status": "Underperforming"
       }
     ],
     "15": [
       {
         "symbol": "NIFTY_IPO",
-        "return": 1.16,
-        "nifty_return": -3.09,
+        "return": 1.82,
+        "nifty_return": -3.02,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXPHARMA",
-        "return": -0.52,
-        "nifty_return": -3.09,
+        "return": 0.07,
+        "nifty_return": -3.02,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTY_HEALTHCARE",
-        "return": -0.56,
-        "nifty_return": -3.09,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CPSE",
-        "return": -0.79,
-        "nifty_return": -3.09,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXENERGY",
-        "return": -0.87,
-        "nifty_return": -3.09,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_OIL_AND_GAS",
-        "return": -1.01,
-        "nifty_return": -3.09,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXPSE",
-        "return": -1.08,
-        "nifty_return": -3.09,
+        "return": -0.02,
+        "nifty_return": -3.02,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTY_IND_TOURISM",
-        "return": -1.41,
-        "nifty_return": -3.09,
+        "return": -0.05,
+        "nifty_return": -3.02,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CPSE",
+        "return": -0.33,
+        "nifty_return": -3.02,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXENERGY",
+        "return": -0.34,
+        "nifty_return": -3.02,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_OIL_AND_GAS",
+        "return": -0.56,
+        "nifty_return": -3.02,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXPSE",
+        "return": -0.62,
+        "nifty_return": -3.02,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTYPVTBANK",
-        "return": -1.69,
-        "nifty_return": -3.09,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXINFRA",
-        "return": -1.8,
-        "nifty_return": -3.09,
+        "return": -1.05,
+        "nifty_return": -3.02,
         "status": "Outperforming"
       },
       {
         "symbol": "BANKNIFTY",
-        "return": -2.0,
-        "nifty_return": -3.09,
+        "return": -1.61,
+        "nifty_return": -3.02,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXFMCG",
+        "return": -1.72,
+        "nifty_return": -3.02,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXINFRA",
+        "return": -1.92,
+        "nifty_return": -3.02,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTY_MULTI_INFRA",
-        "return": -2.06,
-        "nifty_return": -3.09,
+        "return": -2.2,
+        "nifty_return": -3.02,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_NONCYC_CONS",
+        "return": -2.4,
+        "nifty_return": -3.02,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXSERVICE",
-        "return": -2.2,
-        "nifty_return": -3.09,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_CAPITAL_MKT",
         "return": -2.54,
-        "nifty_return": -3.09,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXMEDIA",
-        "return": -2.69,
-        "nifty_return": -3.09,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXMETAL",
-        "return": -2.78,
-        "nifty_return": -3.09,
+        "nifty_return": -3.02,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXFINANCE",
-        "return": -2.93,
-        "nifty_return": -3.09,
+        "return": -2.61,
+        "nifty_return": -3.02,
         "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_TOP_10_EW",
-        "return": -2.98,
-        "nifty_return": -3.09,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXPSUBANK",
-        "return": -3.15,
-        "nifty_return": -3.09,
-        "status": "Underperforming"
       },
       {
         "symbol": "NIFTY_MULTI_MFG",
+        "return": -2.97,
+        "nifty_return": -3.02,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXMEDIA",
+        "return": -2.98,
+        "nifty_return": -3.02,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXCONSUMPTION",
         "return": -3.2,
-        "nifty_return": -3.09,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_NONCYC_CONS",
-        "return": -3.31,
-        "nifty_return": -3.09,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXFMCG",
-        "return": -3.32,
-        "nifty_return": -3.09,
+        "nifty_return": -3.02,
         "status": "Underperforming"
       },
       {
         "symbol": "NIFTY_HOUSING",
-        "return": -3.74,
-        "nifty_return": -3.09,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_RURAL",
-        "return": -3.75,
-        "nifty_return": -3.09,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_INDIA_MFG",
-        "return": -3.8,
-        "nifty_return": -3.09,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXCONSUMPTION",
-        "return": -3.86,
-        "nifty_return": -3.09,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_MS_IT_TELCM",
-        "return": -3.87,
-        "nifty_return": -3.09,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_MOBILITY",
-        "return": -3.95,
-        "nifty_return": -3.09,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_CORP_MAATR",
-        "return": -3.96,
-        "nifty_return": -3.09,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_NEW_CONSUMP",
-        "return": -3.98,
-        "nifty_return": -3.09,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXMNC",
-        "return": -4.21,
-        "nifty_return": -3.09,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXIT",
-        "return": -4.52,
-        "nifty_return": -3.09,
+        "return": -3.33,
+        "nifty_return": -3.02,
         "status": "Underperforming"
       },
       {
         "symbol": "NIFTY_IND_DEFENCE",
-        "return": -4.6,
-        "nifty_return": -3.09,
+        "return": -3.34,
+        "nifty_return": -3.02,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_NEW_CONSUMP",
+        "return": -3.34,
+        "nifty_return": -3.02,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXPSUBANK",
+        "return": -3.4,
+        "nifty_return": -3.02,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_TOP_10_EW",
+        "return": -3.43,
+        "nifty_return": -3.02,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_MOBILITY",
+        "return": -3.46,
+        "nifty_return": -3.02,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_INDIA_MFG",
+        "return": -3.58,
+        "nifty_return": -3.02,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_RURAL",
+        "return": -3.63,
+        "nifty_return": -3.02,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXMETAL",
+        "return": -4.01,
+        "nifty_return": -3.02,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_CORP_MAATR",
+        "return": -4.12,
+        "nifty_return": -3.02,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXMNC",
+        "return": -4.4,
+        "nifty_return": -3.02,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_CAPITAL_MKT",
+        "return": -4.58,
+        "nifty_return": -3.02,
         "status": "Underperforming"
       },
       {
         "symbol": "NIFTY_EV",
-        "return": -4.76,
-        "nifty_return": -3.09,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXAUTO",
-        "return": -6.07,
-        "nifty_return": -3.09,
+        "return": -5.16,
+        "nifty_return": -3.02,
         "status": "Underperforming"
       },
       {
         "symbol": "NIFTY_COREHOUSING",
-        "return": -6.31,
-        "nifty_return": -3.09,
+        "return": -5.34,
+        "nifty_return": -3.02,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXAUTO",
+        "return": -5.7,
+        "nifty_return": -3.02,
         "status": "Underperforming"
       },
       {
         "symbol": "NIFTY_CONSR_DURBL",
-        "return": -7.09,
-        "nifty_return": -3.09,
+        "return": -5.75,
+        "nifty_return": -3.02,
         "status": "Underperforming"
       },
       {
         "symbol": "CNXREALTY",
-        "return": -7.19,
-        "nifty_return": -3.09,
+        "return": -6.01,
+        "nifty_return": -3.02,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_MS_IT_TELCM",
+        "return": -6.6,
+        "nifty_return": -3.02,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXIT",
+        "return": -7.73,
+        "nifty_return": -3.02,
         "status": "Underperforming"
       }
     ],
     "20": [
       {
+        "symbol": "CNXPHARMA",
+        "return": 2.47,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_HEALTHCARE",
+        "return": 2.26,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
         "symbol": "NIFTY_IPO",
-        "return": 1.85,
+        "return": 1.82,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTYPVTBANK",
+        "return": -0.52,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXENERGY",
+        "return": -0.98,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_IND_TOURISM",
+        "return": -1.42,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXMETAL",
+        "return": -1.44,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_OIL_AND_GAS",
+        "return": -1.58,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXPSE",
+        "return": -1.63,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CPSE",
+        "return": -1.79,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "BANKNIFTY",
+        "return": -2.06,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXFINANCE",
+        "return": -2.52,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXSERVICE",
+        "return": -2.66,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_MULTI_MFG",
+        "return": -2.66,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_MULTI_INFRA",
+        "return": -2.93,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_CAPITAL_MKT",
+        "return": -3.08,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_INDIA_MFG",
+        "return": -3.09,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXFMCG",
+        "return": -3.16,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXINFRA",
+        "return": -3.17,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_MS_IT_TELCM",
+        "return": -3.23,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_TOP_10_EW",
+        "return": -3.23,
+        "nifty_return": -3.32,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_NONCYC_CONS",
+        "return": -3.35,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_HOUSING",
+        "return": -3.44,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXMEDIA",
+        "return": -3.57,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXPSUBANK",
+        "return": -3.58,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_NEW_CONSUMP",
+        "return": -3.7,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_MOBILITY",
+        "return": -3.9,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXCONSUMPTION",
+        "return": -4.12,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_IND_DEFENCE",
+        "return": -4.13,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_CORP_MAATR",
+        "return": -4.14,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXMNC",
+        "return": -4.55,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_RURAL",
+        "return": -4.78,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_EV",
+        "return": -5.31,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXIT",
+        "return": -5.47,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_CONSR_DURBL",
+        "return": -5.83,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_COREHOUSING",
+        "return": -5.88,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXREALTY",
+        "return": -6.29,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXAUTO",
+        "return": -6.58,
+        "nifty_return": -3.32,
+        "status": "Underperforming"
+      }
+    ],
+    "30": [
+      {
+        "symbol": "NIFTY_IPO",
+        "return": 4.62,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXPHARMA",
+        "return": 1.77,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_CAPITAL_MKT",
+        "return": 0.99,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_HEALTHCARE",
+        "return": 0.52,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTYPVTBANK",
+        "return": 0.2,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXMEDIA",
+        "return": 0.01,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_MS_IT_TELCM",
+        "return": -1.37,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXMETAL",
+        "return": -1.57,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CPSE",
+        "return": -1.86,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "BANKNIFTY",
+        "return": -2.04,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXENERGY",
+        "return": -2.26,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_OIL_AND_GAS",
+        "return": -2.7,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_NEW_CONSUMP",
+        "return": -2.76,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXPSE",
+        "return": -2.95,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_IND_DEFENCE",
+        "return": -3.14,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXFINANCE",
+        "return": -3.27,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_IND_TOURISM",
+        "return": -3.29,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_MULTI_MFG",
+        "return": -3.53,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXREALTY",
+        "return": -3.58,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXSERVICE",
+        "return": -3.68,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_MULTI_INFRA",
+        "return": -3.73,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_INDIA_MFG",
+        "return": -4.19,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_HOUSING",
+        "return": -4.4,
+        "nifty_return": -4.58,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXINFRA",
+        "return": -4.61,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_CONSR_DURBL",
+        "return": -4.68,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_NONCYC_CONS",
+        "return": -4.73,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_MOBILITY",
+        "return": -4.75,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_TOP_10_EW",
+        "return": -4.79,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXPSUBANK",
+        "return": -5.4,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXCONSUMPTION",
+        "return": -5.52,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_CORP_MAATR",
+        "return": -6.09,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXMNC",
+        "return": -6.19,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_RURAL",
+        "return": -6.55,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_COREHOUSING",
+        "return": -6.81,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_EV",
+        "return": -6.89,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXFMCG",
+        "return": -6.93,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXAUTO",
+        "return": -8.23,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXIT",
+        "return": -8.51,
+        "nifty_return": -4.58,
+        "status": "Underperforming"
+      }
+    ],
+    "45": [
+      {
+        "symbol": "NIFTY_IPO",
+        "return": 6.2,
         "nifty_return": -3.65,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXPHARMA",
-        "return": 1.11,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_HEALTHCARE",
-        "return": 0.9,
+        "return": 5.32,
         "nifty_return": -3.65,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXMETAL",
-        "return": -0.06,
+        "return": 4.39,
         "nifty_return": -3.65,
         "status": "Outperforming"
       },
       {
-        "symbol": "NIFTYPVTBANK",
-        "return": -0.58,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXENERGY",
-        "return": -0.99,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_CAPITAL_MKT",
-        "return": -1.36,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXPSE",
-        "return": -1.5,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CPSE",
-        "return": -1.58,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "BANKNIFTY",
-        "return": -1.98,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_OIL_AND_GAS",
-        "return": -2.05,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_IND_TOURISM",
-        "return": -2.2,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_MS_IT_TELCM",
-        "return": -2.47,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_MULTI_INFRA",
-        "return": -2.6,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXSERVICE",
-        "return": -2.64,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXFINANCE",
-        "return": -2.65,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXINFRA",
-        "return": -2.97,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_MULTI_MFG",
-        "return": -3.14,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_TOP_10_EW",
-        "return": -3.43,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXPSUBANK",
-        "return": -3.47,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_HOUSING",
-        "return": -3.51,
-        "nifty_return": -3.65,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_INDIA_MFG",
-        "return": -3.53,
+        "symbol": "NIFTY_HEALTHCARE",
+        "return": 3.15,
         "nifty_return": -3.65,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXMEDIA",
-        "return": -4.17,
+        "return": 2.22,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_MOBILITY",
+        "return": 1.29,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_MS_IT_TELCM",
+        "return": 1.17,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_IND_DEFENCE",
+        "return": 0.87,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_MULTI_MFG",
+        "return": 0.63,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXAUTO",
+        "return": 0.4,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_EV",
+        "return": 0.37,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_NEW_CONSUMP",
+        "return": 0.33,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_INDIA_MFG",
+        "return": 0.25,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXPSUBANK",
+        "return": -0.84,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_IND_TOURISM",
+        "return": -1.04,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXIT",
+        "return": -1.24,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXCONSUMPTION",
+        "return": -1.55,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_NONCYC_CONS",
+        "return": -2.19,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_CAPITAL_MKT",
+        "return": -2.39,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_OIL_AND_GAS",
+        "return": -2.59,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXMNC",
+        "return": -2.7,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_MULTI_INFRA",
+        "return": -2.76,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_CONSR_DURBL",
+        "return": -3.0,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXPSE",
+        "return": -3.11,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXINFRA",
+        "return": -3.32,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "BANKNIFTY",
+        "return": -3.33,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_CORP_MAATR",
+        "return": -3.39,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_RURAL",
+        "return": -3.45,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXENERGY",
+        "return": -3.57,
+        "nifty_return": -3.65,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTYPVTBANK",
+        "return": -3.73,
         "nifty_return": -3.65,
         "status": "Underperforming"
       },
       {
-        "symbol": "NIFTY_NEW_CONSUMP",
+        "symbol": "CPSE",
+        "return": -3.8,
+        "nifty_return": -3.65,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_TOP_10_EW",
+        "return": -4.04,
+        "nifty_return": -3.65,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_HOUSING",
+        "return": -4.19,
+        "nifty_return": -3.65,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXSERVICE",
         "return": -4.22,
         "nifty_return": -3.65,
         "status": "Underperforming"
       },
       {
-        "symbol": "NIFTY_CORP_MAATR",
-        "return": -4.27,
-        "nifty_return": -3.65,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_NONCYC_CONS",
-        "return": -4.31,
-        "nifty_return": -3.65,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXMNC",
-        "return": -4.59,
-        "nifty_return": -3.65,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_IND_DEFENCE",
-        "return": -4.59,
-        "nifty_return": -3.65,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_MOBILITY",
-        "return": -4.6,
-        "nifty_return": -3.65,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_RURAL",
-        "return": -4.77,
+        "symbol": "CNXFINANCE",
+        "return": -4.85,
         "nifty_return": -3.65,
         "status": "Underperforming"
       },
       {
         "symbol": "CNXFMCG",
-        "return": -5.01,
-        "nifty_return": -3.65,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXCONSUMPTION",
-        "return": -5.03,
-        "nifty_return": -3.65,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXIT",
-        "return": -5.93,
-        "nifty_return": -3.65,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_EV",
-        "return": -6.02,
+        "return": -5.62,
         "nifty_return": -3.65,
         "status": "Underperforming"
       },
       {
         "symbol": "NIFTY_COREHOUSING",
-        "return": -6.46,
-        "nifty_return": -3.65,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_CONSR_DURBL",
-        "return": -6.56,
+        "return": -5.69,
         "nifty_return": -3.65,
         "status": "Underperforming"
       },
@@ -709,1176 +1175,703 @@
         "return": -7.02,
         "nifty_return": -3.65,
         "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXAUTO",
-        "return": -7.42,
-        "nifty_return": -3.65,
-        "status": "Underperforming"
-      }
-    ],
-    "30": [
-      {
-        "symbol": "NIFTY_IPO",
-        "return": 4.56,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_CAPITAL_MKT",
-        "return": 2.13,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXPHARMA",
-        "return": 0.55,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_MS_IT_TELCM",
-        "return": 0.19,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXMEDIA",
-        "return": -0.08,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_HEALTHCARE",
-        "return": -0.5,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXMETAL",
-        "return": -0.55,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTYPVTBANK",
-        "return": -1.41,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXENERGY",
-        "return": -2.35,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CPSE",
-        "return": -2.4,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "BANKNIFTY",
-        "return": -2.94,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_IND_TOURISM",
-        "return": -3.01,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_NEW_CONSUMP",
-        "return": -3.15,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_OIL_AND_GAS",
-        "return": -3.15,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_MULTI_INFRA",
-        "return": -3.2,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_IND_DEFENCE",
-        "return": -3.25,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXPSE",
-        "return": -3.43,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_MULTI_MFG",
-        "return": -3.48,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_INDIA_MFG",
-        "return": -3.97,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXINFRA",
-        "return": -4.04,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_MOBILITY",
-        "return": -4.23,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXSERVICE",
-        "return": -4.45,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXPSUBANK",
-        "return": -4.72,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXREALTY",
-        "return": -4.81,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_HOUSING",
-        "return": -4.88,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_TOP_10_EW",
-        "return": -5.02,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXFINANCE",
-        "return": -5.04,
-        "nifty_return": -5.23,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_EV",
-        "return": -5.39,
-        "nifty_return": -5.23,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_CORP_MAATR",
-        "return": -5.41,
-        "nifty_return": -5.23,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXMNC",
-        "return": -5.42,
-        "nifty_return": -5.23,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_NONCYC_CONS",
-        "return": -5.63,
-        "nifty_return": -5.23,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXCONSUMPTION",
-        "return": -5.84,
-        "nifty_return": -5.23,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_CONSR_DURBL",
-        "return": -6.27,
-        "nifty_return": -5.23,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_RURAL",
-        "return": -6.37,
-        "nifty_return": -5.23,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXAUTO",
-        "return": -6.82,
-        "nifty_return": -5.23,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXIT",
-        "return": -7.24,
-        "nifty_return": -5.23,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_COREHOUSING",
-        "return": -7.35,
-        "nifty_return": -5.23,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXFMCG",
-        "return": -7.91,
-        "nifty_return": -5.23,
-        "status": "Underperforming"
-      }
-    ],
-    "45": [
-      {
-        "symbol": "NIFTY_IPO",
-        "return": 5.42,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXMETAL",
-        "return": 4.46,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXPHARMA",
-        "return": 2.7,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXMEDIA",
-        "return": 2.13,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_MOBILITY",
-        "return": 1.75,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_MS_IT_TELCM",
-        "return": 1.57,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXAUTO",
-        "return": 1.35,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_EV",
-        "return": 1.2,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_HEALTHCARE",
-        "return": 0.73,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_IND_DEFENCE",
-        "return": 0.7,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXIT",
-        "return": 0.46,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_NEW_CONSUMP",
-        "return": 0.21,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_MULTI_MFG",
-        "return": 0.19,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_INDIA_MFG",
-        "return": -0.15,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXPSUBANK",
-        "return": -0.36,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_CAPITAL_MKT",
-        "return": -1.26,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXCONSUMPTION",
-        "return": -1.71,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_IND_TOURISM",
-        "return": -1.8,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "BANKNIFTY",
-        "return": -2.12,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_OIL_AND_GAS",
-        "return": -2.14,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTYPVTBANK",
-        "return": -2.24,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_MULTI_INFRA",
-        "return": -2.52,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_CORP_MAATR",
-        "return": -2.59,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXMNC",
-        "return": -2.66,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_NONCYC_CONS",
-        "return": -2.72,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXINFRA",
-        "return": -2.79,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_TOP_10_EW",
-        "return": -2.84,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_RURAL",
-        "return": -2.95,
-        "nifty_return": -3.02,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXPSE",
-        "return": -3.17,
-        "nifty_return": -3.02,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXSERVICE",
-        "return": -3.3,
-        "nifty_return": -3.02,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXFINANCE",
-        "return": -3.94,
-        "nifty_return": -3.02,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_HOUSING",
-        "return": -3.96,
-        "nifty_return": -3.02,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXENERGY",
-        "return": -4.0,
-        "nifty_return": -3.02,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CPSE",
-        "return": -4.04,
-        "nifty_return": -3.02,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_CONSR_DURBL",
-        "return": -4.22,
-        "nifty_return": -3.02,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXFMCG",
-        "return": -6.08,
-        "nifty_return": -3.02,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_COREHOUSING",
-        "return": -6.4,
-        "nifty_return": -3.02,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXREALTY",
-        "return": -6.84,
-        "nifty_return": -3.02,
-        "status": "Underperforming"
       }
     ],
     "60": [
       {
-        "symbol": "NIFTY_IPO",
-        "return": 7.15,
-        "nifty_return": -2.81,
+        "symbol": "CNXPHARMA",
+        "return": 8.17,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
-        "symbol": "CNXPHARMA",
-        "return": 6.76,
-        "nifty_return": -2.81,
+        "symbol": "NIFTY_IPO",
+        "return": 7.82,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXIT",
-        "return": 4.67,
-        "nifty_return": -2.81,
+        "return": 5.61,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTY_HEALTHCARE",
-        "return": 4.14,
-        "nifty_return": -2.81,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_MOBILITY",
-        "return": 3.67,
-        "nifty_return": -2.81,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_NEW_CONSUMP",
-        "return": 3.47,
-        "nifty_return": -2.81,
+        "return": 5.21,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTY_CONSR_DURBL",
-        "return": 3.46,
-        "nifty_return": -2.81,
+        "return": 5.16,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXMETAL",
-        "return": 3.44,
-        "nifty_return": -2.81,
+        "return": 4.32,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
-        "symbol": "NIFTY_MS_IT_TELCM",
-        "return": 3.37,
-        "nifty_return": -2.81,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXAUTO",
-        "return": 2.82,
-        "nifty_return": -2.81,
+        "symbol": "NIFTY_NEW_CONSUMP",
+        "return": 3.57,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXREALTY",
-        "return": 2.51,
-        "nifty_return": -2.81,
+        "return": 3.39,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
         "symbol": "CNXMEDIA",
-        "return": 2.27,
-        "nifty_return": -2.81,
+        "return": 3.01,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
-        "symbol": "NIFTY_EV",
-        "return": 1.9,
-        "nifty_return": -2.81,
+        "symbol": "NIFTY_MS_IT_TELCM",
+        "return": 2.9,
+        "nifty_return": -2.53,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_MOBILITY",
+        "return": 2.46,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTY_MULTI_MFG",
-        "return": 1.41,
-        "nifty_return": -2.81,
+        "return": 1.8,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
-        "symbol": "NIFTY_INDIA_MFG",
-        "return": 0.28,
-        "nifty_return": -2.81,
+        "symbol": "CNXAUTO",
+        "return": 0.85,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
-        "symbol": "CNXCONSUMPTION",
-        "return": -0.42,
-        "nifty_return": -2.81,
+        "symbol": "NIFTY_EV",
+        "return": 0.44,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTY_IND_DEFENCE",
-        "return": -1.17,
-        "nifty_return": -2.81,
+        "return": 0.32,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
-        "symbol": "NIFTY_IND_TOURISM",
-        "return": -1.37,
-        "nifty_return": -2.81,
+        "symbol": "NIFTY_INDIA_MFG",
+        "return": 0.25,
+        "nifty_return": -2.53,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXCONSUMPTION",
+        "return": -0.6,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTY_NONCYC_CONS",
-        "return": -1.43,
-        "nifty_return": -2.81,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXMNC",
-        "return": -1.74,
-        "nifty_return": -2.81,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "CNXSERVICE",
-        "return": -2.11,
-        "nifty_return": -2.81,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_CORP_MAATR",
-        "return": -2.17,
-        "nifty_return": -2.81,
-        "status": "Outperforming"
-      },
-      {
-        "symbol": "NIFTY_CAPITAL_MKT",
-        "return": -2.37,
-        "nifty_return": -2.81,
+        "return": -0.76,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
         "symbol": "NIFTY_OIL_AND_GAS",
-        "return": -2.61,
-        "nifty_return": -2.81,
+        "return": -1.23,
+        "nifty_return": -2.53,
         "status": "Outperforming"
       },
       {
-        "symbol": "NIFTY_RURAL",
-        "return": -2.65,
-        "nifty_return": -2.81,
+        "symbol": "NIFTY_IND_TOURISM",
+        "return": -1.65,
+        "nifty_return": -2.53,
         "status": "Outperforming"
+      },
+      {
+        "symbol": "CNXSERVICE",
+        "return": -1.9,
+        "nifty_return": -2.53,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_CORP_MAATR",
+        "return": -2.3,
+        "nifty_return": -2.53,
+        "status": "Outperforming"
+      },
+      {
+        "symbol": "NIFTY_COREHOUSING",
+        "return": -2.56,
+        "nifty_return": -2.53,
+        "status": "Underperforming"
       },
       {
         "symbol": "BANKNIFTY",
-        "return": -3.08,
-        "nifty_return": -2.81,
+        "return": -2.76,
+        "nifty_return": -2.53,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXMNC",
+        "return": -2.79,
+        "nifty_return": -2.53,
         "status": "Underperforming"
       },
       {
         "symbol": "NIFTY_MULTI_INFRA",
-        "return": -3.09,
-        "nifty_return": -2.81,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_COREHOUSING",
-        "return": -3.46,
-        "nifty_return": -2.81,
+        "return": -3.01,
+        "nifty_return": -2.53,
         "status": "Underperforming"
       },
       {
         "symbol": "NIFTYPVTBANK",
-        "return": -3.49,
-        "nifty_return": -2.81,
+        "return": -3.1,
+        "nifty_return": -2.53,
         "status": "Underperforming"
       },
       {
-        "symbol": "CNXPSUBANK",
-        "return": -3.6,
-        "nifty_return": -2.81,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_TOP_10_EW",
-        "return": -4.11,
-        "nifty_return": -2.81,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXINFRA",
-        "return": -4.14,
-        "nifty_return": -2.81,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "NIFTY_HOUSING",
-        "return": -4.54,
-        "nifty_return": -2.81,
-        "status": "Underperforming"
-      },
-      {
-        "symbol": "CNXFINANCE",
-        "return": -4.59,
-        "nifty_return": -2.81,
+        "symbol": "NIFTY_RURAL",
+        "return": -3.2,
+        "nifty_return": -2.53,
         "status": "Underperforming"
       },
       {
         "symbol": "CNXPSE",
-        "return": -4.88,
-        "nifty_return": -2.81,
+        "return": -3.26,
+        "nifty_return": -2.53,
         "status": "Underperforming"
       },
       {
-        "symbol": "CNXENERGY",
-        "return": -5.35,
-        "nifty_return": -2.81,
+        "symbol": "NIFTY_CAPITAL_MKT",
+        "return": -3.33,
+        "nifty_return": -2.53,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXPSUBANK",
+        "return": -3.76,
+        "nifty_return": -2.53,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_TOP_10_EW",
+        "return": -3.77,
+        "nifty_return": -2.53,
         "status": "Underperforming"
       },
       {
         "symbol": "CPSE",
-        "return": -6.24,
-        "nifty_return": -2.81,
+        "return": -3.94,
+        "nifty_return": -2.53,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXINFRA",
+        "return": -4.17,
+        "nifty_return": -2.53,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "NIFTY_HOUSING",
+        "return": -4.21,
+        "nifty_return": -2.53,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXFINANCE",
+        "return": -4.37,
+        "nifty_return": -2.53,
+        "status": "Underperforming"
+      },
+      {
+        "symbol": "CNXENERGY",
+        "return": -4.44,
+        "nifty_return": -2.53,
         "status": "Underperforming"
       },
       {
         "symbol": "CNXFMCG",
-        "return": -7.37,
-        "nifty_return": -2.81,
+        "return": -6.9,
+        "nifty_return": -2.53,
         "status": "Underperforming"
       }
     ]
   },
   "rotation_table": [
     {
-      "sector": "NIFTY_IPO",
-      "r1m": 2.62,
-      "r3m": 7.29,
-      "r6m": 33.43,
+      "sector": "CNXPHARMA",
+      "r1m": 2.25,
+      "r3m": 9.08,
+      "r6m": 19.53,
       "rotation": "Leading",
-      "rs_vs_nifty": 5.66,
-      "momentum": -4.67,
+      "rs_vs_nifty": 5.49,
+      "momentum": -6.83,
       "rs_rank": 1
     },
     {
-      "sector": "CNXPHARMA",
-      "r1m": 1.51,
-      "r3m": 9.2,
-      "r6m": 18.46,
+      "sector": "NIFTY_HEALTHCARE",
+      "r1m": 2.0,
+      "r3m": 6.08,
+      "r6m": 16.31,
       "rotation": "Leading",
-      "rs_vs_nifty": 4.55,
-      "momentum": -7.69,
+      "rs_vs_nifty": 5.24,
+      "momentum": -4.08,
       "rs_rank": 2
     },
     {
-      "sector": "NIFTY_HEALTHCARE",
-      "r1m": 1.23,
-      "r3m": 6.03,
-      "r6m": 15.35,
+      "sector": "NIFTY_IPO",
+      "r1m": 2.0,
+      "r3m": 7.27,
+      "r6m": 32.28,
       "rotation": "Leading",
-      "rs_vs_nifty": 4.27,
-      "momentum": -4.8,
+      "rs_vs_nifty": 5.24,
+      "momentum": -5.27,
       "rs_rank": 3
     },
     {
       "sector": "NIFTYPVTBANK",
-      "r1m": 0.3,
-      "r3m": -2.16,
-      "r6m": 5.67,
-      "rotation": "Improving",
-      "rs_vs_nifty": 3.34,
-      "momentum": 2.46,
+      "r1m": -0.01,
+      "r3m": -1.9,
+      "r6m": 5.29,
+      "rotation": "Lagging",
+      "rs_vs_nifty": 3.23,
+      "momentum": 1.89,
       "rs_rank": 4
     },
     {
       "sector": "CNXMETAL",
-      "r1m": 0.23,
-      "r3m": 0.24,
-      "r6m": 15.33,
-      "rotation": "Leading",
-      "rs_vs_nifty": 3.27,
-      "momentum": -0.01,
+      "r1m": -0.59,
+      "r3m": -0.82,
+      "r6m": 11.57,
+      "rotation": "Lagging",
+      "rs_vs_nifty": 2.65,
+      "momentum": 0.23,
       "rs_rank": 5
     },
     {
-      "sector": "NIFTY_CAPITAL_MKT",
-      "r1m": -0.02,
-      "r3m": -4.25,
-      "r6m": 18.87,
+      "sector": "CNXENERGY",
+      "r1m": -0.72,
+      "r3m": -7.11,
+      "r6m": 5.27,
       "rotation": "Lagging",
-      "rs_vs_nifty": 3.02,
-      "momentum": 4.23,
+      "rs_vs_nifty": 2.52,
+      "momentum": 6.39,
       "rs_rank": 6
     },
     {
-      "sector": "CNXENERGY",
-      "r1m": -0.92,
-      "r3m": -6.84,
-      "r6m": 5.86,
+      "sector": "CPSE",
+      "r1m": -1.01,
+      "r3m": -7.47,
+      "r6m": -9.92,
       "rotation": "Lagging",
-      "rs_vs_nifty": 2.12,
-      "momentum": 5.92,
+      "rs_vs_nifty": 2.23,
+      "momentum": 6.46,
       "rs_rank": 7
     },
     {
-      "sector": "CPSE",
-      "r1m": -1.21,
-      "r3m": -7.83,
-      "r6m": -9.47,
+      "sector": "CNXPSE",
+      "r1m": -1.17,
+      "r3m": -6.03,
+      "r6m": -3.75,
       "rotation": "Lagging",
-      "rs_vs_nifty": 1.83,
-      "momentum": 6.62,
+      "rs_vs_nifty": 2.07,
+      "momentum": 4.86,
       "rs_rank": 8
     },
     {
-      "sector": "NIFTY_MS_IT_TELCM",
-      "r1m": -1.42,
-      "r3m": 3.5,
-      "r6m": 24.34,
-      "rotation": "Weakening",
-      "rs_vs_nifty": 1.62,
-      "momentum": -4.92,
+      "sector": "NIFTY_OIL_AND_GAS",
+      "r1m": -1.54,
+      "r3m": -2.37,
+      "r6m": -1.09,
+      "rotation": "Lagging",
+      "rs_vs_nifty": 1.7,
+      "momentum": 0.83,
       "rs_rank": 9
     },
     {
       "sector": "BANKNIFTY",
-      "r1m": -1.54,
-      "r3m": -2.3,
-      "r6m": 3.58,
+      "r1m": -1.61,
+      "r3m": -2.36,
+      "r6m": 3.09,
       "rotation": "Lagging",
-      "rs_vs_nifty": 1.5,
-      "momentum": 0.76,
+      "rs_vs_nifty": 1.63,
+      "momentum": 0.75,
       "rs_rank": 10
     },
     {
-      "sector": "CNXPSE",
-      "r1m": -1.58,
-      "r3m": -5.71,
-      "r6m": -3.28,
+      "sector": "NIFTY_IND_TOURISM",
+      "r1m": -1.94,
+      "r3m": -0.94,
+      "r6m": 12.17,
       "rotation": "Lagging",
-      "rs_vs_nifty": 1.46,
-      "momentum": 4.13,
+      "rs_vs_nifty": 1.3,
+      "momentum": -1.0,
       "rs_rank": 11
     },
     {
-      "sector": "NIFTY_IND_TOURISM",
-      "r1m": -1.74,
-      "r3m": -0.25,
-      "r6m": 12.34,
+      "sector": "CNXFINANCE",
+      "r1m": -2.31,
+      "r3m": -3.71,
+      "r6m": -0.49,
       "rotation": "Lagging",
-      "rs_vs_nifty": 1.3,
-      "momentum": -1.49,
+      "rs_vs_nifty": 0.93,
+      "momentum": 1.4,
       "rs_rank": 12
     },
     {
-      "sector": "CNXFINANCE",
-      "r1m": -1.93,
-      "r3m": -3.49,
-      "r6m": -0.02,
+      "sector": "CNXSERVICE",
+      "r1m": -2.51,
+      "r3m": -1.87,
+      "r6m": -0.45,
       "rotation": "Lagging",
-      "rs_vs_nifty": 1.11,
-      "momentum": 1.56,
+      "rs_vs_nifty": 0.73,
+      "momentum": -0.64,
       "rs_rank": 13
     },
     {
-      "sector": "CNXSERVICE",
-      "r1m": -1.99,
-      "r3m": -1.6,
-      "r6m": 0.12,
+      "sector": "NIFTY_CAPITAL_MKT",
+      "r1m": -2.67,
+      "r3m": -5.83,
+      "r6m": 14.81,
       "rotation": "Lagging",
-      "rs_vs_nifty": 1.05,
-      "momentum": -0.39,
+      "rs_vs_nifty": 0.57,
+      "momentum": 3.16,
       "rs_rank": 14
     },
     {
-      "sector": "NIFTY_OIL_AND_GAS",
-      "r1m": -2.04,
-      "r3m": -1.98,
-      "r6m": -1.44,
-      "rotation": "Lagging",
-      "rs_vs_nifty": 1.0,
-      "momentum": -0.06,
+      "sector": "NIFTY_MULTI_MFG",
+      "r1m": -2.7,
+      "r3m": 1.06,
+      "r6m": 10.53,
+      "rotation": "Weakening",
+      "rs_vs_nifty": 0.54,
+      "momentum": -3.76,
       "rs_rank": 15
     },
     {
-      "sector": "CNXMEDIA",
-      "r1m": -2.14,
-      "r3m": 2.53,
-      "r6m": 20.12,
-      "rotation": "Weakening",
-      "rs_vs_nifty": 0.9,
-      "momentum": -4.67,
+      "sector": "NIFTY_MULTI_INFRA",
+      "r1m": -2.74,
+      "r3m": -3.98,
+      "r6m": 7.76,
+      "rotation": "Lagging",
+      "rs_vs_nifty": 0.5,
+      "momentum": 1.24,
       "rs_rank": 16
     },
     {
-      "sector": "NIFTY_MULTI_INFRA",
-      "r1m": -2.34,
-      "r3m": -3.15,
-      "r6m": 8.95,
+      "sector": "CNXINFRA",
+      "r1m": -3.03,
+      "r3m": -5.08,
+      "r6m": 2.27,
       "rotation": "Lagging",
-      "rs_vs_nifty": 0.7,
-      "momentum": 0.81,
+      "rs_vs_nifty": 0.21,
+      "momentum": 2.05,
       "rs_rank": 17
     },
     {
-      "sector": "NIFTY_TOP_10_EW",
-      "r1m": -2.51,
-      "r3m": -3.68,
-      "r6m": -2.48,
-      "rotation": "Lagging",
-      "rs_vs_nifty": 0.53,
-      "momentum": 1.17,
+      "sector": "NIFTY_MS_IT_TELCM",
+      "r1m": -3.09,
+      "r3m": 2.06,
+      "r6m": 23.68,
+      "rotation": "Weakening",
+      "rs_vs_nifty": 0.15,
+      "momentum": -5.15,
       "rs_rank": 18
     },
     {
-      "sector": "CNXINFRA",
-      "r1m": -2.52,
-      "r3m": -4.63,
-      "r6m": 3.37,
+      "sector": "NIFTY_TOP_10_EW",
+      "r1m": -3.12,
+      "r3m": -3.77,
+      "r6m": -2.75,
       "rotation": "Lagging",
-      "rs_vs_nifty": 0.52,
-      "momentum": 2.11,
+      "rs_vs_nifty": 0.12,
+      "momentum": 0.65,
       "rs_rank": 19
     },
     {
-      "sector": "NIFTY_MULTI_MFG",
-      "r1m": -2.87,
-      "r3m": 1.1,
-      "r6m": 11.34,
-      "rotation": "Weakening",
-      "rs_vs_nifty": 0.17,
-      "momentum": -3.97,
-      "rs_rank": 20
-    },
-    {
       "sector": "NIFTY_HOUSING",
-      "r1m": -2.96,
-      "r3m": -5.2,
-      "r6m": 4.82,
+      "r1m": -3.29,
+      "r3m": -5.24,
+      "r6m": 3.67,
       "rotation": "Lagging",
-      "rs_vs_nifty": 0.08,
-      "momentum": 2.24,
-      "rs_rank": 21
+      "rs_vs_nifty": -0.05,
+      "momentum": 1.95,
+      "rs_rank": 20
     },
     {
       "sector": "NIFTY_INDIA_MFG",
       "r1m": -3.31,
-      "r3m": -0.57,
-      "r6m": 9.15,
+      "r3m": -1.0,
+      "r6m": 8.0,
       "rotation": "Lagging",
-      "rs_vs_nifty": -0.27,
-      "momentum": -2.74,
-      "rs_rank": 22
-    },
-    {
-      "sector": "NIFTY_NEW_CONSUMP",
-      "r1m": -3.35,
-      "r3m": 2.95,
-      "r6m": 16.14,
-      "rotation": "Weakening",
-      "rs_vs_nifty": -0.31,
-      "momentum": -6.3,
-      "rs_rank": 23
+      "rs_vs_nifty": -0.07,
+      "momentum": -2.31,
+      "rs_rank": 21
     },
     {
       "sector": "CNXPSUBANK",
-      "r1m": -3.48,
-      "r3m": -4.58,
-      "r6m": -2.93,
+      "r1m": -3.54,
+      "r3m": -5.16,
+      "r6m": -3.32,
       "rotation": "Lagging",
-      "rs_vs_nifty": -0.44,
-      "momentum": 1.1,
-      "rs_rank": 24
+      "rs_vs_nifty": -0.3,
+      "momentum": 1.62,
+      "rs_rank": 22
     },
     {
       "sector": "NIFTY_NONCYC_CONS",
-      "r1m": -3.56,
-      "r3m": -2.28,
-      "r6m": 6.54,
+      "r1m": -3.67,
+      "r3m": -1.34,
+      "r6m": 6.49,
       "rotation": "Lagging",
-      "rs_vs_nifty": -0.52,
-      "momentum": -1.28,
-      "rs_rank": 25
-    },
-    {
-      "sector": "NIFTY_CORP_MAATR",
-      "r1m": -4.02,
-      "r3m": -2.56,
-      "r6m": 8.38,
-      "rotation": "Lagging",
-      "rs_vs_nifty": -0.98,
-      "momentum": -1.46,
-      "rs_rank": 26
-    },
-    {
-      "sector": "NIFTY_MOBILITY",
-      "r1m": -4.08,
-      "r3m": 3.18,
-      "r6m": 12.66,
-      "rotation": "Weakening",
-      "rs_vs_nifty": -1.04,
-      "momentum": -7.26,
-      "rs_rank": 27
-    },
-    {
-      "sector": "NIFTY_RURAL",
-      "r1m": -4.16,
-      "r3m": -3.2,
-      "r6m": 1.07,
-      "rotation": "Lagging",
-      "rs_vs_nifty": -1.12,
-      "momentum": -0.96,
-      "rs_rank": 28
-    },
-    {
-      "sector": "CNXMNC",
-      "r1m": -4.19,
-      "r3m": -3.05,
-      "r6m": 8.35,
-      "rotation": "Lagging",
-      "rs_vs_nifty": -1.15,
-      "momentum": -1.14,
-      "rs_rank": 29
-    },
-    {
-      "sector": "CNXFMCG",
-      "r1m": -4.23,
-      "r3m": -8.26,
-      "r6m": -6.19,
-      "rotation": "Lagging",
-      "rs_vs_nifty": -1.19,
-      "momentum": 4.03,
-      "rs_rank": 30
-    },
-    {
-      "sector": "CNXCONSUMPTION",
-      "r1m": -4.39,
-      "r3m": -1.38,
-      "r6m": 7.17,
-      "rotation": "Lagging",
-      "rs_vs_nifty": -1.35,
-      "momentum": -3.01,
-      "rs_rank": 31
+      "rs_vs_nifty": -0.43,
+      "momentum": -2.33,
+      "rs_rank": 23
     },
     {
       "sector": "NIFTY_IND_DEFENCE",
-      "r1m": -4.76,
-      "r3m": -2.46,
-      "r6m": 18.91,
+      "r1m": -3.82,
+      "r3m": -3.11,
+      "r6m": 17.67,
       "rotation": "Lagging",
-      "rs_vs_nifty": -1.72,
-      "momentum": -2.3,
+      "rs_vs_nifty": -0.58,
+      "momentum": -0.71,
+      "rs_rank": 24
+    },
+    {
+      "sector": "NIFTY_NEW_CONSUMP",
+      "r1m": -3.84,
+      "r3m": 3.13,
+      "r6m": 14.98,
+      "rotation": "Weakening",
+      "rs_vs_nifty": -0.6,
+      "momentum": -6.97,
+      "rs_rank": 25
+    },
+    {
+      "sector": "CNXFMCG",
+      "r1m": -3.88,
+      "r3m": -6.78,
+      "r6m": -4.36,
+      "rotation": "Lagging",
+      "rs_vs_nifty": -0.64,
+      "momentum": 2.9,
+      "rs_rank": 26
+    },
+    {
+      "sector": "CNXMEDIA",
+      "r1m": -4.08,
+      "r3m": 1.19,
+      "r6m": 18.91,
+      "rotation": "Weakening",
+      "rs_vs_nifty": -0.84,
+      "momentum": -5.27,
+      "rs_rank": 27
+    },
+    {
+      "sector": "NIFTY_CORP_MAATR",
+      "r1m": -4.16,
+      "r3m": -3.0,
+      "r6m": 7.53,
+      "rotation": "Lagging",
+      "rs_vs_nifty": -0.92,
+      "momentum": -1.16,
+      "rs_rank": 28
+    },
+    {
+      "sector": "NIFTY_MOBILITY",
+      "r1m": -4.33,
+      "r3m": 2.97,
+      "r6m": 11.19,
+      "rotation": "Weakening",
+      "rs_vs_nifty": -1.09,
+      "momentum": -7.3,
+      "rs_rank": 29
+    },
+    {
+      "sector": "CNXCONSUMPTION",
+      "r1m": -4.51,
+      "r3m": -0.72,
+      "r6m": 6.56,
+      "rotation": "Lagging",
+      "rs_vs_nifty": -1.27,
+      "momentum": -3.79,
+      "rs_rank": 30
+    },
+    {
+      "sector": "CNXMNC",
+      "r1m": -4.79,
+      "r3m": -3.63,
+      "r6m": 7.51,
+      "rotation": "Lagging",
+      "rs_vs_nifty": -1.55,
+      "momentum": -1.16,
+      "rs_rank": 31
+    },
+    {
+      "sector": "NIFTY_RURAL",
+      "r1m": -4.94,
+      "r3m": -3.62,
+      "r6m": 0.2,
+      "rotation": "Lagging",
+      "rs_vs_nifty": -1.7,
+      "momentum": -1.32,
       "rs_rank": 32
     },
     {
-      "sector": "CNXIT",
-      "r1m": -5.19,
-      "r3m": 5.21,
-      "r6m": -0.65,
+      "sector": "NIFTY_CONSR_DURBL",
+      "r1m": -5.66,
+      "r3m": 3.19,
+      "r6m": 8.59,
       "rotation": "Weakening",
-      "rs_vs_nifty": -2.15,
-      "momentum": -10.4,
+      "rs_vs_nifty": -2.42,
+      "momentum": -8.85,
       "rs_rank": 33
     },
     {
-      "sector": "CNXREALTY",
-      "r1m": -5.71,
-      "r3m": 3.98,
-      "r6m": 20.83,
-      "rotation": "Weakening",
-      "rs_vs_nifty": -2.67,
-      "momentum": -9.69,
+      "sector": "NIFTY_COREHOUSING",
+      "r1m": -5.89,
+      "r3m": -3.15,
+      "r6m": 8.55,
+      "rotation": "Lagging",
+      "rs_vs_nifty": -2.65,
+      "momentum": -2.74,
       "rs_rank": 34
     },
     {
-      "sector": "NIFTY_COREHOUSING",
-      "r1m": -5.76,
-      "r3m": -3.84,
-      "r6m": 9.01,
-      "rotation": "Lagging",
-      "rs_vs_nifty": -2.72,
-      "momentum": -1.92,
+      "sector": "CNXIT",
+      "r1m": -5.9,
+      "r3m": 4.47,
+      "r6m": 0.36,
+      "rotation": "Weakening",
+      "rs_vs_nifty": -2.66,
+      "momentum": -10.37,
       "rs_rank": 35
     },
     {
-      "sector": "NIFTY_EV",
-      "r1m": -5.93,
-      "r3m": 1.25,
-      "r6m": 15.73,
+      "sector": "CNXREALTY",
+      "r1m": -5.91,
+      "r3m": 4.8,
+      "r6m": 20.11,
       "rotation": "Weakening",
-      "rs_vs_nifty": -2.89,
-      "momentum": -7.18,
+      "rs_vs_nifty": -2.67,
+      "momentum": -10.71,
       "rs_rank": 36
     },
     {
-      "sector": "NIFTY_CONSR_DURBL",
-      "r1m": -6.03,
-      "r3m": 1.64,
-      "r6m": 8.33,
+      "sector": "NIFTY_EV",
+      "r1m": -6.1,
+      "r3m": 0.79,
+      "r6m": 14.01,
       "rotation": "Weakening",
-      "rs_vs_nifty": -2.99,
-      "momentum": -7.67,
+      "rs_vs_nifty": -2.86,
+      "momentum": -6.89,
       "rs_rank": 37
     },
     {
       "sector": "CNXAUTO",
-      "r1m": -7.05,
-      "r3m": 2.05,
-      "r6m": 10.28,
+      "r1m": -7.15,
+      "r3m": 1.89,
+      "r6m": 8.33,
       "rotation": "Weakening",
-      "rs_vs_nifty": -4.01,
-      "momentum": -9.1,
+      "rs_vs_nifty": -3.91,
+      "momentum": -9.04,
       "rs_rank": 38
     }
   ],
   "top_sectors": [
     {
-      "sector": "NIFTY_IPO",
-      "r1m": 2.62,
-      "r3m": 7.29,
-      "r6m": 33.43,
+      "sector": "CNXPHARMA",
+      "r1m": 2.25,
+      "r3m": 9.08,
+      "r6m": 19.53,
       "rotation": "Leading",
-      "rs_vs_nifty": 5.66,
-      "momentum": -4.67,
+      "rs_vs_nifty": 5.49,
+      "momentum": -6.83,
       "rs_rank": 1
     },
     {
-      "sector": "CNXPHARMA",
-      "r1m": 1.51,
-      "r3m": 9.2,
-      "r6m": 18.46,
+      "sector": "NIFTY_HEALTHCARE",
+      "r1m": 2.0,
+      "r3m": 6.08,
+      "r6m": 16.31,
       "rotation": "Leading",
-      "rs_vs_nifty": 4.55,
-      "momentum": -7.69,
+      "rs_vs_nifty": 5.24,
+      "momentum": -4.08,
       "rs_rank": 2
     },
     {
-      "sector": "NIFTY_HEALTHCARE",
-      "r1m": 1.23,
-      "r3m": 6.03,
-      "r6m": 15.35,
+      "sector": "NIFTY_IPO",
+      "r1m": 2.0,
+      "r3m": 7.27,
+      "r6m": 32.28,
       "rotation": "Leading",
-      "rs_vs_nifty": 4.27,
-      "momentum": -4.8,
+      "rs_vs_nifty": 5.24,
+      "momentum": -5.27,
       "rs_rank": 3
     },
     {
       "sector": "NIFTYPVTBANK",
-      "r1m": 0.3,
-      "r3m": -2.16,
-      "r6m": 5.67,
-      "rotation": "Improving",
-      "rs_vs_nifty": 3.34,
-      "momentum": 2.46,
+      "r1m": -0.01,
+      "r3m": -1.9,
+      "r6m": 5.29,
+      "rotation": "Lagging",
+      "rs_vs_nifty": 3.23,
+      "momentum": 1.89,
       "rs_rank": 4
     },
     {
       "sector": "CNXMETAL",
-      "r1m": 0.23,
-      "r3m": 0.24,
-      "r6m": 15.33,
-      "rotation": "Leading",
-      "rs_vs_nifty": 3.27,
-      "momentum": -0.01,
+      "r1m": -0.59,
+      "r3m": -0.82,
+      "r6m": 11.57,
+      "rotation": "Lagging",
+      "rs_vs_nifty": 2.65,
+      "momentum": 0.23,
       "rs_rank": 5
     }
   ],
   "rotation_alerts": [
     {
+      "sector": "NIFTYPVTBANK",
+      "from": "Improving",
+      "to": "Lagging"
+    },
+    {
       "sector": "CNXMETAL",
-      "from": "Lagging",
-      "to": "Leading"
+      "from": "Leading",
+      "to": "Lagging"
     }
   ],
   "model_portfolio": [
     {
-      "sector": "NIFTY_IPO",
-      "rotation": "Leading",
-      "rs_rank": 1,
-      "weight_pct": 33.33
-    },
-    {
       "sector": "CNXPHARMA",
       "rotation": "Leading",
-      "rs_rank": 2,
-      "weight_pct": 26.67
+      "rs_rank": 1,
+      "weight_pct": 50.0
     },
     {
       "sector": "NIFTY_HEALTHCARE",
       "rotation": "Leading",
-      "rs_rank": 3,
-      "weight_pct": 20.0
+      "rs_rank": 2,
+      "weight_pct": 33.33
     },
     {
-      "sector": "NIFTYPVTBANK",
-      "rotation": "Improving",
-      "rs_rank": 4,
-      "weight_pct": 13.33
-    },
-    {
-      "sector": "CNXMETAL",
+      "sector": "NIFTY_IPO",
       "rotation": "Leading",
-      "rs_rank": 5,
-      "weight_pct": 6.67
+      "rs_rank": 3,
+      "weight_pct": 16.67
     }
   ],
   "stock_rrg": {
@@ -1886,1561 +1879,1561 @@
       "points": [
         {
           "symbol": "TCS",
-          "rs_vs_sector": -2.85,
+          "rs_vs_sector": -2.14,
           "momentum": -7.1,
           "r1m": -8.04
         },
         {
           "symbol": "INFY",
-          "rs_vs_sector": -0.92,
+          "rs_vs_sector": -0.21,
           "momentum": -6.11,
           "r1m": -6.11
         },
         {
           "symbol": "WIPRO",
-          "rs_vs_sector": -1.89,
+          "rs_vs_sector": -1.18,
           "momentum": 0.65,
           "r1m": -7.08
         },
         {
           "symbol": "HCLTECH",
-          "rs_vs_sector": -0.51,
+          "rs_vs_sector": 0.2,
           "momentum": -16.09,
           "r1m": -5.7
         },
         {
           "symbol": "TECHM",
-          "rs_vs_sector": 1.88,
+          "rs_vs_sector": 2.59,
           "momentum": -12.36,
           "r1m": -3.31
         },
         {
           "symbol": "COFORGE",
-          "rs_vs_sector": 6.73,
+          "rs_vs_sector": 7.44,
           "momentum": -24.27,
           "r1m": 1.54
         },
         {
           "symbol": "MPHASIS",
-          "rs_vs_sector": 0.07,
+          "rs_vs_sector": 0.78,
           "momentum": -6.57,
           "r1m": -5.12
         },
         {
           "symbol": "OFSS",
-          "rs_vs_sector": 6.23,
+          "rs_vs_sector": 6.94,
           "momentum": -22.38,
           "r1m": 1.04
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": -5.19
+      "sector_1m": -5.9
     },
     "CNXAUTO": {
       "points": [
         {
           "symbol": "TMPV",
-          "rs_vs_sector": 1.6,
+          "rs_vs_sector": 1.7,
           "momentum": 10.04,
           "r1m": -5.45
         },
         {
           "symbol": "MARUTI",
-          "rs_vs_sector": -4.54,
+          "rs_vs_sector": -4.44,
           "momentum": -1.94,
           "r1m": -11.59
         },
         {
           "symbol": "M&M",
-          "rs_vs_sector": -3.58,
+          "rs_vs_sector": -3.48,
           "momentum": -9.89,
           "r1m": -10.63
         },
         {
           "symbol": "EICHERMOT",
-          "rs_vs_sector": 1.11,
+          "rs_vs_sector": 1.21,
           "momentum": -4.69,
           "r1m": -5.94
         },
         {
           "symbol": "BOSCHLTD",
-          "rs_vs_sector": 4.04,
+          "rs_vs_sector": 4.14,
           "momentum": -19.94,
           "r1m": -3.01
         },
         {
           "symbol": "HEROMOTOCO",
-          "rs_vs_sector": -0.38,
+          "rs_vs_sector": -0.28,
           "momentum": -13.67,
           "r1m": -7.43
         },
         {
           "symbol": "ASHOKLEY",
-          "rs_vs_sector": 1.22,
+          "rs_vs_sector": 1.32,
           "momentum": -9.88,
           "r1m": -5.83
         },
         {
           "symbol": "UNOMINDA",
-          "rs_vs_sector": 7.99,
+          "rs_vs_sector": 8.09,
           "momentum": -14.16,
           "r1m": 0.94
         },
         {
           "symbol": "BHARATFORG",
-          "rs_vs_sector": 1.88,
+          "rs_vs_sector": 1.98,
           "momentum": -1.29,
           "r1m": -5.17
         },
         {
           "symbol": "TIINDIA",
-          "rs_vs_sector": -5.14,
+          "rs_vs_sector": -5.04,
           "momentum": 8.68,
           "r1m": -12.19
         },
         {
           "symbol": "SONACOMS",
-          "rs_vs_sector": 5.17,
+          "rs_vs_sector": 5.27,
           "momentum": -33.52,
           "r1m": -1.88
         },
         {
           "symbol": "EXIDEIND",
-          "rs_vs_sector": 1.9,
+          "rs_vs_sector": 2.0,
           "momentum": -19.62,
           "r1m": -5.15
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": -7.05
+      "sector_1m": -7.15
     },
     "CNXFINANCE": {
       "points": [
         {
           "symbol": "HDFCBANK",
-          "rs_vs_sector": 3.46,
+          "rs_vs_sector": 3.84,
           "momentum": 7.79,
           "r1m": 1.53
         },
         {
           "symbol": "ICICIBANK",
-          "rs_vs_sector": -2.57,
+          "rs_vs_sector": -2.19,
           "momentum": -3.94,
           "r1m": -4.5
         },
         {
           "symbol": "AXISBANK",
-          "rs_vs_sector": 3.71,
+          "rs_vs_sector": 4.09,
           "momentum": 9.21,
           "r1m": 1.78
         },
         {
           "symbol": "SBIN",
-          "rs_vs_sector": -3.07,
+          "rs_vs_sector": -2.69,
           "momentum": -1.24,
           "r1m": -5.0
         },
         {
           "symbol": "BAJFINANCE",
-          "rs_vs_sector": -1.76,
+          "rs_vs_sector": -1.38,
           "momentum": -11.85,
           "r1m": -3.69
         },
         {
           "symbol": "KOTAKBANK",
-          "rs_vs_sector": 7.63,
+          "rs_vs_sector": 8.01,
           "momentum": 2.38,
           "r1m": 5.7
         },
         {
           "symbol": "BAJAJFINSV",
-          "rs_vs_sector": -6.0,
+          "rs_vs_sector": -5.62,
           "momentum": -12.63,
           "r1m": -7.93
         },
         {
           "symbol": "SBILIFE",
-          "rs_vs_sector": -0.84,
+          "rs_vs_sector": -0.46,
           "momentum": 1.07,
           "r1m": -2.77
         },
         {
           "symbol": "JIOFIN",
-          "rs_vs_sector": -3.52,
+          "rs_vs_sector": -3.14,
           "momentum": 0.51,
           "r1m": -5.45
         },
         {
           "symbol": "SHRIRAMFIN",
-          "rs_vs_sector": -6.75,
+          "rs_vs_sector": -6.37,
           "momentum": -9.49,
           "r1m": -8.68
         },
         {
           "symbol": "HDFCLIFE",
-          "rs_vs_sector": 4.66,
+          "rs_vs_sector": 5.04,
           "momentum": 9.64,
           "r1m": 2.73
         },
         {
           "symbol": "MUTHOOTFIN",
-          "rs_vs_sector": 1.3,
+          "rs_vs_sector": 1.68,
           "momentum": 8.49,
           "r1m": -0.63
         },
         {
           "symbol": "CHOLAFIN",
-          "rs_vs_sector": -1.99,
+          "rs_vs_sector": -1.61,
           "momentum": -10.22,
           "r1m": -3.92
         },
         {
           "symbol": "PFC",
-          "rs_vs_sector": -6.59,
+          "rs_vs_sector": -6.21,
           "momentum": 12.0,
           "r1m": -8.52
         },
         {
           "symbol": "BSE",
-          "rs_vs_sector": -0.62,
+          "rs_vs_sector": -0.24,
           "momentum": 16.2,
           "r1m": -2.55
         },
         {
           "symbol": "ICICIGI",
-          "rs_vs_sector": -7.82,
+          "rs_vs_sector": -7.44,
           "momentum": 12.28,
           "r1m": -9.75
         },
         {
           "symbol": "ICICIPRULI",
-          "rs_vs_sector": 0.43,
+          "rs_vs_sector": 0.81,
           "momentum": 0.16,
           "r1m": -1.5
         },
         {
           "symbol": "RECLTD",
-          "rs_vs_sector": -5.49,
+          "rs_vs_sector": -5.11,
           "momentum": 4.78,
           "r1m": -7.42
         },
         {
           "symbol": "SBICARD",
-          "rs_vs_sector": 6.34,
+          "rs_vs_sector": 6.72,
           "momentum": -1.14,
           "r1m": 4.41
         },
         {
           "symbol": "LICHSGFIN",
-          "rs_vs_sector": 12.22,
+          "rs_vs_sector": 12.6,
           "momentum": 10.61,
           "r1m": 10.29
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": -1.93
+      "sector_1m": -2.31
     },
     "BANKNIFTY": {
       "points": [
         {
           "symbol": "HDFCBANK",
-          "rs_vs_sector": 3.07,
+          "rs_vs_sector": 3.14,
           "momentum": 7.79,
           "r1m": 1.53
         },
         {
           "symbol": "ICICIBANK",
-          "rs_vs_sector": -2.96,
+          "rs_vs_sector": -2.89,
           "momentum": -3.94,
           "r1m": -4.5
         },
         {
           "symbol": "AXISBANK",
-          "rs_vs_sector": 3.32,
+          "rs_vs_sector": 3.39,
           "momentum": 9.21,
           "r1m": 1.78
         },
         {
           "symbol": "PNB",
-          "rs_vs_sector": 1.36,
+          "rs_vs_sector": 1.43,
           "momentum": -7.99,
           "r1m": -0.18
         },
         {
           "symbol": "KOTAKBANK",
-          "rs_vs_sector": 7.24,
+          "rs_vs_sector": 7.31,
           "momentum": 2.38,
           "r1m": 5.7
         },
         {
           "symbol": "SBIN",
-          "rs_vs_sector": -3.46,
+          "rs_vs_sector": -3.39,
           "momentum": -1.24,
           "r1m": -5.0
         },
         {
           "symbol": "IDFCFIRSTB",
-          "rs_vs_sector": 2.04,
+          "rs_vs_sector": 2.11,
           "momentum": -8.7,
           "r1m": 0.5
         },
         {
           "symbol": "AUBANK",
-          "rs_vs_sector": 0.01,
+          "rs_vs_sector": 0.08,
           "momentum": -4.0,
           "r1m": -1.53
         },
         {
           "symbol": "INDUSINDBK",
-          "rs_vs_sector": -3.42,
+          "rs_vs_sector": -3.35,
           "momentum": -6.95,
           "r1m": -4.96
         },
         {
           "symbol": "CANBK",
-          "rs_vs_sector": -2.57,
+          "rs_vs_sector": -2.5,
           "momentum": 3.34,
           "r1m": -4.11
         },
         {
           "symbol": "BANKBARODA",
-          "rs_vs_sector": -2.57,
+          "rs_vs_sector": -2.5,
           "momentum": 12.3,
           "r1m": -4.11
         },
         {
           "symbol": "FEDERALBNK",
-          "rs_vs_sector": -5.72,
+          "rs_vs_sector": -5.65,
           "momentum": -9.98,
           "r1m": -7.26
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": -1.54
+      "sector_1m": -1.61
     },
     "CNXMETAL": {
       "points": [
         {
           "symbol": "HINDZINC",
-          "rs_vs_sector": 6.77,
+          "rs_vs_sector": 7.59,
           "momentum": 1.24,
           "r1m": 7.0
         },
         {
           "symbol": "VEDL",
-          "rs_vs_sector": 1.67,
+          "rs_vs_sector": 2.49,
           "momentum": 12.94,
           "r1m": 1.9
         },
         {
           "symbol": "ADANIENT",
-          "rs_vs_sector": 0.76,
+          "rs_vs_sector": 1.58,
           "momentum": 1.6,
           "r1m": 0.99
         },
         {
           "symbol": "HINDALCO",
-          "rs_vs_sector": -5.28,
+          "rs_vs_sector": -4.46,
           "momentum": -2.72,
           "r1m": -5.05
         },
         {
           "symbol": "TATASTEEL",
-          "rs_vs_sector": 0.61,
+          "rs_vs_sector": 1.43,
           "momentum": 7.59,
           "r1m": 0.84
         },
         {
           "symbol": "JINDALSTEL",
-          "rs_vs_sector": 0.17,
+          "rs_vs_sector": 0.99,
           "momentum": 2.0,
           "r1m": 0.4
         },
         {
           "symbol": "NMDC",
-          "rs_vs_sector": -5.27,
+          "rs_vs_sector": -4.45,
           "momentum": 5.44,
           "r1m": -5.04
         },
         {
           "symbol": "SAIL",
-          "rs_vs_sector": 2.42,
+          "rs_vs_sector": 3.24,
           "momentum": 4.16,
           "r1m": 2.65
         },
         {
           "symbol": "APLAPOLLO",
-          "rs_vs_sector": 6.76,
+          "rs_vs_sector": 7.58,
           "momentum": -14.3,
           "r1m": 6.99
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": 0.23
+      "sector_1m": -0.59
     },
     "CNXPHARMA": {
       "points": [
         {
           "symbol": "SUNPHARMA",
-          "rs_vs_sector": -4.81,
+          "rs_vs_sector": -5.55,
           "momentum": -3.25,
           "r1m": -3.3
         },
         {
           "symbol": "DIVISLAB",
-          "rs_vs_sector": 8.01,
+          "rs_vs_sector": 7.27,
           "momentum": -29.51,
           "r1m": 9.52
         },
         {
           "symbol": "CIPLA",
-          "rs_vs_sector": -3.44,
+          "rs_vs_sector": -4.18,
           "momentum": -5.09,
           "r1m": -1.93
         },
         {
           "symbol": "TORNTPHARM",
-          "rs_vs_sector": -4.96,
+          "rs_vs_sector": -5.7,
           "momentum": -12.71,
           "r1m": -3.45
         },
         {
           "symbol": "DRREDDY",
-          "rs_vs_sector": -0.23,
+          "rs_vs_sector": -0.97,
           "momentum": 8.13,
           "r1m": 1.28
         },
         {
           "symbol": "LUPIN",
-          "rs_vs_sector": -7.89,
+          "rs_vs_sector": -8.63,
           "momentum": 5.04,
           "r1m": -6.38
         },
         {
           "symbol": "ZYDUSLIFE",
-          "rs_vs_sector": 3.51,
+          "rs_vs_sector": 2.77,
           "momentum": -3.31,
           "r1m": 5.02
         },
         {
           "symbol": "AUROPHARMA",
-          "rs_vs_sector": 5.23,
+          "rs_vs_sector": 4.49,
           "momentum": -9.03,
           "r1m": 6.74
         },
         {
           "symbol": "ALKEM",
-          "rs_vs_sector": 0.05,
+          "rs_vs_sector": -0.69,
           "momentum": -0.17,
           "r1m": 1.56
         },
         {
           "symbol": "MANKIND",
-          "rs_vs_sector": -5.41,
+          "rs_vs_sector": -6.15,
           "momentum": 0.8,
           "r1m": -3.9
         },
         {
           "symbol": "LAURUSLABS",
-          "rs_vs_sector": 6.94,
+          "rs_vs_sector": 6.2,
           "momentum": -29.85,
           "r1m": 8.45
         },
         {
           "symbol": "GLENMARK",
-          "rs_vs_sector": 7.43,
+          "rs_vs_sector": 6.69,
           "momentum": -1.62,
           "r1m": 8.94
         },
         {
           "symbol": "BIOCON",
-          "rs_vs_sector": -8.23,
+          "rs_vs_sector": -8.97,
           "momentum": 0.62,
           "r1m": -6.72
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": 1.51
+      "sector_1m": 2.25
     },
     "CNXFMCG": {
       "points": [
         {
           "symbol": "VBL",
-          "rs_vs_sector": 1.94,
+          "rs_vs_sector": 1.59,
           "momentum": 18.02,
           "r1m": -2.29
         },
         {
           "symbol": "GODREJCP",
-          "rs_vs_sector": -1.15,
+          "rs_vs_sector": -1.5,
           "momentum": 6.67,
           "r1m": -5.38
         },
         {
           "symbol": "COLPAL",
-          "rs_vs_sector": 6.26,
+          "rs_vs_sector": 5.91,
           "momentum": 6.03,
           "r1m": 2.03
         },
         {
           "symbol": "BRITANNIA",
-          "rs_vs_sector": -4.11,
+          "rs_vs_sector": -4.46,
           "momentum": -4.55,
           "r1m": -8.34
         },
         {
           "symbol": "DABUR",
-          "rs_vs_sector": 3.1,
+          "rs_vs_sector": 2.75,
           "momentum": 5.54,
           "r1m": -1.13
         },
         {
           "symbol": "HINDUNILVR",
-          "rs_vs_sector": -0.16,
+          "rs_vs_sector": -0.51,
           "momentum": 7.58,
           "r1m": -4.39
         },
         {
           "symbol": "ITC",
-          "rs_vs_sector": 2.45,
+          "rs_vs_sector": 2.1,
           "momentum": 8.54,
           "r1m": -1.78
         },
         {
           "symbol": "MARICO",
-          "rs_vs_sector": -1.19,
+          "rs_vs_sector": -1.54,
           "momentum": -3.81,
           "r1m": -5.42
         },
         {
           "symbol": "NESTLEIND",
-          "rs_vs_sector": -2.09,
+          "rs_vs_sector": -2.44,
           "momentum": -3.32,
           "r1m": -6.32
         },
         {
           "symbol": "PATANJALI",
-          "rs_vs_sector": 8.8,
+          "rs_vs_sector": 8.45,
           "momentum": 17.54,
           "r1m": 4.57
         },
         {
           "symbol": "UNITDSPR",
-          "rs_vs_sector": -5.81,
+          "rs_vs_sector": -6.16,
           "momentum": -13.86,
           "r1m": -10.04
         },
         {
           "symbol": "TATACONSUM",
-          "rs_vs_sector": -2.51,
+          "rs_vs_sector": -2.86,
           "momentum": 3.65,
           "r1m": -6.74
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": -4.23
+      "sector_1m": -3.88
     },
     "CNXENERGY": {
       "points": [
         {
           "symbol": "NTPC",
-          "rs_vs_sector": -2.91,
+          "rs_vs_sector": -3.11,
           "momentum": 7.69,
           "r1m": -3.83
         },
         {
           "symbol": "RELIANCE",
-          "rs_vs_sector": -5.53,
+          "rs_vs_sector": -5.73,
           "momentum": -0.1,
           "r1m": -6.45
         },
         {
           "symbol": "ONGC",
-          "rs_vs_sector": -1.26,
+          "rs_vs_sector": -1.46,
           "momentum": 3.28,
           "r1m": -2.18
         },
         {
           "symbol": "POWERGRID",
-          "rs_vs_sector": 3.5,
+          "rs_vs_sector": 3.3,
           "momentum": 10.09,
           "r1m": 2.58
         },
         {
           "symbol": "COALINDIA",
-          "rs_vs_sector": 3.4,
+          "rs_vs_sector": 3.2,
           "momentum": 11.65,
           "r1m": 2.48
         },
         {
           "symbol": "IOC",
-          "rs_vs_sector": 1.43,
+          "rs_vs_sector": 1.23,
           "momentum": 4.99,
           "r1m": 0.51
         },
         {
           "symbol": "ADANIGREEN",
-          "rs_vs_sector": 4.13,
+          "rs_vs_sector": 3.93,
           "momentum": 14.39,
           "r1m": 3.21
         },
         {
           "symbol": "BPCL",
-          "rs_vs_sector": 3.2,
+          "rs_vs_sector": 3.0,
           "momentum": -0.13,
           "r1m": 2.28
         },
         {
           "symbol": "GAIL",
-          "rs_vs_sector": 1.73,
+          "rs_vs_sector": 1.53,
           "momentum": 0.81,
           "r1m": 0.81
         },
         {
           "symbol": "TATAPOWER",
-          "rs_vs_sector": -0.16,
+          "rs_vs_sector": -0.36,
           "momentum": 5.77,
           "r1m": -1.08
         },
         {
           "symbol": "SIEMENS",
-          "rs_vs_sector": 1.3,
+          "rs_vs_sector": 1.1,
           "momentum": -3.72,
           "r1m": 0.38
         },
         {
           "symbol": "ABB",
-          "rs_vs_sector": -1.23,
+          "rs_vs_sector": -1.43,
           "momentum": -2.46,
           "r1m": -2.15
         },
         {
           "symbol": "CGPOWER",
-          "rs_vs_sector": 4.27,
+          "rs_vs_sector": 4.07,
           "momentum": 10.79,
           "r1m": 3.35
         },
         {
           "symbol": "BHEL",
-          "rs_vs_sector": 5.71,
+          "rs_vs_sector": 5.51,
           "momentum": -1.38,
           "r1m": 4.79
         },
         {
           "symbol": "JSWENERGY",
-          "rs_vs_sector": -2.38,
+          "rs_vs_sector": -2.58,
           "momentum": 4.44,
           "r1m": -3.3
         },
         {
           "symbol": "SUZLON",
-          "rs_vs_sector": -6.84,
+          "rs_vs_sector": -7.04,
           "momentum": 19.37,
           "r1m": -7.76
         },
         {
           "symbol": "INOXWIND",
-          "rs_vs_sector": 5.07,
+          "rs_vs_sector": 4.87,
           "momentum": 19.49,
           "r1m": 4.15
         },
         {
           "symbol": "PETRONET",
-          "rs_vs_sector": 2.46,
+          "rs_vs_sector": 2.26,
           "momentum": 0.19,
           "r1m": 1.54
         },
         {
           "symbol": "OIL",
-          "rs_vs_sector": 1.1,
+          "rs_vs_sector": 0.9,
           "momentum": -13.58,
           "r1m": 0.18
         },
         {
           "symbol": "NHPC",
-          "rs_vs_sector": 1.94,
+          "rs_vs_sector": 1.74,
           "momentum": -0.47,
           "r1m": 1.02
         },
         {
           "symbol": "HINDPETRO",
-          "rs_vs_sector": -1.11,
+          "rs_vs_sector": -1.31,
           "momentum": 6.41,
           "r1m": -2.03
         },
         {
           "symbol": "ADANIENSOL",
-          "rs_vs_sector": -5.87,
+          "rs_vs_sector": -6.07,
           "momentum": -2.06,
           "r1m": -6.79
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": -0.92
+      "sector_1m": -0.72
     },
     "CNXREALTY": {
       "points": [
         {
           "symbol": "DLF",
-          "rs_vs_sector": 1.9,
+          "rs_vs_sector": 2.1,
           "momentum": -6.99,
           "r1m": -3.81
         },
         {
           "symbol": "LODHA",
-          "rs_vs_sector": 0.31,
+          "rs_vs_sector": 0.51,
           "momentum": -30.07,
           "r1m": -5.4
         },
         {
           "symbol": "GODREJPROP",
-          "rs_vs_sector": -10.04,
+          "rs_vs_sector": -9.84,
           "momentum": -9.91,
           "r1m": -15.75
         },
         {
           "symbol": "OBEROIRLTY",
-          "rs_vs_sector": 1.18,
+          "rs_vs_sector": 1.38,
           "momentum": -10.56,
           "r1m": -4.53
         },
         {
           "symbol": "PHOENIXLTD",
-          "rs_vs_sector": 3.57,
+          "rs_vs_sector": 3.77,
           "momentum": -1.97,
           "r1m": -2.14
         },
         {
           "symbol": "PRESTIGE",
-          "rs_vs_sector": -3.56,
+          "rs_vs_sector": -3.36,
           "momentum": -5.12,
           "r1m": -9.27
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": -5.71
+      "sector_1m": -5.91
     },
     "NIFTY_HEALTHCARE": {
       "points": [
         {
           "symbol": "FORTIS",
-          "rs_vs_sector": -4.01,
+          "rs_vs_sector": -4.78,
           "momentum": 5.21,
           "r1m": -2.78
         },
         {
           "symbol": "MAXHEALTH",
-          "rs_vs_sector": 4.02,
+          "rs_vs_sector": 3.25,
           "momentum": 9.4,
           "r1m": 5.25
         },
         {
           "symbol": "APOLLOHOSP",
-          "rs_vs_sector": 0.99,
+          "rs_vs_sector": 0.22,
           "momentum": -3.14,
           "r1m": 2.22
         },
         {
           "symbol": "SUNPHARMA",
-          "rs_vs_sector": -4.53,
+          "rs_vs_sector": -5.3,
           "momentum": -3.25,
           "r1m": -3.3
         },
         {
           "symbol": "ZYDUSLIFE",
-          "rs_vs_sector": 3.79,
+          "rs_vs_sector": 3.02,
           "momentum": -3.31,
           "r1m": 5.02
         },
         {
           "symbol": "LAURUSLABS",
-          "rs_vs_sector": 7.22,
+          "rs_vs_sector": 6.45,
           "momentum": -29.85,
           "r1m": 8.45
         },
         {
           "symbol": "DRREDDY",
-          "rs_vs_sector": 0.05,
+          "rs_vs_sector": -0.72,
           "momentum": 8.13,
           "r1m": 1.28
         },
         {
           "symbol": "DIVISLAB",
-          "rs_vs_sector": 8.29,
+          "rs_vs_sector": 7.52,
           "momentum": -29.51,
           "r1m": 9.52
         },
         {
           "symbol": "CIPLA",
-          "rs_vs_sector": -3.16,
+          "rs_vs_sector": -3.93,
           "momentum": -5.09,
           "r1m": -1.93
         },
         {
           "symbol": "ALKEM",
-          "rs_vs_sector": 0.33,
+          "rs_vs_sector": -0.44,
           "momentum": -0.17,
           "r1m": 1.56
         },
         {
           "symbol": "TORNTPHARM",
-          "rs_vs_sector": -4.68,
+          "rs_vs_sector": -5.45,
           "momentum": -12.71,
           "r1m": -3.45
         },
         {
           "symbol": "AUROPHARMA",
-          "rs_vs_sector": 5.51,
+          "rs_vs_sector": 4.74,
           "momentum": -9.03,
           "r1m": 6.74
         },
         {
           "symbol": "GLENMARK",
-          "rs_vs_sector": 7.71,
+          "rs_vs_sector": 6.94,
           "momentum": -1.62,
           "r1m": 8.94
         },
         {
           "symbol": "MANKIND",
-          "rs_vs_sector": -5.13,
+          "rs_vs_sector": -5.9,
           "momentum": 0.8,
           "r1m": -3.9
         },
         {
           "symbol": "BIOCON",
-          "rs_vs_sector": -7.95,
+          "rs_vs_sector": -8.72,
           "momentum": 0.62,
           "r1m": -6.72
         },
         {
           "symbol": "LUPIN",
-          "rs_vs_sector": -7.61,
+          "rs_vs_sector": -8.38,
           "momentum": 5.04,
           "r1m": -6.38
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": 1.23
+      "sector_1m": 2.0
     },
     "NIFTY_IND_DEFENCE": {
       "points": [
         {
           "symbol": "SOLARINDS",
-          "rs_vs_sector": -1.15,
+          "rs_vs_sector": -2.09,
           "momentum": -8.7,
           "r1m": -5.91
         },
         {
           "symbol": "BDL",
-          "rs_vs_sector": -6.54,
+          "rs_vs_sector": -7.48,
           "momentum": 1.57,
           "r1m": -11.3
         },
         {
           "symbol": "BEL",
-          "rs_vs_sector": 0.87,
+          "rs_vs_sector": -0.07,
           "momentum": 3.98,
           "r1m": -3.89
         },
         {
           "symbol": "HAL",
-          "rs_vs_sector": 0.44,
+          "rs_vs_sector": -0.5,
           "momentum": -13.22,
           "r1m": -4.32
         },
         {
           "symbol": "MAZDOCK",
-          "rs_vs_sector": -6.31,
+          "rs_vs_sector": -7.25,
           "momentum": -1.59,
           "r1m": -11.07
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": -4.76
+      "sector_1m": -3.82
     },
     "NIFTY_CAPITAL_MKT": {
       "points": [
         {
           "symbol": "NUVAMA",
-          "rs_vs_sector": -1.12,
+          "rs_vs_sector": 1.53,
           "momentum": 0.35,
           "r1m": -1.14
         },
         {
           "symbol": "MCX",
-          "rs_vs_sector": 9.67,
+          "rs_vs_sector": 12.32,
           "momentum": -6.62,
           "r1m": 9.65
         },
         {
           "symbol": "ANGELONE",
-          "rs_vs_sector": 3.34,
+          "rs_vs_sector": 5.99,
           "momentum": 18.76,
           "r1m": 3.32
         },
         {
           "symbol": "BSE",
-          "rs_vs_sector": -2.53,
+          "rs_vs_sector": 0.12,
           "momentum": 16.2,
           "r1m": -2.55
         },
         {
           "symbol": "CAMS",
-          "rs_vs_sector": -6.11,
+          "rs_vs_sector": -3.46,
           "momentum": 7.85,
           "r1m": -6.13
         },
         {
           "symbol": "CDSL",
-          "rs_vs_sector": 4.61,
+          "rs_vs_sector": 7.26,
           "momentum": 3.15,
           "r1m": 4.59
         },
         {
           "symbol": "HDFCAMC",
-          "rs_vs_sector": -4.95,
+          "rs_vs_sector": -2.3,
           "momentum": 5.84,
           "r1m": -4.97
         },
         {
           "symbol": "360ONE",
-          "rs_vs_sector": -9.08,
+          "rs_vs_sector": -6.43,
           "momentum": -2.81,
           "r1m": -9.1
         },
         {
           "symbol": "KFINTECH",
-          "rs_vs_sector": -1.88,
+          "rs_vs_sector": 0.77,
           "momentum": -3.5,
           "r1m": -1.9
         },
         {
           "symbol": "IEX",
-          "rs_vs_sector": -6.11,
+          "rs_vs_sector": -3.46,
           "momentum": -0.17,
           "r1m": -6.13
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": -0.02
+      "sector_1m": -2.67
     },
     "NIFTY_TOP_10_EW": {
       "points": [
         {
           "symbol": "RELIANCE",
-          "rs_vs_sector": -3.94,
+          "rs_vs_sector": -3.33,
           "momentum": -0.1,
           "r1m": -6.45
         },
         {
           "symbol": "KOTAKBANK",
-          "rs_vs_sector": 8.21,
+          "rs_vs_sector": 8.82,
           "momentum": 2.38,
           "r1m": 5.7
         },
         {
           "symbol": "BHARTIARTL",
-          "rs_vs_sector": 1.02,
+          "rs_vs_sector": 1.63,
           "momentum": -0.57,
           "r1m": -1.49
         },
         {
           "symbol": "HDFCBANK",
-          "rs_vs_sector": 4.04,
+          "rs_vs_sector": 4.65,
           "momentum": 7.79,
           "r1m": 1.53
         },
         {
           "symbol": "INFY",
-          "rs_vs_sector": -3.6,
+          "rs_vs_sector": -2.99,
           "momentum": -6.11,
           "r1m": -6.11
         },
         {
           "symbol": "LT",
-          "rs_vs_sector": -1.36,
+          "rs_vs_sector": -0.75,
           "momentum": 3.84,
           "r1m": -3.87
         },
         {
           "symbol": "ITC",
-          "rs_vs_sector": 0.73,
+          "rs_vs_sector": 1.34,
           "momentum": 8.54,
           "r1m": -1.78
         },
         {
           "symbol": "TCS",
-          "rs_vs_sector": -5.53,
+          "rs_vs_sector": -4.92,
           "momentum": -7.1,
           "r1m": -8.04
         },
         {
           "symbol": "ICICIBANK",
-          "rs_vs_sector": -1.99,
+          "rs_vs_sector": -1.38,
           "momentum": -3.94,
           "r1m": -4.5
         },
         {
           "symbol": "AXISBANK",
-          "rs_vs_sector": 4.29,
+          "rs_vs_sector": 4.9,
           "momentum": 9.21,
           "r1m": 1.78
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": -2.51
+      "sector_1m": -3.12
     },
     "NIFTY_NEW_CONSUMP": {
       "points": [
         {
           "symbol": "360ONE",
-          "rs_vs_sector": -5.75,
+          "rs_vs_sector": -5.26,
           "momentum": -2.81,
           "r1m": -9.1
         },
         {
           "symbol": "AMBER",
-          "rs_vs_sector": 1.63,
+          "rs_vs_sector": 2.12,
           "momentum": 7.96,
           "r1m": -1.72
         },
         {
           "symbol": "ANGELONE",
-          "rs_vs_sector": 6.67,
+          "rs_vs_sector": 7.16,
           "momentum": 18.76,
           "r1m": 3.32
         },
         {
           "symbol": "BAJAJ_AUTO",
-          "rs_vs_sector": 1.37,
+          "rs_vs_sector": 1.86,
           "momentum": -15.37,
           "r1m": -1.98
         },
         {
           "symbol": "BHARTIARTL",
-          "rs_vs_sector": 1.86,
+          "rs_vs_sector": 2.35,
           "momentum": -0.57,
           "r1m": -1.49
         },
         {
           "symbol": "BLUESTARCO",
-          "rs_vs_sector": 5.94,
+          "rs_vs_sector": 6.43,
           "momentum": 10.77,
           "r1m": 2.59
         },
         {
           "symbol": "CROMPTON",
-          "rs_vs_sector": -4.14,
+          "rs_vs_sector": -3.65,
           "momentum": 10.0,
           "r1m": -7.49
         },
         {
           "symbol": "DIXON",
-          "rs_vs_sector": -6.72,
+          "rs_vs_sector": -6.23,
           "momentum": -13.97,
           "r1m": -10.07
         },
         {
           "symbol": "DLF",
-          "rs_vs_sector": -0.46,
+          "rs_vs_sector": 0.03,
           "momentum": -6.99,
           "r1m": -3.81
         },
         {
           "symbol": "DMART",
-          "rs_vs_sector": -2.07,
+          "rs_vs_sector": -1.58,
           "momentum": 7.11,
           "r1m": -5.42
         },
         {
           "symbol": "EICHERMOT",
-          "rs_vs_sector": -2.59,
+          "rs_vs_sector": -2.1,
           "momentum": -4.69,
           "r1m": -5.94
         },
         {
           "symbol": "ETERNAL",
-          "rs_vs_sector": 5.49,
+          "rs_vs_sector": 5.98,
           "momentum": -21.53,
           "r1m": 2.14
         },
         {
           "symbol": "GODREJPROP",
-          "rs_vs_sector": -12.4,
+          "rs_vs_sector": -11.91,
           "momentum": -9.91,
           "r1m": -15.75
         },
         {
           "symbol": "HAVELLS",
-          "rs_vs_sector": -8.66,
+          "rs_vs_sector": -8.17,
           "momentum": -8.28,
           "r1m": -12.01
         },
         {
           "symbol": "HDFCAMC",
-          "rs_vs_sector": -1.62,
+          "rs_vs_sector": -1.13,
           "momentum": 5.84,
           "r1m": -4.97
         },
         {
           "symbol": "HEROMOTOCO",
-          "rs_vs_sector": -4.08,
+          "rs_vs_sector": -3.59,
           "momentum": -13.67,
           "r1m": -7.43
         },
         {
           "symbol": "IDEA",
-          "rs_vs_sector": 2.28,
+          "rs_vs_sector": 2.77,
           "momentum": 5.63,
           "r1m": -1.07
         },
         {
           "symbol": "INDHOTEL",
-          "rs_vs_sector": 4.65,
+          "rs_vs_sector": 5.14,
           "momentum": 0.2,
           "r1m": 1.3
         },
         {
           "symbol": "INDIGO",
-          "rs_vs_sector": -1.91,
+          "rs_vs_sector": -1.42,
           "momentum": -3.24,
           "r1m": -5.26
         },
         {
           "symbol": "JUBLFOOD",
-          "rs_vs_sector": 3.69,
+          "rs_vs_sector": 4.18,
           "momentum": -18.99,
           "r1m": 0.34
         },
         {
           "symbol": "KALYANKJIL",
-          "rs_vs_sector": 1.11,
+          "rs_vs_sector": 1.6,
           "momentum": -53.96,
           "r1m": -2.24
         },
         {
           "symbol": "LODHA",
-          "rs_vs_sector": -2.05,
+          "rs_vs_sector": -1.56,
           "momentum": -30.07,
           "r1m": -5.4
         },
         {
           "symbol": "M&M",
-          "rs_vs_sector": -7.28,
+          "rs_vs_sector": -6.79,
           "momentum": -9.89,
           "r1m": -10.63
         },
         {
           "symbol": "MARUTI",
-          "rs_vs_sector": -8.24,
+          "rs_vs_sector": -7.75,
           "momentum": -1.94,
           "r1m": -11.59
         },
         {
           "symbol": "NAUKRI",
-          "rs_vs_sector": -5.88,
+          "rs_vs_sector": -5.39,
           "momentum": -36.35,
           "r1m": -9.23
         },
         {
           "symbol": "NUVAMA",
-          "rs_vs_sector": 2.21,
+          "rs_vs_sector": 2.7,
           "momentum": 0.35,
           "r1m": -1.14
         },
         {
           "symbol": "NYKAA",
-          "rs_vs_sector": 4.82,
+          "rs_vs_sector": 5.31,
           "momentum": -8.4,
           "r1m": 1.47
         },
         {
           "symbol": "OBEROIRLTY",
-          "rs_vs_sector": -1.18,
+          "rs_vs_sector": -0.69,
           "momentum": -10.56,
           "r1m": -4.53
         },
         {
           "symbol": "PAGEIND",
-          "rs_vs_sector": 6.64,
+          "rs_vs_sector": 7.13,
           "momentum": 12.23,
           "r1m": 3.29
         },
         {
           "symbol": "PAYTM",
-          "rs_vs_sector": 20.17,
+          "rs_vs_sector": 20.66,
           "momentum": -52.88,
           "r1m": 16.82
         },
         {
           "symbol": "LODHA",
-          "rs_vs_sector": -2.05,
+          "rs_vs_sector": -1.56,
           "momentum": -30.07,
           "r1m": -5.4
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": -3.35
+      "sector_1m": -3.84
     },
     "CNXPSE": {
       "points": [
         {
           "symbol": "BEL",
-          "rs_vs_sector": -2.31,
+          "rs_vs_sector": -2.72,
           "momentum": 3.98,
           "r1m": -3.89
         },
         {
           "symbol": "BHEL",
-          "rs_vs_sector": 6.37,
+          "rs_vs_sector": 5.96,
           "momentum": -1.38,
           "r1m": 4.79
         },
         {
           "symbol": "BPCL",
-          "rs_vs_sector": 3.86,
+          "rs_vs_sector": 3.45,
           "momentum": -0.13,
           "r1m": 2.28
         },
         {
           "symbol": "COALINDIA",
-          "rs_vs_sector": 4.06,
+          "rs_vs_sector": 3.65,
           "momentum": 11.65,
           "r1m": 2.48
         },
         {
           "symbol": "CONCOR",
-          "rs_vs_sector": -0.33,
+          "rs_vs_sector": -0.74,
           "momentum": -8.86,
           "r1m": -1.91
         },
         {
           "symbol": "GAIL",
-          "rs_vs_sector": 2.39,
+          "rs_vs_sector": 1.98,
           "momentum": 0.81,
           "r1m": 0.81
         },
         {
           "symbol": "HAL",
-          "rs_vs_sector": -2.74,
+          "rs_vs_sector": -3.15,
           "momentum": -13.22,
           "r1m": -4.32
         },
         {
           "symbol": "HINDPETRO",
-          "rs_vs_sector": -0.45,
+          "rs_vs_sector": -0.86,
           "momentum": 6.41,
           "r1m": -2.03
         },
         {
           "symbol": "IOC",
-          "rs_vs_sector": 2.09,
+          "rs_vs_sector": 1.68,
           "momentum": 4.99,
           "r1m": 0.51
         },
         {
           "symbol": "IRFC",
-          "rs_vs_sector": -2.74,
+          "rs_vs_sector": -3.15,
           "momentum": 13.78,
           "r1m": -4.32
         },
         {
           "symbol": "NHPC",
-          "rs_vs_sector": 2.6,
+          "rs_vs_sector": 2.19,
           "momentum": -0.47,
           "r1m": 1.02
         },
         {
           "symbol": "NMDC",
-          "rs_vs_sector": -3.46,
+          "rs_vs_sector": -3.87,
           "momentum": 5.44,
           "r1m": -5.04
         },
         {
           "symbol": "NTPC",
-          "rs_vs_sector": -2.25,
+          "rs_vs_sector": -2.66,
           "momentum": 7.69,
           "r1m": -3.83
         },
         {
           "symbol": "ONGC",
-          "rs_vs_sector": -0.6,
+          "rs_vs_sector": -1.01,
           "momentum": 3.28,
           "r1m": -2.18
         },
         {
           "symbol": "PFC",
-          "rs_vs_sector": -6.94,
+          "rs_vs_sector": -7.35,
           "momentum": 12.0,
           "r1m": -8.52
         },
         {
           "symbol": "POWERGRID",
-          "rs_vs_sector": 4.16,
+          "rs_vs_sector": 3.75,
           "momentum": 10.09,
           "r1m": 2.58
         },
         {
           "symbol": "RECLTD",
-          "rs_vs_sector": -5.84,
+          "rs_vs_sector": -6.25,
           "momentum": 4.78,
           "r1m": -7.42
         },
         {
           "symbol": "RVNL",
-          "rs_vs_sector": -2.54,
+          "rs_vs_sector": -2.95,
           "momentum": 8.05,
           "r1m": -4.12
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": -1.58
+      "sector_1m": -1.17
     },
     "NIFTY_CONSR_DURBL": {
       "points": [
         {
           "symbol": "TITAN",
-          "rs_vs_sector": 0.71,
+          "rs_vs_sector": 0.34,
           "momentum": -13.89,
           "r1m": -5.32
         },
         {
           "symbol": "KALYANKJIL",
-          "rs_vs_sector": 3.79,
+          "rs_vs_sector": 3.42,
           "momentum": -53.96,
           "r1m": -2.24
         },
         {
           "symbol": "CROMPTON",
-          "rs_vs_sector": -1.46,
+          "rs_vs_sector": -1.83,
           "momentum": 10.0,
           "r1m": -7.49
         },
         {
           "symbol": "AMBER",
-          "rs_vs_sector": 4.31,
+          "rs_vs_sector": 3.94,
           "momentum": 7.96,
           "r1m": -1.72
         },
         {
           "symbol": "BLUESTARCO",
-          "rs_vs_sector": 8.62,
+          "rs_vs_sector": 8.25,
           "momentum": 10.77,
           "r1m": 2.59
         },
         {
           "symbol": "VOLTAS",
-          "rs_vs_sector": -3.14,
+          "rs_vs_sector": -3.51,
           "momentum": 8.14,
           "r1m": -9.17
         },
         {
           "symbol": "HAVELLS",
-          "rs_vs_sector": -5.98,
+          "rs_vs_sector": -6.35,
           "momentum": -8.28,
           "r1m": -12.01
         },
         {
           "symbol": "PGEL",
-          "rs_vs_sector": -6.06,
+          "rs_vs_sector": -6.43,
           "momentum": -6.5,
           "r1m": -12.09
         },
         {
           "symbol": "DIXON",
-          "rs_vs_sector": -4.04,
+          "rs_vs_sector": -4.41,
           "momentum": -13.97,
           "r1m": -10.07
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": -6.03
+      "sector_1m": -5.66
     },
     "CNXINFRA": {
       "points": [
         {
           "symbol": "ULTRACEMCO",
-          "rs_vs_sector": -1.29,
+          "rs_vs_sector": -0.78,
           "momentum": -0.7,
           "r1m": -3.81
         },
         {
           "symbol": "TATAPOWER",
-          "rs_vs_sector": 1.44,
+          "rs_vs_sector": 1.95,
           "momentum": 5.77,
           "r1m": -1.08
         },
         {
           "symbol": "SIEMENS",
-          "rs_vs_sector": 2.9,
+          "rs_vs_sector": 3.41,
           "momentum": -3.72,
           "r1m": 0.38
         },
         {
           "symbol": "SHREECEM",
-          "rs_vs_sector": -4.63,
+          "rs_vs_sector": -4.12,
           "momentum": 2.72,
           "r1m": -7.15
         },
         {
           "symbol": "RELIANCE",
-          "rs_vs_sector": -3.93,
+          "rs_vs_sector": -3.42,
           "momentum": -0.1,
           "r1m": -6.45
         },
         {
           "symbol": "POWERGRID",
-          "rs_vs_sector": 5.1,
+          "rs_vs_sector": 5.61,
           "momentum": 10.09,
           "r1m": 2.58
         },
         {
           "symbol": "ONGC",
-          "rs_vs_sector": 0.34,
+          "rs_vs_sector": 0.85,
           "momentum": 3.28,
           "r1m": -2.18
         },
         {
           "symbol": "NTPC",
-          "rs_vs_sector": -1.31,
+          "rs_vs_sector": -0.8,
           "momentum": 7.69,
           "r1m": -3.83
         },
         {
           "symbol": "MOTHERSON",
-          "rs_vs_sector": -2.01,
+          "rs_vs_sector": -1.5,
           "momentum": -16.23,
           "r1m": -4.53
         },
         {
           "symbol": "MAXHEALTH",
-          "rs_vs_sector": 7.77,
+          "rs_vs_sector": 8.28,
           "momentum": 9.4,
           "r1m": 5.25
         },
         {
           "symbol": "LT",
-          "rs_vs_sector": -1.35,
+          "rs_vs_sector": -0.84,
           "momentum": 3.84,
           "r1m": -3.87
         },
         {
           "symbol": "IOC",
-          "rs_vs_sector": 3.03,
+          "rs_vs_sector": 3.54,
           "momentum": 4.99,
           "r1m": 0.51
         },
         {
           "symbol": "INDUSTOWER",
-          "rs_vs_sector": 3.46,
+          "rs_vs_sector": 3.97,
           "momentum": 9.52,
           "r1m": 0.94
         },
         {
           "symbol": "INDIGO",
-          "rs_vs_sector": -2.74,
+          "rs_vs_sector": -2.23,
           "momentum": -3.24,
           "r1m": -5.26
         },
         {
           "symbol": "INDHOTEL",
-          "rs_vs_sector": 3.82,
+          "rs_vs_sector": 4.33,
           "momentum": 0.2,
           "r1m": 1.3
         },
         {
           "symbol": "HINDPETRO",
-          "rs_vs_sector": 0.49,
+          "rs_vs_sector": 1.0,
           "momentum": 6.41,
           "r1m": -2.03
         },
         {
           "symbol": "GRASIM",
-          "rs_vs_sector": 0.66,
+          "rs_vs_sector": 1.17,
           "momentum": -3.76,
           "r1m": -1.86
         },
         {
           "symbol": "GODREJPROP",
-          "rs_vs_sector": -13.23,
+          "rs_vs_sector": -12.72,
           "momentum": -9.91,
           "r1m": -15.75
         },
         {
           "symbol": "GAIL",
-          "rs_vs_sector": 3.33,
+          "rs_vs_sector": 3.84,
           "momentum": 0.81,
           "r1m": 0.81
         },
         {
           "symbol": "DLF",
-          "rs_vs_sector": -1.29,
+          "rs_vs_sector": -0.78,
           "momentum": -6.99,
           "r1m": -3.81
         },
         {
           "symbol": "CUMMINSIND",
-          "rs_vs_sector": 0.21,
+          "rs_vs_sector": 0.72,
           "momentum": 10.74,
           "r1m": -2.31
         },
         {
           "symbol": "CGPOWER",
-          "rs_vs_sector": 5.87,
+          "rs_vs_sector": 6.38,
           "momentum": 10.79,
           "r1m": 3.35
         },
         {
           "symbol": "BPCL",
-          "rs_vs_sector": 4.8,
+          "rs_vs_sector": 5.31,
           "momentum": -0.13,
           "r1m": 2.28
         },
         {
           "symbol": "BHARTIARTL",
-          "rs_vs_sector": 1.03,
+          "rs_vs_sector": 1.54,
           "momentum": -0.57,
           "r1m": -1.49
         },
         {
           "symbol": "BHARATFORG",
-          "rs_vs_sector": -2.65,
+          "rs_vs_sector": -2.14,
           "momentum": -1.29,
           "r1m": -5.17
         },
         {
           "symbol": "ASHOKLEY",
-          "rs_vs_sector": -3.31,
+          "rs_vs_sector": -2.8,
           "momentum": -9.88,
           "r1m": -5.83
         },
         {
           "symbol": "APOLLOHOSP",
-          "rs_vs_sector": 4.74,
+          "rs_vs_sector": 5.25,
           "momentum": -3.14,
           "r1m": 2.22
         },
         {
           "symbol": "AMBUJACEM",
-          "rs_vs_sector": -2.19,
+          "rs_vs_sector": -1.68,
           "momentum": 3.7,
           "r1m": -4.71
         },
         {
           "symbol": "ADANIPORTS",
-          "rs_vs_sector": 10.97,
+          "rs_vs_sector": 11.48,
           "momentum": 9.07,
           "r1m": 8.45
         },
         {
           "symbol": "ADANIGREEN",
-          "rs_vs_sector": 5.73,
+          "rs_vs_sector": 6.24,
           "momentum": 14.39,
           "r1m": 3.21
         }
       ],
       "as_of": "2026-09-18",
-      "sector_1m": -2.52
+      "sector_1m": -3.03
     }
   },
   "sector_scanner": [
@@ -3448,154 +3441,84 @@
       "sector": "NIFTY_HEALTHCARE",
       "stock": "DIVISLAB",
       "stock_1m": 9.52,
-      "sector_1m": 1.23,
+      "sector_1m": 2.0,
       "signal": "Sector Leader"
     },
     {
       "sector": "CNXPHARMA",
       "stock": "DIVISLAB",
       "stock_1m": 9.52,
-      "sector_1m": 1.51,
+      "sector_1m": 2.25,
       "signal": "Sector Leader"
     },
     {
       "sector": "NIFTY_HEALTHCARE",
       "stock": "GLENMARK",
       "stock_1m": 8.94,
-      "sector_1m": 1.23,
+      "sector_1m": 2.0,
       "signal": "Sector Leader"
     },
     {
       "sector": "CNXPHARMA",
       "stock": "GLENMARK",
       "stock_1m": 8.94,
-      "sector_1m": 1.51,
+      "sector_1m": 2.25,
       "signal": "Sector Leader"
     },
     {
       "sector": "NIFTY_HEALTHCARE",
       "stock": "LAURUSLABS",
       "stock_1m": 8.45,
-      "sector_1m": 1.23,
+      "sector_1m": 2.0,
       "signal": "Sector Leader"
     },
     {
       "sector": "CNXPHARMA",
       "stock": "LAURUSLABS",
       "stock_1m": 8.45,
-      "sector_1m": 1.51,
-      "signal": "Sector Leader"
-    },
-    {
-      "sector": "CNXMETAL",
-      "stock": "HINDZINC",
-      "stock_1m": 7.0,
-      "sector_1m": 0.23,
-      "signal": "Sector Leader"
-    },
-    {
-      "sector": "CNXMETAL",
-      "stock": "APLAPOLLO",
-      "stock_1m": 6.99,
-      "sector_1m": 0.23,
+      "sector_1m": 2.25,
       "signal": "Sector Leader"
     },
     {
       "sector": "NIFTY_HEALTHCARE",
       "stock": "AUROPHARMA",
       "stock_1m": 6.74,
-      "sector_1m": 1.23,
+      "sector_1m": 2.0,
       "signal": "Sector Leader"
     },
     {
       "sector": "CNXPHARMA",
       "stock": "AUROPHARMA",
       "stock_1m": 6.74,
-      "sector_1m": 1.51,
+      "sector_1m": 2.25,
       "signal": "Sector Leader"
     },
     {
       "sector": "NIFTY_HEALTHCARE",
       "stock": "MAXHEALTH",
       "stock_1m": 5.25,
-      "sector_1m": 1.23,
+      "sector_1m": 2.0,
       "signal": "Sector Leader"
     },
     {
       "sector": "NIFTY_HEALTHCARE",
       "stock": "ZYDUSLIFE",
       "stock_1m": 5.02,
-      "sector_1m": 1.23,
+      "sector_1m": 2.0,
       "signal": "Sector Leader"
     },
     {
       "sector": "CNXPHARMA",
       "stock": "ZYDUSLIFE",
       "stock_1m": 5.02,
-      "sector_1m": 1.51,
-      "signal": "Sector Leader"
-    },
-    {
-      "sector": "CNXMETAL",
-      "stock": "SAIL",
-      "stock_1m": 2.65,
-      "sector_1m": 0.23,
-      "signal": "Sector Leader"
-    },
-    {
-      "sector": "CNXMETAL",
-      "stock": "VEDL",
-      "stock_1m": 1.9,
-      "sector_1m": 0.23,
+      "sector_1m": 2.25,
       "signal": "Sector Leader"
     },
     {
       "sector": "NIFTY_HEALTHCARE",
       "stock": "APOLLOHOSP",
       "stock_1m": 2.22,
-      "sector_1m": 1.23,
-      "signal": "Sector Leader"
-    },
-    {
-      "sector": "CNXMETAL",
-      "stock": "ADANIENT",
-      "stock_1m": 0.99,
-      "sector_1m": 0.23,
-      "signal": "Sector Leader"
-    },
-    {
-      "sector": "CNXMETAL",
-      "stock": "TATASTEEL",
-      "stock_1m": 0.84,
-      "sector_1m": 0.23,
-      "signal": "Sector Leader"
-    },
-    {
-      "sector": "NIFTY_HEALTHCARE",
-      "stock": "ALKEM",
-      "stock_1m": 1.56,
-      "sector_1m": 1.23,
-      "signal": "Sector Leader"
-    },
-    {
-      "sector": "CNXMETAL",
-      "stock": "JINDALSTEL",
-      "stock_1m": 0.4,
-      "sector_1m": 0.23,
-      "signal": "Sector Leader"
-    },
-    {
-      "sector": "CNXPHARMA",
-      "stock": "ALKEM",
-      "stock_1m": 1.56,
-      "sector_1m": 1.51,
-      "signal": "Sector Leader"
-    },
-    {
-      "sector": "NIFTY_HEALTHCARE",
-      "stock": "DRREDDY",
-      "stock_1m": 1.28,
-      "sector_1m": 1.23,
+      "sector_1m": 2.0,
       "signal": "Sector Leader"
     }
   ]
