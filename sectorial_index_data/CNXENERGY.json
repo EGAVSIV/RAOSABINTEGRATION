@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-09-08T09:15:00.000",
-        "symbol":"NSE:CNXENERGY",
-        "open":27870.75,
-        "high":27975.30078125,
-        "low":27696.05078125,
-        "close":27783.59960938,
-        "volume":91360000.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-09-09T09:15:00.000",
         "symbol":"NSE:CNXENERGY",
         "open":27993.34960938,
@@ -10997,6 +10986,17 @@
         "low":37720.45,
         "close":37814.55,
         "volume":754094360.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-09-22T09:15:00.000",
+        "symbol":"NSE:CNXENERGY",
+        "open":37979.0,
+        "high":38104.1,
+        "low":37669.55,
+        "close":37697.35,
+        "volume":248974467.0,
         "timeframe":"D"
     },
     {
@@ -21993,10 +21993,10 @@
         "datetime":"2026-09-21T09:15:00.000",
         "symbol":"NSE:CNXENERGY",
         "open":37728.8,
-        "high":37910.4,
-        "low":37720.45,
-        "close":37814.55,
-        "volume":754094360.0,
+        "high":38104.1,
+        "low":37669.55,
+        "close":37697.3,
+        "volume":1003081055.0,
         "timeframe":"W"
     },
     {
@@ -25394,8 +25394,8 @@
         "open":37873.7,
         "high":38527.65,
         "low":36843.35,
-        "close":37814.55,
-        "volume":4160155951.0,
+        "close":37697.3,
+        "volume":4409143018.0,
         "timeframe":"M"
     }
 ]
