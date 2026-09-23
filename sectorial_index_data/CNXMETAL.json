@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-09-09T09:15:00.000",
-        "symbol":"NSE:CNXMETAL",
-        "open":6058.79980469,
-        "high":6101.45019531,
-        "low":6014.89990234,
-        "close":6025.29980469,
-        "volume":130324096.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-09-12T09:15:00.000",
         "symbol":"NSE:CNXMETAL",
         "open":6065.85009766,
@@ -11000,6 +10989,17 @@
         "timeframe":"D"
     },
     {
+        "Timeframe":"D",
+        "datetime":"2026-09-23T09:15:00.000",
+        "symbol":"NSE:CNXMETAL",
+        "open":13032.35,
+        "high":13303.1,
+        "low":13030.65,
+        "close":13281.65,
+        "volume":103385094.0,
+        "timeframe":"D"
+    },
+    {
         "Timeframe":"W",
         "datetime":"2011-07-11T09:15:00.000",
         "symbol":"NSE:CNXMETAL",
@@ -19727,10 +19727,10 @@
         "datetime":"2026-09-21T09:15:00.000",
         "symbol":"NSE:CNXMETAL",
         "open":13058.0,
-        "high":13098.55,
+        "high":13303.1,
         "low":12931.7,
-        "close":12990.35,
-        "volume":117007520.0,
+        "close":13281.3,
+        "volume":220413997.0,
         "timeframe":"W"
     },
     {
@@ -21742,8 +21742,8 @@
         "open":13239.15,
         "high":13437.8,
         "low":12553.1,
-        "close":12990.35,
-        "volume":1374589474.0,
+        "close":13281.3,
+        "volume":1477995951.0,
         "timeframe":"M"
     }
 ]
