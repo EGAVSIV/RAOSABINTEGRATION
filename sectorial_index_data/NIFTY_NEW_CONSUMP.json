@@ -4840,6 +4840,17 @@
         "timeframe":"D"
     },
     {
+        "Timeframe":"D",
+        "datetime":"2026-09-24T09:15:00.000",
+        "symbol":"NSE:NIFTY_NEW_CONSUMP",
+        "open":11734.35,
+        "high":11751.15,
+        "low":11562.4,
+        "close":11572.8,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
         "Timeframe":"W",
         "datetime":"2024-12-16T09:15:00.000",
         "symbol":"NSE:NIFTY_NEW_CONSUMP",
@@ -5857,8 +5868,8 @@
         "symbol":"NSE:NIFTY_NEW_CONSUMP",
         "open":11742.4,
         "high":11860.1,
-        "low":11737.15,
-        "close":11849.0,
+        "low":11562.4,
+        "close":11572.8,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -6100,7 +6111,7 @@
         "open":12203.8,
         "high":12206.65,
         "low":11451.7,
-        "close":11849.0,
+        "close":11572.65,
         "volume":0.0,
         "timeframe":"M"
     }

@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "Original_Index":"2022-09-12T09:15:00.000",
-        "symbol":"NSE:NIFTYJR",
-        "open":44268.69921875,
-        "high":44677.6484375,
-        "low":44245.6015625,
-        "close":44635.6484375,
-        "volume":270420000.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "Original_Index":"2022-09-13T09:15:00.000",
         "symbol":"NSE:NIFTYJR",
         "open":44887.3984375,
@@ -10997,6 +10986,17 @@
         "low":71931.5,
         "close":72462.4,
         "volume":157723447.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "Original_Index":"2026-09-24T09:15:00.000",
+        "symbol":"NSE:NIFTYJR",
+        "open":71755.0,
+        "high":72085.35,
+        "low":71388.55,
+        "close":71467.7,
+        "volume":114282695.0,
         "timeframe":"D"
     },
     {
@@ -21994,9 +21994,9 @@
         "symbol":"NSE:NIFTYJR",
         "open":72077.65,
         "high":72465.7,
-        "low":71729.4,
-        "close":72462.4,
-        "volume":420489831.0,
+        "low":71388.55,
+        "close":71470.2,
+        "volume":534776833.0,
         "timeframe":"W"
     },
     {
@@ -26087,8 +26087,8 @@
         "open":73462.4,
         "high":73480.2,
         "low":69592.15,
-        "close":72462.4,
-        "volume":2617612109.0,
+        "close":71470.2,
+        "volume":2731899111.0,
         "timeframe":"M"
     }
 ]
