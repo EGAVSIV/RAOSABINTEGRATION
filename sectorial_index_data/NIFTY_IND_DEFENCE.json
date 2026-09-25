@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-09-14T09:15:00.000",
-        "symbol":"NSE:NIFTY_IND_DEFENCE",
-        "open":2081.77,
-        "high":2081.77,
-        "low":2081.77,
-        "close":2081.77,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-09-15T09:15:00.000",
         "symbol":"NSE:NIFTY_IND_DEFENCE",
         "open":2080.53,
@@ -11000,6 +10989,17 @@
         "timeframe":"D"
     },
     {
+        "Timeframe":"D",
+        "datetime":"2026-09-25T09:15:00.000",
+        "symbol":"NSE:NIFTY_IND_DEFENCE",
+        "open":9358.45,
+        "high":9419.4,
+        "low":9313.35,
+        "close":9385.25,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
         "Timeframe":"W",
         "datetime":"2018-04-02T09:15:00.000",
         "symbol":"NSE:NIFTY_IND_DEFENCE",
@@ -15867,8 +15867,8 @@
         "symbol":"NSE:NIFTY_IND_DEFENCE",
         "open":9386.6,
         "high":9526.65,
-        "low":9358.3,
-        "close":9361.7,
+        "low":9313.35,
+        "close":9385.35,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -16990,7 +16990,7 @@
         "open":9701.65,
         "high":10067.2,
         "low":8936.05,
-        "close":9361.7,
+        "close":9385.35,
         "volume":0.0,
         "timeframe":"M"
     }
