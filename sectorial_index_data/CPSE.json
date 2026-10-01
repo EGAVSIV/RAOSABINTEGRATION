@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-09-19T09:15:00.000",
-        "symbol":"NSE:CPSE",
-        "open":2782.3999,
-        "high":2793.95,
-        "low":2743.1001,
-        "close":2749.95,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-09-20T09:15:00.000",
         "symbol":"NSE:CPSE",
         "open":2765.6001,
@@ -10996,6 +10985,17 @@
         "high":6273.45,
         "low":6195.25,
         "close":6228.75,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-10-01T09:15:00.000",
+        "symbol":"NSE:CPSE",
+        "open":6186.9,
+        "high":6198.35,
+        "low":6061.6,
+        "close":6120.1,
         "volume":0.0,
         "timeframe":"D"
     },
@@ -21994,8 +21994,8 @@
         "symbol":"NSE:CPSE",
         "open":6375.65,
         "high":6377.75,
-        "low":6195.25,
-        "close":6228.75,
+        "low":6061.6,
+        "close":6120.1,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -24999,6 +24999,17 @@
         "high":6530.5,
         "low":6195.25,
         "close":6228.75,
+        "volume":0.0,
+        "timeframe":"M"
+    },
+    {
+        "Timeframe":"M",
+        "datetime":"2026-10-01T09:15:00.000",
+        "symbol":"NSE:CPSE",
+        "open":6186.9,
+        "high":6198.35,
+        "low":6061.6,
+        "close":6120.1,
         "volume":0.0,
         "timeframe":"M"
     }

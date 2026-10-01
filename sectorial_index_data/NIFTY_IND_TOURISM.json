@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-09-20T09:15:00.000",
-        "symbol":"NSE:NIFTY_IND_TOURISM",
-        "open":5475.29,
-        "high":5475.29,
-        "low":5475.29,
-        "close":5475.29,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-09-21T09:15:00.000",
         "symbol":"NSE:NIFTY_IND_TOURISM",
         "open":5459.7,
@@ -10917,7 +10906,7 @@
         "symbol":"NSE:NIFTY_IND_TOURISM",
         "open":7924.15,
         "high":7962.6,
-        "low":7857.65,
+        "low":7857.8,
         "close":7860.1,
         "volume":0.0,
         "timeframe":"D"
@@ -10996,6 +10985,17 @@
         "high":7738.2,
         "low":7617.1,
         "close":7704.45,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-10-01T09:15:00.000",
+        "symbol":"NSE:NIFTY_IND_TOURISM",
+        "open":7665.25,
+        "high":7699.65,
+        "low":7510.75,
+        "close":7580.8,
         "volume":0.0,
         "timeframe":"D"
     },
@@ -20608,8 +20608,8 @@
         "symbol":"NSE:NIFTY_IND_TOURISM",
         "open":7766.65,
         "high":7777.7,
-        "low":7558.4,
-        "close":7704.45,
+        "low":7510.75,
+        "close":7580.8,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -22821,6 +22821,17 @@
         "high":7962.6,
         "low":7451.6,
         "close":7704.45,
+        "volume":0.0,
+        "timeframe":"M"
+    },
+    {
+        "Timeframe":"M",
+        "datetime":"2026-10-01T09:15:00.000",
+        "symbol":"NSE:NIFTY_IND_TOURISM",
+        "open":7665.25,
+        "high":7699.65,
+        "low":7510.75,
+        "close":7580.8,
         "volume":0.0,
         "timeframe":"M"
     }
