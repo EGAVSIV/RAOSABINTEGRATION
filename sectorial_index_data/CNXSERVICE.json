@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-09-23T09:15:00.000",
-        "symbol":"NSE:CNXSERVICE",
-        "open":24160.65,
-        "high":24219.051,
-        "low":23681.15,
-        "close":23728.4,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-09-26T09:15:00.000",
         "symbol":"NSE:CNXSERVICE",
         "open":23490.199,
@@ -10996,6 +10985,17 @@
         "high":29245.1,
         "low":28998.2,
         "close":29059.0,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-10-08T09:15:00.000",
+        "symbol":"NSE:CNXSERVICE",
+        "open":29110.0,
+        "high":29110.0,
+        "low":28535.3,
+        "close":28623.75,
         "volume":0.0,
         "timeframe":"D"
     },
@@ -21994,8 +21994,8 @@
         "symbol":"NSE:CNXSERVICE",
         "open":29099.95,
         "high":29245.1,
-        "low":28875.45,
-        "close":29059.0,
+        "low":28535.3,
+        "close":28623.75,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -25613,8 +25613,8 @@
         "symbol":"NSE:CNXSERVICE",
         "open":28950.45,
         "high":29245.1,
-        "low":28619.95,
-        "close":29059.0,
+        "low":28535.3,
+        "close":28623.75,
         "volume":0.0,
         "timeframe":"M"
     }

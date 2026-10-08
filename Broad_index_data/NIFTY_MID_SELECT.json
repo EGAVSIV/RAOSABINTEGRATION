@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "Original_Index":"2022-09-23T09:15:00.000",
-        "symbol":"NSE:NIFTY_MID_SELECT",
-        "open":7505.0,
-        "high":7524.5498,
-        "low":7288.7998,
-        "close":7303.2002,
-        "volume":326591044.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "Original_Index":"2022-09-26T09:15:00.000",
         "symbol":"NSE:NIFTY_MID_SELECT",
         "open":7246.1499,
@@ -11000,6 +10989,17 @@
         "timeframe":"D"
     },
     {
+        "Timeframe":"D",
+        "Original_Index":"2026-10-08T09:15:00.000",
+        "symbol":"NSE:NIFTY_MID_SELECT",
+        "open":13726.85,
+        "high":13726.85,
+        "low":13375.7,
+        "close":13386.75,
+        "volume":237258088.0,
+        "timeframe":"D"
+    },
+    {
         "Timeframe":"W",
         "Original_Index":"2022-01-10T09:15:00.000",
         "symbol":"NSE:NIFTY_MID_SELECT",
@@ -13722,9 +13722,9 @@
         "symbol":"NSE:NIFTY_MID_SELECT",
         "open":13637.7,
         "high":13831.45,
-        "low":13601.7,
-        "close":13757.2,
-        "volume":603061348.0,
+        "low":13375.7,
+        "close":13386.75,
+        "volume":840319436.0,
         "timeframe":"W"
     },
     {
@@ -14360,9 +14360,9 @@
         "symbol":"NSE:NIFTY_MID_SELECT",
         "open":13707.35,
         "high":13831.45,
-        "low":13427.75,
-        "close":13757.2,
-        "volume":848692199.0,
+        "low":13375.7,
+        "close":13386.75,
+        "volume":1085950287.0,
         "timeframe":"M"
     }
 ]
