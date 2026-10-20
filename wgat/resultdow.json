@@ -1,7 +1,7 @@
 {
   "scanner": "Dow Theory Trend + Fibonacci Entry Scanner",
   "source_format": "JSON",
-  "generated_at": "2026-10-20T09:29:19.711562+00:00",
+  "generated_at": "2026-10-20T14:20:48.296678+00:00",
   "data_root": "/home/runner/work/RAOSABINTEGRATION/RAOSABINTEGRATION",
   "scan_date": "2026-10-20T00:00:00+00:00",
   "timeframes": {
@@ -5423,7 +5423,7 @@
           "50% Bull": false,
           "61.8% Bull": false,
           "78% Bull": false,
-          "23% Bear": true,
+          "23% Bear": false,
           "38% Bear": false,
           "50% Bear": false,
           "61.8% Bear": false,
@@ -5433,11 +5433,11 @@
           "50% Up": null,
           "61.8% Up": null,
           "78% Up": null,
-          "23% Down": 2880.836,
-          "38% Down": 2888.816,
-          "50% Down": 2895.2,
-          "61.8% Down": 2901.4776,
-          "78% Down": 2910.096
+          "23% Down": null,
+          "38% Down": null,
+          "50% Down": null,
+          "61.8% Down": null,
+          "78% Down": null
         },
         {
           "Stock": "TVSMOTOR",
