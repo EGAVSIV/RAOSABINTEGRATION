@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-07T09:15:00.000",
-        "symbol":"NSE:BANKNIFTY",
-        "open":39093.5,
-        "high":39235.051,
-        "low":38807.5,
-        "close":39178.051,
-        "volume":165025353.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-10T09:15:00.000",
         "symbol":"NSE:BANKNIFTY",
         "open":38641.551,
@@ -10997,6 +10986,17 @@
         "low":55331.1,
         "close":55488.1,
         "volume":522634603.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-10-21T09:15:00.000",
+        "symbol":"NSE:BANKNIFTY",
+        "open":55707.85,
+        "high":55867.45,
+        "low":54696.45,
+        "close":54791.7,
+        "volume":293339593.0,
         "timeframe":"D"
     },
     {
@@ -21994,9 +21994,9 @@
         "symbol":"NSE:BANKNIFTY",
         "open":55827.45,
         "high":55883.7,
-        "low":55331.1,
-        "close":55488.1,
-        "volume":522634603.0,
+        "low":54696.45,
+        "close":54791.7,
+        "volume":815974196.0,
         "timeframe":"W"
     },
     {
@@ -25537,8 +25537,8 @@
         "open":54583.05,
         "high":56065.5,
         "low":54066.6,
-        "close":55488.1,
-        "volume":4102874367.0,
+        "close":54787.85,
+        "volume":4396218858.0,
         "timeframe":"M"
     }
 ]
