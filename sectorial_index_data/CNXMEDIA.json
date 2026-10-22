@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-07T09:15:00.000",
-        "symbol":"NSE:CNXMEDIA",
-        "open":2150.55,
-        "high":2167.25,
-        "low":2136.95,
-        "close":2160.8,
-        "volume":20995203.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-10T09:15:00.000",
         "symbol":"NSE:CNXMEDIA",
         "open":2133.3,
@@ -10997,6 +10986,17 @@
         "low":1614.05,
         "close":1622.65,
         "volume":20825307.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-10-22T09:15:00.000",
+        "symbol":"NSE:CNXMEDIA",
+        "open":1615.35,
+        "high":1623.8,
+        "low":1582.1,
+        "close":1583.25,
+        "volume":20120253.0,
         "timeframe":"D"
     },
     {
@@ -21994,9 +21994,9 @@
         "symbol":"NSE:CNXMEDIA",
         "open":1652.65,
         "high":1654.75,
-        "low":1614.05,
-        "close":1622.65,
-        "volume":43701289.0,
+        "low":1582.1,
+        "close":1583.25,
+        "volume":63821555.0,
         "timeframe":"W"
     },
     {
@@ -24756,8 +24756,8 @@
         "open":1572.2,
         "high":1654.75,
         "low":1521.05,
-        "close":1622.65,
-        "volume":371968612.0,
+        "close":1583.25,
+        "volume":392088878.0,
         "timeframe":"M"
     }
 ]
