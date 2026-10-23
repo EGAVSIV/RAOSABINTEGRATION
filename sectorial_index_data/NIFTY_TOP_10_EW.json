@@ -5302,6 +5302,17 @@
         "timeframe":"D"
     },
     {
+        "Timeframe":"D",
+        "datetime":"2026-10-23T09:15:00.000",
+        "symbol":"NSE:NIFTY_TOP_10_EW",
+        "open":8344.6,
+        "high":8366.7,
+        "low":8163.4,
+        "close":8281.2,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
         "Timeframe":"W",
         "datetime":"2024-11-11T09:15:00.000",
         "symbol":"NSE:NIFTY_TOP_10_EW",
@@ -6418,8 +6429,8 @@
         "symbol":"NSE:NIFTY_TOP_10_EW",
         "open":8430.7,
         "high":8455.85,
-        "low":8273.95,
-        "close":8302.75,
+        "low":8163.4,
+        "close":8281.25,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -6683,7 +6694,7 @@
         "open":8077.2,
         "high":8455.85,
         "low":7986.25,
-        "close":8302.75,
+        "close":8281.25,
         "volume":0.0,
         "timeframe":"M"
     }

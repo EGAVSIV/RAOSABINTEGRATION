@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-10T09:15:00.000",
-        "symbol":"NSE:CNXFMCG",
-        "open":43278.6015625,
-        "high":43413.5,
-        "low":42996.6015625,
-        "close":43329.19921875,
-        "volume":21662920.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-11T09:15:00.000",
         "symbol":"NSE:CNXFMCG",
         "open":43466.8984375,
@@ -10997,6 +10986,17 @@
         "low":42865.0,
         "close":43105.45,
         "volume":30530905.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-10-23T09:15:00.000",
+        "symbol":"NSE:CNXFMCG",
+        "open":43113.4,
+        "high":43190.85,
+        "low":42146.1,
+        "close":42501.0,
+        "volume":26261546.0,
         "timeframe":"D"
     },
     {
@@ -21994,9 +21994,9 @@
         "symbol":"NSE:CNXFMCG",
         "open":44548.0,
         "high":44579.25,
-        "low":42865.0,
-        "close":43105.45,
-        "volume":97887840.0,
+        "low":42146.1,
+        "close":42503.05,
+        "volume":124150601.0,
         "timeframe":"W"
     },
     {
@@ -26064,9 +26064,9 @@
         "symbol":"NSE:CNXFMCG",
         "open":44386.0,
         "high":45664.85,
-        "low":42865.0,
-        "close":43105.45,
-        "volume":627714105.0,
+        "low":42146.1,
+        "close":42503.05,
+        "volume":653976866.0,
         "timeframe":"M"
     }
 ]
