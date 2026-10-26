@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "Original_Index":"2022-10-11T09:15:00.000",
-        "symbol":"NSE:NIFTYJR",
-        "open":42506.55078125,
-        "high":42506.55078125,
-        "low":41406.80078125,
-        "close":41514.69921875,
-        "volume":212074000.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "Original_Index":"2022-10-12T09:15:00.000",
         "symbol":"NSE:NIFTYJR",
         "open":41644.1015625,
@@ -10963,7 +10952,7 @@
         "high":69337.6,
         "low":68496.9,
         "close":68695.85,
-        "volume":596778553.0,
+        "volume":596778556.0,
         "timeframe":"D"
     },
     {
@@ -10996,19 +10985,19 @@
         "high":67194.55,
         "low":65081.55,
         "close":65828.6,
-        "volume":775945582.0,
+        "volume":775945584.0,
         "timeframe":"D"
     },
     {
-        "Timeframe":"W",
-        "Original_Index":"2007-08-27T09:15:00.000",
+        "Timeframe":"D",
+        "Original_Index":"2026-10-26T09:15:00.000",
         "symbol":"NSE:NIFTYJR",
-        "open":8016.14990234,
-        "high":8642.29980469,
-        "low":8016.14990234,
-        "close":8632.75,
-        "volume":608919000.0,
-        "timeframe":"W"
+        "open":65571.75,
+        "high":66434.65,
+        "low":64999.15,
+        "close":66301.15,
+        "volume":608929654.0,
+        "timeframe":"D"
     },
     {
         "Timeframe":"W",
@@ -22000,6 +21989,17 @@
         "timeframe":"W"
     },
     {
+        "Timeframe":"W",
+        "Original_Index":"2026-10-26T09:15:00.000",
+        "symbol":"NSE:NIFTYJR",
+        "open":65571.75,
+        "high":66434.65,
+        "low":64999.15,
+        "close":66301.15,
+        "volume":608929654.0,
+        "timeframe":"W"
+    },
+    {
         "Timeframe":"M",
         "Original_Index":"1995-10-02T09:15:00.000",
         "symbol":"NSE:NIFTYJR",
@@ -26097,9 +26097,9 @@
         "symbol":"NSE:NIFTYJR",
         "open":69531.05,
         "high":69978.0,
-        "low":65081.55,
-        "close":65828.6,
-        "volume":8448725316.0,
+        "low":64999.15,
+        "close":66298.1,
+        "volume":9057663016.0,
         "timeframe":"M"
     }
 ]
