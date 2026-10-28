@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-13T09:15:00.000",
-        "symbol":"NSE:CNXINFRA",
-        "open":4955.45019531,
-        "high":4967.45019531,
-        "low":4906.64990234,
-        "close":4922.04980469,
-        "volume":121925000.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-14T09:15:00.000",
         "symbol":"NSE:CNXINFRA",
         "open":4993.79980469,
@@ -10997,6 +10986,17 @@
         "low":8631.5,
         "close":8726.6,
         "volume":332092965.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-10-28T09:15:00.000",
+        "symbol":"NSE:CNXINFRA",
+        "open":8749.4,
+        "high":8768.55,
+        "low":8677.8,
+        "close":8705.35,
+        "volume":217623620.0,
         "timeframe":"D"
     },
     {
@@ -21993,10 +21993,10 @@
         "datetime":"2026-10-26T09:15:00.000",
         "symbol":"NSE:CNXINFRA",
         "open":8529.55,
-        "high":8750.3,
+        "high":8768.55,
         "low":8468.3,
-        "close":8726.6,
-        "volume":559313422.0,
+        "close":8705.35,
+        "volume":776937042.0,
         "timeframe":"W"
     },
     {
@@ -25009,8 +25009,8 @@
         "open":8677.7,
         "high":8797.55,
         "low":8425.35,
-        "close":8726.6,
-        "volume":4055774486.0,
+        "close":8705.35,
+        "volume":4273398106.0,
         "timeframe":"M"
     }
 ]
