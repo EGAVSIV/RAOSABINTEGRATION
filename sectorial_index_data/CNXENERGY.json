@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-18T09:15:00.000",
-        "symbol":"NSE:CNXENERGY",
-        "open":25629.65039063,
-        "high":25881.59960938,
-        "low":25619.75,
-        "close":25779.55078125,
-        "volume":75585000.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-19T09:15:00.000",
         "symbol":"NSE:CNXENERGY",
         "open":25843.44921875,
@@ -10996,19 +10985,19 @@
         "high":35265.15,
         "low":34751.35,
         "close":34957.9,
-        "volume":619265032.0,
+        "volume":619265031.0,
         "timeframe":"D"
     },
     {
-        "Timeframe":"W",
-        "datetime":"2007-09-03T09:15:00.000",
+        "Timeframe":"D",
+        "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:CNXENERGY",
-        "open":7241.8301,
-        "high":7318.25,
-        "low":7239.8599,
-        "close":7316.6899,
-        "volume":0.0,
-        "timeframe":"W"
+        "open":35371.85,
+        "high":36344.8,
+        "low":35265.5,
+        "close":36329.85,
+        "volume":576436451.0,
+        "timeframe":"D"
     },
     {
         "Timeframe":"W",
@@ -21996,7 +21985,18 @@
         "high":35395.65,
         "low":34119.8,
         "close":34957.9,
-        "volume":2116677285.0,
+        "volume":2116677284.0,
+        "timeframe":"W"
+    },
+    {
+        "Timeframe":"W",
+        "datetime":"2026-11-02T09:15:00.000",
+        "symbol":"NSE:CNXENERGY",
+        "open":35371.85,
+        "high":36344.8,
+        "low":35265.5,
+        "close":36329.85,
+        "volume":576436451.0,
         "timeframe":"W"
     },
     {
@@ -25406,7 +25406,18 @@
         "high":36935.25,
         "low":33968.75,
         "close":34957.9,
-        "volume":6959156331.0,
+        "volume":6959156330.0,
+        "timeframe":"M"
+    },
+    {
+        "Timeframe":"M",
+        "datetime":"2026-11-02T09:15:00.000",
+        "symbol":"NSE:CNXENERGY",
+        "open":35371.85,
+        "high":36344.8,
+        "low":35265.5,
+        "close":36329.85,
+        "volume":576436451.0,
         "timeframe":"M"
     }
 ]

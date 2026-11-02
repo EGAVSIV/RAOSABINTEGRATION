@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-18T09:15:00.000",
-        "symbol":"NSE:CNXINFRA",
-        "open":4969.70019531,
-        "high":5020.95019531,
-        "low":4969.35009766,
-        "close":5004.75,
-        "volume":125236000.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-19T09:15:00.000",
         "symbol":"NSE:CNXINFRA",
         "open":5016.20019531,
@@ -10996,19 +10985,19 @@
         "high":8803.05,
         "low":8722.3,
         "close":8799.0,
-        "volume":506165219.0,
+        "volume":506165218.0,
         "timeframe":"D"
     },
     {
-        "Timeframe":"W",
-        "datetime":"2007-09-03T09:15:00.000",
+        "Timeframe":"D",
+        "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:CNXINFRA",
-        "open":4096.3999,
-        "high":4101.5098,
-        "low":4085.49,
-        "close":4096.5898,
-        "volume":0.0,
-        "timeframe":"W"
+        "open":8938.4,
+        "high":9124.95,
+        "low":8916.15,
+        "close":9124.95,
+        "volume":370757595.0,
+        "timeframe":"D"
     },
     {
         "Timeframe":"W",
@@ -22000,6 +21989,17 @@
         "timeframe":"W"
     },
     {
+        "Timeframe":"W",
+        "datetime":"2026-11-02T09:15:00.000",
+        "symbol":"NSE:CNXINFRA",
+        "open":8938.4,
+        "high":9124.95,
+        "low":8916.15,
+        "close":9124.95,
+        "volume":370757595.0,
+        "timeframe":"W"
+    },
+    {
         "Timeframe":"M",
         "datetime":"2004-01-01T09:15:00.000",
         "symbol":"NSE:CNXINFRA",
@@ -25010,7 +25010,18 @@
         "high":8803.05,
         "low":8425.35,
         "close":8799.0,
-        "volume":5032349775.0,
+        "volume":5032349774.0,
+        "timeframe":"M"
+    },
+    {
+        "Timeframe":"M",
+        "datetime":"2026-11-02T09:15:00.000",
+        "symbol":"NSE:CNXINFRA",
+        "open":8938.4,
+        "high":9124.95,
+        "low":8916.15,
+        "close":9124.95,
+        "volume":370757595.0,
         "timeframe":"M"
     }
 ]
