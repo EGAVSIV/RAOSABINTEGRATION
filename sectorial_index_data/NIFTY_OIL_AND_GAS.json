@@ -1,28 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-25T09:15:00.000",
-        "symbol":"NSE:NIFTY_OIL_AND_GAS",
-        "open":7780.15,
-        "high":7801.05,
-        "low":7721.0,
-        "close":7782.3,
-        "volume":75970064.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
-        "datetime":"2022-10-27T09:15:00.000",
-        "symbol":"NSE:NIFTY_OIL_AND_GAS",
-        "open":7812.7,
-        "high":7923.8,
-        "low":7808.3,
-        "close":7887.95,
-        "volume":77532292.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-28T09:15:00.000",
         "symbol":"NSE:NIFTY_OIL_AND_GAS",
         "open":7919.1,
@@ -11000,6 +10978,28 @@
         "timeframe":"D"
     },
     {
+        "Timeframe":"D",
+        "datetime":"2026-11-08T14:20:00.000",
+        "symbol":"NSE:NIFTY_OIL_AND_GAS",
+        "open":11316.9,
+        "high":11334.0,
+        "low":11268.95,
+        "close":11306.65,
+        "volume":14287040.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:NIFTY_OIL_AND_GAS",
+        "open":11297.95,
+        "high":11357.2,
+        "low":11232.6,
+        "close":11334.6,
+        "volume":96014984.0,
+        "timeframe":"D"
+    },
+    {
         "Timeframe":"W",
         "datetime":"2021-08-09T09:15:00.000",
         "symbol":"NSE:NIFTY_OIL_AND_GAS",
@@ -14009,8 +14009,19 @@
         "open":10530.95,
         "high":11357.6,
         "low":10512.35,
-        "close":11288.1,
-        "volume":630538355.0,
+        "close":11306.65,
+        "volume":644825395.0,
+        "timeframe":"W"
+    },
+    {
+        "Timeframe":"W",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:NIFTY_OIL_AND_GAS",
+        "open":11297.95,
+        "high":11357.2,
+        "low":11232.6,
+        "close":11334.6,
+        "volume":96014984.0,
         "timeframe":"W"
     },
     {
@@ -14713,8 +14724,8 @@
         "open":10530.95,
         "high":11357.6,
         "low":10512.35,
-        "close":11288.1,
-        "volume":630538355.0,
+        "close":11334.6,
+        "volume":740840379.0,
         "timeframe":"M"
     }
 ]

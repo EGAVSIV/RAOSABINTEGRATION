@@ -1,28 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-27T09:15:00.000",
-        "symbol":"NSE:NIFTY",
-        "open":17771.4,
-        "high":17783.9,
-        "low":17654.5,
-        "close":17736.949,
-        "volume":324649088.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
-        "datetime":"2022-10-28T09:15:00.000",
-        "symbol":"NSE:NIFTY",
-        "open":17756.4,
-        "high":17838.9,
-        "low":17723.699,
-        "close":17786.801,
-        "volume":250030113.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-31T09:15:00.000",
         "symbol":"NSE:NIFTY",
         "open":17910.199,
@@ -11000,15 +10978,26 @@
         "timeframe":"D"
     },
     {
-        "Timeframe":"W",
-        "datetime":"2007-09-10T09:15:00.000",
+        "Timeframe":"D",
+        "datetime":"2026-11-08T14:20:00.000",
         "symbol":"NSE:NIFTY",
-        "open":4506.8501,
-        "high":4582.6001,
-        "low":4452.9502,
-        "close":4518.0,
-        "volume":346296996.0,
-        "timeframe":"W"
+        "open":25070.45,
+        "high":25131.85,
+        "low":24985.3,
+        "close":24986.4,
+        "volume":66566858.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:NIFTY",
+        "open":25076.4,
+        "high":25084.05,
+        "low":24838.75,
+        "close":25044.65,
+        "volume":406189985.0,
+        "timeframe":"D"
     },
     {
         "Timeframe":"W",
@@ -21993,10 +21982,21 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:NIFTY",
         "open":23222.3,
-        "high":25030.35,
+        "high":25131.85,
         "low":23207.05,
-        "close":25030.35,
-        "volume":2215777470.0,
+        "close":24986.4,
+        "volume":2282344328.0,
+        "timeframe":"W"
+    },
+    {
+        "Timeframe":"W",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:NIFTY",
+        "open":25076.4,
+        "high":25084.05,
+        "low":24838.75,
+        "close":25044.65,
+        "volume":406189985.0,
         "timeframe":"W"
     },
     {
@@ -26800,10 +26800,10 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:NIFTY",
         "open":23222.3,
-        "high":25030.35,
+        "high":25131.85,
         "low":23207.05,
-        "close":25030.35,
-        "volume":2215777470.0,
+        "close":25044.65,
+        "volume":2688534313.0,
         "timeframe":"M"
     }
 ]

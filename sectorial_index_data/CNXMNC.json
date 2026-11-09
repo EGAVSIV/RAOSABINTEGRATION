@@ -1,28 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-25T09:15:00.000",
-        "symbol":"NSE:CNXMNC",
-        "open":19684.949,
-        "high":19699.0,
-        "low":19541.35,
-        "close":19584.051,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
-        "datetime":"2022-10-27T09:15:00.000",
-        "symbol":"NSE:CNXMNC",
-        "open":19651.051,
-        "high":19682.9,
-        "low":19542.15,
-        "close":19635.35,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-28T09:15:00.000",
         "symbol":"NSE:CNXMNC",
         "open":19682.15,
@@ -11000,15 +10978,26 @@
         "timeframe":"D"
     },
     {
-        "Timeframe":"W",
-        "datetime":"2007-09-10T09:15:00.000",
+        "Timeframe":"D",
+        "datetime":"2026-11-08T14:20:00.000",
         "symbol":"NSE:CNXMNC",
-        "open":3771.3601,
-        "high":3801.8899,
-        "low":3760.1799,
-        "close":3760.1799,
+        "open":30393.85,
+        "high":30539.65,
+        "low":30385.65,
+        "close":30451.8,
         "volume":0.0,
-        "timeframe":"W"
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:CNXMNC",
+        "open":30451.7,
+        "high":30521.55,
+        "low":30285.05,
+        "close":30521.55,
+        "volume":0.0,
+        "timeframe":"D"
     },
     {
         "Timeframe":"W",
@@ -21993,9 +21982,20 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:CNXMNC",
         "open":28486.75,
-        "high":30358.85,
+        "high":30539.65,
         "low":28484.55,
-        "close":30262.35,
+        "close":30451.8,
+        "volume":0.0,
+        "timeframe":"W"
+    },
+    {
+        "Timeframe":"W",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:CNXMNC",
+        "open":30451.7,
+        "high":30521.55,
+        "low":30285.05,
+        "close":30521.55,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -26206,9 +26206,9 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:CNXMNC",
         "open":28486.75,
-        "high":30358.85,
+        "high":30539.65,
         "low":28484.55,
-        "close":30262.35,
+        "close":30521.55,
         "volume":0.0,
         "timeframe":"M"
     }

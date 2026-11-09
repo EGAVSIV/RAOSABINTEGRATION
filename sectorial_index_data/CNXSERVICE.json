@@ -1,28 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-25T09:15:00.000",
-        "symbol":"NSE:CNXSERVICE",
-        "open":24542.551,
-        "high":24552.85,
-        "low":24305.35,
-        "close":24331.75,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
-        "datetime":"2022-10-27T09:15:00.000",
-        "symbol":"NSE:CNXSERVICE",
-        "open":24502.9,
-        "high":24518.699,
-        "low":24341.949,
-        "close":24453.051,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-28T09:15:00.000",
         "symbol":"NSE:CNXSERVICE",
         "open":24449.15,
@@ -11000,15 +10978,26 @@
         "timeframe":"D"
     },
     {
-        "Timeframe":"W",
-        "datetime":"2007-09-10T09:15:00.000",
+        "Timeframe":"D",
+        "datetime":"2026-11-08T14:20:00.000",
         "symbol":"NSE:CNXSERVICE",
-        "open":5594.21,
-        "high":5617.6699,
-        "low":5550.71,
-        "close":5569.3198,
+        "open":32629.9,
+        "high":32709.5,
+        "low":32508.7,
+        "close":32509.65,
         "volume":0.0,
-        "timeframe":"W"
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:CNXSERVICE",
+        "open":32575.35,
+        "high":32580.6,
+        "low":32200.5,
+        "close":32494.7,
+        "volume":0.0,
+        "timeframe":"D"
     },
     {
         "Timeframe":"W",
@@ -21993,9 +21982,20 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:CNXSERVICE",
         "open":31001.0,
-        "high":32612.75,
+        "high":32709.5,
         "low":30813.75,
-        "close":32612.75,
+        "close":32509.65,
+        "volume":0.0,
+        "timeframe":"W"
+    },
+    {
+        "Timeframe":"W",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:CNXSERVICE",
+        "open":32575.35,
+        "high":32580.6,
+        "low":32200.5,
+        "close":32494.7,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -25623,9 +25623,9 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:CNXSERVICE",
         "open":31001.0,
-        "high":32612.75,
+        "high":32709.5,
         "low":30813.75,
-        "close":32612.75,
+        "close":32494.7,
         "volume":0.0,
         "timeframe":"M"
     }

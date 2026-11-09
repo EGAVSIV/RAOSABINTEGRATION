@@ -5170,6 +5170,28 @@
         "timeframe":"D"
     },
     {
+        "Timeframe":"D",
+        "datetime":"2026-11-08T14:20:00.000",
+        "symbol":"NSE:NIFTY_HOUSING",
+        "open":12061.6,
+        "high":12087.5,
+        "low":12001.2,
+        "close":12005.65,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:NIFTY_HOUSING",
+        "open":12061.6,
+        "high":12063.7,
+        "low":11953.6,
+        "close":12060.2,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
         "Timeframe":"W",
         "datetime":"2024-12-16T09:15:00.000",
         "symbol":"NSE:NIFTY_HOUSING",
@@ -6252,9 +6274,20 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:NIFTY_HOUSING",
         "open":11108.5,
-        "high":12031.85,
+        "high":12087.5,
         "low":11105.25,
-        "close":12031.45,
+        "close":12005.65,
+        "volume":0.0,
+        "timeframe":"W"
+    },
+    {
+        "Timeframe":"W",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:NIFTY_HOUSING",
+        "open":12061.6,
+        "high":12063.7,
+        "low":11953.6,
+        "close":12060.2,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -6516,9 +6549,9 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:NIFTY_HOUSING",
         "open":11108.5,
-        "high":12031.85,
+        "high":12087.5,
         "low":11105.25,
-        "close":12031.45,
+        "close":12060.2,
         "volume":0.0,
         "timeframe":"M"
     }

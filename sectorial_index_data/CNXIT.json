@@ -1,28 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-25T09:15:00.000",
-        "symbol":"NSE:CNXIT",
-        "open":28687.90039063,
-        "high":28820.15039063,
-        "low":28544.65039063,
-        "close":28722.84960938,
-        "volume":16473763.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
-        "datetime":"2022-10-27T09:15:00.000",
-        "symbol":"NSE:CNXIT",
-        "open":28787.09960938,
-        "high":28827.44921875,
-        "low":28403.30078125,
-        "close":28572.19921875,
-        "volume":22326516.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-28T09:15:00.000",
         "symbol":"NSE:CNXIT",
         "open":28567.65039063,
@@ -11000,15 +10978,26 @@
         "timeframe":"D"
     },
     {
-        "Timeframe":"W",
-        "datetime":"2007-09-10T09:15:00.000",
+        "Timeframe":"D",
+        "datetime":"2026-11-08T14:20:00.000",
         "symbol":"NSE:CNXIT",
-        "open":4859.14990234,
-        "high":4859.14990234,
-        "low":4629.25,
-        "close":4641.60009766,
-        "volume":49738000.0,
-        "timeframe":"W"
+        "open":32955.1,
+        "high":33070.55,
+        "low":32863.25,
+        "close":32869.65,
+        "volume":2648842.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:CNXIT",
+        "open":32745.75,
+        "high":32766.45,
+        "low":32151.8,
+        "close":32468.9,
+        "volume":34423457.0,
+        "timeframe":"D"
     },
     {
         "Timeframe":"W",
@@ -21995,8 +21984,19 @@
         "open":32773.8,
         "high":33616.2,
         "low":31738.55,
-        "close":32977.9,
-        "volume":187773780.0,
+        "close":32869.65,
+        "volume":190422622.0,
+        "timeframe":"W"
+    },
+    {
+        "Timeframe":"W",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:CNXIT",
+        "open":32745.75,
+        "high":32766.45,
+        "low":32151.8,
+        "close":32468.9,
+        "volume":34423457.0,
         "timeframe":"W"
     },
     {
@@ -26076,8 +26076,8 @@
         "open":32773.8,
         "high":33616.2,
         "low":31738.55,
-        "close":32977.9,
-        "volume":187773780.0,
+        "close":32468.9,
+        "volume":224846079.0,
         "timeframe":"M"
     }
 ]

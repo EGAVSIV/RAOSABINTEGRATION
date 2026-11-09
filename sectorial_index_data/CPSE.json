@@ -1,28 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-25T09:15:00.000",
-        "symbol":"NSE:CPSE",
-        "open":2731.6499,
-        "high":2739.3,
-        "low":2701.3999,
-        "close":2735.25,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
-        "datetime":"2022-10-27T09:15:00.000",
-        "symbol":"NSE:CPSE",
-        "open":2743.75,
-        "high":2777.3999,
-        "low":2733.7,
-        "close":2771.8999,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-28T09:15:00.000",
         "symbol":"NSE:CPSE",
         "open":2775.3999,
@@ -11000,15 +10978,26 @@
         "timeframe":"D"
     },
     {
-        "Timeframe":"W",
-        "datetime":"2007-09-10T09:15:00.000",
+        "Timeframe":"D",
+        "datetime":"2026-11-08T14:20:00.000",
         "symbol":"NSE:CPSE",
-        "open":1151.1801,
-        "high":1158.3,
-        "low":1146.03,
-        "close":1146.37,
+        "open":6290.9,
+        "high":6298.5,
+        "low":6262.1,
+        "close":6276.45,
         "volume":0.0,
-        "timeframe":"W"
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:CPSE",
+        "open":6289.35,
+        "high":6298.35,
+        "low":6230.55,
+        "close":6274.25,
+        "volume":0.0,
+        "timeframe":"D"
     },
     {
         "Timeframe":"W",
@@ -21995,7 +21984,18 @@
         "open":6105.9,
         "high":6333.4,
         "low":6092.25,
-        "close":6254.3,
+        "close":6276.45,
+        "volume":0.0,
+        "timeframe":"W"
+    },
+    {
+        "Timeframe":"W",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:CPSE",
+        "open":6289.35,
+        "high":6298.35,
+        "low":6230.55,
+        "close":6274.25,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -25020,7 +25020,7 @@
         "open":6105.9,
         "high":6333.4,
         "low":6092.25,
-        "close":6254.3,
+        "close":6274.25,
         "volume":0.0,
         "timeframe":"M"
     }

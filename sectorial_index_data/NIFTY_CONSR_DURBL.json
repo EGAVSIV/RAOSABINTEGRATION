@@ -1,28 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-25T09:15:00.000",
-        "symbol":"NSE:NIFTY_CONSR_DURBL",
-        "open":26710.15,
-        "high":26721.0,
-        "low":26445.3,
-        "close":26506.9,
-        "volume":8471144.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
-        "datetime":"2022-10-27T09:15:00.000",
-        "symbol":"NSE:NIFTY_CONSR_DURBL",
-        "open":26628.25,
-        "high":26849.55,
-        "low":26536.8,
-        "close":26632.75,
-        "volume":11998613.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-28T09:15:00.000",
         "symbol":"NSE:NIFTY_CONSR_DURBL",
         "open":26659.4,
@@ -11000,6 +10978,28 @@
         "timeframe":"D"
     },
     {
+        "Timeframe":"D",
+        "datetime":"2026-11-08T14:20:00.000",
+        "symbol":"NSE:NIFTY_CONSR_DURBL",
+        "open":38188.75,
+        "high":38321.95,
+        "low":37827.35,
+        "close":37908.6,
+        "volume":5576283.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:NIFTY_CONSR_DURBL",
+        "open":37989.95,
+        "high":38260.6,
+        "low":37695.8,
+        "close":38255.7,
+        "volume":29829904.0,
+        "timeframe":"D"
+    },
+    {
         "Timeframe":"W",
         "datetime":"2021-08-09T09:15:00.000",
         "symbol":"NSE:NIFTY_CONSR_DURBL",
@@ -14007,10 +14007,21 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:NIFTY_CONSR_DURBL",
         "open":34579.25,
-        "high":38019.25,
+        "high":38321.95,
         "low":34579.2,
-        "close":38003.6,
-        "volume":106793836.0,
+        "close":37908.6,
+        "volume":112370119.0,
+        "timeframe":"W"
+    },
+    {
+        "Timeframe":"W",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:NIFTY_CONSR_DURBL",
+        "open":37989.95,
+        "high":38260.6,
+        "low":37695.8,
+        "close":38255.7,
+        "volume":29829904.0,
         "timeframe":"W"
     },
     {
@@ -14711,10 +14722,10 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:NIFTY_CONSR_DURBL",
         "open":34579.25,
-        "high":38019.25,
+        "high":38321.95,
         "low":34579.2,
-        "close":38003.6,
-        "volume":106793836.0,
+        "close":38255.7,
+        "volume":142200023.0,
         "timeframe":"M"
     }
 ]

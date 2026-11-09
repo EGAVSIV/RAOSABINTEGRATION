@@ -1,28 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-25T09:15:00.000",
-        "symbol":"NSE:NIFTY_INDIA_MFG",
-        "open":8228.4502,
-        "high":8256.2002,
-        "low":8187.5498,
-        "close":8231.4502,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
-        "datetime":"2022-10-27T09:15:00.000",
-        "symbol":"NSE:NIFTY_INDIA_MFG",
-        "open":8280.75,
-        "high":8326.2002,
-        "low":8268.8496,
-        "close":8309.3496,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-28T09:15:00.000",
         "symbol":"NSE:NIFTY_INDIA_MFG",
         "open":8321.5996,
@@ -11000,6 +10978,28 @@
         "timeframe":"D"
     },
     {
+        "Timeframe":"D",
+        "datetime":"2026-11-08T14:20:00.000",
+        "symbol":"NSE:NIFTY_INDIA_MFG",
+        "open":15958.25,
+        "high":16014.3,
+        "low":15948.8,
+        "close":15964.05,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:NIFTY_INDIA_MFG",
+        "open":15978.2,
+        "high":16042.1,
+        "low":15901.6,
+        "close":16040.4,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
         "Timeframe":"W",
         "datetime":"2022-01-10T09:15:00.000",
         "symbol":"NSE:NIFTY_INDIA_MFG",
@@ -13765,9 +13765,20 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:NIFTY_INDIA_MFG",
         "open":15006.1,
-        "high":15861.4,
+        "high":16014.3,
         "low":14999.95,
-        "close":15856.8,
+        "close":15964.05,
+        "volume":0.0,
+        "timeframe":"W"
+    },
+    {
+        "Timeframe":"W",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:NIFTY_INDIA_MFG",
+        "open":15978.2,
+        "high":16042.1,
+        "low":15901.6,
+        "close":16040.4,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -14414,9 +14425,9 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:NIFTY_INDIA_MFG",
         "open":15006.1,
-        "high":15861.4,
+        "high":16042.1,
         "low":14999.95,
-        "close":15856.8,
+        "close":16040.4,
         "volume":0.0,
         "timeframe":"M"
     }

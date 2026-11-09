@@ -1,28 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-25T09:15:00.000",
-        "symbol":"NSE:CNXCONSUMPTION",
-        "open":7832.8999,
-        "high":7833.3999,
-        "low":7753.8501,
-        "close":7767.0498,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
-        "datetime":"2022-10-27T09:15:00.000",
-        "symbol":"NSE:CNXCONSUMPTION",
-        "open":7806.5498,
-        "high":7847.8501,
-        "low":7770.0498,
-        "close":7824.75,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-28T09:15:00.000",
         "symbol":"NSE:CNXCONSUMPTION",
         "open":7850.6499,
@@ -11000,15 +10978,26 @@
         "timeframe":"D"
     },
     {
-        "Timeframe":"W",
-        "datetime":"2007-09-10T09:15:00.000",
+        "Timeframe":"D",
+        "datetime":"2026-11-08T14:20:00.000",
         "symbol":"NSE:CNXCONSUMPTION",
-        "open":1430.58,
-        "high":1438.71,
-        "low":1430.01,
-        "close":1430.01,
+        "open":11976.65,
+        "high":11994.9,
+        "low":11923.35,
+        "close":11924.05,
         "volume":0.0,
-        "timeframe":"W"
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:CNXCONSUMPTION",
+        "open":11945.7,
+        "high":11958.65,
+        "low":11836.65,
+        "close":11935.55,
+        "volume":0.0,
+        "timeframe":"D"
     },
     {
         "Timeframe":"W",
@@ -21993,9 +21982,20 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:CNXCONSUMPTION",
         "open":11142.85,
-        "high":11957.25,
+        "high":11994.9,
         "low":11142.85,
-        "close":11957.25,
+        "close":11924.05,
+        "volume":0.0,
+        "timeframe":"W"
+    },
+    {
+        "Timeframe":"W",
+        "datetime":"2026-11-09T09:15:00.000",
+        "symbol":"NSE:CNXCONSUMPTION",
+        "open":11945.7,
+        "high":11958.65,
+        "low":11836.65,
+        "close":11935.55,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -24754,9 +24754,9 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:CNXCONSUMPTION",
         "open":11142.85,
-        "high":11957.25,
+        "high":11994.9,
         "low":11142.85,
-        "close":11957.25,
+        "close":11935.55,
         "volume":0.0,
         "timeframe":"M"
     }
