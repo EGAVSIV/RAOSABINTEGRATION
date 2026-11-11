@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-10-28T09:15:00.000",
-        "symbol":"NSE:CNXIT",
-        "open":28567.65039063,
-        "high":28629.55078125,
-        "low":28267.19921875,
-        "close":28318.34960938,
-        "volume":13846894.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-10-31T09:15:00.000",
         "symbol":"NSE:CNXIT",
         "open":28588.69921875,
@@ -10997,6 +10986,17 @@
         "low":32151.8,
         "close":32468.9,
         "volume":34423457.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-11-11T09:15:00.000",
+        "symbol":"NSE:CNXIT",
+        "open":32741.5,
+        "high":32787.25,
+        "low":32067.75,
+        "close":32295.6,
+        "volume":36870290.0,
         "timeframe":"D"
     },
     {
@@ -21993,10 +21993,10 @@
         "datetime":"2026-11-09T09:15:00.000",
         "symbol":"NSE:CNXIT",
         "open":32745.75,
-        "high":32766.45,
-        "low":32151.8,
-        "close":32468.9,
-        "volume":34423457.0,
+        "high":32787.25,
+        "low":32067.75,
+        "close":32295.6,
+        "volume":71293747.0,
         "timeframe":"W"
     },
     {
@@ -26076,8 +26076,8 @@
         "open":32773.8,
         "high":33616.2,
         "low":31738.55,
-        "close":32468.9,
-        "volume":224846079.0,
+        "close":32295.6,
+        "volume":261716369.0,
         "timeframe":"M"
     }
 ]
