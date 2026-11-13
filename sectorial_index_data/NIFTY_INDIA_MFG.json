@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-11-01T09:15:00.000",
-        "symbol":"NSE:NIFTY_INDIA_MFG",
-        "open":8417.8496,
-        "high":8480.5,
-        "low":8408.3496,
-        "close":8472.2998,
-        "volume":0.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-11-02T09:15:00.000",
         "symbol":"NSE:NIFTY_INDIA_MFG",
         "open":8477.3496,
@@ -11000,6 +10989,17 @@
         "timeframe":"D"
     },
     {
+        "Timeframe":"D",
+        "datetime":"2026-11-13T09:15:00.000",
+        "symbol":"NSE:NIFTY_INDIA_MFG",
+        "open":16104.95,
+        "high":16188.35,
+        "low":15994.9,
+        "close":16049.45,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
         "Timeframe":"W",
         "datetime":"2022-01-10T09:15:00.000",
         "symbol":"NSE:NIFTY_INDIA_MFG",
@@ -13778,7 +13778,7 @@
         "open":15978.2,
         "high":16285.7,
         "low":15901.6,
-        "close":16146.55,
+        "close":16049.45,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -14427,7 +14427,7 @@
         "open":15006.1,
         "high":16285.7,
         "low":14999.95,
-        "close":16146.55,
+        "close":16049.45,
         "volume":0.0,
         "timeframe":"M"
     }
