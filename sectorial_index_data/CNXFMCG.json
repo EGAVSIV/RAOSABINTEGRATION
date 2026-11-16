@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-11-02T09:15:00.000",
-        "symbol":"NSE:CNXFMCG",
-        "open":44583.75,
-        "high":44807.80078125,
-        "low":44346.69921875,
-        "close":44533.3515625,
-        "volume":27742732.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-11-03T09:15:00.000",
         "symbol":"NSE:CNXFMCG",
         "open":44439.0,
@@ -10952,7 +10941,7 @@
         "high":46956.7,
         "low":46729.95,
         "close":46729.95,
-        "volume":5363479.0,
+        "volume":5479536.0,
         "timeframe":"D"
     },
     {
@@ -11000,15 +10989,15 @@
         "timeframe":"D"
     },
     {
-        "Timeframe":"W",
-        "datetime":"2007-09-17T09:15:00.000",
+        "Timeframe":"D",
+        "datetime":"2026-11-16T09:15:00.000",
         "symbol":"NSE:CNXFMCG",
-        "open":5633.8501,
-        "high":5774.29,
-        "low":5633.8501,
-        "close":5754.8101,
-        "volume":0.0,
-        "timeframe":"W"
+        "open":46849.65,
+        "high":47708.1,
+        "low":46793.75,
+        "close":47708.1,
+        "volume":67282138.0,
+        "timeframe":"D"
     },
     {
         "Timeframe":"W",
@@ -21985,7 +21974,7 @@
         "high":46970.95,
         "low":43537.0,
         "close":46729.95,
-        "volume":290191710.0,
+        "volume":290307767.0,
         "timeframe":"W"
     },
     {
@@ -21997,6 +21986,17 @@
         "low":46393.3,
         "close":46833.55,
         "volume":142742336.0,
+        "timeframe":"W"
+    },
+    {
+        "Timeframe":"W",
+        "datetime":"2026-11-16T09:15:00.000",
+        "symbol":"NSE:CNXFMCG",
+        "open":46849.65,
+        "high":47708.1,
+        "low":46793.75,
+        "close":47708.1,
+        "volume":67282138.0,
         "timeframe":"W"
     },
     {
@@ -26074,10 +26074,10 @@
         "datetime":"2026-11-02T09:15:00.000",
         "symbol":"NSE:CNXFMCG",
         "open":43651.1,
-        "high":47390.85,
+        "high":47708.1,
         "low":43537.0,
-        "close":46833.55,
-        "volume":433050103.0,
+        "close":47708.1,
+        "volume":500332241.0,
         "timeframe":"M"
     }
 ]

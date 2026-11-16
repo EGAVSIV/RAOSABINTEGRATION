@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-11-02T09:15:00.000",
-        "symbol":"NSE:CNXREALTY",
-        "open":442.1499939,
-        "high":446.5,
-        "low":437.95001221,
-        "close":439.1499939,
-        "volume":27897764.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-11-03T09:15:00.000",
         "symbol":"NSE:CNXREALTY",
         "open":437.3999939,
@@ -10952,7 +10941,7 @@
         "high":903.45,
         "low":888.1,
         "close":890.85,
-        "volume":992422.0,
+        "volume":1003293.0,
         "timeframe":"D"
     },
     {
@@ -11000,15 +10989,15 @@
         "timeframe":"D"
     },
     {
-        "Timeframe":"W",
-        "datetime":"2007-09-17T09:15:00.000",
+        "Timeframe":"D",
+        "datetime":"2026-11-16T09:15:00.000",
         "symbol":"NSE:CNXREALTY",
-        "open":1078.3101,
-        "high":1240.98,
-        "low":1078.3101,
-        "close":1240.98,
-        "volume":0.0,
-        "timeframe":"W"
+        "open":923.8,
+        "high":924.0,
+        "low":901.95,
+        "close":908.9,
+        "volume":5915446.0,
+        "timeframe":"D"
     },
     {
         "Timeframe":"W",
@@ -21985,7 +21974,7 @@
         "high":903.45,
         "low":807.9,
         "close":890.85,
-        "volume":59717908.0,
+        "volume":59728779.0,
         "timeframe":"W"
     },
     {
@@ -21997,6 +21986,17 @@
         "low":882.6,
         "close":921.25,
         "volume":46930815.0,
+        "timeframe":"W"
+    },
+    {
+        "Timeframe":"W",
+        "datetime":"2026-11-16T09:15:00.000",
+        "symbol":"NSE:CNXREALTY",
+        "open":923.8,
+        "high":924.0,
+        "low":901.95,
+        "close":908.9,
+        "volume":5915446.0,
         "timeframe":"W"
     },
     {
@@ -24635,8 +24635,8 @@
         "open":807.9,
         "high":934.45,
         "low":807.9,
-        "close":921.25,
-        "volume":106659594.0,
+        "close":908.9,
+        "volume":112575040.0,
         "timeframe":"M"
     }
 ]
