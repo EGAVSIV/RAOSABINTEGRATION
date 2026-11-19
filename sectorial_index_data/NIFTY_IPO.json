@@ -5258,6 +5258,17 @@
         "timeframe":"D"
     },
     {
+        "Timeframe":"D",
+        "datetime":"2026-11-19T09:15:00.000",
+        "symbol":"NSE:NIFTY_IPO",
+        "open":2430.1,
+        "high":2444.75,
+        "low":2418.35,
+        "close":2442.7,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
         "Timeframe":"W",
         "datetime":"2024-12-16T09:15:00.000",
         "symbol":"NSE:NIFTY_IPO",
@@ -6363,8 +6374,8 @@
         "symbol":"NSE:NIFTY_IPO",
         "open":2475.75,
         "high":2475.75,
-        "low":2422.7,
-        "close":2426.05,
+        "low":2418.35,
+        "close":2442.7,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -6628,7 +6639,7 @@
         "open":2271.25,
         "high":2483.7,
         "low":2242.45,
-        "close":2426.05,
+        "close":2442.7,
         "volume":0.0,
         "timeframe":"M"
     }

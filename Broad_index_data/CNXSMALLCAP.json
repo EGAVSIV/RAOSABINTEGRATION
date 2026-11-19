@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "Original_Index":"2022-11-07T09:15:00.000",
-        "symbol":"NSE:CNXSMALLCAP",
-        "open":9807.55,
-        "high":9846.3,
-        "low":9773.7,
-        "close":9836.3,
-        "volume":180001869.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "Original_Index":"2022-11-09T09:15:00.000",
         "symbol":"NSE:CNXSMALLCAP",
         "open":9864.55,
@@ -10997,6 +10986,17 @@
         "low":19276.3,
         "close":19331.6,
         "volume":435762933.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "Original_Index":"2026-11-19T09:15:00.000",
+        "symbol":"NSE:CNXSMALLCAP",
+        "open":19308.95,
+        "high":19479.45,
+        "low":19230.85,
+        "close":19468.4,
+        "volume":393802468.0,
         "timeframe":"D"
     },
     {
@@ -21994,9 +21994,9 @@
         "symbol":"NSE:CNXSMALLCAP",
         "open":19645.85,
         "high":19655.1,
-        "low":19276.3,
-        "close":19331.6,
-        "volume":1323377075.0,
+        "low":19230.85,
+        "close":19468.4,
+        "volume":1717179543.0,
         "timeframe":"W"
     },
     {
@@ -25020,8 +25020,8 @@
         "open":18442.5,
         "high":19794.25,
         "low":18381.65,
-        "close":19331.6,
-        "volume":5532765575.0,
+        "close":19468.4,
+        "volume":5926568043.0,
         "timeframe":"M"
     }
 ]
