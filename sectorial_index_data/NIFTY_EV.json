@@ -5302,6 +5302,17 @@
         "timeframe":"D"
     },
     {
+        "Timeframe":"D",
+        "datetime":"2026-11-26T09:15:00.000",
+        "symbol":"NSE:NIFTY_EV",
+        "open":3211.6,
+        "high":3223.6,
+        "low":3197.35,
+        "close":3208.6,
+        "volume":0.0,
+        "timeframe":"D"
+    },
+    {
         "Timeframe":"W",
         "datetime":"2024-12-16T09:15:00.000",
         "symbol":"NSE:NIFTY_EV",
@@ -6418,8 +6429,8 @@
         "symbol":"NSE:NIFTY_EV",
         "open":3256.8,
         "high":3262.6,
-        "low":3199.75,
-        "close":3213.05,
+        "low":3197.35,
+        "close":3208.6,
         "volume":0.0,
         "timeframe":"W"
     },
@@ -6683,7 +6694,7 @@
         "open":2930.75,
         "high":3262.6,
         "low":2930.6,
-        "close":3213.05,
+        "close":3208.6,
         "volume":0.0,
         "timeframe":"M"
     }
