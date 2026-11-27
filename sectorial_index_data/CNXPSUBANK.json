@@ -1,17 +1,6 @@
 [
     {
         "Timeframe":"D",
-        "datetime":"2022-11-15T09:15:00.000",
-        "symbol":"NSE:CNXPSUBANK",
-        "open":3747.0,
-        "high":3763.69995117,
-        "low":3719.10009766,
-        "close":3750.80004883,
-        "volume":138777792.0,
-        "timeframe":"D"
-    },
-    {
-        "Timeframe":"D",
         "datetime":"2022-11-16T09:15:00.000",
         "symbol":"NSE:CNXPSUBANK",
         "open":3757.85009766,
@@ -10997,6 +10986,17 @@
         "low":9523.3,
         "close":9529.9,
         "volume":95881804.0,
+        "timeframe":"D"
+    },
+    {
+        "Timeframe":"D",
+        "datetime":"2026-11-27T09:15:00.000",
+        "symbol":"NSE:CNXPSUBANK",
+        "open":9499.5,
+        "high":9693.6,
+        "low":9476.55,
+        "close":9491.8,
+        "volume":137546714.0,
         "timeframe":"D"
     },
     {
@@ -21994,9 +21994,9 @@
         "symbol":"NSE:CNXPSUBANK",
         "open":9952.05,
         "high":9980.5,
-        "low":9516.7,
-        "close":9529.9,
-        "volume":443894621.0,
+        "low":9476.55,
+        "close":9491.8,
+        "volume":581441335.0,
         "timeframe":"W"
     },
     {
@@ -25020,8 +25020,8 @@
         "open":8275.4,
         "high":9980.5,
         "low":8197.5,
-        "close":9529.9,
-        "volume":3178930011.0,
+        "close":9491.8,
+        "volume":3316476725.0,
         "timeframe":"M"
     }
 ]
